@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/* Fonts */
+$default-font-family: Helvetica, Arial, sans-serif;
+$default-font-size: 12px;
+$default-line-height: 1.5em;
+
+/* Dimensions */
+
+/* Colors */
+$body-background: #EEE;
+
+body {
+	padding: 0;
+	margin: 0;
+	background: $body-background;
+}
