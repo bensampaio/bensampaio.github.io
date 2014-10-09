@@ -1,0 +1,113 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: #E9E9E9;
+  overflow-y: auto; }
+
+nav.navbar-top {
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: #424242;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+  z-index: 10000; }
+  nav.navbar-top .navbar-header, nav.navbar-top .navbar-list, nav.navbar-top ul {
+    height: 100%; }
+  nav.navbar-top .navbar-header {
+    float: left;
+    width: 300px;
+    height: 73px;
+    padding-top: 12px;
+    padding-left: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer; }
+    nav.navbar-top .navbar-header .author-picture {
+      width: 55px;
+      border: 3px solid black;
+      -webkit-border-radius: 55px;
+      -moz-border-radius: 55px;
+      border-radius: 55px; }
+    nav.navbar-top .navbar-header .author-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 8px;
+      margin-left: 10px;
+      vertical-align: top;
+      display: inline-block;
+      color: #BCBCBC; }
+    nav.navbar-top .navbar-header:hover .author-name {
+      color: #efefef; }
+  nav.navbar-top .navbar-list {
+    margin-left: 300px; }
+    nav.navbar-top .navbar-list ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center; }
+      nav.navbar-top .navbar-list ul.navbar-items-left {
+        float: left;
+        flex-flow: flex-start; }
+      nav.navbar-top .navbar-list ul.navbar-items-right {
+        float: right;
+        flex-flow: flex-end; }
+      nav.navbar-top .navbar-list ul li {
+        font-weight: bold;
+        line-height: 1em;
+        padding: 4px 8px;
+        border: 2px solid black;
+        margin: 0 10px;
+        display: inline-block;
+        flex-grow: 1;
+        align-self: center;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px; }
+        nav.navbar-top .navbar-list ul li.navbar-item-experience {
+          background-color: #EDC951; }
+        nav.navbar-top .navbar-list ul li.navbar-item-education {
+          background-color: #00A0B0; }
+        nav.navbar-top .navbar-list ul li.navbar-item-projects {
+          background-color: #EB6841; }
+        nav.navbar-top .navbar-list ul li.navbar-item-others {
+          background-color: #CC333F; }
+        nav.navbar-top .navbar-list ul li.navbar-item-about {
+          background-color: #3D8AF7; }
+        nav.navbar-top .navbar-list ul li a, nav.navbar-top .navbar-list ul li a:link, nav.navbar-top .navbar-list ul li a:hover, nav.navbar-top .navbar-list ul li a:visited {
+          text-decoration: none;
+          color: black; }
+
+main {
+  width: 700px;
+  min-height: 100vh;
+  padding-top: 50px;
+  margin: 0 auto;
+  background: #FFF;
+  position: relative;
+  -webkit-box-shadow: 0 0 6px 6px #DDD;
+  -moz-box-shadow: 0 0 6px 6px #DDD;
+  box-shadow: 0 0 6px 6px #DDD;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.ajax {
+  background-image: url("../../img/ajax.gif");
+  background-position: center center;
+  background-repeat: no-repeat; }
+  .ajax > * {
+    display: none; }
+
+/*# sourceMappingURL=general.css.map */
