@@ -1,0 +1,34 @@
+{
+	"summary" : "",
+	"phones" : [
+		{
+			"type" : "",
+			"value" : ""
+		}
+	],
+	"emails" : [
+		{
+			"type" : "",
+			"value" : ""
+		}
+	],
+	"languages" : [
+		{
+			"name" : "",
+			"code" : "",
+			"level" : ""
+		}
+	],
+	"skills" : [
+		{
+			"name" : ""
+		}
+	],
+	"pages" : [
+		{
+			"name" : "",
+			"icon" : "",
+			"url" : ""
+		}
+	]
+}

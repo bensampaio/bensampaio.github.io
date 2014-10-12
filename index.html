@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myself" ng-controller="NavigationController as navigation" lang="en">
 	<head>
-		<title></title>
+		<title>{{navigation.homeSection.title}}</title>
 		
 		<meta charset="UTF-8">
 		<meta name="language" content="EN">
 
-		<meta name="author" content="Bruno Sampaio">
+		<meta name="author" content="{{navigation.homeSection.title}}">
 		<meta name="description" content="My personal website">
 		<meta name="keywords" content="personal,resume,curriculum vitae,portfolio">
 
@@ -20,36 +20,30 @@
 		<!-- Navigation Bar -->
 		<nav class="navbar-top">
 			<div class="navbar-header">
-				<img class="author-picture" src="img/author-picture.jpg">
-				<span class="author-name">Bruno Sampaio</span>
+				<div ng-click="navigation.homeSection.show()" ng-cloak class="{{navigation.homeSection.linkClasses}}">
+					<img class="author-picture" ng-src="{{navigation.homeSection.img}}">
+					<a class="author-name" href="#/{{navigation.homeSection.id}}">{{navigation.homeSection.title}}</a>
+				</div>
+				<div class="navbar-menu"></div>
 			</div>
 			<div class="navbar-list">
 				<ul class="navbar-items-left navbar-items-top">
-					<li class="navbar-item-experience">
-						<a href="#">Experience</a>
-					</li>
-					<li class="navbar-item-education">
-						<a href="#">Education</a>
-					</li>
-					<li class="navbar-item-projects">
-						<a href="#">Projects</a>
-					</li>
-					<li class="navbar-item-others">
-						<a href="#">Others</a>
-					</li>
+					<navbar-item ng-repeat="section in navigation.infoSections"></navbar-item>
 				</ul>
 				<ul class="navbar-items-right navbar-items-bottom">
-					<li class="navbar-item-about">
-						<a href="#">About this Site</a>
-					</li>
+					<navbar-item ng-repeat="section in navigation.generalSections"></navbar-item>
 				</ul>
 			</div>
 		</nav>
 
 		<!-- Main Section -->
-		<main></main>
+		<main ng-view></main>
 
 		<!-- JavaScript Files -->
-		<script type="text/javascript" src=""></script>
+		<script type="text/javascript" src="js/angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
+		<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/controllers.js"></script>
 	</body>
 </html>

@@ -3,10 +3,6 @@
 @import "config";
 @import "tools";
 
-@media screen and (min-width: 850px) {
-
-}
-
 body {
 	font-family: $default-font-family;
 	font-size: $default-font-size;
@@ -16,66 +12,125 @@ body {
 	border: 0;
 	background: $body-background;
 	overflow-y: auto;
+
+	@media screen and (max-width: $min-screen-width) {
+		font-size: $mobile-font-size;
+	}
 }
 
 nav.navbar-top {
+	$navbar-lateral-padding: 1.4em;
+	$navbar-items-border: 2px solid black;
 	$navbar-top-shadow-color: #999;
 
 	height: $navbar-top-height;
 	top: 0;
 	left: 0;
 	right: 0;
+	padding: 0 $navbar-lateral-padding;
 	position: fixed;
-	background: $navbar-background;
+	background-color: $navbar-background;
 	@include box-shadow(0, 8px, 6px, -6px, $navbar-top-shadow-color);
-	z-index: 10000;
+	z-index: $navbar-top-z-index;
 
-	.navbar-header, .navbar-list, ul {
-		height: 100%;
+	a, a:link, a:hover, a:visited {
+		text-decoration: none;
+		color: black;
+	}
+
+	%navbar-box {
+		border: $navbar-items-border;
+		@include border-radius(5px);
+		cursor: pointer;
 	}
 
 	.navbar-header {
-		$navbar-header-padding-top: 12px;
-		$author-picture-size: 55px;
-		$author-picture-border: 3px;
+		$navbar-header-padding-top: 1em;
+		$author-picture-size: 5em;
+		$author-picture-border: 0.3em;
 
-		float: left;
 		width: $navbar-header-width;
 		height: $author-picture-size + ($author-picture-border * 2) + $navbar-header-padding-top;
-		padding-top: $navbar-header-padding-top;
-		padding-left: 20px;
+		padding: $navbar-header-padding-top $navbar-lateral-padding 0;
+		top: 0;
+		left: 0;
+		position: absolute;
 		@include box-sizing(border-box);
-		cursor: pointer;
+		z-index: $navbar-top-z-index + 1;
 
-		.author-picture {
-			width: $author-picture-size;
-			border: $author-picture-border solid black;
-			@include border-radius($author-picture-size);
+		@media screen and (max-width: $min-screen-width) {
+			width: 100%;
 		}
+		
+		.navbar-item-info {
+			@media screen and (max-width: $min-screen-width) {
+				float: left;
+			}
+			cursor: pointer;
 
-		.author-name {
-			font-size: 24px;
-			font-weight: bold;
-			margin-top: 8px;
-			margin-left: 10px;
-			vertical-align: top;
-			display: inline-block;
-			color: $navbar-author-name-color;
-		}
-
-		&:hover {
 			.author-picture {
-
+				width: $author-picture-size;
+				border: $author-picture-border solid black;
+				@include border-radius($author-picture-size);
 			}
 
 			.author-name {
-				color: lighten($navbar-author-name-color, 20%);
+				font-size: 2em;
+				font-weight: bold;
+				font-style: none;
+				margin-top: 5px;
+				margin-left: 10px;
+				vertical-align: top;
+				display: inline-block;
+				color: $navbar-author-name-color;
+			}
+
+			&:hover {
+				.author-picture {
+
+				}
+
+				.author-name {
+					color: lighten($navbar-author-name-color, 20%);
+				}
+			}
+		}
+
+		.navbar-menu {
+			$navbar-menu-size: 16px;
+			width: $navbar-menu-size;
+			height: $navbar-menu-size;
+			padding: 2px;
+			background-color: $body-background;
+			background-image: url($img-folder + 'icon-menu.png');
+			background-position: center center;
+			background-repeat: no-repeat;
+			display: none;
+			@extend %navbar-box;
+			@media screen and (max-width: $min-screen-width) {
+				float: right;
+				display: block;
 			}
 		}
 	}
 
 	.navbar-list {
+		width: auto;
 		margin-left: $navbar-header-width;
+
+		@media screen and (max-width: $min-screen-width) {
+			width: $navbar-header-width;
+			height: 100vh;
+			top: $navbar-top-height;
+			left: 0;
+			bottom: 0;
+			margin: 0;
+			position: absolute;
+			background-color: $body-background;
+			@include box-shadow(8px, 0, 6px, -6px, $navbar-top-shadow-color);
+			z-index: $navbar-top-z-index - 1;
+			/*display: none;*/
+		}
 
 		ul {
 			list-style-type: none;
@@ -86,26 +141,42 @@ nav.navbar-top {
 			flex-wrap: nowrap;
 			align-items: center;
 
+			@media screen and (max-width: $min-screen-width) {
+				flex-direction: column;
+				align-items: flex-start;
+				position: absolute;
+			}
+
 			&.navbar-items-left {
 				float: left;
-				flex-flow: flex-start;
+				justify-content: flex-start;
+				@media screen and (max-width: $min-screen-width) {
+					float: none;
+					top: 0;
+					align-content: flex-start;
+				}
 			}
 
 			&.navbar-items-right {
 				float: right;
-				flex-flow: flex-end;
+				justify-content: flex-end;
+				@media screen and (max-width: $min-screen-width) {
+					float: none;
+					bottom: 100vh;
+					align-content: flex-end;
+				}
 			}
 
 			li {
 				font-weight: bold;
 				line-height: 1em;
 				padding: 4px 8px;
-				border: 2px solid black;
+				border: $navbar-items-border;
 				margin: 0 10px;
 				display: inline-block;
 				flex-grow: 1;
 				align-self: center;
-				@include border-radius(5px);
+				@extend %navbar-box;
 
 				&.navbar-item-experience {
 					background-color: $navbar-item-experience-background;
@@ -126,23 +197,22 @@ nav.navbar-top {
 				&.navbar-item-about {
 					background-color: $navbar-item-about-background;
 				}
-
-				a, a:link, a:hover, a:visited {
-					text-decoration: none;
-					color: black;
-				}
 			}
 		}
 	}
 
+	@media screen and (min-width: $min-screen-width) {
+		.navbar-list, ul {
+			height: 100%;
+		}
+	}
 }
 
 main {
 	$main-page-shadow-color: #DDD;
-
-	width: $main-page-width;
+	max-width: $main-page-maxwidth;
 	min-height: 100vh;
-	padding-top: $navbar-top-height;
+	padding: $navbar-top-height 1.5em 0.5em;
 	margin: 0 auto;
 	background: $main-page-background;
 	position: relative;
@@ -151,7 +221,7 @@ main {
 }
 
 .ajax {
-	background-image: url('../../img/ajax.gif');
+	background-image: url($img-folder + 'ajax.gif');
 	background-position: center center;
 	background-repeat: no-repeat;
 

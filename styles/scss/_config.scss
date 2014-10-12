@@ -1,12 +1,18 @@
 // Fonts
 $default-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $default-font-size: 12px;
+$mobile-font-size: 10px;
 $default-line-height: 1.5em;
 
+// Directories
+$img-folder: '../../img/';
+
 // Dimensions
-$navbar-top-height: 50px;
+$min-screen-width: 800px;
+$navbar-top-height: 4.3em;
 $navbar-header-width: 300px;
-$main-page-width: 700px;
+$navbar-top-z-index: 10000;
+$main-page-maxwidth: 700px;
 
 // Text Colors
 $navbar-author-name-color: #BCBCBC;
