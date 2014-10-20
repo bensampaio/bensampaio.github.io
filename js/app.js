@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('myself', [ 'ngRoute', 'myControllers' ]);
+	var app = angular.module('myself', [ 'ngAnimate', 'ngRoute', 'myNavigation', 'myPages' ]);
 
 	app.constant('DEFAULTS', {
 		title : 'Bruno Sampaio',
@@ -26,7 +26,6 @@
 		{ id : "experience", controller : 'ExperienceController' },
 		{ id : "education", controller : 'EducationController' },
 		{ id : "projects", controller : 'ProjectsController' },
-		{ id : "others", controller : '', noRoute : true },
 		{ id : "lang", controller : '', noRoute : true },
 		{ id : "about", controller : '' }
 	]);

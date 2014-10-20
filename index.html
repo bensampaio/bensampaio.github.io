@@ -13,6 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 		<!-- CSS Files -->
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/css/general.css" />
 	</head>
 	<body>
@@ -20,18 +21,20 @@
 		<!-- Navigation Bar -->
 		<nav class="navbar-top">
 			<div class="navbar-header">
-				<div ng-click="navigation.homeSection.show()" ng-cloak class="{{navigation.homeSection.linkClasses}}">
-					<img class="author-picture" ng-src="{{navigation.homeSection.img}}">
-					<a class="author-name" href="#/{{navigation.homeSection.id}}">{{navigation.homeSection.title}}</a>
+				<div ng-click="navigation.setCurrentSection(navigation.homeSection)" ng-cloak class="{{navigation.homeSection.linkClasses}}">
+					<a ng-class="{ selected : navigation.homeSection.isCurrent() }" href="#/{{navigation.homeSection.id}}">
+						<i class="{{navigation.homeSection.icon}}"></i>
+						<h1 class="author-name">{{navigation.homeSection.title}}</h1>
+					</a>
 				</div>
-				<div class="navbar-menu"></div>
+				<div class="navbar-menu"><i class="fa fa-navicon"></i></div>
 			</div>
-			<div class="navbar-list">
+			<div class="navbar-list expanded">
 				<ul class="navbar-items-left navbar-items-top">
-					<navbar-item ng-repeat="section in navigation.infoSections"></navbar-item>
+					<navbar-item ng-repeat="section in navigation.infoSections" ng-show="section.visible"></navbar-item>
 				</ul>
 				<ul class="navbar-items-right navbar-items-bottom">
-					<navbar-item ng-repeat="section in navigation.generalSections"></navbar-item>
+					<navbar-item ng-repeat="section in navigation.generalSections" ng-show="section.visible"></navbar-item>
 				</ul>
 			</div>
 		</nav>
@@ -39,11 +42,15 @@
 		<!-- Main Section -->
 		<main ng-view></main>
 
+		<!-- Copyright -->
+		<div class="footer"><i class="fa fa-copyright"></i> 2014 {{navigation.homeSection.title}}</div>
+
 		<!-- JavaScript Files -->
 		<script type="text/javascript" src="js/angular/angular.min.js"></script>
 		<script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
 		<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-		<script type="text/javascript" src="js/controllers.js"></script>
+		<script type="text/javascript" src="js/navigation.js"></script>
+		<script type="text/javascript" src="js/pages.js"></script>
 	</body>
 </html>

@@ -1,0 +1,17 @@
+main {
+	$main-page-shadow-color: #DDD;
+	max-width: $main-page-maxwidth;
+	min-height: 100vh;
+	padding: $main-page-tpadding 1.5em 0.5em;
+	margin: 0 auto;
+	background: $main-page-background;
+	position: relative;
+	@include box-shadow(0, 0, 6px, 6px, $main-page-shadow-color);
+	@include box-sizing(border-box);
+
+	h2:first-child {
+		margin-top: 2em;
+	}
+
+	@include anchor-styles($main-page-links-color);
+}

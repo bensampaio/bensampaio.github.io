@@ -12,17 +12,37 @@ $min-screen-width: 800px;
 $navbar-top-height: 4.3em;
 $navbar-header-width: 300px;
 $navbar-top-z-index: 10000;
+$main-page-tpadding: $navbar-top-height;
 $main-page-maxwidth: 700px;
 
 // Text Colors
-$navbar-author-name-color: #BCBCBC;
+$navbar-author-name-color: #3299BB;
+$navbar-links-color: #BCBCBC;
+$main-page-links-color: #0077b5;
 
 // Backgrounds
 $body-background: #E9E9E9;
 $navbar-background: #424242;
-$navbar-item-experience-background: #EDC951;
-$navbar-item-education-background: #00A0B0;
-$navbar-item-projects-background: #EB6841;
-$navbar-item-others-background: #CC333F;
-$navbar-item-about-background: #3D8AF7;
+$navbar-list-background: lighten($navbar-background, 25%);
+$navbar-item-selected-background: darken($navbar-list-background, 5%);
 $main-page-background: #FFF;
+$pages: (
+	info : (
+		color : transparent
+	),
+	experience : (
+		color : #CC333F
+	), 
+	education : (
+		color : #00A0B0
+	), 
+	projects : (
+		color : #EB6841
+	),
+	lang : (
+		color : transparent
+	),
+	about : (
+		color : #EDC951
+	)
+);

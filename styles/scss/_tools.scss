@@ -1,13 +1,46 @@
-@mixin box-sizing($type) {
-	-webkit-box-sizing: $type;
-	-moz-box-sizing: $type;
-	box-sizing: $type;
+%contentOnly {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+@mixin apply-to-desktop {
+	@media screen and (min-width: $min-screen-width) {
+		@content;
+	}
+}
+
+@mixin apply-to-mobile {
+	@media screen and (max-width: $min-screen-width) {
+		@content;
+	}
+}
+
+@mixin anchor-styles($color) {
+	a, a:link, a:hover, a:visited {
+		text-decoration: none;
+		color: $color;
+	}
+}
+
+@mixin background-image($img, $position, $repeat) {
+	background: {
+		image: url($img-folder + $img);
+		position: $position;
+		repeat: $repeat;
+	}
 }
 
 @mixin border-radius($radius) {
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
+}
+
+@mixin box-sizing($type) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing: $type;
+	box-sizing: $type;
 }
 
 @mixin box-shadow($hoffset, $voffset, $blur, $spread, $color) {

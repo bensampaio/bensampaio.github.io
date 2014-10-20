@@ -3,229 +3,40 @@
 @import "config";
 @import "tools";
 
+@import "navigation";
+@import "pages";
+
 body {
 	font-family: $default-font-family;
 	font-size: $default-font-size;
 	line-height: $default-line-height;
-	padding: 0;
-	margin: 0;
-	border: 0;
 	background: $body-background;
 	overflow-y: auto;
+	@extend %contentOnly;
 
-	@media screen and (max-width: $min-screen-width) {
+	@include apply-to-mobile {
 		font-size: $mobile-font-size;
 	}
 }
 
-nav.navbar-top {
-	$navbar-lateral-padding: 1.4em;
-	$navbar-items-border: 2px solid black;
-	$navbar-top-shadow-color: #999;
-
-	height: $navbar-top-height;
-	top: 0;
-	left: 0;
-	right: 0;
-	padding: 0 $navbar-lateral-padding;
-	position: fixed;
-	background-color: $navbar-background;
-	@include box-shadow(0, 8px, 6px, -6px, $navbar-top-shadow-color);
-	z-index: $navbar-top-z-index;
-
-	a, a:link, a:hover, a:visited {
-		text-decoration: none;
-		color: black;
-	}
-
-	%navbar-box {
-		border: $navbar-items-border;
-		@include border-radius(5px);
-		cursor: pointer;
-	}
-
-	.navbar-header {
-		$navbar-header-padding-top: 1em;
-		$author-picture-size: 5em;
-		$author-picture-border: 0.3em;
-
-		width: $navbar-header-width;
-		height: $author-picture-size + ($author-picture-border * 2) + $navbar-header-padding-top;
-		padding: $navbar-header-padding-top $navbar-lateral-padding 0;
-		top: 0;
-		left: 0;
-		position: absolute;
-		@include box-sizing(border-box);
-		z-index: $navbar-top-z-index + 1;
-
-		@media screen and (max-width: $min-screen-width) {
-			width: 100%;
-		}
-		
-		.navbar-item-info {
-			@media screen and (max-width: $min-screen-width) {
-				float: left;
-			}
-			cursor: pointer;
-
-			.author-picture {
-				width: $author-picture-size;
-				border: $author-picture-border solid black;
-				@include border-radius($author-picture-size);
-			}
-
-			.author-name {
-				font-size: 2em;
-				font-weight: bold;
-				font-style: none;
-				margin-top: 5px;
-				margin-left: 10px;
-				vertical-align: top;
-				display: inline-block;
-				color: $navbar-author-name-color;
-			}
-
-			&:hover {
-				.author-picture {
-
-				}
-
-				.author-name {
-					color: lighten($navbar-author-name-color, 20%);
-				}
-			}
-		}
-
-		.navbar-menu {
-			$navbar-menu-size: 16px;
-			width: $navbar-menu-size;
-			height: $navbar-menu-size;
-			padding: 2px;
-			background-color: $body-background;
-			background-image: url($img-folder + 'icon-menu.png');
-			background-position: center center;
-			background-repeat: no-repeat;
-			display: none;
-			@extend %navbar-box;
-			@media screen and (max-width: $min-screen-width) {
-				float: right;
-				display: block;
-			}
-		}
-	}
-
-	.navbar-list {
-		width: auto;
-		margin-left: $navbar-header-width;
-
-		@media screen and (max-width: $min-screen-width) {
-			width: $navbar-header-width;
-			height: 100vh;
-			top: $navbar-top-height;
-			left: 0;
-			bottom: 0;
-			margin: 0;
-			position: absolute;
-			background-color: $body-background;
-			@include box-shadow(8px, 0, 6px, -6px, $navbar-top-shadow-color);
-			z-index: $navbar-top-z-index - 1;
-			/*display: none;*/
-		}
-
-		ul {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			align-items: center;
-
-			@media screen and (max-width: $min-screen-width) {
-				flex-direction: column;
-				align-items: flex-start;
-				position: absolute;
-			}
-
-			&.navbar-items-left {
-				float: left;
-				justify-content: flex-start;
-				@media screen and (max-width: $min-screen-width) {
-					float: none;
-					top: 0;
-					align-content: flex-start;
-				}
-			}
-
-			&.navbar-items-right {
-				float: right;
-				justify-content: flex-end;
-				@media screen and (max-width: $min-screen-width) {
-					float: none;
-					bottom: 100vh;
-					align-content: flex-end;
-				}
-			}
-
-			li {
-				font-weight: bold;
-				line-height: 1em;
-				padding: 4px 8px;
-				border: $navbar-items-border;
-				margin: 0 10px;
-				display: inline-block;
-				flex-grow: 1;
-				align-self: center;
-				@extend %navbar-box;
-
-				&.navbar-item-experience {
-					background-color: $navbar-item-experience-background;
-				}
-
-				&.navbar-item-education {
-					background-color: $navbar-item-education-background;
-				}
-
-				&.navbar-item-projects {
-					background-color: $navbar-item-projects-background;
-				}
-
-				&.navbar-item-others {
-					background-color: $navbar-item-others-background;
-				}
-
-				&.navbar-item-about {
-					background-color: $navbar-item-about-background;
-				}
-			}
-		}
-	}
-
-	@media screen and (min-width: $min-screen-width) {
-		.navbar-list, ul {
-			height: 100%;
-		}
-	}
-}
-
-main {
-	$main-page-shadow-color: #DDD;
-	max-width: $main-page-maxwidth;
-	min-height: 100vh;
-	padding: $navbar-top-height 1.5em 0.5em;
-	margin: 0 auto;
-	background: $main-page-background;
-	position: relative;
-	@include box-shadow(0, 0, 6px, 6px, $main-page-shadow-color);
-	@include box-sizing(border-box);
+h2 {
+	font-size: 1.6em;
+	margin-top: 1em;
+	margin-bottom: 0.5em; 
 }
 
 .ajax {
-	background-image: url($img-folder + 'ajax.gif');
-	background-position: center center;
-	background-repeat: no-repeat;
+	@include background-image('ajax.gif', center center, no-repeat);
 
 	& > * {
 		display: none;
 	}
+}
+
+.footer {
+	padding: 0.8em;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	color: black;
 }
