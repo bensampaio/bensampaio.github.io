@@ -19,12 +19,6 @@ body {
 	}
 }
 
-h2 {
-	font-size: 1.6em;
-	margin-top: 1em;
-	margin-bottom: 0.5em; 
-}
-
 .ajax {
 	@include background-image('ajax.gif', center center, no-repeat);
 
@@ -37,6 +31,6 @@ h2 {
 	padding: 0.8em;
 	right: 0;
 	bottom: 0;
-	position: absolute;
+	position: fixed;
 	color: black;
 }

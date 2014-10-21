@@ -9,8 +9,22 @@ main {
 	@include box-shadow(0, 0, 6px, 6px, $main-page-shadow-color);
 	@include box-sizing(border-box);
 
+	h2 {
+		font-size: 1.6em;
+		margin-top: 1em;
+		margin-bottom: 0.5em; 
+	}
+
 	h2:first-child {
 		margin-top: 2em;
+	}
+
+	a, p, li {
+		font-size: 1.1em;
+	}
+
+	span {
+		font-size: inherit;
 	}
 
 	@include anchor-styles($main-page-links-color);

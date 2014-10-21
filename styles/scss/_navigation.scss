@@ -3,6 +3,7 @@ nav.navbar-top {
 	// Navbar Values
 	$navbar-hpadding: 1.4em;
 	$navbar-shadow-color: #999;
+	$navbar-item-selected-shadow: #222;
 
 	// Navbar Header Values
 	$navbar-header-padding-top: 1em;
@@ -10,8 +11,7 @@ nav.navbar-top {
 	$author-picture-border: 0.3em;
 
 	// Navbar Items List Values
-	$navbar-list-tmargin: $navbar-top-height - $navbar-header-padding-top - $author-picture-size - ($author-picture-border * 2);
-	$navbar-list-tpadding: ceil(abs($navbar-list-tmargin));
+	$navbar-list-tpadding: ceil(abs($navbar-top-height - $navbar-header-padding-top - $author-picture-size - ($author-picture-border * 2)));
 	$navbar-items-vpadding: 6px;
 	$navbar-items-hpadding: 10px;
 	$navbar-items-border-width: 2px;
@@ -38,6 +38,8 @@ nav.navbar-top {
 		@include apply-to-mobile {
 			float: none;
 			width: 100%;
+			top: 0;
+			position: absolute;
 		}
 		
 		.navbar-item-info {
@@ -78,8 +80,13 @@ nav.navbar-top {
 				&:hover {
 					color: $navbar-author-name-color;
 
+					.author-name {
+						text-shadow: 0px 1px 1px $navbar-item-selected-shadow;
+					}
+
 					.author-picture {
 						border-color: darken($navbar-author-name-color, 15%);
+						@include box-shadow(0px, 1px, 1px, 1px, $navbar-item-selected-shadow);
 					}
 				}
 			}
@@ -88,6 +95,7 @@ nav.navbar-top {
 		.navbar-menu {
 			$navbar-menu-size: 16px;
 			font-size: 14px;
+			line-height: 1em;
 			text-align: center;
 			width: $navbar-menu-size;
 			height: $navbar-menu-size;
@@ -102,6 +110,10 @@ nav.navbar-top {
 				float: right;
 				display: block;
 			}
+
+			i {
+				vertical-align: middle;
+			}
 		}
 	}
 
@@ -111,19 +123,28 @@ nav.navbar-top {
 		margin-left: $navbar-header-width;
 
 		@include apply-to-mobile {
+			width: 100%;
 			padding: $navbar-list-tpadding $navbar-hpadding 1em;
-			margin-top: $navbar-list-tmargin;
+			margin-top: $navbar-top-height;
 			margin-left: 0;
 			background-color: $navbar-list-background;
-			@include box-shadow(8px, 0, 6px, -6px, $navbar-shadow-color);
+			@include box-shadow(0, 8px, 6px, -6px, $navbar-shadow-color);
 			z-index: $navbar-top-z-index - 1;
+			overflow-y: hidden;
+
+			&.collapsed,
+			&.expanded {
+				@include transition(all, 0.5s, ease-in-out);
+			}
 
 			&.collapsed {
-				display: none;
+				max-height: 0;
+				padding-top: 0;
+				padding-bottom: 0;
 			}
 
 			&.expanded {
-				display: block;
+				max-height: 100vh;
 			}
 		}
 
@@ -198,6 +219,7 @@ nav.navbar-top {
 
 						&.selected {
 							background-color: $navbar-item-selected-background;
+							text-shadow: 0px 1px 1px $navbar-item-selected-shadow;
 						}
 					}					
 				}

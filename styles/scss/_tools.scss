@@ -48,3 +48,10 @@
 	-moz-box-shadow: $hoffset $voffset $blur $spread $color;
 	box-shadow: $hoffset $voffset $blur $spread $color;
 }
+
+@mixin transition($attrs, $time, $type) {
+	-webkit-transition: $attrs $time $type;
+	-moz-transition: $attrs $time $type;
+    -o-transition: $attrs $time $type;
+    transition: $attrs $time $type;
+}
