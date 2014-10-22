@@ -16,6 +16,12 @@
 	}
 }
 
+@mixin apply-to-print {
+	@media print {
+		@content;
+	}
+}
+
 @mixin anchor-styles($color) {
 	a, a:link, a:hover, a:visited {
 		text-decoration: none;

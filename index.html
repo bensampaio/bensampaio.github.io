@@ -15,6 +15,11 @@
 		<!-- CSS Files -->
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/css/general.css" />
+
+		<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+		  api_key:    77mnf8e1atz9pc
+		  authorize:  yes
+		</script>
 	</head>
 	<body>
 
@@ -29,7 +34,7 @@
 				</div>
 				<div class="navbar-menu"><i class="fa fa-navicon"></i></div>
 			</div>
-			<div class="navbar-list expanded">
+			<div class="navbar-list collapsed">
 				<ul class="navbar-items-left navbar-items-top">
 					<navbar-item ng-repeat="section in navigation.infoSections" ng-show="section.visible"></navbar-item>
 				</ul>

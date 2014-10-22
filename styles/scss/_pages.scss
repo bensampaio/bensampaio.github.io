@@ -1,8 +1,10 @@
 main {
+	$main-page-bpadding: $default-line-height + ($footer-padding * 2);
 	$main-page-shadow-color: #DDD;
+
 	max-width: $main-page-maxwidth;
 	min-height: 100vh;
-	padding: $main-page-tpadding 1.5em 0.5em;
+	padding: $main-page-tpadding 1.5em $main-page-bpadding;
 	margin: 0 auto;
 	background: $main-page-background;
 	position: relative;

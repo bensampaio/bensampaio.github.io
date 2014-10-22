@@ -93,26 +93,15 @@ nav.navbar-top {
 		}
 
 		.navbar-menu {
-			$navbar-menu-size: 16px;
-			font-size: 14px;
-			line-height: 1em;
-			text-align: center;
-			width: $navbar-menu-size;
-			height: $navbar-menu-size;
-			padding: 2px;
-			border: $navbar-items-border-width solid black;
-			@include border-radius(5px);
-			background-color: $body-background;
+			font-size: 18px;
+			padding: 0.15em;
+			color: $navbar-links-color;
 			display: none;
 			cursor: pointer;
 
 			@include apply-to-mobile {
 				float: right;
 				display: block;
-			}
-
-			i {
-				vertical-align: middle;
 			}
 		}
 	}
@@ -129,12 +118,13 @@ nav.navbar-top {
 			margin-left: 0;
 			background-color: $navbar-list-background;
 			@include box-shadow(0, 8px, 6px, -6px, $navbar-shadow-color);
+			@include box-sizing(border-box);
 			z-index: $navbar-top-z-index - 1;
 			overflow-y: hidden;
 
 			&.collapsed,
 			&.expanded {
-				@include transition(all, 0.5s, ease-in-out);
+				@include transition(all, 0.4s, ease-in-out);
 			}
 
 			&.collapsed {
@@ -257,7 +247,7 @@ nav.navbar-top {
 		}
 	}
 
-	@media print {
+	@include apply-to-print {
 		display: none;
 	}
 }

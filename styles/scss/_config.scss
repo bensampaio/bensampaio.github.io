@@ -14,6 +14,7 @@ $navbar-header-width: 300px;
 $navbar-top-z-index: 10000;
 $main-page-tpadding: $navbar-top-height;
 $main-page-maxwidth: 700px;
+$footer-padding: 0.8em;
 
 // Text Colors
 $navbar-author-name-color: #3299BB;
@@ -31,18 +32,18 @@ $pages: (
 		color : transparent
 	),
 	experience : (
-		color : #55B34D
+		color : #1abc9c //#55B34D
 	), 
 	education : (
-		color : #00B6C7
+		color : #e74c3c //#00B6C7
 	), 
 	projects : (
-		color : #FF8000
+		color : #e67e22 //#FF8000
 	),
 	lang : (
 		color : transparent
 	),
 	about : (
-		color : #FFBF00
+		color : #f1c40f //#FFBF00
 	)
 );

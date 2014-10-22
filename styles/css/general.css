@@ -72,25 +72,15 @@ nav.navbar-top {
             -moz-box-shadow: 0px 1px 1px 1px #222;
             box-shadow: 0px 1px 1px 1px #222; }
     nav.navbar-top .navbar-header .navbar-menu {
-      font-size: 14px;
-      line-height: 1em;
-      text-align: center;
-      width: 16px;
-      height: 16px;
-      padding: 2px;
-      border: 2px solid black;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      background-color: #E9E9E9;
+      font-size: 18px;
+      padding: 0.15em;
+      color: #BCBCBC;
       display: none;
       cursor: pointer; }
       @media screen and (max-width: 800px) {
         nav.navbar-top .navbar-header .navbar-menu {
           float: right;
           display: block; } }
-      nav.navbar-top .navbar-header .navbar-menu i {
-        vertical-align: middle; }
   nav.navbar-top .navbar-list {
     width: auto;
     padding-right: 1.4em;
@@ -105,13 +95,16 @@ nav.navbar-top {
         -webkit-box-shadow: 0 8px 6px -6px #999;
         -moz-box-shadow: 0 8px 6px -6px #999;
         box-shadow: 0 8px 6px -6px #999;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         z-index: 9999;
         overflow-y: hidden; }
         nav.navbar-top .navbar-list.collapsed, nav.navbar-top .navbar-list.expanded {
-          -webkit-transition: all 0.5s ease-in-out;
-          -moz-transition: all 0.5s ease-in-out;
-          -o-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out; }
         nav.navbar-top .navbar-list.collapsed {
           max-height: 0;
           padding-top: 0;
@@ -163,15 +156,15 @@ nav.navbar-top {
             nav.navbar-top .navbar-list ul li.navbar-item-info a.selected {
               color: transparent; }
             nav.navbar-top .navbar-list ul li.navbar-item-experience a.selected {
-              color: #55B34D; }
+              color: #1abc9c; }
             nav.navbar-top .navbar-list ul li.navbar-item-education a.selected {
-              color: #00B6C7; }
+              color: #e74c3c; }
             nav.navbar-top .navbar-list ul li.navbar-item-projects a.selected {
-              color: #FF8000; }
+              color: #e67e22; }
             nav.navbar-top .navbar-list ul li.navbar-item-lang a.selected {
               color: transparent; }
             nav.navbar-top .navbar-list ul li.navbar-item-about a.selected {
-              color: #FFBF00; }
+              color: #f1c40f; }
             nav.navbar-top .navbar-list ul li a {
               font-size: 1.5em;
               width: 100%;
@@ -188,15 +181,15 @@ nav.navbar-top {
             nav.navbar-top .navbar-list ul li.navbar-item-info a.selected, nav.navbar-top .navbar-list ul li.navbar-item-info a:hover {
               background-color: transparent; }
             nav.navbar-top .navbar-list ul li.navbar-item-experience a.selected, nav.navbar-top .navbar-list ul li.navbar-item-experience a:hover {
-              background-color: #55B34D; }
+              background-color: #1abc9c; }
             nav.navbar-top .navbar-list ul li.navbar-item-education a.selected, nav.navbar-top .navbar-list ul li.navbar-item-education a:hover {
-              background-color: #00B6C7; }
+              background-color: #e74c3c; }
             nav.navbar-top .navbar-list ul li.navbar-item-projects a.selected, nav.navbar-top .navbar-list ul li.navbar-item-projects a:hover {
-              background-color: #FF8000; }
+              background-color: #e67e22; }
             nav.navbar-top .navbar-list ul li.navbar-item-lang a.selected, nav.navbar-top .navbar-list ul li.navbar-item-lang a:hover {
               background-color: transparent; }
             nav.navbar-top .navbar-list ul li.navbar-item-about a.selected, nav.navbar-top .navbar-list ul li.navbar-item-about a:hover {
-              background-color: #FFBF00; }
+              background-color: #f1c40f; }
             nav.navbar-top .navbar-list ul li a {
               padding: 6px 10px; }
               nav.navbar-top .navbar-list ul li a.selected, nav.navbar-top .navbar-list ul li a:hover {
@@ -216,7 +209,7 @@ nav.navbar-top {
 main {
   max-width: 700px;
   min-height: 100vh;
-  padding: 4.3em 1.5em 0.5em;
+  padding: 4.3em 1.5em 3.1em;
   margin: 0 auto;
   background: #FFF;
   position: relative;
@@ -256,6 +249,9 @@ body {
   background-repeat: no-repeat; }
   .ajax > * {
     display: none; }
+
+.fa .fa-linkedin-square {
+  color: #000; }
 
 .footer {
   padding: 0.8em;
