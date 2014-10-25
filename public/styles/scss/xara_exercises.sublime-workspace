@@ -1,0 +1,762 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"curr",
+				"currents"
+			],
+			[
+				"curre",
+				"currents"
+			],
+			[
+				"item",
+				"itemSelected"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"get",
+				"getContainer"
+			],
+			[
+				"NEWS",
+				"NEWS_LOADER_ID"
+			],
+			[
+				"cons",
+				"constants"
+			],
+			[
+				"news",
+				"newsfeed"
+			],
+			[
+				"bord",
+				"border-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"border-r",
+				"border-right-width"
+			],
+			[
+				"border-l",
+				"border-left-width"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"board",
+				"boardWidth"
+			],
+			[
+				"found",
+				"foundInSquare"
+			],
+			[
+				"curren",
+				"currentCol"
+			],
+			[
+				"wind",
+				"windowHeight"
+			],
+			[
+				"docu",
+				"documentHeight"
+			],
+			[
+				"ch",
+				"children"
+			],
+			[
+				"backgro",
+				"backgroundImage"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"textMetadata"
+			],
+			[
+				"tex",
+				"textMetadata"
+			],
+			[
+				"toggl",
+				"toggleIcon"
+			],
+			[
+				"ke",
+				"keyPress"
+			],
+			[
+				"to",
+				"toggleEvent"
+			],
+			[
+				"ele",
+				"elements"
+			],
+			[
+				"elements",
+				"elementsLogic"
+			],
+			[
+				"eleme",
+				"elements"
+			],
+			[
+				"eve",
+				"events"
+			],
+			[
+				"add",
+				"addElements"
+			],
+			[
+				"new",
+				"newElements"
+			],
+			[
+				"elem",
+				"elements"
+			],
+			[
+				"do",
+				"documentClicked"
+			],
+			[
+				"e",
+				"events"
+			],
+			[
+				"box",
+				"boxBorder"
+			],
+			[
+				"data",
+				"dataBoxStyles"
+			],
+			[
+				"filler",
+				"fillerBoxStyles"
+			],
+			[
+				"chrome",
+				"chrome-extension-wi-element"
+			],
+			[
+				"element",
+				"elementHeight"
+			],
+			[
+				"dataBox",
+				"dataBoxStyles"
+			],
+			[
+				"content",
+				"contentBoxStyles"
+			],
+			[
+				"dataBo",
+				"dataBoxStyles"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"DA",
+				"DATA_BOX_CLASS"
+			],
+			[
+				"out",
+				"outerHeight"
+			],
+			[
+				"cont",
+				"contentBox"
+			],
+			[
+				"ou",
+				"outerHeight"
+			],
+			[
+				"CON",
+				"CONTENT_BOX_CLASS"
+			],
+			[
+				"cli",
+				"clickEvent"
+			],
+			[
+				"dom",
+				"domCreated"
+			],
+			[
+				"ba",
+				"backgroundColor"
+			],
+			[
+				"par",
+				"parseBackgroundImage"
+			],
+			[
+				"C",
+				"CONTENT"
+			],
+			[
+				"rem",
+				"removeDataBox"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"em",
+				"embed	Tag"
+			],
+			[
+				"boun",
+				"boundaries"
+			],
+			[
+				"bound",
+				"boundaries_start"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/general.css",
+			"settings":
+			{
+				"buffer_size": 856,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/app.js",
+			"settings":
+			{
+				"buffer_size": 650,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/slider.js",
+			"settings":
+			{
+				"buffer_size": 7348,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/app.js",
+			"settings":
+			{
+				"buffer_size": 917,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/index.html",
+			"settings":
+			{
+				"buffer_size": 692,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/general.css",
+			"settings":
+			{
+				"buffer_size": 654,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 147.0,
+		"selected_items":
+		[
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Bruno/Documents/Repositories/xara_exercises/LICENSE",
+		"/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/app.js",
+		"/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/index.html",
+		"/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/general.css",
+		"/Users/Bruno/Documents/Repositories/xara_exercises/slider/index.html",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/views/experience/index.html",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/views/info/index.html",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/views/projects/index.html",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/views/education/index.html",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/views/about/index.html",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/README",
+		"/Users/Bruno/Documents/Repositories/bensampaio.github.io/js/navigation.js",
+		"/Users/Bruno/Documents/Repositories/backbase_yahoo_news/README.md",
+		"/Users/Bruno/Documents/Repositories/backbase_yahoo_news/js/logic.js",
+		"/Users/Bruno/Documents/Repositories/backbase_yahoo_news/css/general.css",
+		"/Users/Bruno/Documents/Repositories/backbase_yahoo_news/index.html",
+		"/Users/Bruno/Documents/Repositories/backbase_yahoo_news/general.css",
+		"/Applications/MAMP/htdocs/epik/app/Controller/Component/QuizConverterComponent.php",
+		"/Users/Bruno/Desktop/ValidateSudoku.js",
+		"/Users/Bruno/Desktop/ValidateSudoku.php",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/manifest.json",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/js/init.js",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/css/general.css",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/js/sizzle.js",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/js/background.js",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/_locales/en/messages.json",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/README",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/.gitignore",
+		"/Users/Bruno/Documents/Repositories/chrome-extension-web_inspector/js/jquery.js",
+		"/Users/Bruno/Desktop/index.html",
+		"/Users/Bruno/Desktop/index.php",
+		"/Users/Bruno/Desktop/index 2.html",
+		"/Users/Bruno/Documents/University/Licenciatura/3rd Year/1st Semester/Produção de Conteudos Multimédia/2º Trabalho/code/data/AUFile.as",
+		"/Applications/MAMP/htdocs/primeIT.php",
+		"/Applications/MAMP/htdocs/epik/app/webroot/files/schemas/project.xsd"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"event",
+			"this",
+			"bind",
+			"querySelector",
+			"\\w{6}\\b",
+			"\\w{6,8}\\b",
+			"\\w{6}\\b",
+			"\\w{6}",
+			"\\w{1}",
+			"\\w",
+			"\\w{1-6}",
+			"\\w{1-6}\\b",
+			"ease-in-out",
+			"0.5s",
+			"all",
+			"max-height",
+			"$navbar-list-tmargin",
+			"height",
+			"all",
+			"2s",
+			"max-height",
+			"height",
+			"0.8",
+			"all",
+			"$author-shadow-color",
+			";\n",
+			"font-size",
+			"besides",
+			"Besides",
+			"itemStructure",
+			"itemStruc",
+			"currents",
+			"itemSelected",
+			"BYN",
+			"itemSelected",
+			"itemStructure",
+			"constants",
+			"config",
+			"itemStructure",
+			"this",
+			"getContainer",
+			"newsToLoad",
+			"accordion",
+			"collapse1",
+			"board",
+			"{}",
+			"var ",
+			"]",
+			"[",
+			"top",
+			"contentBoxStyles",
+			"windowHeight",
+			"CLOSE_BUTTON",
+			"tagName",
+			"parseSourceURL",
+			"tagName",
+			"source",
+			"parseBackgroundImage",
+			"filter",
+			"getTextMetadata",
+			"getReferenceMetadata",
+			"getMultimediaMetadata",
+			"removeDataBox",
+			"setDataBoxStyles",
+			"addDataBox",
+			"wi.current",
+			"resetElements",
+			"addElements",
+			"currentIcon",
+			"resetElements",
+			"wi.elements",
+			"elementsToInspect",
+			"wi.elements",
+			"setClickEvent",
+			"domToInspect",
+			"domsToInspect",
+			"current.dataBox",
+			"ACTIVE",
+			"active",
+			"ACTIVE",
+			"chrome-extension-wi-active",
+			"clickEvent",
+			"fill",
+			"dataBox",
+			"boxPadding",
+			"boxStyles",
+			"setDataBoxStyles",
+			"styles",
+			"calculateDataBoxPosition",
+			"backgroundURL",
+			"backgroundImage",
+			"url",
+			"calculateSourceURL",
+			"calculateDataBoxPosition",
+			"this",
+			"Position",
+			"position",
+			"tagName",
+			"calculateContentBoxPosition",
+			"dataBox",
+			"chrome-extension-wi-active",
+			"tab.id",
+			"_s",
+			"s",
+			"_h",
+			"_l",
+			"-",
+			"wi.",
+			"wi",
+			"DATA_FIELD",
+			"data_field",
+			"DATA_FIELD",
+			"domDataBox",
+			"'",
+			"attachNetStream",
+			"placeOnScreen",
+			"screen",
+			"boundaries",
+			"PaginationFooter.",
+			"lol"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/general.css",
+					"settings":
+					{
+						"buffer_size": 856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/app.js",
+					"settings":
+					{
+						"buffer_size": 650,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/slider.js",
+					"settings":
+					{
+						"buffer_size": 7348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3065,
+								3065
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1386.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/app.js",
+					"settings":
+					{
+						"buffer_size": 917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								632,
+								632
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/Bruno/Documents/Repositories/xara_exercises/slider/index.html",
+					"settings":
+					{
+						"buffer_size": 692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/Bruno/Documents/Repositories/xara_exercises/rectangle/general.css",
+					"settings":
+					{
+						"buffer_size": 654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								454,
+								454
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

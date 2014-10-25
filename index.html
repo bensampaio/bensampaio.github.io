@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myself" ng-controller="NavigationController as navigation" lang="en">
 	<head>
-		<title>{{navigation.homeSection.title}}</title>
+		<title ng-cloak>{{navigation.homeSection.title}}</title>
 		
 		<meta charset="UTF-8">
 		<meta name="language" content="EN">
@@ -14,12 +14,7 @@
 
 		<!-- CSS Files -->
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/css/general.css" />
-
-		<script type="text/javascript" src="http://platform.linkedin.com/in.js">
-		  api_key:    77mnf8e1atz9pc
-		  authorize:  yes
-		</script>
+		<link rel="stylesheet" type="text/css" href="public/styles/css/general.css" />
 	</head>
 	<body>
 
@@ -36,10 +31,10 @@
 			</div>
 			<div class="navbar-list collapsed">
 				<ul class="navbar-items-left navbar-items-top">
-					<navbar-item ng-repeat="section in navigation.infoSections" ng-show="section.visible"></navbar-item>
+					<navbar-item ng-repeat="section in navigation.authorSections" ng-show="section.visible"></navbar-item>
 				</ul>
 				<ul class="navbar-items-right navbar-items-bottom">
-					<navbar-item ng-repeat="section in navigation.generalSections" ng-show="section.visible"></navbar-item>
+					<navbar-item ng-repeat="section in navigation.infoSections" ng-show="section.visible"></navbar-item>
 				</ul>
 			</div>
 		</nav>
@@ -48,14 +43,14 @@
 		<main ng-view></main>
 
 		<!-- Copyright -->
-		<div class="footer"><i class="fa fa-copyright"></i> 2014 {{navigation.homeSection.title}}</div>
+		<div ng-cloak class="footer"><i class="fa fa-copyright"></i> 2014 {{navigation.homeSection.title}}</div>
 
 		<!-- JavaScript Files -->
-		<script type="text/javascript" src="js/angular/angular.min.js"></script>
-		<script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
-		<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
-		<script type="text/javascript" src="js/navigation.js"></script>
-		<script type="text/javascript" src="js/pages.js"></script>
+		<script type="text/javascript" src="public/js/angular/angular.min.js"></script>
+		<script type="text/javascript" src="public/js/angular/angular-animate.min.js"></script>
+		<script type="text/javascript" src="public/js/angular/angular-route.min.js"></script>
+		<script type="text/javascript" src="public/js/app.js"></script>
+		<script type="text/javascript" src="public/js/navigation.js"></script>
+		<script type="text/javascript" src="public/js/pages.js"></script>
 	</body>
 </html>

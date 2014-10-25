@@ -1,0 +1,210 @@
+main {
+	$main-page-bpadding: $default-line-height + ($footer-padding * 2);
+	$main-page-shadow-color: #DDD;
+
+	$section-simple-lists-hpadding: 1.5em;
+	$section-simple-lists-vpadding: 0.5em;
+
+	$flag-icon-size: 64px;
+
+	font-size: 1.1em;
+	max-width: $main-page-maxwidth;
+	min-height: 100vh;
+	padding: $main-page-tpadding 1.5em $main-page-bpadding;
+	margin: 0 auto;
+	background: $main-page-background;
+	position: relative;
+	@include box-shadow(0, 0, 6px, 6px, $main-page-shadow-color);
+	@include box-sizing(border-box);
+
+
+	/**
+	 * GENERIC FIELDS
+	 *********************************************/
+	@include anchor-styles($main-page-links-color);
+
+	section > *:first-child {
+		margin-top: 2em;
+	}
+
+	h2 {
+		font-size: 1.6em;
+		margin-top: 1em;
+		margin-bottom: 0.5em; 
+	}
+
+	h3 {
+		font-size: 1.3em;
+		margin-bottom: 0.4em;
+	}
+
+	span {
+		font-size: inherit;
+	}
+
+	form {
+		width: 100%;
+		padding: 0.5em;
+		margin: 0;
+		@include box-sizing(border-box);
+
+		label {
+			font-weight: bold;
+			margin-bottom: 0.4em;
+
+			&.full-line {
+				display: block;
+
+				&:after {
+					content: ":";
+				}
+			}
+		}
+
+		input[type=text], input[type=checkbox] {
+			margin-bottom: 1em;
+		}
+
+		input[type=text] {
+			width: 70%;
+			padding: 0.5em;
+			outline: 0;
+			@include box-sizing(border-box);
+		}
+	}
+
+
+	/**
+	 * ICONS
+	 *********************************************/
+	.fa {
+		&.fa-facebook-square {
+			color: #3b5998;
+		}
+
+		&.fa-github-square {
+			color: #000;
+		}
+
+		&.fa-google-plus-square {
+			color: #dd4b39;
+		}
+
+		&.fa-linkedin-square {
+			color: #007bb6;
+		}
+	}
+
+	.flag {
+		width: $flag-icon-size;
+		height: $flag-icon-size;
+		display: inline-block;
+
+		&.flag-pt {
+			@include background-image('flags/pt.png', center center, no-repeat);
+		}
+
+		&.flag-en {
+			@include background-image('flags/en.png', center center, no-repeat);
+		}
+	}
+
+
+	/**
+	 * SECTIONS
+	 *********************************************/
+	.section-simple-hlist {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		& > * {
+			//min-width: 40%;
+			padding: $section-simple-lists-vpadding $section-simple-lists-hpadding;
+			display: inline-block;
+		}
+	}
+
+	.section-boxes-hlist {
+		@extend .section-simple-hlist;
+
+		& > * {
+			padding: 0.5em;
+			margin: 0.5em;
+		}
+
+		& > .section-list-more {
+
+			&.collapsed {
+				text-align: center;
+				border: 1px solid #AAA;
+				background-color: #DDD;
+				color: #AAA;
+
+				.section-boxes-hlist {
+					max-height: 0;
+					opacity: 0;
+					overflow: hidden;
+				}
+			}
+
+			&.expnaded {
+
+			}
+		}
+	}
+
+
+	/**
+	 * INFO SECTION
+	 *********************************************/
+	.main-section-info {
+
+		.info-languages-list {
+			.lang-flag {
+				float: left;
+				height: $flag-icon-size;
+			}
+
+			.lang-data {
+				padding-top: 1em;
+				padding-left: 0.8em;
+				margin-left: $flag-icon-size;
+			}
+		}
+
+		.info-skills-list {
+			& > li.ng-binding {
+				font-size: 1.05em;
+				font-weight: bold;
+			}
+		}
+
+		.info-social-list li {
+			font-size: 2em;
+
+			a {
+				color: black;
+			}
+		}
+	}
+
+
+	/**
+	 * LINKEDIN SECTION
+	 *********************************************/
+	.main-section-linkedin {
+		.linkedin-result {
+			font-size: 40em;
+			text-align: center;
+
+			.fa-check-circle {
+				color: #00C176;
+			}
+
+			.fa-close {
+				color: #B90504;
+			}
+		}
+	}
+}

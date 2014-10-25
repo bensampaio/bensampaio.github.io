@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@import "config";
+@import "tools";
+
+@import "navigation";
+@import "pages";
+
+body {
+	font-family: $default-font-family;
+	font-size: $default-font-size;
+	line-height: $default-line-height;
+	background: $body-background;
+	overflow-y: auto;
+	@extend %contentOnly;
+
+	@include apply-to-mobile {
+		font-size: $mobile-font-size;
+	}
+}
+
+.ajax {
+	@include background-image('ajax.gif', center center, no-repeat);
+
+	& > * {
+		display: none;
+	}
+}
+
+.footer {
+	padding: $footer-padding;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	color: black;
+}

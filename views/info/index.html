@@ -1,45 +1,59 @@
 <section ng-cloak class="{{navigation.currentSection.contentClasses}}">
 	
+	<img width="500" src="http://www.dusa.co.uk/malaysian/files/2013/03/website_under_construction1.png">
+
 	<h2>Summary</h2>
-	<p class="info-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta tempor urna, non dictum ipsum faucibus vitae. Donec pellentesque elit ante. Nunc nec egestas est. Quisque maximus odio nec felis luctus hendrerit. Nullam euismod enim faucibus lacinia elementum. Duis urna dui, rhoncus quis mi eu, molestie egestas velit. Quisque tincidunt erat nec ullamcorper sodales. Vestibulum magna quam, gravida ullamcorper eros eu, placerat finibus mauris. Praesent libero nisl, ultrices pharetra est id, ultrices malesuada orci. Vivamus gravida velit ut leo mattis molestie. Sed dolor leo, egestas eu elementum nec, commodo lacinia risus. Etiam et diam leo.</p>
+	<text class="info-summary" data="info.summary"></text>
 
 	<h2>Languages</h2>
-	<ul class="info-langs-list">
-		<li class="lang-primary">
-			<i class=""></i> <b>Portuguese</b> Native
-		</li>
-		<li>
-			<i class=""></i> <b>English</b> Fluent
-		</li>
-	</ul>
+	<div class="info-languages-list section-simple-hlist">
+		<div ng-repeat="lang in info.languages" class="{{(lang.level == 'native')? 'lang-primary' : ''}}">
+			<div class="lang-flag">
+				<i class="flag flag-{{lang.code}}"></i>
+			</div>
+			<div class="lang-data">
+				<div class="lang-name"><b>{{lang.name}}</b></div>
+				<div class="lang-level">{{lang.level}}</div>
+			</div>
+		</div>
+	</div>
 
 	<h2>Skills</h2>
-	<ul class="info-skills-list">
-		<li>
-			<i class=""></i> HTML5
+	<ul class="info-skills-list section-boxes-hlist">
+		<li ng-repeat="skill in info.skills | limitTo:15">
+			<i class="fa fa-{{skill.code}}"></i> {{skill.name}}</a>
 		</li>
-		<li>
-			<i class=""></i> CSS3
+		<li class="section-list-more collapsed">
+			<ul class="section-boxes-hlist">
+				<li ng-repeat="skill in info.skills | startOn:15">
+					<i class="fa fa-{{skill.code}}"></i> {{skill.name}}</a>
+				</li>
+			</ul>
 		</li>
 	</ul>
 
 	<h2>Social</h2>
-	<ul class="info-social-list">
-		<li>
-			<a href=""><i class="fa fa-linkedin-square"></i> LinkedIn</a>
-		</li>
-		<li>
-			<a href=""><i class="fa fa-github"></i> Github</a>
-		</li>
-		<li>
-			<a href=""><i class="fa fa-google-plus-square"></i> Google+</a>
-		</li>
-		<li>
-			<a href=""><i class="fa fa-facebook-square"></i> Facebook</a>
+	<ul class="info-social-list section-simple-hlist">
+		<li ng-repeat="page in info.pages">
+			<a ng-href="{{page.url}}" target="_blank"><i class="fa {{page.icon}}"></i> {{page.name}}</a>
 		</li>
 	</ul>
 
 	<h2>Contacts</h2>
+	<div class="info-contacts section-simple-hlist">
+		<div class="info-contacts-emails">
+			<h3>E-Mails</h3>
+			<div ng-repeat="email in info.emails" class="info-contacts-email">
+				<i class="fa fa-envelope"></i> <a ng-href="mailto:{{email.value}}" target="_blank">{{email.value}}</a>
+			</div>
+		</div>
+		<div class="info-contacts-phones">
+			<h3>Phones</h3>
+			<div ng-repeat="phone in info.phones" class="info-contacts-phone">
+				<i class="fa fa-{{phone.type}}"></i> {{phone.value}}
+			</div>
+		</div>
+	</div>
 
 
 </section>

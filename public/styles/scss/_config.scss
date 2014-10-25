@@ -1,0 +1,52 @@
+// Fonts
+$default-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$default-font-size: 12px;
+$mobile-font-size: 10px;
+$default-line-height: 1.5em;
+
+// Directories
+$img-folder: '../../img/';
+
+// Dimensions
+$min-screen-width: 800px;
+$navbar-top-height: 4.3em;
+$navbar-header-width: 300px;
+$navbar-top-z-index: 10000;
+$main-page-tpadding: $navbar-top-height;
+$main-page-maxwidth: 700px;
+$footer-padding: 0.8em;
+
+// Text Colors
+$navbar-author-name-color: #3299BB;
+$navbar-links-color: #BCBCBC;
+$main-page-links-color: #0077b5;
+
+// Backgrounds
+$body-background: #E9E9E9;
+$navbar-background: #424242;
+$navbar-list-background: lighten($navbar-background, 25%);
+$navbar-item-selected-background: darken($navbar-list-background, 5%);
+$main-page-background: #FFF;
+$pages: (
+	info : (
+		color : transparent
+	),
+	experience : (
+		color : #1abc9c
+	), 
+	education : (
+		color : #e74c3c
+	), 
+	projects : (
+		color : #e67e22
+	),
+	linkedin : (
+		color : #007bb6 // LinkedIn Blue
+	),
+	lang : (
+		color : transparent
+	),
+	about : (
+		color : #f1c40f
+	)
+);
