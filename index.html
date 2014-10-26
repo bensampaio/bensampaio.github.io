@@ -27,9 +27,9 @@
 						<h1 class="author-name">{{navigation.homeSection.title}}</h1>
 					</a>
 				</div>
-				<div class="navbar-menu"><i class="fa fa-navicon"></i></div>
+				<div class="navbar-menu" toggle-expand-collapse="navbarMenu"><i class="fa fa-navicon"></i></div>
 			</div>
-			<div class="navbar-list collapsed">
+			<div class="navbar-list collapsed" expand-collapse="navbarMenu">
 				<ul class="navbar-items-left navbar-items-top">
 					<navbar-item ng-repeat="section in navigation.authorSections" ng-show="section.visible"></navbar-item>
 				</ul>
@@ -50,6 +50,7 @@
 		<script type="text/javascript" src="public/js/angular/angular-animate.min.js"></script>
 		<script type="text/javascript" src="public/js/angular/angular-route.min.js"></script>
 		<script type="text/javascript" src="public/js/app.js"></script>
+		<script type="text/javascript" src="public/js/directives.js"></script>
 		<script type="text/javascript" src="public/js/navigation.js"></script>
 		<script type="text/javascript" src="public/js/pages.js"></script>
 	</body>

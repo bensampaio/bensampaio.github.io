@@ -2,10 +2,12 @@ main {
 	$main-page-bpadding: $default-line-height + ($footer-padding * 2);
 	$main-page-shadow-color: #DDD;
 
-	$section-simple-lists-hpadding: 1.5em;
-	$section-simple-lists-vpadding: 0.5em;
+	$section-simple-hlists-hpadding: 1.5em;
+	$section-simple-hlists-vpadding: 0.5em;
+	$section-simple-vlists-hpadding: 0.5em;
+	$section-simple-vlists-vpadding: 1em;
 
-	$flag-icon-size: 64px;
+	$flag-icon-size: 48px;
 
 	font-size: 1.1em;
 	max-width: $main-page-maxwidth;
@@ -40,6 +42,10 @@ main {
 
 	span {
 		font-size: inherit;
+	}
+
+	text {
+		display: block;
 	}
 
 	form {
@@ -114,43 +120,89 @@ main {
 	 * SECTIONS
 	 *********************************************/
 	.section-simple-hlist {
+		text-align: left;
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
 
-		& > * {
-			//min-width: 40%;
-			padding: $section-simple-lists-vpadding $section-simple-lists-hpadding;
+		& > .list-item {
+			padding: $section-simple-hlists-vpadding $section-simple-hlists-hpadding;
 			display: inline-block;
 		}
+	}
+
+	.section-simple-vlist {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		& > .list-item {
+			padding: $section-simple-vlists-vpadding $section-simple-vlists-hpadding;
+			display: block;
+
+			h3 {
+	 			margin-top: 0;
+	 		}
+
+	 		.right img {
+	 			max-width: 10em;
+	 			max-height: 3em;
+	 		}
+
+	 		p:last-child {
+	 			margin-bottom: 0;
+	 		}
+		}	
 	}
 
 	.section-boxes-hlist {
 		@extend .section-simple-hlist;
 
-		& > * {
+		& > .list-item {
 			padding: 0.5em;
 			margin: 0.5em;
 		}
 
 		& > .section-list-more {
+			text-align: center;
+			border: 1px solid #DDD;
+			background-color: #EEE;
+			color: #888;
+			cursor: pointer;
 
-			&.collapsed {
-				text-align: center;
-				border: 1px solid #AAA;
-				background-color: #DDD;
-				color: #AAA;
-
-				.section-boxes-hlist {
-					max-height: 0;
+			.section-boxes-hlist {
+				overflow: hidden;
+				
+				&.collapsed {
 					opacity: 0;
-					overflow: hidden;
+
+					& ~ .fa-chevron-up:before {
+						display: none;
+					}
+				}
+
+				&.expanded {
+					opacity: 1;
+
+					& ~ .fa-chevron-down {
+						display: none;
+					}
 				}
 			}
+		}
+	}
 
-			&.expnaded {
+	section-status {
+		font-size: 40em;
+		text-align: center;
+		display: block;
 
-			}
+		.fa-check-circle {
+			color: #00C176;
+		}
+
+		.fa-close {
+			color: #B90504;
 		}
 	}
 
@@ -160,6 +212,18 @@ main {
 	 *********************************************/
 	.main-section-info {
 
+		.info-skills-list {
+
+			& > li.info-skill-item {
+				font-size: 1.05em;
+				font-weight: bold;
+				/*border: 1px solid #DDD;
+				background-color: #EEE;
+				@include border-radius(5px);
+				@include box-shadow(1px, 1px, 5px, 1px, #AAA);*/
+			}
+		}
+
 		.info-languages-list {
 			.lang-flag {
 				float: left;
@@ -167,16 +231,9 @@ main {
 			}
 
 			.lang-data {
-				padding-top: 1em;
+				padding-top: 0.4em;
 				padding-left: 0.8em;
 				margin-left: $flag-icon-size;
-			}
-		}
-
-		.info-skills-list {
-			& > li.ng-binding {
-				font-size: 1.05em;
-				font-weight: bold;
 			}
 		}
 
@@ -185,25 +242,6 @@ main {
 
 			a {
 				color: black;
-			}
-		}
-	}
-
-
-	/**
-	 * LINKEDIN SECTION
-	 *********************************************/
-	.main-section-linkedin {
-		.linkedin-result {
-			font-size: 40em;
-			text-align: center;
-
-			.fa-check-circle {
-				color: #00C176;
-			}
-
-			.fa-close {
-				color: #B90504;
 			}
 		}
 	}

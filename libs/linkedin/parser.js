@@ -29,7 +29,7 @@ var TOTAL_PARSED = 0, TOTAL_TO_PARSE = 0, PARSE_ERRORS = [];
 		},
 		unl : {
 			url : 'http://www.fct.unl.pt/',
-			logo : 'fct.png'
+			logo : 'unl.png'
 		},
 		tud : {
 			url : 'http://tu-dresden.de/en',

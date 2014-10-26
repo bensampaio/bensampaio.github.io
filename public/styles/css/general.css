@@ -85,6 +85,12 @@ nav.navbar-top {
     width: auto;
     padding-right: 1.4em;
     margin-left: 300px; }
+    @media screen and (min-width: 800px) {
+      nav.navbar-top .navbar-list.collapsed {
+        max-height: none;
+        padding: inherit;
+        overflow-y: auto;
+        opacity: 1; } }
     @media screen and (max-width: 800px) {
       nav.navbar-top .navbar-list {
         width: 100%;
@@ -98,19 +104,10 @@ nav.navbar-top {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        z-index: 9999;
-        overflow-y: hidden; }
-        nav.navbar-top .navbar-list.collapsed, nav.navbar-top .navbar-list.expanded {
-          -webkit-transition: all 0.4s ease-in-out;
-          -moz-transition: all 0.4s ease-in-out;
-          -o-transition: all 0.4s ease-in-out;
-          transition: all 0.4s ease-in-out; }
+        z-index: 9999; }
         nav.navbar-top .navbar-list.collapsed {
-          max-height: 0;
           padding-top: 0;
-          padding-bottom: 0; }
-        nav.navbar-top .navbar-list.expanded {
-          max-height: 100vh; } }
+          padding-bottom: 0; } }
     nav.navbar-top .navbar-list ul {
       list-style-type: none;
       padding: 0;
@@ -215,9 +212,6 @@ main {
    *********************************************/
   /**
    * INFO SECTION
-   *********************************************/
-  /**
-   * LINKEDIN SECTION
    *********************************************/ }
   main a, main a:link, main a:hover, main a:visited {
     text-decoration: none;
@@ -233,6 +227,8 @@ main {
     margin-bottom: 0.4em; }
   main span {
     font-size: inherit; }
+  main text {
+    display: block; }
   main form {
     width: 100%;
     padding: 0.5em;
@@ -265,8 +261,8 @@ main {
   main .fa.fa-linkedin-square {
     color: #007bb6; }
   main .flag {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     display: inline-block; }
     main .flag.flag-pt {
       background-image: url("../../img/flags/pt.png");
@@ -277,45 +273,72 @@ main {
       background-position: center center;
       background-repeat: no-repeat; }
   main .section-simple-hlist, main .section-boxes-hlist {
+    text-align: left;
     list-style-type: none;
     padding: 0;
     margin: 0; }
-    main .section-simple-hlist > *, main .section-boxes-hlist > * {
+    main .section-simple-hlist > .list-item, main .section-boxes-hlist > .list-item {
       padding: 0.5em 1.5em;
       display: inline-block; }
-  main .section-boxes-hlist > * {
+  main .section-simple-vlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    main .section-simple-vlist > .list-item {
+      padding: 1em 0.5em;
+      display: block; }
+      main .section-simple-vlist > .list-item h3 {
+        margin-top: 0; }
+      main .section-simple-vlist > .list-item .right img {
+        max-width: 10em;
+        max-height: 3em; }
+      main .section-simple-vlist > .list-item p:last-child {
+        margin-bottom: 0; }
+  main .section-boxes-hlist > .list-item {
     padding: 0.5em;
     margin: 0.5em; }
-  main .section-boxes-hlist > .section-list-more.collapsed {
+  main .section-boxes-hlist > .section-list-more {
     text-align: center;
-    border: 1px solid #AAA;
-    background-color: #DDD;
-    color: #AAA; }
-    main .section-boxes-hlist > .section-list-more.collapsed .section-boxes-hlist {
-      max-height: 0;
-      opacity: 0;
+    border: 1px solid #DDD;
+    background-color: #EEE;
+    color: #888;
+    cursor: pointer; }
+    main .section-boxes-hlist > .section-list-more .section-boxes-hlist {
       overflow: hidden; }
+      main .section-boxes-hlist > .section-list-more .section-boxes-hlist.collapsed {
+        opacity: 0; }
+        main .section-boxes-hlist > .section-list-more .section-boxes-hlist.collapsed ~ .fa-chevron-up:before {
+          display: none; }
+      main .section-boxes-hlist > .section-list-more .section-boxes-hlist.expanded {
+        opacity: 1; }
+        main .section-boxes-hlist > .section-list-more .section-boxes-hlist.expanded ~ .fa-chevron-down {
+          display: none; }
+  main section-status {
+    font-size: 40em;
+    text-align: center;
+    display: block; }
+    main section-status .fa-check-circle {
+      color: #00C176; }
+    main section-status .fa-close {
+      color: #B90504; }
+  main .main-section-info .info-skills-list > li.info-skill-item {
+    font-size: 1.05em;
+    font-weight: bold;
+    /*border: 1px solid #DDD;
+    background-color: #EEE;
+    @include border-radius(5px);
+    @include box-shadow(1px, 1px, 5px, 1px, #AAA);*/ }
   main .main-section-info .info-languages-list .lang-flag {
     float: left;
-    height: 64px; }
+    height: 48px; }
   main .main-section-info .info-languages-list .lang-data {
-    padding-top: 1em;
+    padding-top: 0.4em;
     padding-left: 0.8em;
-    margin-left: 64px; }
-  main .main-section-info .info-skills-list > li.ng-binding {
-    font-size: 1.05em;
-    font-weight: bold; }
+    margin-left: 48px; }
   main .main-section-info .info-social-list li {
     font-size: 2em; }
     main .main-section-info .info-social-list li a {
       color: black; }
-  main .main-section-linkedin .linkedin-result {
-    font-size: 40em;
-    text-align: center; }
-    main .main-section-linkedin .linkedin-result .fa-check-circle {
-      color: #00C176; }
-    main .main-section-linkedin .linkedin-result .fa-close {
-      color: #B90504; }
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -327,6 +350,9 @@ body {
     body {
       font-size: 10px; } }
 
+/**
+ * LOADING CLASSES
+ *********************************************/
 .ajax {
   background-image: url("../../img/ajax.gif");
   background-position: center center;
@@ -334,6 +360,36 @@ body {
   .ajax > * {
     display: none; }
 
+/**
+ * EXPAND & COLLAPSE CLASSES
+ *********************************************/
+.collapsed,
+.expanded {
+  overflow-y: hidden;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; }
+
+.collapsed {
+  max-height: 0; }
+
+.expanded {
+  max-height: 100vh; }
+
+/**
+ * FLOATING CLASSES
+ *********************************************/
+.float-container {
+  overflow: hidden; }
+  .float-container .left {
+    float: left; }
+  .float-container .right {
+    float: right; }
+
+/**
+ * FOOTER
+ *********************************************/
 .footer {
   padding: 0.8em;
   right: 0;

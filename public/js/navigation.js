@@ -29,7 +29,7 @@
 
 		this.setCurrentSection = function(section) {
 			this.currentSection = section;
-			$scope.displayNavbarMenu = false;
+			$scope.display.navbarMenu = false;
 		}
 
 		this.homeSection = new Section(SECTIONS[sectionIndex++].id, DEFAULTS.title, 'author-picture', true);
@@ -56,49 +56,6 @@
 			}
 		});
 
-	}]);
-
-	app.directive('navbarMenu', [function () {
-		return {
-			restrict: 'C',
-			link: function ($scope, element, attrs) {
-				$scope.displayNavbarMenu = false;
-
-				element.on('click', function(event) {
-					$scope.displayNavbarMenu = !$scope.displayNavbarMenu;
-					$scope.$digest();
-				});
-			}
-		};
-	}]);
-
-	app.directive('navbarList', [function () {
-		return {
-			restrict: 'C',
-			link: function ($scope, element, attrs) {
-				$scope.$watch('displayNavbarMenu', function(newValue, oldValue) {
-					var classToAdd, classToRemove;
-
-					if(newValue) {
-						classToAdd = 'expanded';
-						classToRemove = 'collapsed';
-					}
-					else {
-						classToAdd = 'collapsed';
-						classToRemove = 'expanded';
-					}
-
-					element.removeClass(classToRemove).addClass(classToAdd);
-				});
-			}
-		};
-	}])
-
-	app.directive('navbarItem', [ 'PATHS', function(PATHS) {
-		return {
-			restrict : 'E',
-			templateUrl : PATHS.views.folder + PATHS.views.elements + 'navbar-item.html'
-		};
 	}]);
 
 })();

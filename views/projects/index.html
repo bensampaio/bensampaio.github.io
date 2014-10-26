@@ -1,3 +1,23 @@
-<section ng-cloak class="{{navigation.currentSection.contentClasses}}">
+<section ng-hide="error" ng-cloak class="{{navigation.currentSection.contentClasses}}">
+
 	<h2>{{navigation.currentSection.title}}</h2>
+
+	<div class="section-simple-vlist">
+		<div ng-repeat="project in projects" class="project-item list-item">
+			<div class="float-container">
+				<div class="left">
+					<h3>{{project.name}}</h3>
+					<a ng-href="{{project.institution.url}}" target="_blank">{{project.institution.name}}</a>
+				</div>
+				<div class="right">
+					<a ng-href="{{project.institution.url}}" target="_blank">
+						<img ng-src="{{project.institution.logo}}" alt="{{project.institution.name}}">
+					</a>
+				</div>
+			</div>
+			<text data="project.desc"></text>
+		</div>
+	</div>
+
 </section>
+<section-status ng-show="error"></section-status>

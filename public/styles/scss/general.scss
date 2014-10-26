@@ -19,6 +19,10 @@ body {
 	}
 }
 
+
+/**
+ * LOADING CLASSES
+ *********************************************/
 .ajax {
 	@include background-image('ajax.gif', center center, no-repeat);
 
@@ -27,6 +31,43 @@ body {
 	}
 }
 
+
+/**
+ * EXPAND & COLLAPSE CLASSES
+ *********************************************/
+.collapsed,
+.expanded {
+	overflow-y: hidden;
+	@include transition(all, 0.4s, ease-in-out);
+}
+
+.collapsed {
+	max-height: 0;
+}
+
+.expanded {
+	max-height: 100vh;
+}
+
+
+/**
+ * FLOATING CLASSES
+ *********************************************/
+ .float-container {
+ 	overflow: hidden;
+
+ 	.left {
+		float: left;
+	}
+
+	.right {
+		float: right;
+	}
+ }
+
+/**
+ * FOOTER
+ *********************************************/
 .footer {
 	padding: $footer-padding;
 	right: 0;

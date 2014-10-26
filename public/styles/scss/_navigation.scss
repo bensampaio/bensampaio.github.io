@@ -108,6 +108,15 @@ nav.navbar-top {
 		padding-right: $navbar-hpadding;
 		margin-left: $navbar-header-width;
 
+		@include apply-to-desktop {
+			&.collapsed {
+				max-height: none;
+				padding: inherit;
+				overflow-y: auto;
+				opacity: 1;
+			}
+		}
+
 		@include apply-to-mobile {
 			width: 100%;
 			padding: $navbar-list-tpadding $navbar-hpadding 1em;
@@ -117,21 +126,10 @@ nav.navbar-top {
 			@include box-shadow(0, 8px, 6px, -6px, $navbar-shadow-color);
 			@include box-sizing(border-box);
 			z-index: $navbar-top-z-index - 1;
-			overflow-y: hidden;
-
-			&.collapsed,
-			&.expanded {
-				@include transition(all, 0.4s, ease-in-out);
-			}
 
 			&.collapsed {
-				max-height: 0;
 				padding-top: 0;
 				padding-bottom: 0;
-			}
-
-			&.expanded {
-				max-height: 100vh;
 			}
 		}
 

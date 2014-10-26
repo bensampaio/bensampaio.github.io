@@ -1,6 +1,4 @@
 <section ng-cloak class="{{navigation.currentSection.contentClasses}}">
-	<h2>Load {{linkedin.success? 'Succeded' : 'Failed'}}</h2>
-	<div class="linkedin-result">
-		<i class="{{'fa ' + (linkedin.success? 'fa-check-circle' : 'fa-close')}}"></i>
-	</div>
+	<h2>Load {{error? 'Failed' : 'Succeded'}}</h2>
+	<section-status></section-status>
 </section>
