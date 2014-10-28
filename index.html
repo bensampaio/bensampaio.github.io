@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="myself" ng-controller="NavigationController as navigation" lang="en">
+<html ng-app="myself" ng-controller="NavigationController as navigationCtrl" lang="en">
 	<head>
-		<title ng-cloak>{{navigation.homeSection.title}}</title>
+		<title ng-cloak>{{navigationCtrl.homeSection.title}}</title>
 		
 		<meta charset="UTF-8">
 		<meta name="language" content="EN">
 
-		<meta name="author" content="{{navigation.homeSection.title}}">
+		<meta name="author" content="{{navigationCtrl.homeSection.title}}">
 		<meta name="description" content="My personal website">
 		<meta name="keywords" content="personal,resume,curriculum vitae,portfolio">
 
@@ -21,20 +21,20 @@
 		<!-- Navigation Bar -->
 		<nav class="navbar-top">
 			<div class="navbar-header">
-				<div ng-click="navigation.setCurrentSection(navigation.homeSection)" ng-cloak class="{{navigation.homeSection.linkClasses}}">
-					<a ng-class="{ selected : navigation.homeSection.isCurrent() }" href="#/{{navigation.homeSection.id}}">
-						<i class="{{navigation.homeSection.icon}}"></i>
-						<h1 class="author-name">{{navigation.homeSection.title}}</h1>
+				<div ng-click="navigationCtrl.setCurrentSection(navigationCtrl.homeSection)" ng-cloak class="{{navigationCtrl.homeSection.linkClasses}}">
+					<a ng-class="{ selected : navigationCtrl.homeSection.isCurrent() }" href="#/{{navigationCtrl.homeSection.id}}">
+						<i class="{{navigationCtrl.homeSection.icon}}"></i>
+						<h1 class="author-name">{{navigationCtrl.homeSection.title}}</h1>
 					</a>
 				</div>
 				<div class="navbar-menu" toggle-expand-collapse="navbarMenu"><i class="fa fa-navicon"></i></div>
 			</div>
 			<div class="navbar-list collapsed" expand-collapse="navbarMenu">
 				<ul class="navbar-items-left navbar-items-top">
-					<navbar-item ng-repeat="section in navigation.authorSections" ng-show="section.visible"></navbar-item>
+					<navbar-item ng-repeat="section in navigationCtrl.authorSections" ng-show="section.visible"></navbar-item>
 				</ul>
 				<ul class="navbar-items-right navbar-items-bottom">
-					<navbar-item ng-repeat="section in navigation.infoSections" ng-show="section.visible"></navbar-item>
+					<navbar-item ng-repeat="section in navigationCtrl.infoSections" ng-show="section.visible"></navbar-item>
 				</ul>
 			</div>
 		</nav>
@@ -43,7 +43,7 @@
 		<main ng-view></main>
 
 		<!-- Copyright -->
-		<div ng-cloak class="footer"><i class="fa fa-copyright"></i> 2014 {{navigation.homeSection.title}}</div>
+		<div ng-cloak class="footer"><i class="fa fa-copyright"></i> {{getToday() | date:'yyyy'}} {{navigationCtrl.homeSection.title}}</div>
 
 		<!-- JavaScript Files -->
 		<script type="text/javascript" src="public/js/angular/angular.min.js"></script>

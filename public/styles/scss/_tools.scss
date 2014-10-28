@@ -37,7 +37,7 @@
 	}
 }
 
-@mixin border-radius($radius) {
+@mixin border-radius($radius:0) {
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
@@ -49,10 +49,21 @@
 	box-sizing: $type;
 }
 
-@mixin box-shadow($hoffset, $voffset, $blur, $spread, $color) {
-	-webkit-box-shadow: $hoffset $voffset $blur $spread $color;
-	-moz-box-shadow: $hoffset $voffset $blur $spread $color;
-	box-shadow: $hoffset $voffset $blur $spread $color;
+@mixin box-shadow($hoffset:0, $voffset:0, $blur:0, $spread:0, $color:transparent) {
+	$properties: $hoffset $voffset $blur $spread $color;
+	$shadowType: $hoffset;
+
+	@if type-of($hoffset) == list {
+		$shadowType: nth($hoffset, 1);
+	}
+
+	@if $shadowType == none {
+		$properties: $hoffset;
+	}
+
+	-webkit-box-shadow: $properties;
+	-moz-box-shadow: $properties;
+	box-shadow: $properties;
 }
 
 @mixin transition($attrs, $time, $type) {

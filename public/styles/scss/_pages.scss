@@ -11,11 +11,13 @@ main {
 
 	font-size: 1.1em;
 	max-width: $main-page-maxwidth;
+	min-height: 100%; /* if browser doesn't support vh, this rule is applied instead */
 	min-height: 100vh;
 	padding: $main-page-tpadding 1.5em $main-page-bpadding;
 	margin: 0 auto;
 	background: $main-page-background;
 	position: relative;
+	display: block;
 	@include box-shadow(0, 0, 6px, 6px, $main-page-shadow-color);
 	@include box-sizing(border-box);
 
@@ -175,18 +177,10 @@ main {
 				
 				&.collapsed {
 					opacity: 0;
-
-					& ~ .fa-chevron-up:before {
-						display: none;
-					}
 				}
 
 				&.expanded {
 					opacity: 1;
-
-					& ~ .fa-chevron-down {
-						display: none;
-					}
 				}
 			}
 		}
@@ -237,12 +231,22 @@ main {
 			}
 		}
 
-		.info-social-list li {
+		.info-social-list .list-item {
 			font-size: 2em;
 
 			a {
 				color: black;
 			}
+		}
+	}
+
+	@include apply-to-print {
+		max-width: none;
+		padding:0;
+		margin:0;
+
+		section > *:first-child {
+			margin-top: 0;
 		}
 	}
 }

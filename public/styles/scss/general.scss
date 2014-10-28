@@ -6,6 +6,11 @@
 @import "navigation";
 @import "pages";
 
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
 body {
 	font-family: $default-font-family;
 	font-size: $default-font-size;
@@ -16,6 +21,10 @@ body {
 
 	@include apply-to-mobile {
 		font-size: $mobile-font-size;
+	}
+
+	@include apply-to-print {
+		background: white;
 	}
 }
 
@@ -39,14 +48,31 @@ body {
 .expanded {
 	overflow-y: hidden;
 	@include transition(all, 0.4s, ease-in-out);
+
+	@include apply-to-print {
+		max-height: none !important;
+		opacity: 1 !important;
+		& ~ .fa-chevron-up:before,
+		& ~ .fa-chevron-down {
+			display: none;
+		}
+	}
 }
 
 .collapsed {
 	max-height: 0;
+
+	& ~ .fa-chevron-up {
+		display: none;
+	}
 }
 
 .expanded {
 	max-height: 100vh;
+
+	& ~ .fa-chevron-down {
+		display: none;
+	}
 }
 
 
@@ -74,4 +100,16 @@ body {
 	bottom: 0;
 	position: fixed;
 	color: black;
+}
+
+
+@include apply-to-print {
+	@page {
+		size: auto;
+		margin: 2cm 1cm;
+	}
+
+	* {
+		@include box-shadow(none !important);
+	}
 }

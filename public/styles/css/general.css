@@ -190,11 +190,14 @@ nav.navbar-top {
 main {
   font-size: 1.1em;
   max-width: 700px;
+  min-height: 100%;
+  /* if browser doesn't support vh, this rule is applied instead */
   min-height: 100vh;
   padding: 4.3em 1.5em 3.1em;
   margin: 0 auto;
   background: #FFF;
   position: relative;
+  display: block;
   -webkit-box-shadow: 0 0 6px 6px #DDD;
   -moz-box-shadow: 0 0 6px 6px #DDD;
   box-shadow: 0 0 6px 6px #DDD;
@@ -307,12 +310,8 @@ main {
       overflow: hidden; }
       main .section-boxes-hlist > .section-list-more .section-boxes-hlist.collapsed {
         opacity: 0; }
-        main .section-boxes-hlist > .section-list-more .section-boxes-hlist.collapsed ~ .fa-chevron-up:before {
-          display: none; }
       main .section-boxes-hlist > .section-list-more .section-boxes-hlist.expanded {
         opacity: 1; }
-        main .section-boxes-hlist > .section-list-more .section-boxes-hlist.expanded ~ .fa-chevron-down {
-          display: none; }
   main section-status {
     font-size: 40em;
     text-align: center;
@@ -335,10 +334,21 @@ main {
     padding-top: 0.4em;
     padding-left: 0.8em;
     margin-left: 48px; }
-  main .main-section-info .info-social-list li {
+  main .main-section-info .info-social-list .list-item {
     font-size: 2em; }
-    main .main-section-info .info-social-list li a {
+    main .main-section-info .info-social-list .list-item a {
       color: black; }
+  @media print {
+    main {
+      max-width: none;
+      padding: 0;
+      margin: 0; }
+      main section > *:first-child {
+        margin-top: 0; } }
+
+html, body {
+  width: 100%;
+  height: 100%; }
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -349,6 +359,9 @@ body {
   @media screen and (max-width: 800px) {
     body {
       font-size: 10px; } }
+  @media print {
+    body {
+      background: white; } }
 
 /**
  * LOADING CLASSES
@@ -370,12 +383,25 @@ body {
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out; }
+  @media print {
+    .collapsed,
+    .expanded {
+      max-height: none !important;
+      opacity: 1 !important; }
+      .collapsed ~ .fa-chevron-up:before, .collapsed ~ .fa-chevron-down,
+      .expanded ~ .fa-chevron-up:before,
+      .expanded ~ .fa-chevron-down {
+        display: none; } }
 
 .collapsed {
   max-height: 0; }
+  .collapsed ~ .fa-chevron-up {
+    display: none; }
 
 .expanded {
   max-height: 100vh; }
+  .expanded ~ .fa-chevron-down {
+    display: none; }
 
 /**
  * FLOATING CLASSES
@@ -396,5 +422,14 @@ body {
   bottom: 0;
   position: fixed;
   color: black; }
+
+@media print {
+  @page {
+    size: auto;
+    margin: 2cm 1cm; }
+  * {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important; } }
 
 /*# sourceMappingURL=general.css.map */

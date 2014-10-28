@@ -46,6 +46,10 @@
 			new Section(SECTIONS[sectionIndex++].id, "About this Site", 'fa-info-circle', true)
 		];
 
+		$scope.getToday = function() {
+			return new Date();
+		}
+
 		$scope.$on('$routeChangeSuccess', function(event, data) {
 			if(data.loadedTemplateUrl) {
 				var paths = data.loadedTemplateUrl.split('/');
