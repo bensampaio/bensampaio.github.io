@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="myself" ng-controller="NavigationController as navigationCtrl" lang="en">
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myself" ng-controller="NavigationController as navigationCtrl" lang="en">
 	<head>
-		<title ng-cloak>{{navigationCtrl.homeSection.title}}</title>
+		<title ng-cloak>{{homeSection.title}}</title>
 		
 		<meta charset="UTF-8">
 		<meta name="language" content="EN">
 
-		<meta name="author" content="{{navigationCtrl.homeSection.title}}">
+		<meta name="author" content="{{homeSection.title}}">
 		<meta name="description" content="My personal website">
 		<meta name="keywords" content="personal,resume,curriculum vitae,portfolio">
 
@@ -15,26 +15,30 @@
 		<!-- CSS Files -->
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="public/styles/css/general.css" />
+
+		<!--[if lte IE 7]>
+	    	<script src="public/js/utils/json2.js"></script>
+	    <![endif]-->
 	</head>
 	<body>
 
 		<!-- Navigation Bar -->
 		<nav class="navbar-top">
 			<div class="navbar-header">
-				<div ng-click="navigationCtrl.setCurrentSection(navigationCtrl.homeSection)" ng-cloak class="{{navigationCtrl.homeSection.linkClasses}}">
-					<a ng-class="{ selected : navigationCtrl.homeSection.isCurrent() }" href="#/{{navigationCtrl.homeSection.id}}">
-						<i class="{{navigationCtrl.homeSection.icon}}"></i>
-						<h1 class="author-name">{{navigationCtrl.homeSection.title}}</h1>
+				<div ng-click="navigationCtrl.setCurrentSection(homeSection)" ng-cloak class="{{homeSection.linkClasses}}">
+					<a ng-class="{ selected : homeSection.isCurrent() }" href="#/{{homeSection.id}}">
+						<img class="author-picture" ng-src="{{homeSection.icon}}">
+						<h1 class="author-name">{{homeSection.title}}</h1>
 					</a>
 				</div>
 				<div class="navbar-menu" toggle-expand-collapse="navbarMenu"><i class="fa fa-navicon"></i></div>
 			</div>
 			<div class="navbar-list collapsed" expand-collapse="navbarMenu">
 				<ul class="navbar-items-left navbar-items-top">
-					<navbar-item ng-repeat="section in navigationCtrl.authorSections" ng-show="section.visible"></navbar-item>
+					<navbar-item ng-repeat="section in authorSections" ng-show="section.visible"></navbar-item>
 				</ul>
 				<ul class="navbar-items-right navbar-items-bottom">
-					<navbar-item ng-repeat="section in navigationCtrl.infoSections" ng-show="section.visible"></navbar-item>
+					<navbar-item ng-repeat="section in infoSections" ng-show="section.visible"></navbar-item>
 				</ul>
 			</div>
 		</nav>
@@ -43,7 +47,7 @@
 		<main ng-view></main>
 
 		<!-- Copyright -->
-		<div ng-cloak class="footer"><i class="fa fa-copyright"></i> {{getToday() | date:'yyyy'}} {{navigationCtrl.homeSection.title}}</div>
+		<div ng-cloak class="footer"><i class="fa fa-copyright"></i> {{getToday() | date:'yyyy'}} {{homeSection.title}}</div>
 
 		<!-- JavaScript Files -->
 		<script type="text/javascript" src="public/js/angular/angular.min.js"></script>

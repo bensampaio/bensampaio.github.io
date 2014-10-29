@@ -1,11 +1,6 @@
 (function() {
 	var app = angular.module('myself', [ 'ngAnimate', 'ngRoute', 'myDirectives', 'myNavigation', 'myPages' ]);
 
-	app.constant('DEFAULTS', {
-		title : 'Bruno Sampaio',
-		lang : 'EN'
-	});
-
 	app.constant('PATHS', {
 		data : {
 			folder : 'db/'
