@@ -17,15 +17,15 @@
 		<link rel="stylesheet" type="text/css" href="public/styles/css/general.css" />
 
 		<!--[if lte IE 7]>
-	    	<script src="public/js/utils/json2.js"></script>
+	    	<script src="public/js/compatibility/json2.js"></script>
 	    <![endif]-->
 	</head>
 	<body>
 
 		<!-- Navigation Bar -->
 		<nav class="navbar-top">
-			<div class="navbar-header">
-				<div ng-click="navigationCtrl.setCurrentSection(homeSection)" ng-cloak class="{{homeSection.linkClasses}}">
+			<div class="navbar-header" ng-cloak>
+				<div ng-click="navigationCtrl.setCurrentSection(homeSection)" class="{{homeSection.linkClasses}}">
 					<a ng-class="{ selected : homeSection.isCurrent() }" href="#/{{homeSection.id}}">
 						<img class="author-picture" ng-src="{{homeSection.icon}}">
 						<h1 class="author-name">{{homeSection.title}}</h1>

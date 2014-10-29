@@ -49,10 +49,6 @@ nav.navbar-top {
           -webkit-border-radius: 5em;
           -moz-border-radius: 5em;
           border-radius: 5em;
-          background-image: url("../../img/author-picture.jpg");
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: 5em;
           display: inline-block; }
         nav.navbar-top .navbar-header .navbar-item-info a .author-name {
           float: left;
@@ -112,27 +108,44 @@ nav.navbar-top {
       list-style-type: none;
       padding: 0;
       margin: 0;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
       display: flex;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
       flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -moz-flex-wrap: nowrap;
       flex-wrap: nowrap;
+      -webkit-align-items: center;
       align-items: center; }
       @media screen and (max-width: 800px) {
         nav.navbar-top .navbar-list ul {
+          -webkit-flex-direction: column;
+          -moz-flex-direction: column;
           flex-direction: column;
+          -webkit-align-items: flex-start;
           align-items: flex-start; } }
       nav.navbar-top .navbar-list ul.navbar-items-left {
         float: left;
+        -webkit-justify-content: flex-start;
+        -moz-justify-content: flex-start;
         justify-content: flex-start; }
         @media screen and (max-width: 800px) {
           nav.navbar-top .navbar-list ul.navbar-items-left {
             float: none;
+            -webkit-align-content: flex-start;
             align-content: flex-start; } }
       nav.navbar-top .navbar-list ul.navbar-items-right {
         float: right;
+        -webkit-justify-content: flex-end;
+        -moz-justify-content: flex-end;
         justify-content: flex-end; }
         @media screen and (max-width: 800px) {
           nav.navbar-top .navbar-list ul.navbar-items-right {
             float: none;
+            -webkit-align-content: flex-end;
             align-content: flex-end; } }
       @media screen and (max-width: 800px) {
         nav.navbar-top .navbar-list ul > navbar-item {
@@ -141,7 +154,10 @@ nav.navbar-top {
             border: 0; } }
       nav.navbar-top .navbar-list ul li {
         margin: 0;
+        -webkit-flex-grow: 1;
+        -moz-flex-grow: 1;
         flex-grow: 1;
+        -webkit-align-self: center;
         align-self: center;
         cursor: pointer; }
         nav.navbar-top .navbar-list ul li a {
