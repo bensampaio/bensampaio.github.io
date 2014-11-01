@@ -111,6 +111,7 @@ nav.navbar-top {
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flex;
+      display: -ms-flexbox;
       display: flex;
       -webkit-flex-direction: row;
       -moz-flex-direction: row;
@@ -129,6 +130,8 @@ nav.navbar-top {
           align-items: flex-start; } }
       nav.navbar-top .navbar-list ul.navbar-items-left {
         float: left;
+        -ms-flex-pack: start;
+        flex-pack: start;
         -webkit-justify-content: flex-start;
         -moz-justify-content: flex-start;
         justify-content: flex-start; }
@@ -139,6 +142,8 @@ nav.navbar-top {
             align-content: flex-start; } }
       nav.navbar-top .navbar-list ul.navbar-items-right {
         float: right;
+        -ms-flex-pack: end;
+        flex-pack: end;
         -webkit-justify-content: flex-end;
         -moz-justify-content: flex-end;
         justify-content: flex-end; }
