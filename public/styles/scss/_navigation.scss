@@ -157,6 +157,8 @@ nav.navbar-top {
 			}
 
 			& > navbar-item {
+				display: inline-block;
+
 				@include apply-to-mobile {
 					width: 100%;
 
@@ -169,6 +171,7 @@ nav.navbar-top {
 			li {
 				margin: 0;
 				@include flex-item(center, 1);
+				display: block;
 				cursor: pointer;
 
 				a {

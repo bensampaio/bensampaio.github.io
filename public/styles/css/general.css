@@ -227,11 +227,13 @@ nav.navbar-top {
             justify-content: flex-end;
             -ms-flex-align: start;
             -ms-flex-pack: end; } }
-      @media screen and (max-width: 800px) {
-        nav.navbar-top .navbar-list ul > navbar-item {
-          width: 100%; }
-          nav.navbar-top .navbar-list ul > navbar-item:last-child {
-            border: 0; } }
+      nav.navbar-top .navbar-list ul > navbar-item {
+        display: inline-block; }
+        @media screen and (max-width: 800px) {
+          nav.navbar-top .navbar-list ul > navbar-item {
+            width: 100%; }
+            nav.navbar-top .navbar-list ul > navbar-item:last-child {
+              border: 0; } }
       nav.navbar-top .navbar-list ul li {
         margin: 0;
         -webkit-align-self: center;
@@ -240,6 +242,7 @@ nav.navbar-top {
         -webkit-flex-grow: 1;
         -moz-flex-grow: 1;
         flex-grow: 1;
+        display: block;
         cursor: pointer; }
         nav.navbar-top .navbar-list ul li a {
           font-weight: bold;
