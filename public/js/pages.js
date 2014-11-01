@@ -114,9 +114,9 @@
 		var self = this;
 
 		$scope.linkedin = {
-			apiKey : '77mnf8e1atz9pc',
-			apiSecret : 'MlN48gYTNwa8fURd',
-			oauthUserToken : '35629c8d-3917-4442-8297-05cc52435d1e',
+			apiKey : '',
+			apiSecret : '',
+			oauthUserToken : '',
 			toLoad : {
 				profile : true
 			},
