@@ -67,5 +67,10 @@
             "icon": "fa-facebook-square",
             "url": "https://www.facebook.com/bens.sampaio"
         }
-    ]
+    ],
+    "projects" : {
+        "epik" : {
+            "video" : "//www.youtube.com/embed/PfHJn1gS4OE"
+        }
+    }
 }

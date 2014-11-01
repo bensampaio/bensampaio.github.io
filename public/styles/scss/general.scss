@@ -13,14 +13,14 @@ html, body {
 
 body {
 	font-family: $default-font-family;
-	font-size: $default-font-size;
+	font-size: $l-font-size;
 	line-height: $default-line-height;
 	background: $body-background;
 	overflow-y: auto;
 	@extend %contentOnly;
 
-	@include apply-to-mobile {
-		font-size: $mobile-font-size;
+	@include apply-to-m-screens {
+		font-size: $m-font-size;
 	}
 
 	@include apply-to-print {

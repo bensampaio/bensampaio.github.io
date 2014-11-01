@@ -32,7 +32,7 @@ nav.navbar-top {
 		padding: $navbar-header-padding-top $navbar-hpadding 0;
 		@include box-sizing(border-box);
 
-		@include apply-to-mobile {
+		@include apply-to-m-screens {
 			float: none;
 			width: 100%;
 			top: 0;
@@ -43,7 +43,7 @@ nav.navbar-top {
 			height: 100%;
 			cursor: pointer;
 
-			@include apply-to-mobile {
+			@include apply-to-m-screens {
 				float: left;
 			}
 
@@ -94,7 +94,7 @@ nav.navbar-top {
 			display: none;
 			cursor: pointer;
 
-			@include apply-to-mobile {
+			@include apply-to-m-screens {
 				float: right;
 				display: block;
 			}
@@ -106,7 +106,7 @@ nav.navbar-top {
 		padding-right: $navbar-hpadding;
 		margin-left: $navbar-header-width;
 
-		@include apply-to-desktop {
+		@include apply-to-l-screens {
 			&.collapsed {
 				max-height: none;
 				padding: inherit;
@@ -115,7 +115,7 @@ nav.navbar-top {
 			}
 		}
 
-		@include apply-to-mobile {
+		@include apply-to-m-screens {
 			width: 100%;
 			padding: $navbar-list-tpadding $navbar-hpadding 1em;
 			margin-top: $navbar-top-height;
@@ -140,7 +140,7 @@ nav.navbar-top {
 				float: left;
 				@include flex-container(row, nowrap, start, center, center, center, flex-start);
 
-				@include apply-to-mobile {
+				@include apply-to-m-screens {
 					float: none;
 					@include flex-container(column, nowrap, start, start, flex-start, flex-start, flex-start);
 				}
@@ -150,7 +150,7 @@ nav.navbar-top {
 				float: right;
 				@include flex-container(row, nowrap, end, center, center, center, flex-end);
 				
-				@include apply-to-mobile {
+				@include apply-to-m-screens {
 					float: none;
 					@include flex-container(column, nowrap, end, start, flex-end, flex-start, flex-end);
 				}
@@ -159,7 +159,7 @@ nav.navbar-top {
 			& > navbar-item {
 				display: inline-block;
 
-				@include apply-to-mobile {
+				@include apply-to-m-screens {
 					width: 100%;
 
 					&:last-child {
@@ -190,7 +190,7 @@ nav.navbar-top {
 					}
 				}
 				
-				@include apply-to-mobile {
+				@include apply-to-m-screens {
 					a {
 						font-size: 1.5em;
 						width: 100%;
@@ -206,7 +206,7 @@ nav.navbar-top {
 		}
 	}
 
-	@include apply-to-desktop {
+	@include apply-to-l-screens {
 		.navbar-list, ul {
 			height: 100%;
 		}

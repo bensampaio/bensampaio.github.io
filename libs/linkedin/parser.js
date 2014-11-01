@@ -21,6 +21,10 @@ var TOTAL_PARSED = 0, TOTAL_TO_PARSE = 0, PARSE_ERRORS = [];
 
  		getPages : function() {
  			return data.pages;
+ 		},
+
+ 		getProject : function(name) {
+ 			return data.projects[name.toLowerCase()]
  		}
  	}
 
@@ -215,17 +219,19 @@ var parseProjects = function(list, callback) {
 			}
 			project.institutionName = projectNameParts[0];
 
-			// Get project institution metadata
-			meta = METADATA.getInstitution(project.institutionName.match(/\w+/g).join('_'));
+			// Get institution and project metadata
+			metaI = METADATA.getInstitution(project.institutionName.match(/\w+/g).join('_'));
+			metaP = METADATA.getProject(project.name);
 
-			if(meta) {
-				institution = meta;
+			if(metaI) {
+				institution = metaI;
 				institution.name = project.institutionName;
 			}
 
 			data.push({
 				name : project.name,
 				url : project.url,
+				video : metaP? metaP.video : false,
 				desc : parseText(project.description),
 				institution : institution
 			});

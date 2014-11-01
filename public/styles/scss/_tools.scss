@@ -4,13 +4,13 @@
 	margin: 0;
 }
 
-@mixin apply-to-desktop {
+@mixin apply-to-l-screens {
 	@media screen and (min-width: $min-screen-width) {
 		@content;
 	}
 }
 
-@mixin apply-to-mobile {
+@mixin apply-to-m-screens {
 	@media screen and (max-width: $min-screen-width) {
 		@content;
 	}

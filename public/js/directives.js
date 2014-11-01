@@ -113,4 +113,21 @@
 		};
 	}]);
 
+
+	app.directive('youtube', [function() {
+		return {
+			restrict: 'E',
+			link : function($scope, element, attrs) {
+				attrs.$observe('video', function(value) {
+					if(value != 'false') {
+						element.html('<iframe width="100%" src="' + value + '" frameborder="0" allowfullscreen></iframe>');
+					}
+					else {
+						element.html('');
+					}
+				});
+			}
+		}
+	}]);
+
 })();
