@@ -24,6 +24,7 @@
 
 @mixin anchor-styles($color) {
 	a, a:link, a:hover, a:visited {
+		border: 0;
 		text-decoration: none;
 		color: $color;
 	}

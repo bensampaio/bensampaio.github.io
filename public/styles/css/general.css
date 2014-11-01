@@ -15,6 +15,7 @@ nav.navbar-top {
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999; }
   nav.navbar-top a, nav.navbar-top a:link, nav.navbar-top a:hover, nav.navbar-top a:visited {
+    border: 0;
     text-decoration: none;
     color: #BCBCBC; }
   nav.navbar-top .navbar-header {
@@ -316,11 +317,13 @@ main {
    * ABOUT SECTION
    *********************************************/ }
   main a, main a:link, main a:hover, main a:visited {
+    border: 0;
     text-decoration: none;
     color: #0077b5; }
   main section > *:first-child {
     margin-top: 2em; }
   main h1 a, main h1 a:link, main h1 a:hover, main h1 a:visited, main h2 a, main h2 a:link, main h2 a:hover, main h2 a:visited, main h3 a, main h3 a:link, main h3 a:hover, main h3 a:visited, main h4 a, main h4 a:link, main h4 a:hover, main h4 a:visited, main h5 a, main h5 a:link, main h5 a:hover, main h5 a:visited, main h6 a, main h6 a:link, main h6 a:hover, main h6 a:visited {
+    border: 0;
     text-decoration: none;
     color: inherit; }
   main h2 {
@@ -453,6 +456,7 @@ main {
       margin: 0 auto;
       display: block; }
     main .main-section-about .about-technologies-list .list-item a, main .main-section-about .about-technologies-list .list-item a:link, main .main-section-about .about-technologies-list .list-item a:hover, main .main-section-about .about-technologies-list .list-item a:visited {
+      border: 0;
       text-decoration: none;
       color: inherit; }
   main .main-section-about .about-credits-list .list-item {
@@ -481,6 +485,9 @@ body {
   @media print {
     body {
       background: white; } }
+
+img {
+  border: 0; }
 
 /**
  * LOADING CLASSES
