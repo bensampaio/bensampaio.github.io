@@ -231,12 +231,18 @@ main {
    *********************************************/
   /**
    * INFO SECTION
+   *********************************************/
+  /**
+   * ABOUT SECTION
    *********************************************/ }
   main a, main a:link, main a:hover, main a:visited {
     text-decoration: none;
     color: #0077b5; }
   main section > *:first-child {
     margin-top: 2em; }
+  main h1 a, main h1 a:link, main h1 a:hover, main h1 a:visited, main h2 a, main h2 a:link, main h2 a:hover, main h2 a:visited, main h3 a, main h3 a:link, main h3 a:hover, main h3 a:visited, main h4 a, main h4 a:link, main h4 a:hover, main h4 a:visited, main h5 a, main h5 a:link, main h5 a:hover, main h5 a:visited, main h6 a, main h6 a:link, main h6 a:hover, main h6 a:visited {
+    text-decoration: none;
+    color: inherit; }
   main h2 {
     font-size: 1.6em;
     margin-top: 1em;
@@ -247,6 +253,7 @@ main {
   main span {
     font-size: inherit; }
   main text {
+    text-align: justify;
     display: block; }
   main form {
     width: 100%;
@@ -295,18 +302,23 @@ main {
     text-align: left;
     list-style-type: none;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    overflow: hidden; }
     main .section-simple-hlist > .list-item, main .section-boxes-hlist > .list-item {
       padding: 0.5em 1.5em;
       display: inline-block; }
+    main .section-simple-hlist > .separator, main .section-boxes-hlist > .separator {
+      margin: 1em 0; }
+      main .section-simple-hlist > .separator > *, main .section-boxes-hlist > .separator > * {
+        display: none; }
   main .section-simple-vlist {
     list-style-type: none;
     padding: 0;
     margin: 0; }
     main .section-simple-vlist > .list-item {
-      padding: 1em 0.5em;
+      padding: 1.5em 0.5em;
       display: block; }
-      main .section-simple-vlist > .list-item h3 {
+      main .section-simple-vlist > .list-item h2 {
         margin-top: 0; }
       main .section-simple-vlist > .list-item .right img {
         max-width: 10em;
@@ -338,13 +350,13 @@ main {
       color: #B90504; }
   main .main-section-info .info-skills-list > li.info-skill-item {
     font-size: 1.05em;
-    font-weight: bold;
     /*border: 1px solid #DDD;
     background-color: #EEE;
     @include border-radius(5px);
     @include box-shadow(1px, 1px, 5px, 1px, #AAA);*/ }
   main .main-section-info .info-languages-list .lang-flag {
     float: left;
+    width: 48px;
     height: 48px; }
   main .main-section-info .info-languages-list .lang-data {
     padding-top: 0.4em;
@@ -354,6 +366,17 @@ main {
     font-size: 2em; }
     main .main-section-info .info-social-list .list-item a {
       color: black; }
+  main .main-section-about .about-technologies-list {
+    text-align: center; }
+    main .main-section-about .about-technologies-list .list-item img {
+      max-height: 4em;
+      margin: 0 auto;
+      display: block; }
+    main .main-section-about .about-technologies-list .list-item a, main .main-section-about .about-technologies-list .list-item a:link, main .main-section-about .about-technologies-list .list-item a:hover, main .main-section-about .about-technologies-list .list-item a:visited {
+      text-decoration: none;
+      color: inherit; }
+  main .main-section-about .about-credits-list .list-item {
+    float: left; }
   @media print {
     main {
       max-width: none;

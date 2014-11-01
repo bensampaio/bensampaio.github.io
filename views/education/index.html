@@ -1,12 +1,10 @@
 <section ng-hide="error" ng-cloak class="{{navigationCtrl.currentSection.contentClasses}}">
 
-	<h2>{{navigationCtrl.currentSection.title}}</h2>
-
 	<div class="section-simple-vlist">
 		<div ng-repeat="degree in education" class="education-degree-item list-item">
 			<div class="float-container">
 				<div class="left">
-					<h3>{{degree.degree + ' in ' + degree.field}}</h3>
+					<h2>{{degree.degree + ' in ' + degree.field}}</h2>
 					<a ng-href="{{degree.institution.url}}" target="_blank">{{degree.institution.name}}</a>, <span>{{ degree.period | timeInterval }}</span>
 				</div>
 				<div class="right">

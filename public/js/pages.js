@@ -24,6 +24,10 @@
 		$http.get('/' + PATHS.data.folder + 'info.json')
 			.success(function(data) {
 				$scope.info = data;
+				for(var i = 0; i < data.languages.length; i++) {
+					var lang = data.languages[i];
+					lang.flag = PATHS.images.folder + PATHS.images.flags + lang.flag;
+				}
 			})
 			.error(function(msg, code) {
 				$scope.error = true;
@@ -85,6 +89,24 @@
 			});
 	}]);
 
+
+	/**
+	 * About Controller
+	 */
+	app.controller('AboutController', [ '$scope', '$http', 'PATHS', function($scope, $http, PATHS) {
+		$scope.about = {};
+
+		$http.get('/' + PATHS.data.folder + 'about.json')
+			.success(function(data) {
+				$scope.about = data;
+			})
+			.error(function(msg, code) {
+				$scope.error = true;
+				console.log(code + ' : ' + msg);
+			});
+	}]);
+
+
 	/**
 	 * LinkedIn Controller
 	 */
@@ -92,9 +114,9 @@
 		var self = this;
 
 		$scope.linkedin = {
-			apiKey : '',
-			apiSecret : '',
-			oauthUserToken : '',
+			apiKey : '77mnf8e1atz9pc',
+			apiSecret : 'MlN48gYTNwa8fURd',
+			oauthUserToken : '35629c8d-3917-4442-8297-05cc52435d1e',
 			toLoad : {
 				profile : true
 			},

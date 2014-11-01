@@ -5,7 +5,7 @@ main {
 	$section-simple-hlists-hpadding: 1.5em;
 	$section-simple-hlists-vpadding: 0.5em;
 	$section-simple-vlists-hpadding: 0.5em;
-	$section-simple-vlists-vpadding: 1em;
+	$section-simple-vlists-vpadding: 1.5em;
 
 	$flag-icon-size: 48px;
 
@@ -31,6 +31,10 @@ main {
 		margin-top: 2em;
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		@include anchor-styles(inherit);
+	}
+
 	h2 {
 		font-size: 1.6em;
 		margin-top: 1em;
@@ -47,6 +51,7 @@ main {
 	}
 
 	text {
+		text-align: justify;
 		display: block;
 	}
 
@@ -126,11 +131,19 @@ main {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
+		overflow: hidden;
 
 		& > .list-item {
 			padding: $section-simple-hlists-vpadding $section-simple-hlists-hpadding;
 			display: inline-block;
 		}
+
+		& > .separator {
+	 		margin: 1em 0;
+	 		& > * {
+	 			display: none;
+	 		}
+	 	}
 	}
 
 	.section-simple-vlist {
@@ -142,7 +155,7 @@ main {
 			padding: $section-simple-vlists-vpadding $section-simple-vlists-hpadding;
 			display: block;
 
-			h3 {
+			h2 {
 	 			margin-top: 0;
 	 		}
 
@@ -210,7 +223,6 @@ main {
 
 			& > li.info-skill-item {
 				font-size: 1.05em;
-				font-weight: bold;
 				/*border: 1px solid #DDD;
 				background-color: #EEE;
 				@include border-radius(5px);
@@ -221,6 +233,7 @@ main {
 		.info-languages-list {
 			.lang-flag {
 				float: left;
+				width: $flag-icon-size;
 				height: $flag-icon-size;
 			}
 
@@ -239,6 +252,34 @@ main {
 			}
 		}
 	}
+
+
+	/**
+	 * ABOUT SECTION
+	 *********************************************/
+	 .main-section-about {
+
+	 	.about-technologies-list {
+	 		text-align: center;
+
+	 		.list-item {
+
+	 			img {
+	 				max-height: 4em;
+	 				margin: 0 auto;
+	 				display: block;
+	 			}
+		 		
+			 	@include anchor-styles(inherit);
+		 	}
+	 	}
+
+	 	.about-credits-list {
+	 		.list-item {
+	 			float: left;
+	 		}
+	 	}
+	 }
 
 	@include apply-to-print {
 		max-width: none;

@@ -7,6 +7,7 @@
 		},
 		images : {
 			folder : 'public/img/',
+			flags : 'flags/',
 			logos : 'logos/'
 		},
 		views : {
@@ -24,7 +25,7 @@
 		{ id : "projects", controller : 'ProjectsController' },
 		{ id : "linkedin", controller : 'LinkedInController', views : [ '/connect', '/load', '/done' ] },
 		{ id : "lang", controller : '', noRoute : true },
-		{ id : "about", controller : '' }
+		{ id : "about", controller : 'AboutController' }
 	]);
 
 	app.config([ '$routeProvider', 'PATHS', 'SECTIONS', function($routeProvider, PATHS, SECTIONS) {

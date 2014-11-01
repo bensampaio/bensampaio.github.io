@@ -78,6 +78,7 @@ app.post(LinkedIN.paths.load, function (req, res) {
             'public-profile-url',
             'languages',
             'skills',
+            'interests',
             'positions',
             'educations',
             'projects'

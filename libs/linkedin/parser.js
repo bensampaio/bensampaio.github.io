@@ -8,42 +8,19 @@ var TOTAL_PARSED = 0, TOTAL_TO_PARSE = 0, PARSE_ERRORS = [];
  */
  var METADATA = (function() {
 
- 	var languages = {
-		portuguese : { code : 'pt', level : 'Native' },
-		english : { code : 'en', level : 'Proficient' },
-		german : { code : 'ge', level : '' }
-	};
-
-	var institutions = {
-		banif : {
-			url : 'http://www.banif.pt/',
-			logo : 'bnf.gif'
-		},
-		safira : {
-			url : 'http://www.safira.pt',
-			logo : 'safira.jpg'
-		},
-		coggitare : {
-			url : 'http://www.coggitare.com/forum/',
-			logo : false
-		},
-		unl : {
-			url : 'http://www.fct.unl.pt/',
-			logo : 'unl.png'
-		},
-		tud : {
-			url : 'http://tu-dresden.de/en',
-			logo : 'tud.png'
-		}
-	};
+ 	var data = require(DB_PATH + 'extra.json');
 
  	return {
  		getLanguage : function(name) {
- 			return languages[name.toLowerCase()];
+ 			return data.languages[name.toLowerCase()];
  		},
 
  		getInstitution : function(name) {
- 			return institutions[name.toLowerCase()];
+ 			return data.institutions[name.toLowerCase()];
+ 		},
+
+ 		getPages : function() {
+ 			return data.pages;
  		}
  	}
 
@@ -75,7 +52,7 @@ var parseBasic = function(firstName, lastName, picture, callback) {
 	});
 }
 
-var parseInfo = function(summary, email, url, phones, languages, skills, callback) {
+var parseInfo = function(summary, email, url, phones, interests, languages, skills, callback) {
 	var file = DB_PATH + 'info.json';
 
 	fs.readFile(file, { encoding : 'utf8' }, function(err, data) {
@@ -102,6 +79,9 @@ var parseInfo = function(summary, email, url, phones, languages, skills, callbac
 			});
 		}
 
+		// Parse Interests
+		data.interests = interests? interests.split(/,\s*/) : [];
+
 		// Parse Languages
 		data.languages = [];
 		for(var i = 0; i < languages.length; i++) {
@@ -112,6 +92,7 @@ var parseInfo = function(summary, email, url, phones, languages, skills, callbac
 				data.languages.push({
 					name : lang.language.name,
 					code : meta.code,
+					flag : meta.flag,
 					level : meta.level
 				});
 			}
@@ -127,7 +108,8 @@ var parseInfo = function(summary, email, url, phones, languages, skills, callbac
 		}
 
 		// Parse Pages
-		if(data.pages && data.pages.length > 0) {
+		data.pages = METADATA.getPages();
+		if(data.pages instanceof Array && data.pages.length > 0) {
 			data.pages[0].url = url;
 		}
 
@@ -230,14 +212,15 @@ var parseProjects = function(list, callback) {
 
 			if(projectNameParts.length > 1) {
 				project.name = projectNameParts[1];
-				project.institutionName = projectNameParts[0];
+			}
+			project.institutionName = projectNameParts[0];
 
-				meta = METADATA.getInstitution(project.institutionName.match(/\w+/g).join('_'));
+			// Get project institution metadata
+			meta = METADATA.getInstitution(project.institutionName.match(/\w+/g).join('_'));
 
-				if(meta) {
-					institution = meta;
-					institution.name = project.institutionName;
-				}
+			if(meta) {
+				institution = meta;
+				institution.name = project.institutionName;
 			}
 
 			data.push({
@@ -302,7 +285,7 @@ exports.parseAndStore = function(results, callback) {
 	TOTAL_TO_PARSE = 5;
 
 	parseBasic(results.firstName, results.lastName, results.pictureUrl, callback);
-	parseInfo(results.summary, results.emailAddress, results.publicProfileUrl, results.phoneNumbers.values, results.languages.values, results.skills.values, callback);
+	parseInfo(results.summary, results.emailAddress, results.publicProfileUrl, results.phoneNumbers.values, results.interests, results.languages.values, results.skills.values, callback);
 	parseExperience(results.positions.values, callback);
     parseEducation(results.educations.values, callback);
     parseProjects(results.projects.values, callback);
