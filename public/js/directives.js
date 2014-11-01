@@ -13,12 +13,12 @@
 				attrs.$observe('toggleExpandCollapse', function(value) {
 					if(angular.isUndefined($scope.display[value])) {
 						$scope.display[value] = false;
-
-						element.on('click', function(event) {
-							$scope.display[value] = !$scope.display[value];
-							$scope.$digest();
-						});
 					}
+
+					element.on('click', function(event) {
+						$scope.display[value] = !$scope.display[value];
+						$scope.$digest();
+					});
 				});
 			}
 		}
