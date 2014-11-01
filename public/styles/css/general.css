@@ -107,51 +107,125 @@ nav.navbar-top {
     nav.navbar-top .navbar-list ul {
       list-style-type: none;
       padding: 0;
-      margin: 0;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-direction: row;
-      -moz-flex-direction: row;
-      flex-direction: row;
-      -webkit-flex-wrap: nowrap;
-      -moz-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-align-items: center;
-      align-items: center; }
-      @media screen and (max-width: 800px) {
-        nav.navbar-top .navbar-list ul {
-          -webkit-flex-direction: column;
-          -moz-flex-direction: column;
-          flex-direction: column;
-          -webkit-align-items: flex-start;
-          align-items: flex-start; } }
+      margin: 0; }
       nav.navbar-top .navbar-list ul.navbar-items-left {
         float: left;
-        -ms-flex-pack: start;
-        flex-pack: start;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;
+        /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Chrome */
+        display: flex;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -moz-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-content: center;
+        align-content: center;
+        -webkit-align-items: center;
+        align-items: center;
         -webkit-justify-content: flex-start;
         -moz-justify-content: flex-start;
-        justify-content: flex-start; }
+        justify-content: flex-start;
+        -ms-flex-align: center;
+        -ms-flex-pack: start; }
         @media screen and (max-width: 800px) {
           nav.navbar-top .navbar-list ul.navbar-items-left {
             float: none;
+            display: -webkit-box;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+            /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;
+            /* TWEENER - IE 10 */
+            display: -webkit-flex;
+            /* NEW - Chrome */
+            display: flex;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-flex-wrap: nowrap;
+            -moz-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
             -webkit-align-content: flex-start;
-            align-content: flex-start; } }
+            align-content: flex-start;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            -webkit-justify-content: flex-start;
+            -moz-justify-content: flex-start;
+            justify-content: flex-start;
+            -ms-flex-align: start;
+            -ms-flex-pack: start; } }
       nav.navbar-top .navbar-list ul.navbar-items-right {
         float: right;
-        -ms-flex-pack: end;
-        flex-pack: end;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;
+        /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Chrome */
+        display: flex;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -moz-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-content: center;
+        align-content: center;
+        -webkit-align-items: center;
+        align-items: center;
         -webkit-justify-content: flex-end;
         -moz-justify-content: flex-end;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        -ms-flex-align: center;
+        -ms-flex-pack: end; }
         @media screen and (max-width: 800px) {
           nav.navbar-top .navbar-list ul.navbar-items-right {
             float: none;
+            display: -webkit-box;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+            /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;
+            /* TWEENER - IE 10 */
+            display: -webkit-flex;
+            /* NEW - Chrome */
+            display: flex;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-flex-wrap: nowrap;
+            -moz-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
             -webkit-align-content: flex-end;
-            align-content: flex-end; } }
+            align-content: flex-end;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            -webkit-justify-content: flex-end;
+            -moz-justify-content: flex-end;
+            justify-content: flex-end;
+            -ms-flex-align: start;
+            -ms-flex-pack: end; } }
       @media screen and (max-width: 800px) {
         nav.navbar-top .navbar-list ul > navbar-item {
           width: 100%; }
@@ -159,11 +233,12 @@ nav.navbar-top {
             border: 0; } }
       nav.navbar-top .navbar-list ul li {
         margin: 0;
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        align-self: center;
         -webkit-flex-grow: 1;
         -moz-flex-grow: 1;
         flex-grow: 1;
-        -webkit-align-self: center;
-        align-self: center;
         cursor: pointer; }
         nav.navbar-top .navbar-list ul li a {
           font-weight: bold;

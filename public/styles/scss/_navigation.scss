@@ -135,60 +135,30 @@ nav.navbar-top {
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
-			display: -webkit-flex;
-			display: -moz-flex;
-			display: -ms-flex;
-			display: -ms-flexbox;
-			display: flex;
-			-webkit-flex-direction: row;
-			-moz-flex-direction: row;
-			flex-direction: row;
-			-webkit-flex-wrap: nowrap;
-			-moz-flex-wrap: nowrap;
-			flex-wrap: nowrap;
-			-webkit-align-items: center;
-			align-items: center;
-
-			@include apply-to-mobile {
-				-webkit-flex-direction: column;
-				-moz-flex-direction: column;
-				flex-direction: column;
-				-webkit-align-items: flex-start;
-				align-items: flex-start;
-			}
 
 			&.navbar-items-left {
 				float: left;
-				-ms-flex-pack: start;
-				flex-pack: start;
-				-webkit-justify-content: flex-start;
-				-moz-justify-content: flex-start;
-				justify-content: flex-start;
+				@include flex-container(row, nowrap, start, center, center, center, flex-start);
+
 				@include apply-to-mobile {
 					float: none;
-					-webkit-align-content: flex-start;
-					align-content: flex-start;
+					@include flex-container(column, nowrap, start, start, flex-start, flex-start, flex-start);
 				}
 			}
 
 			&.navbar-items-right {
 				float: right;
-				-ms-flex-pack: end;
-				flex-pack: end;
-				-webkit-justify-content: flex-end;
-				-moz-justify-content: flex-end;
-				justify-content: flex-end;
+				@include flex-container(row, nowrap, end, center, center, center, flex-end);
+				
 				@include apply-to-mobile {
 					float: none;
-					-webkit-align-content: flex-end;
-					align-content: flex-end;
+					@include flex-container(column, nowrap, end, start, flex-end, flex-start, flex-end);
 				}
 			}
 
 			& > navbar-item {
 				@include apply-to-mobile {
 					width: 100%;
-					//border-bottom: 1px solid lighten($navbar-list-background, 8%);
 
 					&:last-child {
 						border: 0;
@@ -198,11 +168,7 @@ nav.navbar-top {
 
 			li {
 				margin: 0;
-				-webkit-flex-grow: 1;
-				-moz-flex-grow: 1;
-				flex-grow: 1;
-				-webkit-align-self: center;
-				align-self: center;
+				@include flex-item(center, 1);
 				cursor: pointer;
 
 				a {
