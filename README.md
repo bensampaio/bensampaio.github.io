@@ -72,6 +72,7 @@ In case you also want to change the stylesheets you will need to install [SASS](
 After installing Node.js open a console window and run the following commands:
 
 > cd \<path_to_website_root_directory\>
+
 > sudo node server.js
 
 Now try to access to http://0.0.0.0:8080 (make sure you have no other applications running on this port). 
@@ -128,8 +129,11 @@ You can repeat this process as many times as you want.
 ### Customize
 
 If you want to customize the website a bit, start by running the following commands on a console window:
+
 > cd <path_to_website_root_directory>/public/styles
+
 > sass --watch --style:compressed scss:css
+
 Leave this running while you change SCSS files.
 
 Try to change some of the values in public/styles/scss/_config.scss. If you want to change more things feel free to open the other SCSS files on this directory!
