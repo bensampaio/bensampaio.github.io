@@ -7,7 +7,7 @@ I created this website to present the most interesting and relevant aspects abou
 - **Education** - my courses and qualifications;
 - **Projects** - some of my personal projects;
 - **LinkedIn** - for integration with LinkedIn (available only on localhost);
-- About this site: information about the website purpose and architecture.
+- **About this site** - information about the website purpose and architecture.
 
 All the data to populate the first 4 sections is loaded from LinkedIn using the LinkedIn Profile API.
 
@@ -130,7 +130,7 @@ You can repeat this process as many times as you want.
 
 If you want to customize the website a bit, start by running the following commands on a console window:
 
-> cd <path_to_website_root_directory>/public/styles
+> cd \<path_to_website_root_directory\>/public/styles
 
 > sass --watch --style:compressed scss:css
 
