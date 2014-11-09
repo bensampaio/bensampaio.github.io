@@ -2,12 +2,12 @@
 
 I created this website to present the most interesting and relevant aspects about me and my work in a more clean and simplified way. The website is mobile ready and is composed by the following **sections**:
 
-1. Home Page: general information about me;
-2. Experience: my work experience;
-3. Education: my courses and qualifications;
-4. Projects: some of my personal projects;
-5. LinkedIn: for integration with LinkedIn (available only on localhost);
-6. About this site: information about the website purpose and architecture;
+- **Home Page** - general information about me;
+- **Experience** - my work experience;
+- **Education** - my courses and qualifications;
+- **Projects** - some of my personal projects;
+- **LinkedIn** - for integration with LinkedIn (available only on localhost);
+- About this site: information about the website purpose and architecture.
 
 All the data to populate the first 4 sections is loaded from LinkedIn using the LinkedIn Profile API.
 
@@ -70,8 +70,10 @@ To load your data from LinkedIn you will need to install [Node.js](http://nodejs
 In case you also want to change the stylesheets you will need to install [SASS](http://sass-lang.com/) (the recommended version is 3.4.7).
 
 After installing Node.js open a console window and run the following commands:
-> cd <path_to_website_root_directory>
+
+> cd \<path_to_website_root_directory\>
 > sudo node server.js
+
 Now try to access to http://0.0.0.0:8080 (make sure you have no other applications running on this port). 
 
 
@@ -92,10 +94,10 @@ Then click save. You will then be redirected to the applications page and there 
 #### Format the information on your LinkedIn profile
 
 The parser will look for some specific elements on some fields of your profile, if you format them as expected your data will look better on the website:
-- For long text fields:
+- Long text fields:
   - Each line break will be interpreted as a paragraph (subsequent line breaks are ignored if there is no text between them);
   - Each line started with a hyphen represents an item of a list of items.
-- For project names: if there is an hyphen in the middle of the name, the words to the left of it will be considered as the company name, and the words to the right as the project name.
+- Project names: if there is an hyphen in the middle of the name, the words to the left of it will be considered as the company name, and the words to the right as the project name.
 
 #### Add additional information
 
@@ -110,7 +112,17 @@ Go to the website root directory and open the file: db/extra.json. You must chan
 
 #### Ready? Go!
 
-When you finish all the steps above go to http://0.0.0.0:8080/#/linkedin/connect. You can find the information to fill the fields on this page on the application page you registered on LinkedIn. After filling them press the submit button and when you are redirected to LinkedIn press the Allow button. You will then be redirected to http://0.0.0.0:8080/#/linkedin/load. Now press "Load" with Profile option selected and after a while you will see a success / error page (hope it is the first). Now go to the Home Page and refresh the page (you should see your data on all sections now).
+When you finish all the steps above do the following:
+- Go to http://0.0.0.0:8080/#/linkedin/connect;
+- Fill the fields on this page with the information on the application you registered on LinkedIn;
+- Press the submit button;
+- If this is the first time you load your data you will probably be redirected to LinkedIn. If that happens, press the Allow button;
+- You will eventually be redirected to http://0.0.0.0:8080/#/linkedin/load;
+- Press the Load button with Profile option selected;
+- Wait for a success / error page (hope it is the first);
+- Go to the Home Page and refresh the page (you should see your data on all sections now).
+
+You can repeat this process as many times as you want.
 
 
 ### Customize
