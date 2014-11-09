@@ -11,6 +11,10 @@ var TOTAL_PARSED = 0, TOTAL_TO_PARSE = 0, PARSE_ERRORS = [];
  	var data = require(DB_PATH + 'extra.json');
 
  	return {
+ 		getSummary : function() {
+ 			return data.summary;
+ 		},
+
  		getLanguage : function(name) {
  			return data.languages[name.toLowerCase()];
  		},
@@ -58,6 +62,7 @@ var parseBasic = function(firstName, lastName, picture, callback) {
 
 var parseInfo = function(summary, email, url, phones, interests, languages, skills, callback) {
 	var file = DB_PATH + 'info.json';
+	var meta;
 
 	fs.readFile(file, { encoding : 'utf8' }, function(err, data) {
 		if(err)
@@ -66,7 +71,12 @@ var parseInfo = function(summary, email, url, phones, interests, languages, skil
 		data = JSON.parse(data);
 
 		// Parse summary
-		data.summary = parseText(summary).slice(0, 2);
+		meta = METADATA.getSummary();
+		data.summary = parseText(summary);
+
+		if(meta && meta.paragraphs > 0) {
+			data.summary = data.summary.slice(0, meta.paragraphs);
+		}
 
 		// Parse E-mail
 		data.emails = [{
@@ -90,7 +100,7 @@ var parseInfo = function(summary, email, url, phones, interests, languages, skil
 		data.languages = [];
 		for(var i = 0; i < languages.length; i++) {
 			var lang = languages[i];
-			var meta = METADATA.getLanguage(lang.language.name);
+			meta = METADATA.getLanguage(lang.language.name);
 
 			if(meta) {
 				data.languages.push({
@@ -214,14 +224,12 @@ var parseProjects = function(list, callback) {
 			// Separate project name by a hyphen between spaces (left side is institution name and right is project name)
 			var projectNameParts = project.name.split(/\s*-\s*/);
 
-			if(projectNameParts.length > 1) {
-				project.name = projectNameParts[1];
-			}
+			project.appName = projectNameParts[projectNameParts.length - 1];
 			project.institutionName = projectNameParts[0];
 
 			// Get institution and project metadata
 			metaI = METADATA.getInstitution(project.institutionName.match(/\w+/g).join('_'));
-			metaP = METADATA.getProject(project.name);
+			metaP = METADATA.getProject(project.appName);
 
 			if(metaI) {
 				institution = metaI;

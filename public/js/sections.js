@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('myPages', [ ]);
+	var app = angular.module('mySections', [ ]);
 
 	var setLogoImgURLs = function(list, PATHS) {
 		var generalPath = PATHS.images.folder + PATHS.images.logos, 

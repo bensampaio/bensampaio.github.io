@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('myself', [ 'ngAnimate', 'ngRoute', 'myDirectives', 'myNavigation', 'myPages' ]);
+	var app = angular.module('myself', [ 'ngAnimate', 'ngRoute', 'myDirectives', 'myNavigation', 'mySections' ]);
 
 	app.constant('PATHS', {
 		data : {
