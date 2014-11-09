@@ -146,7 +146,7 @@ var parseExperience = function(list, callback) {
 		for(var i = 0; i < list.length; i++) {
 			var position = list[i];
 			var institution = false;
-			var meta = METADATA.getInstitution(position.company.name);
+			var meta = METADATA.getInstitution(position.company.name.replace(/\s+/g, '_'));
 
 			if(meta) {
 				institution = meta;
@@ -228,7 +228,7 @@ var parseProjects = function(list, callback) {
 			project.institutionName = projectNameParts[0];
 
 			// Get institution and project metadata
-			metaI = METADATA.getInstitution(project.institutionName.match(/\w+/g).join('_'));
+			metaI = METADATA.getInstitution(project.institutionName.replace(/\s+/g, '_'));
 			metaP = METADATA.getProject(project.appName);
 
 			if(metaI) {
