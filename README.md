@@ -52,7 +52,7 @@ Bellow are described the file & folders structure and the usage instructions.
       - **general.scss** - general styles (imports all the previous files);
 - **views** - contains the HTML views specific for each section or element present on the website. Each section can have one or more views:
   - **elements** - stores HTML elements that can be reused on several pages (application directives);
-  - **info**, **experience**, **education**, **projects**, **linkedin** and **about** - store HTML views for each respective section;
+  - **info**, **experience**, **education**, **projects**, **linkedin** and **about** - store HTML views for each section, respectively;
 - **index.html** - main website layout;
 - **server.js** - server start script;
 - **package.json** - app metadata.
@@ -95,10 +95,10 @@ Then click save. You will then be redirected to the applications page and there 
 #### Format the information on your LinkedIn profile
 
 The parser will look for some specific elements on some fields of your profile, if you format them as expected your data will look better on the website:
-- Long text fields:
+- **Long text fields**:
   - Each line break will be interpreted as a paragraph (subsequent line breaks are ignored if there is no text between them);
   - Each line started with a hyphen represents an item of a list of items.
-- Project names: if there is an hyphen in the middle of the name, the words to the left of it will be considered as the company name, and the words to the right as the project name.
+- **Project names** - if there is an hyphen in the middle of the name, the words to the left of it will be considered as the company name, and the words to the right as the project name.
 
 #### Add additional information
 
