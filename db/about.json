@@ -67,6 +67,18 @@
 				"url" : "http://www.json.org/",
 				"desc" : "JSON"
 			}
+		],
+		"tools" : [
+			{
+				"id" : "bower",
+				"url" : "http://bower.io/",
+				"desc" : "1.3"
+			},
+			{
+				"id" : "grunt",
+				"url" : "http://gruntjs.com/",
+				"desc" : "0.4.5"
+			}
 		]
 	},
 	"credits" : {

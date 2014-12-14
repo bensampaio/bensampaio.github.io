@@ -27,6 +27,16 @@
 		</div>
 	</div>
 
+	<div class="about-technologies-list section-simple-hlist">
+		<h3>Tools</h3>
+		<div ng-repeat="tech in about.technologies.tools" class="about-technology-item" ng-class="{ 'list-item' : {{!tech.separator}}, 'separator' : tech.separator }">
+			<a ng-href="{{tech.url}}" target="_blank">
+				<img class="technology-{{tech.id}}" ng-src="public/img/technologies/{{tech.id}}.png">
+				<b>{{tech.desc}}</b>
+			</a>
+		</div>
+	</div>
+
 	</div>
 
 	<h2>Credits</h2>
