@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "express": "^4.9.8",
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
     "node-linkedin": "^0.3.3"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
