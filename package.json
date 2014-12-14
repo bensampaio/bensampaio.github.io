@@ -13,7 +13,11 @@
     "start": "node server.js"
   },
   "keywords": [
-    "personal,resume,curriculum vitae,portfolio,linkedin"
+    "personal",
+    "resume",
+    "curriculum vitae",
+    "portfolio",
+    "linkedin"
   ],
   "author": "Bruno Sampaio",
   "license": "MIT"
