@@ -24,6 +24,10 @@
             "url": "http://www.banif.pt/",
             "logo": "banif.jpg"
         },
+        "campusinc" : {
+            "url": "http://www.campusinc.nl/",
+            "logo": "campusinc.png"
+        },
         "coggitare": {
             "url": "http://www.coggitare.com/forum/",
             "logo": false
