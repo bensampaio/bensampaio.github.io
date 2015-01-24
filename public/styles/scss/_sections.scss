@@ -18,7 +18,7 @@ main {
 	background: $main-page-background;
 	position: relative;
 	display: block;
-	@include box-shadow(0, 0, 6px, 6px, $main-page-shadow-color);
+	@include box-shadow(0 0 6px 6px $main-page-shadow-color);
 	@include box-sizing(border-box);
 
 
@@ -31,7 +31,7 @@ main {
 		margin-top: 2em;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	#{$headings} {
 		@include anchor-styles(inherit);
 	}
 
@@ -193,11 +193,11 @@ main {
 				overflow: hidden;
 				
 				&.collapsed {
-					opacity: 0;
+					@include opacity(0);
 				}
 
 				&.expanded {
-					opacity: 1;
+					@include opacity(1);
 				}
 			}
 		}
@@ -230,7 +230,7 @@ main {
 				/*border: 1px solid #DDD;
 				background-color: #EEE;
 				@include border-radius(5px);
-				@include box-shadow(1px, 1px, 5px, 1px, #AAA);*/
+				@include box-shadow(1px 1px 5px 1px #AAA);*/
 			}
 		}
 

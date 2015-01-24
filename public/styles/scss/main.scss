@@ -55,7 +55,7 @@ img {
 
 	@include apply-to-print {
 		max-height: none !important;
-		opacity: 1 !important;
+		@include opacity(1 !important);
 		& ~ .fa-chevron-up:before,
 		& ~ .fa-chevron-down {
 			display: none;

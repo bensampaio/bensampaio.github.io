@@ -7,7 +7,7 @@
 	<text class="about-technologies" data="about.technologies.summary"></text>
 	
 	<div class="about-technologies-list section-simple-hlist">
-		<h3>Client-side</h3>
+		<h3>Frontend</h3>
 		<div ng-repeat="tech in about.technologies.client" class="about-technology-item" ng-class="{ 'list-item' : {{!tech.separator}}, 'separator' : tech.separator }">
 			<a ng-href="{{tech.url}}" target="_blank">
 				<img class="technology-{{tech.id}}" ng-src="public/img/technologies/{{tech.id}}.png">
@@ -18,7 +18,7 @@
 
 	
 	<div class="about-technologies-list section-simple-hlist">
-		<h3>Server-side</h3>
+		<h3>Backend</h3>
 		<div ng-repeat="tech in about.technologies.server" class="about-technology-item" ng-class="{ 'list-item' : {{!tech.separator}}, 'separator' : tech.separator }">
 			<a ng-href="{{tech.url}}" target="_blank">
 				<img class="technology-{{tech.id}}" ng-src="public/img/technologies/{{tech.id}}.png">

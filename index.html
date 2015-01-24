@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myself" ng-controller="NavigationController as navigationCtrl" lang="en">
 	<head>
-		<title>{{homeSection.title + (navigationCtrl.currentSection.id != homeSection.id? ' - ' + navigationCtrl.currentSection.title : '')}}</title>
-		<link rel="shortcut icon" href="public/img/favicon.ico" />
-		
 		<meta charset="UTF-8">
 		<meta name="language" content="EN">
 
@@ -18,8 +15,17 @@
 		<link rel="stylesheet" type="text/css" href="public/styles/css/main.css" />
 
 		<!--[if lte IE 7]>
-	    	<script src="public/js/json2/json2.js"></script>
+	    	<script src="public/js/lib/json2/json2.js"></script>
 	    <![endif]-->
+
+	    <!-- JavaScript Files -->
+	    <script type="text/javascript" src="public/js/lib/angular/angular.min.js"></script>
+	    <script type="text/javascript" src="public/js/lib/angular-animate/angular-animate.min.js"></script>
+	    <script type="text/javascript" src="public/js/lib/angular-route/angular-route.min.js"></script>
+
+	    <!-- Title -->
+	    <title>{{homeSection.title + (navigationCtrl.currentSection.id != homeSection.id? ' - ' + navigationCtrl.currentSection.title : '')}}</title>
+	    <link rel="shortcut icon" href="public/img/favicon.ico" />
 	</head>
 	<body>
 
@@ -51,9 +57,6 @@
 		<div ng-cloak class="footer"><i class="fa fa-copyright"></i> {{getToday() | date:'yyyy'}} {{homeSection.title}}</div>
 
 		<!-- JavaScript Files -->
-		<script type="text/javascript" src="public/js/angular/angular.min.js"></script>
-		<script type="text/javascript" src="public/js/angular-animate/angular-animate.min.js"></script>
-		<script type="text/javascript" src="public/js/angular-route/angular-route.min.js"></script>
 		<script type="text/javascript" src="public/js/app.min.js"></script>
 	</body>
 </html>

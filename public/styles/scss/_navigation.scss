@@ -20,7 +20,7 @@ nav.navbar-top {
 	position: fixed;
 	background-color: $navbar-background;
 	z-index: $navbar-top-z-index;
-	@include box-shadow(0, 8px, 6px, -6px, $navbar-shadow-color);
+	@include box-shadow(0 8px 6px -6px $navbar-shadow-color);
 	@extend %contentOnly;
 
 	@include anchor-styles($navbar-links-color);
@@ -57,7 +57,7 @@ nav.navbar-top {
 					width: $author-picture-size;
 					height: $author-picture-size;
 					border: $author-picture-border solid black;
-					@include border-radius($author-picture-size);
+					@include border-round();
 					display: inline-block;
 				}
 
@@ -81,7 +81,7 @@ nav.navbar-top {
 
 					.author-picture {
 						border-color: darken($navbar-author-name-color, 15%);
-						@include box-shadow(0px, 1px, 1px, 1px, $navbar-item-selected-shadow);
+						@include box-shadow(0px 1px 1px 1px $navbar-item-selected-shadow);
 					}
 				}
 			}
@@ -111,7 +111,7 @@ nav.navbar-top {
 				max-height: none;
 				padding: inherit;
 				overflow-y: auto;
-				opacity: 1;
+				@include opacity(1);
 			}
 		}
 
@@ -121,7 +121,7 @@ nav.navbar-top {
 			margin-top: $navbar-top-height;
 			margin-left: 0;
 			background-color: $navbar-list-background;
-			@include box-shadow(0, 8px, 6px, -6px, $navbar-shadow-color);
+			@include box-shadow(0 8px 6px -6px $navbar-shadow-color);
 			@include box-sizing(border-box);
 			z-index: $navbar-top-z-index - 1;
 
