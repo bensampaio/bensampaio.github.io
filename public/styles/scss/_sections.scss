@@ -9,17 +9,17 @@ main {
 
 	$flag-icon-size: 48px;
 
+	background: $main-page-background;
+	@include box-shadow(0 0 6px 6px $main-page-shadow-color);
+	@include box-sizing(border-box);
+	display: block;
 	font-size: 1.1em;
+	margin: 0 auto;
 	max-width: $main-page-maxwidth;
 	min-height: 100%; /* if browser doesn't support vh, this rule is applied instead */
 	min-height: 100vh;
 	padding: $main-page-tpadding 1.5em $main-page-bpadding;
-	margin: 0 auto;
-	background: $main-page-background;
 	position: relative;
-	display: block;
-	@include box-shadow(0 0 6px 6px $main-page-shadow-color);
-	@include box-sizing(border-box);
 
 
 	/**
@@ -37,8 +37,8 @@ main {
 
 	h2 {
 		font-size: 1.6em;
-		margin-top: 1em;
 		margin-bottom: 0.5em; 
+		margin-top: 1em;
 	}
 
 	h3 {
@@ -51,15 +51,15 @@ main {
 	}
 
 	text {
-		text-align: justify;
 		display: block;
+		text-align: justify;
 	}
 
 	form {
-		width: 100%;
-		padding: 0.5em;
-		margin: 0;
 		@include box-sizing(border-box);
+		margin: 0;
+		padding: 0.5em;
+		width: 100%;
 
 		label {
 			font-weight: bold;
@@ -79,10 +79,10 @@ main {
 		}
 
 		input[type=text] {
-			width: 70%;
-			padding: 0.5em;
-			outline: 0;
 			@include box-sizing(border-box);
+			outline: 0;
+			padding: 0.5em;
+			width: 70%;
 		}
 	}
 
@@ -113,9 +113,9 @@ main {
 	}
 
 	.flag {
-		width: $flag-icon-size;
-		height: $flag-icon-size;
 		display: inline-block;
+		height: $flag-icon-size;
+		width: $flag-icon-size;
 
 		&.flag-pt {
 			@include background-image('flags/pt.png', center center, no-repeat);
@@ -131,19 +131,20 @@ main {
 	 * SECTIONS
 	 *********************************************/
 	.section-simple-hlist {
-		text-align: left;
 		list-style-type: none;
-		padding: 0;
 		margin: 0;
 		overflow: hidden;
+		padding: 0;
+		text-align: left;
 
 		& > .list-item {
-			padding: $section-simple-hlists-vpadding $section-simple-hlists-hpadding;
 			display: inline-block;
+			padding: $section-simple-hlists-vpadding $section-simple-hlists-hpadding;
 		}
 
 		& > .separator {
 	 		margin: 1em 0;
+	 		
 	 		& > * {
 	 			display: none;
 	 		}
@@ -152,20 +153,20 @@ main {
 
 	.section-simple-vlist {
 		list-style-type: none;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 
 		& > .list-item {
-			padding: $section-simple-vlists-vpadding $section-simple-vlists-hpadding;
 			display: block;
+			padding: $section-simple-vlists-vpadding $section-simple-vlists-hpadding;
 
 			h2 {
 	 			margin-top: 0;
 	 		}
 
 	 		.right img {
-	 			max-width: 10em;
 	 			max-height: 3em;
+	 			max-width: 10em;
 	 		}
 
 	 		p:last-child {
@@ -178,16 +179,16 @@ main {
 		@extend .section-simple-hlist;
 
 		& > .list-item {
-			padding: 0.5em;
 			margin: 0.5em;
+			padding: 0.5em;
 		}
 
 		& > .section-list-more {
-			text-align: center;
-			border: 1px solid #DDD;
 			background-color: #EEE;
+			border: 1px solid #DDD;
 			color: #888;
 			cursor: pointer;
+			text-align: center;
 
 			.section-boxes-hlist {
 				overflow: hidden;
@@ -204,9 +205,9 @@ main {
 	}
 
 	section-status {
+		display: block;
 		font-size: 40em;
 		text-align: center;
-		display: block;
 
 		.fa-check-circle {
 			color: #00C176;
@@ -237,14 +238,14 @@ main {
 		.info-languages-list {
 			.lang-flag {
 				float: left;
-				width: $flag-icon-size;
 				height: $flag-icon-size;
+				width: $flag-icon-size;
 			}
 
 			.lang-data {
+				margin-left: $flag-icon-size;
 				padding-top: 0.4em;
 				padding-left: 0.8em;
-				margin-left: $flag-icon-size;
 			}
 		}
 
@@ -269,9 +270,9 @@ main {
 	 		.list-item {
 
 	 			img {
-	 				max-height: 4em;
-	 				margin: 0 auto;
 	 				display: block;
+	 				margin: 0 auto;
+	 				max-height: 4em;
 	 			}
 		 		
 			 	@include anchor-styles(inherit);
@@ -286,9 +287,9 @@ main {
 	 }
 
 	@include apply-to-print {
+		margin:0;
 		max-width: none;
 		padding:0;
-		margin:0;
 
 		section > *:first-child {
 			margin-top: 0;

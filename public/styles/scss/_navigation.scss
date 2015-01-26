@@ -13,62 +13,62 @@ nav.navbar-top {
 	// Navbar Items List Values
 	$navbar-list-tpadding: ceil(abs($navbar-top-height - $navbar-header-padding-top - $author-picture-size - ($author-picture-border * 2)));
 
-	height: $navbar-top-height;
-	top: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
 	background-color: $navbar-background;
-	z-index: $navbar-top-z-index;
 	@include box-shadow(0 8px 6px -6px $navbar-shadow-color);
+	height: $navbar-top-height;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: $navbar-top-z-index;
 	@extend %contentOnly;
 
 	@include anchor-styles($navbar-links-color);
 
 	.navbar-header {
+		@include box-sizing(border-box);
 		float: left;
-		width: $navbar-header-width;
 		height: $author-picture-size + ($author-picture-border * 2) + $navbar-header-padding-top;
 		padding: $navbar-header-padding-top $navbar-hpadding 0;
-		@include box-sizing(border-box);
+		width: $navbar-header-width;
 
 		@include apply-to-m-screens {
 			float: none;
-			width: 100%;
-			top: 0;
 			position: absolute;
+			top: 0;
+			width: 100%;
 		}
 		
 		.navbar-item-info {
-			height: 100%;
 			cursor: pointer;
+			height: 100%;
 
 			@include apply-to-m-screens {
 				float: left;
 			}
 
 			a {
-				position: relative;
-				display: block;
 				clear: both;
+				display: block;
+				position: relative;
 
 				.author-picture {
-					float: left;
-					width: $author-picture-size;
-					height: $author-picture-size;
 					border: $author-picture-border solid black;
 					@include border-round();
 					display: inline-block;
+					float: left;
+					height: $author-picture-size;
+					width: $author-picture-size;
 				}
 
 				.author-name {
+					display: inline-block;
 					float: left;
 					font-size: 1.9em;
 					font-weight: bold;
 					margin-top: 5px;
 					margin-left: 10px;
 					vertical-align: top;
-					display: inline-block;
 				}
 
 				&.selected,
@@ -88,71 +88,71 @@ nav.navbar-top {
 		}
 
 		.navbar-menu {
+			color: $navbar-links-color;
+			cursor: pointer;
+			display: none;
 			font-size: 18px;
 			padding: 0.15em;
-			color: $navbar-links-color;
-			display: none;
-			cursor: pointer;
 
 			@include apply-to-m-screens {
-				float: right;
 				display: block;
+				float: right;
 			}
 		}
 	}
 
 	.navbar-list {
-		width: auto;
-		padding-right: $navbar-hpadding;
 		margin-left: $navbar-header-width;
+		padding-right: $navbar-hpadding;
+		width: auto;
 
 		@include apply-to-l-screens {
 			&.collapsed {
 				max-height: none;
-				padding: inherit;
-				overflow-y: auto;
 				@include opacity(1);
+				overflow-y: auto;
+				padding: inherit;
 			}
 		}
 
 		@include apply-to-m-screens {
-			width: 100%;
-			padding: $navbar-list-tpadding $navbar-hpadding 1em;
-			margin-top: $navbar-top-height;
-			margin-left: 0;
 			background-color: $navbar-list-background;
 			@include box-shadow(0 8px 6px -6px $navbar-shadow-color);
 			@include box-sizing(border-box);
+			margin-left: 0;
+			margin-top: $navbar-top-height;
+			padding: $navbar-list-tpadding $navbar-hpadding 1em;
+			width: 100%;
 			z-index: $navbar-top-z-index - 1;
 
 			&.collapsed {
-				padding-top: 0;
 				padding-bottom: 0;
+				padding-top: 0;
 			}
 		}
 
 		ul {
 			list-style-type: none;
-			padding: 0;
 			margin: 0;
+			padding: 0;
 
 			&.navbar-items-left {
-				float: left;
 				@include flex-container(row, nowrap, start, center, center, center, flex-start);
+				float: left;
 
 				@include apply-to-m-screens {
-					float: none;
 					@include flex-container(column, nowrap, start, start, flex-start, flex-start, flex-start);
+					float: none;
 				}
 			}
 
 			&.navbar-items-right {
-				float: right;
 				@include flex-container(row, nowrap, end, center, center, center, flex-end);
+				float: right;
 				
 				@include apply-to-m-screens {
-					float: none;
 					@include flex-container(column, nowrap, end, start, flex-end, flex-start, flex-end);
+					float: none;
 				}
 			}
 
@@ -169,17 +169,17 @@ nav.navbar-top {
 			}
 
 			li {
-				margin: 0;
-				@include flex-item(center, 1);
-				display: block;
 				cursor: pointer;
+				display: block;
+				@include flex-item(center, 1);
+				margin: 0;
 
 				a {
+					@include box-sizing(border-box);
+					display: block;
 					font-weight: bold;
 					line-height: 1em;
 					padding: 0 1em;
-					display: block;
-					@include box-sizing(border-box);
 				}
 
 				@each $page, $properties in $pages {
@@ -193,8 +193,8 @@ nav.navbar-top {
 				@include apply-to-m-screens {
 					a {
 						font-size: 1.5em;
-						width: 100%;
 						padding: 1em;
+						width: 100%;
 
 						&:hover,
 						&.selected {

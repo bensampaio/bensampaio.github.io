@@ -1,9 +1,9 @@
 $headings: 'h1, h2, h3, h4, h5, h6';
 
 %contentOnly {
-	padding: 0;
 	border: 0;
 	margin: 0;
+	padding: 0;
 }
 
 %clearfix {
@@ -38,8 +38,8 @@ $headings: 'h1, h2, h3, h4, h5, h6';
 @mixin anchor-styles($color) {
 	a, a:link, a:hover, a:visited {
 		border: 0;
-		text-decoration: none;
 		color: $color;
+		text-decoration: none;
 	}
 }
 
