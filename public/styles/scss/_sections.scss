@@ -1,6 +1,6 @@
 main {
 	$main-page-bpadding: $default-line-height + ($footer-padding * 2);
-	$main-page-shadow-color: #DDD;
+	$main-page-shadow-color: #ddd;
 
 	$section-simple-hlists-hpadding: 1.5em;
 	$section-simple-hlists-vpadding: 0.5em;
@@ -184,8 +184,8 @@ main {
 		}
 
 		& > .section-list-more {
-			background-color: #EEE;
-			border: 1px solid #DDD;
+			background-color: #eee;
+			border: 1px solid #ddd;
 			color: #888;
 			cursor: pointer;
 			text-align: center;
@@ -210,7 +210,7 @@ main {
 		text-align: center;
 
 		.fa-check-circle {
-			color: #00C176;
+			color: #00c176;
 		}
 
 		.fa-close {
@@ -228,10 +228,10 @@ main {
 
 			& > li.info-skill-item {
 				font-size: 1.05em;
-				/*border: 1px solid #DDD;
-				background-color: #EEE;
+				/*border: 1px solid #ddd;
+				background-color: #eee;
 				@include border-radius(5px);
-				@include box-shadow(1px 1px 5px 1px #AAA);*/
+				@include box-shadow(1px 1px 5px 1px #aaa);*/
 			}
 		}
 

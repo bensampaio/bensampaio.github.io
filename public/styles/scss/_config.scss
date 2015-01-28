@@ -17,16 +17,16 @@ $main-page-maxwidth: 700px;
 $footer-padding: 0.8em;
 
 // Text Colors
-$navbar-author-name-color: #3299BB;
-$navbar-links-color: #BCBCBC;
+$navbar-author-name-color: #3299bb;
+$navbar-links-color: #bcbcbc;
 $main-page-links-color: #0077b5;
 
 // Backgrounds
-$body-background: #E9E9E9;
+$body-background: #e9e9e9;
 $navbar-background: #424242;
 $navbar-list-background: lighten($navbar-background, 25%);
 $navbar-item-selected-background: darken($navbar-list-background, 5%);
-$main-page-background: #FFF;
+$main-page-background: #fff;
 $pages: (
 	info : (
 		color : transparent

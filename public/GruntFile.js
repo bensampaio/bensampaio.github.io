@@ -21,6 +21,7 @@ module.exports = function(grunt) {
         files: {
           'js/app.min.js': [
             'js/app/init.js',
+            'js/app/filters.js',
             'js/app/directives.js',
             'js/app/navigation.js',
             'js/app/sections.js'
