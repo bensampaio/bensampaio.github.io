@@ -43,7 +43,7 @@ app.post(LinkedIN.paths.connect, function (req, res) {
     LinkedIN.lib = require('node-linkedin')(fields.apiKey, fields.apiSecret, 'http://' + host + ':' + port + LinkedIN.paths.callback);
 
     LinkedIN.loader = LinkedIN.lib.init(LinkedIN.currentAccessToken);
-        
+
     LinkedIN.lib.auth.authorize(res, ['r_basicprofile', 'r_fullprofile', 'r_emailaddress', 'r_contactinfo']);
 });
 
@@ -83,7 +83,7 @@ app.post(LinkedIN.paths.load, function (req, res) {
             'educations',
             'projects'
         ];
-        
+
         LinkedIN.loader.people.me(profileFields, function(err, results) {
             if (err) {
                 console.error(err);
