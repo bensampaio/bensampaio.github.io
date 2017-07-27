@@ -46,21 +46,5 @@
 		</li>
 	</ul>
 
-	<h2>Contacts</h2>
-	<div class="info-contacts section-simple-hlist">
-		<div class="info-contacts-emails list-item">
-			<h3>E-Mails</h3>
-			<div ng-repeat="email in info.emails" class="info-contacts-email">
-				<i class="fa fa-envelope"></i> <a ng-href="mailto:{{email.value}}" target="_blank">{{email.value}}</a>
-			</div>
-		</div>
-		<div class="info-contacts-phones list-item">
-			<h3>Phones</h3>
-			<div ng-repeat="phone in info.phones" class="info-contacts-phone">
-				<i class="fa fa-{{phone.type}}"></i> {{phone.value}}
-			</div>
-		</div>
-	</div>
-	
 </section>
 <section-status ng-show="error"></section-status>
