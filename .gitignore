@@ -1,4 +1,11 @@
 .DS_Store
-/node_modules
-/public/.sass-cache
-/public/node_modules
+.idea
+
+# Configuration
+.env
+
+# Generated
+build
+
+# Vendor
+node_modules

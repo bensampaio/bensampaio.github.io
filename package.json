@@ -1,17 +1,38 @@
 {
-  "name": "PersonalWebsite-BackEnd",
+  "name": "PersonalWebsite",
   "version": "1.0.1",
   "description": "",
-  "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.4.4",
+    "babel-loader": "^8.0.4",
+    "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.6.0",
+    "fontawesome": "^5.6.3",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "postcss-loader": "^3.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router": "^4.3.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14"
+  },
   "devDependencies": {
-    "body-parser": "^1.10.*",
-    "express": "^4.9.8",
-    "node-linkedin": "^0.3.3"
+    "eslint": "^5.11.1",
+    "eslint-plugin-react": "^7.12.2",
+    "stylelint": "^9.9.0",
+    "stylelint-scss": "^3.4.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "webpack",
+    "lint:css": "stylelint 'src/**/*.{css,scss}'",
+    "lint:js": "eslint 'src/**/*.{mjs,js,jsx}'"
   },
   "keywords": [
     "personal",
