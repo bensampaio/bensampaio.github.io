@@ -1,6 +1,6 @@
 import React from 'react';
 
-import info from '../../../db/info.json';
+import info from '../../../db/info';
 
 import Screen from '../Screen';
 import ExternalLink from '../ExternalLink';

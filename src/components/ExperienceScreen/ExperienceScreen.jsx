@@ -1,6 +1,6 @@
 import React from 'react';
 
-import experience from '../../../db/experience.json';
+import experience from '../../../db/experience';
 
 import Screen from '../Screen';
 import ExternalLink from '../ExternalLink';

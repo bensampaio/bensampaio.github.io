@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import my from '../../../db/my.json';
+import me from '../../../db/me';
 
 class Screen extends PureComponent {
 
@@ -8,12 +8,12 @@ class Screen extends PureComponent {
         const { title } = this.props;
 
         if (title) {
-            document.title = `${title} | ${my.fullName}`;
+            document.title = `${title} | ${me.fullName}`;
         }
     }
 
     componentWillUnmount() {
-        document.title = my.fullName;
+        document.title = me.fullName;
     }
 
     render() {

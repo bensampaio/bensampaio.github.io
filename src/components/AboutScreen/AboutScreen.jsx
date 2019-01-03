@@ -1,12 +1,28 @@
 import classnames from 'classnames';
 import React from 'react';
 
-import about from '../../../db/about.json';
+import about from '../../../db/about';
 
 import Screen from '../Screen';
 import Text from '../Text';
 import HorizontalList from '../HorizontalList';
 import ExternalLink from '../ExternalLink';
+
+const Technology = ({ data }) => {
+    if (data.separator) {
+        return (
+            <li className={classnames('about-technology-item', 'separator')} />
+        );
+    }
+    return (
+        <li className={classnames('about-technology-item', 'list-item')}>
+            <ExternalLink to={data.url}>
+                <img alt={data.id} src={data.logo} />
+                <strong>{data.desc}</strong>
+            </ExternalLink>
+        </li>
+    );
+};
 
 const AboutScreen = React.memo(() => (
     <Screen>
@@ -18,39 +34,18 @@ const AboutScreen = React.memo(() => (
 
         <h3>Frontend</h3>
         <HorizontalList>
-            {about.technologies.client.map((tech, index) => (
-                <li className={classnames('about-technology-item', { 'list-item': !tech.separator, 'separator': tech.separator })} key={index}>
-                    <ExternalLink to={tech.url}>
-                        <img src={`public/img/technologies/${tech.id}.png`} />
-                        <strong>{tech.desc}</strong>
-                    </ExternalLink>
-                </li>
-            ))}
+            {about.technologies.client.map((tech, index) => <Technology data={tech} key={index} />)}
         </HorizontalList>
 
 
         <h3>Backend</h3>
         <HorizontalList>
-            {about.technologies.server.map((tech, index) => (
-                <li className={classnames('about-technology-item', { 'list-item': !tech.separator, 'separator': tech.separator })} key={index}>
-                    <ExternalLink to={tech.url}>
-                        <img src={`public/img/technologies/${tech.id}.png`} />
-                        <strong>{tech.desc}</strong>
-                    </ExternalLink>
-                </li>
-            ))}
+            {about.technologies.server.map((tech, index) => <Technology data={tech} key={index} />)}
         </HorizontalList>
 
         <h3>Tools</h3>
         <HorizontalList>
-            {about.technologies.tools.map((tech, index) => (
-                <li className={classnames('about-technology-item', { 'list-item': !tech.separator, 'separator': tech.separator })} key={index}>
-                    <ExternalLink to={tech.url}>
-                        <img src={`public/img/technologies/${tech.id}.png`} />
-                        <strong>{tech.desc}</strong>
-                    </ExternalLink>
-                </li>
-            ))}
+            {about.technologies.tools.map((tech, index) => <Technology data={tech} key={index} />)}
         </HorizontalList>
 
         <h2>Credits</h2>

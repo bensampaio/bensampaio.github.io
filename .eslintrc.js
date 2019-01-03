@@ -30,6 +30,7 @@ module.exports = {
             "error",
             "single",
         ],
+        "react/display-name": 0,
         "semi": [
             "error",
             "always",

@@ -40,7 +40,7 @@ var TOTAL_PARSED = 0, TOTAL_TO_PARSE = 0, PARSE_ERRORS = [];
  */
 
 var parseBasic = function(firstName, lastName, picture, callback) {
-	var file = DB_PATH + 'my.json';
+	var file = DB_PATH + 'index.js';
 
 	fs.readFile(file, { encoding : 'utf8' }, function(err, data) {
 		if(err)

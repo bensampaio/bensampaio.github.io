@@ -1,6 +1,6 @@
 import React from 'react';
 
-import education from '../../../db/education.json';
+import education from '../../../db/education';
 
 import Screen from '../Screen';
 import VerticalList from '../VerticalList';

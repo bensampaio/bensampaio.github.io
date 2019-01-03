@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import my from '../../../db/my.json';
+import me from '../../../db/me';
 
 const Sidebar = React.memo(() => (
     <aside>
         <header>
             <NavLink exact={true} to={'/'}>
-                <img src={my.picture} />
-                <h1>{my.fullName}</h1>
+                <img src={me.picture} />
+                <h1>{me.fullName}</h1>
             </NavLink>
         </header>
         <nav>
@@ -39,7 +39,7 @@ const Sidebar = React.memo(() => (
                         </NavLink>
                     </li>
                     <li>
-                        © {new Date().getFullYear()} {my.fullName}
+                        © {new Date().getFullYear()} {me.fullName}
                     </li>
                 </ul>
             </nav>

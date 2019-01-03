@@ -1,6 +1,6 @@
 import React from 'react';
 
-import projects from '../../../db/projects.json';
+import projects from '../../../db/projects';
 
 import Screen from '../Screen';
 import VerticalList from '../VerticalList';

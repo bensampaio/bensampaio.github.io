@@ -1,4 +1,17 @@
-{
+import angularLogo from './angularjs.png';
+import bowerLogo from './bower.png';
+import cssLogo from './css.png';
+import expressLogo from './express.png';
+import gruntLogo from './grunt.png';
+import htmlLogo from './html.png';
+import jsLogo from './js.png';
+import jsonLogo from './json.png';
+import linkedinLogo from './linkedin.png';
+import nodeLogo from './nodejs.png';
+import responsiveLogo from './responsive.png';
+import sassLogo from './sass.png';
+
+export default {
 	"goal" : [
 		"I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way. Besides that, creating this website was also a way to get some pratice with several technologies and concepts I wasn't very familiar with, suchs as, SASS, AngularJS, and Responsive Design."
 	],
@@ -12,22 +25,26 @@
 			{
 				"id" : "html",
 				"url" : "http://www.w3.org/TR/html5/",
-				"desc" : "HTML"
+				"desc" : "HTML",
+				"logo": htmlLogo,
 			},
 			{
 				"id" : "css",
 				"url" : "http://www.w3.org/TR/CSS/",
-				"desc" : "CSS"
+				"desc" : "CSS",
+				"logo": cssLogo,
 			},
 			{
 				"id" : "js",
 				"url" : "",
-				"desc" : "JavaScript"
+				"desc" : "JavaScript",
+				"logo": jsLogo,
 			},
 			{
 				"id" : "responsive",
 				"url" : "",
-				"desc" : "Responsive"
+				"desc" : "Responsive",
+				"logo": responsiveLogo,
 			},
 			{
 				"separator" : true
@@ -35,24 +52,28 @@
 			{
 				"id" : "sass",
 				"url" : "http://sass-lang.com/",
-				"desc" : "3.4"
+				"desc" : "3.4",
+				"logo": sassLogo,
 			},
 			{
 				"id" : "angularjs",
 				"url" : "https://angularjs.org/",
-				"desc" : "1.3"
+				"desc" : "1.3",
+				"logo": angularLogo,
 			}
 		],
 		"server" : [
 			{
 				"id" : "nodejs",
 				"url" : "http://nodejs.org/",
-				"desc" : "0.10"
+				"desc" : "0.10",
+				"logo": nodeLogo,
 			},
 			{
 				"id" : "express",
 				"url" : "http://expressjs.com/",
-				"desc" : "4"
+				"desc" : "4",
+				"logo": expressLogo,
 			},
 			{
 				"separator" : true
@@ -60,24 +81,28 @@
 			{
 				"id" : "linkedin",
 				"url" : "https://developer.linkedin.com/apis",
-				"desc" : "API"
+				"desc" : "API",
+				"logo": linkedinLogo,
 			},
 			{
 				"id" : "json",
 				"url" : "http://www.json.org/",
-				"desc" : "JSON"
+				"desc" : "JSON",
+				"logo": jsonLogo,
 			}
 		],
 		"tools" : [
 			{
 				"id" : "bower",
 				"url" : "http://bower.io/",
-				"desc" : "1.3"
+				"desc" : "1.3",
+				"logo": bowerLogo,
 			},
 			{
 				"id" : "grunt",
 				"url" : "http://gruntjs.com/",
-				"desc" : "0.4.5"
+				"desc" : "0.4.5",
+				"logo": gruntLogo,
 			}
 		]
 	},
@@ -85,7 +110,7 @@
 		"developers" : [
 			{
 				"name" : "Bruno Sampaio",
-				"url" : "https://bensampaio.github.io"
+				"url" : "https://bensampaio.github.io",
 			}
 		],
 		"designers" : [
