@@ -1,1 +1,3 @@
-export default {"firstName":"Bruno","lastName":"Sampaio","fullName":"Bruno Sampaio","picture":"https://media.licdn.com/mpr/mprx/0_KMzyHBGF0onY2vHo-s6fHz8kxu5l2P4o-Y3iHztv8Wl81cfEpxLKQv6UlGL77NJ6lscCFtuCPNfN"}
+import profilePicture from './me.jpg';
+
+export default {"firstName":"Bruno","lastName":"Sampaio","fullName":"Bruno Sampaio","picture":profilePicture};

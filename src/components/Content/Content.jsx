@@ -7,8 +7,10 @@ import EducationScreen from '../EducationScreen';
 import ProjectsScreen from '../ProjectsScreen';
 import AboutScreen from '../AboutScreen';
 
+import styles from './Content.scss';
+
 const Content = () => (
-    <main>
+    <main className={styles.container}>
         <Switch>
             <Route component={InfoScreen} exact={true} path={'/'} />
             <Route component={ExperienceScreen} exact={true} path={'/experience'} />

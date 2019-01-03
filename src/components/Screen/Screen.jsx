@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 
 import me from '../../../db/me';
 
+import styles from './Screen.scss';
+
 class Screen extends PureComponent {
 
     componentDidMount() {
@@ -9,6 +11,8 @@ class Screen extends PureComponent {
 
         if (title) {
             document.title = `${title} | ${me.fullName}`;
+        } else {
+            document.title = me.fullName;
         }
     }
 
@@ -20,7 +24,7 @@ class Screen extends PureComponent {
         const { children } = this.props;
 
         return (
-            <article>
+            <article className={styles.container}>
                 {children}
             </article>
         );

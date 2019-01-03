@@ -18,6 +18,7 @@ module.exports = {
         rules: [
             {
                 exclude: /node_modules/,
+                test: /\.m?jsx?$/,
                 use: [
                     {
                         loader: 'babel-loader',
@@ -31,13 +32,18 @@ module.exports = {
                         },
                     }
                 ],
-                test: /\.m?jsx?$/,
             },
             {
+                exclude: /node_modules/,
                 test: /\.s?css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        },
+                    },
                     'sass-loader',
                     {
                         loader: 'postcss-loader',
@@ -50,6 +56,7 @@ module.exports = {
                 ],
             },
             {
+                exclude: /node_modules/,
                 test: /\.(jpg|png)$/,
                 use: [
                     'file-loader',

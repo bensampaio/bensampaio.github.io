@@ -1,1 +1,1 @@
-export { default } from './HorizontalList.jsx';
+export { HorizontalList, HorizontalListItem } from './HorizontalList.jsx';

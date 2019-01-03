@@ -5,22 +5,22 @@ import about from '../../../db/about';
 
 import Screen from '../Screen';
 import Text from '../Text';
-import HorizontalList from '../HorizontalList';
+import { HorizontalList, HorizontalListItem } from '../HorizontalList';
 import ExternalLink from '../ExternalLink';
 
 const Technology = ({ data }) => {
     if (data.separator) {
         return (
-            <li className={classnames('about-technology-item', 'separator')} />
+            <HorizontalListItem className={classnames('about-technology-item', 'separator')} />
         );
     }
     return (
-        <li className={classnames('about-technology-item', 'list-item')}>
+        <HorizontalListItem className={classnames('about-technology-item', 'list-item')}>
             <ExternalLink to={data.url}>
                 <img alt={data.id} src={data.logo} />
                 <strong>{data.desc}</strong>
             </ExternalLink>
-        </li>
+        </HorizontalListItem>
     );
 };
 
@@ -53,34 +53,34 @@ const AboutScreen = React.memo(() => (
         <h3>Developers</h3>
         <HorizontalList>
             {about.credits.developers.map((developer, index) => (
-                <li key={index}>
+                <HorizontalListItem key={index}>
                     <ExternalLink to={developer.url}>
                         {developer.name}
                     </ExternalLink>
-                </li>
+                </HorizontalListItem>
             ))}
         </HorizontalList>
 
         <h3>Designers</h3>
         <HorizontalList>
             {about.credits.designers.map((designer, index) => (
-                <li key={index}>
+                <HorizontalListItem key={index}>
                     <ExternalLink to={designer.url}>
                         {designer.name}
                     </ExternalLink>
-                </li>
+                </HorizontalListItem>
             ))}
         </HorizontalList>
 
         <h3>Others</h3>
         <HorizontalList>
             {about.credits.others.map((other, index) => (
-                <li key={index}>
+                <HorizontalListItem key={index}>
                     <ExternalLink to={other.url}>
                         {other.name}
                     </ExternalLink>
                     {other.desc && <span> - {other.desc} {other.item && <ExternalLink to={other.item.url}>{other.item.name}</ExternalLink>}</span>}
-                </li>
+                </HorizontalListItem>
             ))}
         </HorizontalList>
     </Screen>

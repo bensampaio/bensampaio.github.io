@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Sidebar from '../Sidebar';
 import Content from '../Content';
@@ -7,8 +7,8 @@ import Content from '../Content';
 const App = React.memo(() => (
     <BrowserRouter>
         <>
-            <Sidebar />
-            <Content />
+            <Route component={Sidebar} />
+            <Route component={Content} />
         </>
     </BrowserRouter>
 ));

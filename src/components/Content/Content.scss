@@ -1,0 +1,6 @@
+@import '../Sidebar/vars';
+
+.container {
+  margin-left: $sidebarWidth;
+  padding: $sidebarSectionVSpacing 3rem;
+}

@@ -1,7 +1,11 @@
 import React from 'react';
 
-const HorizontalList = (props) => (
-    <ul {...props} />
+import styles from './HorizontalList.scss';
+
+export const HorizontalList = (props) => (
+    <ul {...props} className={styles.list} />
 );
 
-export default HorizontalList;
+export const HorizontalListItem = (props) => (
+    <li {...props} className={styles.item} />
+);
