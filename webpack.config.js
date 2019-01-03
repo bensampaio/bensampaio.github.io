@@ -7,6 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
 
+const metadata = require('./package.json');
+
 module.exports = {
     entry: {
         main: path.join(__dirname, 'src', 'index.jsx'),
@@ -21,7 +23,9 @@ module.exports = {
                         loader: 'babel-loader',
                         options: {
                             presets: [
-                                '@babel/preset-env',
+                                ['@babel/preset-env', {
+                                    useBuiltIns: 'usage',
+                                }],
                                 '@babel/preset-react',
                             ],
                         },
@@ -45,6 +49,12 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    'file-loader',
+                ],
+            },
         ],
     },
     output: {
@@ -54,8 +64,15 @@ module.exports = {
     plugins: [
         new Dotenv(),
         new HtmlWebpackPlugin({
+            favicon: path.join(__dirname, 'public', 'favicon.ico'),
+            meta: {
+                author: metadata.author,
+                description: metadata.description,
+                keywords: metadata.keywords.join(','),
+                viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+            },
             template: path.join(__dirname, 'src', 'index.html'),
-            title: process.env.APP_TITLE,
+            title: '',
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',

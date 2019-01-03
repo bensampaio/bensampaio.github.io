@@ -1,7 +1,16 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-const App = () => (
-    <div></div>
-);
+import Sidebar from '../Sidebar';
+import Content from '../Content';
+
+const App = React.memo(() => (
+    <BrowserRouter>
+        <>
+            <Sidebar />
+            <Content />
+        </>
+    </BrowserRouter>
+));
 
 export default App;

@@ -65,7 +65,7 @@
 			/*
 			 * Load author basic info and create sections
 			 */
-			$http.get('/' + PATHS.data.folder + 'basic.json')
+			$http.get('/' + PATHS.data.folder + 'my.json')
 				.success(function(data) {
 					$scope.homeSection = new Section(SECTIONS[sectionIndex++].id, data.fullName, data.picture, true);
 

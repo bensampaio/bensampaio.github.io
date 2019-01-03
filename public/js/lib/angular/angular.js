@@ -1426,7 +1426,7 @@ function bootstrap(element, modules, config) {
       //Encode angle brackets to prevent input from being sanitized to empty string #8683
       throw ngMinErr(
           'btstrpd',
-          "App Already Bootstrapped with this Element '{0}'",
+          "Screen Already Bootstrapped with this Element '{0}'",
           tag.replace(/</,'&lt;').replace(/>/,'&gt;'));
     }
 
@@ -6546,11 +6546,11 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *
    * @description
    * Retrieves or overrides the default regular expression that is used for whitelisting of safe
-   * urls during img[src] sanitization.
+   * urls during pictures[src] sanitization.
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
+   * Any url about to be assigned to pictures[src] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -6742,10 +6742,10 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
         if ((nodeName === 'a' && key === 'href') ||
             (nodeName === 'img' && key === 'src')) {
-          // sanitize a[href] and img[src] values
+          // sanitize a[href] and pictures[src] values
           this[key] = value = $$sanitizeUri(value, key === 'src');
         } else if (nodeName === 'img' && key === 'srcset') {
-          // sanitize img[srcset] values
+          // sanitize pictures[srcset] values
           var result = "";
 
           // first check if there are spaces because it's not the same pattern
@@ -7179,7 +7179,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             }
           }
           break;
-        case NODE_TYPE_TEXT: /* Text Node */
+        case NODE_TYPE_TEXT: /* YouTube Node */
           addTextInterpolateDirective(directives, node.nodeValue);
           break;
         case NODE_TYPE_COMMENT: /* Comment */
@@ -14823,11 +14823,11 @@ function $$SanitizeUriProvider() {
   /**
    * @description
    * Retrieves or overrides the default regular expression that is used for whitelisting of safe
-   * urls during img[src] sanitization.
+   * urls during pictures[src] sanitization.
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
+   * Any url about to be assigned to pictures[src] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -16285,8 +16285,8 @@ var originUrl = urlResolve(window.location.href);
  *
  * IE7 does not normalize the URL when assigned to an anchor node.  (Apparently, it does, if one
  * uses the inner HTML approach to assign the URL as part of an HTML snippet -
- * http://stackoverflow.com/a/472729)  However, setting img[src] does normalize the URL.
- * Unfortunately, setting img[src] to something like "javascript:foo" on IE throws an exception.
+ * http://stackoverflow.com/a/472729)  However, setting pictures[src] does normalize the URL.
+ * Unfortunately, setting pictures[src] to something like "javascript:foo" on IE throws an exception.
  * Since the primary usage for normalizing URLs is to sanitize such URLs, we can't use that
  * method and IE < 8 is unsupported.
  *
@@ -17792,12 +17792,12 @@ var htmlAnchorDirective = valueFn({
  *
  * The buggy way to write it:
  * ```html
- * <img src="http://www.gravatar.com/avatar/{{hash}}"/>
+ * <pictures src="http://www.gravatar.com/avatar/{{hash}}"/>
  * ```
  *
  * The correct way to write it:
  * ```html
- * <img ng-src="http://www.gravatar.com/avatar/{{hash}}"/>
+ * <pictures ng-src="http://www.gravatar.com/avatar/{{hash}}"/>
  * ```
  *
  * @element IMG
@@ -17818,12 +17818,12 @@ var htmlAnchorDirective = valueFn({
  *
  * The buggy way to write it:
  * ```html
- * <img srcset="http://www.gravatar.com/avatar/{{hash}} 2x"/>
+ * <pictures srcset="http://www.gravatar.com/avatar/{{hash}} 2x"/>
  * ```
  *
  * The correct way to write it:
  * ```html
- * <img ng-srcset="http://www.gravatar.com/avatar/{{hash}} 2x"/>
+ * <pictures ng-srcset="http://www.gravatar.com/avatar/{{hash}} 2x"/>
  * ```
  *
  * @element IMG
