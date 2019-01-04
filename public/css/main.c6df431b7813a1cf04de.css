@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+html {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  overflow-y: scroll; }
+
+body {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+._2GNh_iUWgSrFDM2ovz5zv {
+  background-color: #fbfbfb;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 20rem; }
+
+.iXWQaLwKZH2wNUqSqIQ_f {
+  color: #333;
+  display: block;
+  text-decoration: none; }
+  .iXWQaLwKZH2wNUqSqIQ_f:link, .iXWQaLwKZH2wNUqSqIQ_f:hover, .iXWQaLwKZH2wNUqSqIQ_f:visited {
+    color: #333; }
+
+._1cgH1cRD1r1RhXNFIrah5_ {
+  font-weight: 500; }
+
+.w52EaRk8XdmM3Tq-di0dj {
+  flex: 0 0 auto;
+  padding-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center; }
+  ._3F3mg2p25WLWFzbta0kYYo {
+    padding: 0 2rem; }
+  ._2UIEwxFm69z38VTU1CCD94 {
+    border: .25rem solid currentColor;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem; }
+
+._3xF6Qom7VNGSiKlSh2HJcw {
+  flex: 1 0 auto; }
+
+.lMsavTt0UKPnZrTAltgZd {
+  flex: 0 0 auto;
+  font-size: .8rem;
+  margin-top: 0.5rem;
+  padding-bottom: 2rem; }
+
+._2JQBPmfym_tY4nn7QczD3_,
+.CF4VskJ7DFBak5xxVw9eu {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+._1tv0Lt1RtJbmFja7vrP8gv {
+  padding: 0.5rem 2rem; }
+  ._1tv0Lt1RtJbmFja7vrP8gv:not(._1Cervc6hO6eGWzLgX0rkVA):hover {
+    background-color: #eee; }
+
+._1Cervc6hO6eGWzLgX0rkVA {
+  background-color: #e8e8e8; }
+
+._1YsUB7O6SZbiZ01YIEnS_l {
+  padding: 0.5rem 2rem 0; }
+
+._9ej3mRRe1flA7bJ8hBEQg {
+  padding: 0.5rem 2rem; }
+  ._9ej3mRRe1flA7bJ8hBEQg:not(._4ZyrQMHHskhXVuoFJWlcd):hover {
+    text-decoration: underline; }
+
+.W9B9sKgeCFg_dohViO-Sn {
+  margin: 0 auto;
+  max-width: 44rem;
+  width: 100%; }
+  .W9B9sKgeCFg_dohViO-Sn > :first-child {
+    margin-top: 0; }
+  .W9B9sKgeCFg_dohViO-Sn > :last-child {
+    margin-bottom: 0; }
+
+._1Lx1yAhd3Lg0VioDM3porE {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+._355hJkxwerO3AJZ0i2JmGj {
+  margin: .5rem 1rem; }
+
+._1FJrjJl9J7DToAYNy2EuvB {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.knFle0zQbDoTN941vSbxY {
+  margin-left: 20rem;
+  padding: 2rem 3rem; }
+

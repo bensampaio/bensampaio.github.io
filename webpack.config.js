@@ -1,11 +1,8 @@
-require('dotenv').config();
-
 const path = require('path');
 
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Dotenv = require('dotenv-webpack');
 
 const metadata = require('./package.json');
 
@@ -59,19 +56,23 @@ module.exports = {
                 exclude: /node_modules/,
                 test: /\.(jpg|png)$/,
                 use: [
-                    'file-loader',
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[hash].[ext]',
+                        },
+                    },
                 ],
             },
         ],
     },
     output: {
-        path: path.join(__dirname, 'public', 'build'),
-        filename: '[name].[hash].js',
+        path: path.join(__dirname, 'public'),
+        filename: 'js/[name].[hash].js',
     },
     plugins: [
-        new Dotenv(),
         new HtmlWebpackPlugin({
-            favicon: path.join(__dirname, 'public', 'favicon.ico'),
+            favicon: path.join(__dirname, 'src', 'favicon.ico'),
             meta: {
                 author: metadata.author,
                 description: metadata.description,
@@ -82,8 +83,8 @@ module.exports = {
             title: '',
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
-            chunkFilename: '[id].[hash].css',
+            filename: 'css/[name].[hash].css',
+            chunkFilename: 'css/[id].[hash].css',
         }),
     ],
 };

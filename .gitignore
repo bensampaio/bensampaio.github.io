@@ -1,11 +1,3 @@
 .DS_Store
 .idea
-
-# Configuration
-.env
-
-# Generated
-build
-
-# Vendor
 node_modules
