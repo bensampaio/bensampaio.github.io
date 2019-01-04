@@ -1,3 +1,5 @@
+@import './shared/mixins';
+
 *,
 *::after,
 *::before {
@@ -19,4 +21,24 @@ body {
     border: none;
     margin: 0;
     padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+a {
+    @include anchorColors(#0077b5);
 }

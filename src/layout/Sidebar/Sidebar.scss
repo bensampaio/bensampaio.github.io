@@ -1,0 +1,109 @@
+@import '../../shared/mixins';
+@import './vars';
+
+.container {
+  background-color: $sidebarBg;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: $sidebarWidth;
+}
+
+.link {
+  @include anchorColors(#333);
+  display: flex;
+  text-decoration: none;
+
+  &Icon {
+    flex: 0 0 1.8rem;
+  }
+}
+
+.header {
+  flex: 0 0 auto;
+  padding: $sidebarSectionVSpacing 0;
+  text-align: center;
+
+  &Link {
+    align-items: center;
+    flex-direction: column;
+    padding: 0 $sidebarLinkHSpacing;
+
+    &Active {
+      @include anchorColors(#1b5265);
+    }
+  }
+
+  &Image {
+    border: .25rem solid currentColor;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+  }
+
+  &Heading {
+    margin: $sidebarSectionVSpacing 0 0;
+  }
+}
+
+.nav {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+  font-size: .8rem;
+  margin-top: $sidebarLinkVSpacing;
+  padding-bottom: $sidebarSectionVSpacing;
+}
+
+.footerList,
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  padding: $sidebarLinkVSpacing $sidebarLinkHSpacing;
+
+  &:not(&Active):hover {
+    background-color: $sidebarLinkHoverBg;
+  }
+
+  &Active {
+    background-color: $sidebarLinkActiveBg;
+  }
+
+  &Experience {
+    @include anchorColors(#0b5143);
+  }
+
+  &Education {
+    @include anchorColors(#881d11);
+  }
+
+  &Projects {
+    @include anchorColors(#733c0d);
+  }
+}
+
+.footerCopyright {
+  padding: $sidebarLinkVSpacing $sidebarLinkHSpacing 0;
+}
+
+.footerLink {
+  padding: $sidebarLinkVSpacing $sidebarLinkHSpacing;
+
+  &:not(&Active):hover {
+    text-decoration: underline;
+  }
+
+  &About {
+    @include anchorColors(#655206);
+  }
+}

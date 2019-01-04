@@ -1,1 +1,0 @@
-export { HorizontalList, HorizontalListItem } from './HorizontalList.jsx';

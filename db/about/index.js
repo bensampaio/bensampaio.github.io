@@ -47,9 +47,6 @@ export default {
 				"logo": responsiveLogo,
 			},
 			{
-				"separator" : true
-			},
-			{
 				"id" : "sass",
 				"url" : "http://sass-lang.com/",
 				"desc" : "3.4",
@@ -74,9 +71,6 @@ export default {
 				"url" : "http://expressjs.com/",
 				"desc" : "4",
 				"logo": expressLogo,
-			},
-			{
-				"separator" : true
 			},
 			{
 				"id" : "linkedin",

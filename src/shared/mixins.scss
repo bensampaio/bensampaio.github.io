@@ -1,0 +1,41 @@
+@mixin anchorColors($normalColor, $hoverColor: null, $focusColor: null, $activeColor: null, $visitedColor: null) {
+  @if ($hoverColor == null) {
+    $hoverColor: $normalColor;
+  }
+
+  @if ($focusColor == null) {
+    $focusColor: $normalColor;
+  }
+
+  @if ($activeColor == null) {
+    $activeColor: $normalColor;
+  }
+
+  @if ($visitedColor == null) {
+    $visitedColor: $normalColor;
+  }
+
+  &,
+  &:link {
+    color: $normalColor;
+  }
+
+  &:visited {
+    color: $visitedColor;
+  }
+
+  // must be after :link and :visited in order to be effective
+  &:hover {
+    color: $hoverColor;
+  }
+
+  // must be after :hover in order to be effective
+  &:focus {
+    color: $focusColor;
+  }
+
+  // must be after :hover and :focus in order to be effective
+  &:active {
+    color: $activeColor;
+  }
+}

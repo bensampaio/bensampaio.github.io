@@ -24,6 +24,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "sass-loader": "^7.1.0",
+    "stylelint-config-recommended": "^2.1.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0",
     "webpack-dev-server": "^3.1.14"
@@ -36,7 +37,7 @@
   },
   "scripts": {
     "build:dev": "NODE_ENV=development webpack-dev-server --history-api-fallback",
-    "build:prd": "NODE_ENV=production webpack",
+    "build:prd": "rm -rf public/* && NODE_ENV=production webpack",
     "lint:css": "stylelint 'src/**/*.{css,scss}'",
     "lint:js": "eslint 'src/**/*.{mjs,js,jsx}'"
   },
