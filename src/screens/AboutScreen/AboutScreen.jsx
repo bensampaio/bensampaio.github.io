@@ -1,17 +1,17 @@
 import React from 'react';
 
 import about from '../../../db/about';
+import ExternalLink from '../../shared/ExternalLink';
+import { HorizontalList, HorizontalListItem } from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
-import { HorizontalList, HorizontalListItem } from '../../shared/HorizontalList';
-import ExternalLink from '../../shared/ExternalLink';
 import styles from './AboutScreen.scss';
 
 const Technology = ({ data }) => (
     <HorizontalListItem>
         <ExternalLink className={styles.techLink} to={data.url}>
             <img alt={data.id} className={styles.techLogo} src={data.logo} />
-            <strong className={styles.techName}>{data.desc}</strong>
+            <span className={styles.techName}>{data.desc}</span>
         </ExternalLink>
     </HorizontalListItem>
 );

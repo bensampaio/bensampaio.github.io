@@ -1,5 +1,6 @@
 @import '../../shared/anchor';
 @import '../../shared/color';
+@import '../../shared/text';
 @import './vars';
 
 .container {
@@ -11,6 +12,7 @@
   height: 100%;
   left: 0;
   overflow-y: auto;
+  padding: $sidebarVSpacing 0;
   position: fixed;
   top: 0;
   transition: width $sidebarAnimationDuration ease-in-out;
@@ -27,65 +29,52 @@
 .toggleButton {
   background-color: transparent;
   border: none;
+  border-radius: 50%;
   color: inherit;
   cursor: pointer;
   font-size: 1rem;
-}
+  margin: 0 $sidebarLinkHSpacing - $sidebarToggleButtonSpacing;
+  padding: $sidebarToggleButtonSpacing;
 
-.item {
-  display: flex;
-  padding: $sidebarLinkVSpacing $sidebarLinkHSpacing;
-
-  &Icon {
-    flex: 0 0 $sidebarItemIconSize;
-    text-align: center;
-    width: $sidebarItemIconSize;
+  .containerCollapsed & {
+    align-self: center;
   }
 
-  &Name {
-    white-space: nowrap;
-
-    .containerCollapsed & {
-      display: none;
-    }
+  .containerExpanded & {
+    align-self: flex-start;
   }
-}
-
-.link {
-  @include anchorColors(inherit);
-  text-decoration: none;
 }
 
 .header {
   flex: 0 0 auto;
-  margin: $sidebarVSpacing 0;
+  margin-bottom: $sidebarVSpacing;
   position: relative;
 
   &Link {
     align-items: center;
     flex-direction: column;
     text-align: center;
-
-    &Active {
-      @include anchorColors(#3aa6cb);
-    }
   }
 
   &Image {
-    border: .25rem solid currentColor;
+    border: $sidebarHeaderPictureBorder solid currentColor;
     border-radius: 50%;
-    height: 8rem;
-    width: 8rem;
+    height: $sidebarHeaderPictureSize;
+    width: $sidebarHeaderPictureSize;
 
     .containerCollapsed & {
-      border-width: .2rem;
-      height: $sidebarItemIconSize;
-      width: $sidebarItemIconSize;
+      height: $sidebarHeaderPictureBorder + $sidebarItemIconSize;
+      width: $sidebarHeaderPictureBorder + $sidebarItemIconSize;
     }
   }
 
   &Heading {
     margin: $sidebarVSpacing 0 0;
+    white-space: nowrap;
+
+    .containerCollapsed & {
+      display: none;
+    }
   }
 }
 
@@ -95,24 +84,47 @@
 
 .footer {
   flex: 0 0 auto;
-  font-size: .8rem;
-  padding: $sidebarVSpacing 0;
+  margin-top: $sidebarVSpacing;
+
+  .itemName {
+    font-size: $tinyText;
+  }
 }
 
-.footerList,
-.navList {
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navLink {
-  &:not(&Active):hover {
-    background-color: $gray4;
+.item {
+  display: flex;
+  padding: $sidebarLinkVSpacing $sidebarLinkHSpacing;
+
+  &Name {
+    margin-left: $sidebarLinkHSpacing;
+    white-space: nowrap;
+
+    .containerCollapsed & {
+      display: none;
+    }
   }
 
   &Active {
     background-color: $gray48;
+  }
+
+  &Hover:not(&Active):hover {
+    background-color: $gray4;
+  }
+}
+
+.link {
+  @include anchorColors(inherit);
+  text-decoration: none;
+
+  &Home {
+    @include anchorColors(#3aa6cb);
   }
 
   &Experience {
@@ -125,12 +137,6 @@
 
   &Projects {
     @include anchorColors(#efa96c);
-  }
-}
-
-.footerLink {
-  &:not(&Active):hover {
-    text-decoration: underline;
   }
 
   &About {

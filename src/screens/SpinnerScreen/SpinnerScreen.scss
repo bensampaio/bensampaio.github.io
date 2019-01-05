@@ -1,0 +1,14 @@
+@import '../../layout/Sidebar/vars';
+
+$iconSize: 10vh;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: calc(#{(100vh - $iconSize) / 2} - #{$sidebarVSpacing}) 0;
+}
+
+.icon {
+  font-size: $iconSize;
+}

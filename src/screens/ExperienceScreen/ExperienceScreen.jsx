@@ -1,11 +1,12 @@
 import React from 'react';
 
 import experience from '../../../db/experience';
-import Screen from '../../shared/Screen';
 import ExternalLink from '../../shared/ExternalLink';
-import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
+import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
 import Period from '../../shared/Period';
+import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
+import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import styles from './ExperienceScreen.scss';
 
 const ExperienceScreen = React.memo(() => (
@@ -20,11 +21,7 @@ const ExperienceScreen = React.memo(() => (
                                 <ExternalLink to={position.institution.url}>{position.institution.name}</ExternalLink>, <Period {...position.period} />
                             </div>
                             {position.institution.logo && (
-                                <div>
-                                    <ExternalLink to={position.institution.url}>
-                                        <img alt={position.institution.name} className={styles.institutionLogo} src={position.institution.logo} />
-                                    </ExternalLink>
-                                </div>
+                                <InstitutionLogoLink {...position.institution} />
                             )}
                         </header>
                         <Text>

@@ -3,9 +3,9 @@ import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import info from '../../../db/info';
-import Screen from '../../shared/Screen';
 import ExternalLink from '../../shared/ExternalLink';
 import { HorizontalList, HorizontalListItem } from '../../shared/HorizontalList';
+import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import styles from './InfoScreen.scss';
 

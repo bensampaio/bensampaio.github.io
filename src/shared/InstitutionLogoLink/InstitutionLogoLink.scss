@@ -1,0 +1,10 @@
+@import '../../shared/grid';
+
+.image {
+  max-height: 3em;
+  max-width: 10em;
+
+  @include xs-down {
+    display: none;
+  }
+}

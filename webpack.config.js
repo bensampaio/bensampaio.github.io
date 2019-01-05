@@ -3,12 +3,16 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const metadata = require('./package.json');
 
 module.exports = {
     entry: {
-        main: path.join(__dirname, 'src', 'index.jsx'),
+        main: [
+            path.join(__dirname, 'src', 'index.scss'),
+            path.join(__dirname, 'src', 'index.jsx'),
+        ],
     },
     mode: process.env.NODE_ENV,
     module: {
@@ -20,6 +24,9 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
+                            plugins: [
+                                '@babel/plugin-syntax-dynamic-import'
+                            ],
                             presets: [
                                 ['@babel/preset-env', {
                                     useBuiltIns: 'usage',
@@ -66,6 +73,18 @@ module.exports = {
             },
         ],
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    chunks: 'initial',
+                    enforce: true,
+                    name: 'vendor',
+                    test: /node_modules/,
+                },
+            },
+        },
+    },
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'js/[name].[hash].js',
@@ -86,5 +105,6 @@ module.exports = {
             filename: 'css/[name].[hash].css',
             chunkFilename: 'css/[id].[hash].css',
         }),
+        new OptimizeCssAssetsPlugin({}),
     ],
 };

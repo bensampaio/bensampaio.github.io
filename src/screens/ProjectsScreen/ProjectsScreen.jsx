@@ -1,10 +1,11 @@
 import React from 'react';
 
 import projects from '../../../db/projects';
-import Screen from '../../shared/Screen';
-import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import ExternalLink from '../../shared/ExternalLink';
+import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
+import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
+import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import YouTube from '../../shared/YouTube';
 import styles from './ProjectsScreen.scss';
 
@@ -26,11 +27,7 @@ const ProjectsScreen = React.memo(() => (
                                 )}
                             </div>
                             {project.institution.logo && (
-                                <div>
-                                    <ExternalLink to={project.institution.url}>
-                                        <img alt={project.institution.name} className={styles.institutionLogo} src={project.institution.logo} />
-                                    </ExternalLink>
-                                </div>
+                                <InstitutionLogoLink {...project.institution} />
                             )}
                         </header>
                         {project.video && <YouTube height="350px" src={project.video} width="100%" />}

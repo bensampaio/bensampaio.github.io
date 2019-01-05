@@ -2,15 +2,18 @@ $sidebarAnimationDuration: 400ms;
 $sidebarZIndex: 1000;
 $sidebarToggleZIndex: 2000;
 
-$sidebarHSpacing: 1.5rem;
-$sidebarVSpacing: 1rem;
+$sidebarHSpacing: 1.8rem;
+$sidebarVSpacing: 1.2rem;
 
-$sidebarItemIconSize: 1.8rem;
+$sidebarItemIconSize: 1.25rem;
 
 $sidebarLinkHSpacing: $sidebarHSpacing;
 $sidebarLinkVSpacing: .5rem;
 
 $sidebarToggleButtonSpacing: .5rem;
+
+$sidebarHeaderPictureBorder: .2rem;
+$sidebarHeaderPictureSize: 8rem;
 
 $sidebarCollapsedWidth: $sidebarLinkHSpacing + $sidebarItemIconSize + $sidebarLinkHSpacing;
 $sidebarExpandedWidth: 20rem;

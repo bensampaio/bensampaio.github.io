@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 
 import me from '../../../db/me';
-
 import styles from './Screen.scss';
 
 class Screen extends PureComponent {

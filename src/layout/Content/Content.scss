@@ -3,6 +3,7 @@
 
 .container {
   margin-left: $sidebarCollapsedWidth;
+  min-height: 100vh;
   padding: $sidebarVSpacing $sidebarHSpacing;
   transition: margin-left $sidebarAnimationDuration ease-in-out;
 

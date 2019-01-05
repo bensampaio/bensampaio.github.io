@@ -41,4 +41,8 @@ p {
 
 a {
     @include anchorColors(#0077b5);
+
+    &:hover {
+        text-decoration: none;
+    }
 }

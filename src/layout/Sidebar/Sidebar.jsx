@@ -14,40 +14,32 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
 
     return (
         <aside className={containerClassNames}>
+            <button className={classnames(styles.toggleButton, styles.itemHover)} title={expanded ? 'Collapse' : 'Expand'} onClick={onToggle}>
+                <FontAwesomeIcon fixedWidth={true} icon={'bars'} />
+            </button>
             <header className={styles.header}>
-                <button className={classnames(styles.item, styles.toggleButton)} title={expanded ? 'Collapse' : 'Expand'} onClick={onToggle}>
-                    <div className={styles.itemIcon}>
-                        <FontAwesomeIcon icon={'bars'} />
-                    </div>
-                </button>
-                <NavLink activeClassName={styles.headerLinkActive} className={classnames(styles.item, styles.link, styles.headerLink)} exact={true} to={'/'}>
+                <NavLink activeClassName={styles.linkHome} className={classnames(styles.item, styles.link, styles.headerLink)} exact={true} to={'/'}>
                     <img className={styles.headerImage} src={me.picture} />
-                    <h1 className={classnames(styles.itemName, styles.headerHeading)}>{me.fullName}</h1>
+                    <h1 className={styles.headerHeading}>{me.fullName}</h1>
                 </NavLink>
             </header>
             <nav className={styles.nav}>
-                <ul className={styles.navList}>
+                <ul className={styles.list}>
                     <li>
-                        <NavLink activeClassName={classnames(styles.navLinkActive, styles.navLinkExperience)} className={classnames(styles.item, styles.link, styles.navLink)} to={'/experience'}>
-                            <div className={styles.itemIcon}>
-                                <FontAwesomeIcon icon={'file'} />
-                            </div>
+                        <NavLink activeClassName={classnames(styles.itemActive, styles.linkExperience)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/experience'}>
+                            <FontAwesomeIcon fixedWidth={true} icon={'file'} />
                             <span className={styles.itemName}>Experience</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName={classnames(styles.navLinkActive, styles.navLinkEducation)} className={classnames(styles.item, styles.link, styles.navLink)} to={'/education'}>
-                            <div className={styles.itemIcon}>
-                                <FontAwesomeIcon icon={'graduation-cap'} />
-                            </div>
+                        <NavLink activeClassName={classnames(styles.itemActive, styles.linkEducation)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/education'}>
+                            <FontAwesomeIcon fixedWidth={true} icon={'graduation-cap'} />
                             <span className={styles.itemName}>Education</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName={classnames(styles.navLinkActive, styles.navLinkProjects)} className={classnames(styles.item, styles.link, styles.navLink)} to={'/projects'}>
-                            <div className={styles.itemIcon}>
-                                <FontAwesomeIcon icon={'code'} />
-                            </div>
+                        <NavLink activeClassName={classnames(styles.itemActive, styles.linkProjects)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/projects'}>
+                            <FontAwesomeIcon fixedWidth={true} icon={'code'} />
                             <span className={styles.itemName}>Projects</span>
                         </NavLink>
                     </li>
@@ -55,20 +47,16 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
             </nav>
             <footer className={styles.footer}>
                 <nav>
-                    <ul className={styles.footerList}>
+                    <ul className={styles.list}>
                         <li>
-                            <NavLink activeClassName={classnames(styles.footerLinkActive, styles.footerLinkAbout)} className={classnames(styles.item, styles.link, styles.footerLink)} to={'/about'}>
-                                <div className={styles.itemIcon}>
-                                    <FontAwesomeIcon icon={'info-circle'} />
-                                </div>
+                            <NavLink activeClassName={classnames(styles.itemActive, styles.linkAbout)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/about'}>
+                                <FontAwesomeIcon fixedWidth={true} icon={'info-circle'} />
                                 <span className={styles.itemName}>About</span>
                             </NavLink>
                         </li>
                         <li>
                             <div className={styles.item}>
-                                <div className={styles.itemIcon}>
-                                    ©
-                                </div>
+                                <FontAwesomeIcon fixedWidth={true} icon={['far', 'copyright']} />
                                 <span className={styles.itemName}>
                                     {new Date().getFullYear()} {me.fullName}
                                 </span>

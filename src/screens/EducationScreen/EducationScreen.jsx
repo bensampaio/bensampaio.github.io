@@ -1,12 +1,13 @@
 import React from 'react';
 
 import education from '../../../db/education';
-import Screen from '../../shared/Screen';
-import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import ExternalLink from '../../shared/ExternalLink';
+import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
 import Period from '../../shared/Period';
+import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import styles from './EducationScreen.scss';
+import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
 const EducationScreen = React.memo(() => (
     <Screen>
@@ -20,11 +21,7 @@ const EducationScreen = React.memo(() => (
                                 <ExternalLink to={degree.institution.url}>{degree.institution.name}</ExternalLink>, <Period {...degree.period} />
                             </div>
                             {degree.institution.logo && (
-                                <div>
-                                    <ExternalLink to={degree.institution.url}>
-                                        <img alt={degree.institution.name} className={styles.institutionLogo} src={degree.institution.logo} />
-                                    </ExternalLink>
-                                </div>
+                                <InstitutionLogoLink {...degree.institution} />
                             )}
                         </header>
                         <Text>
