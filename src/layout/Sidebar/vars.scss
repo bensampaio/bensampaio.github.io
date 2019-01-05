@@ -1,9 +1,16 @@
-$sidebarBg: #fbfbfb;
-$sidebarWidth: 20rem;
+$sidebarAnimationDuration: 400ms;
+$sidebarZIndex: 1000;
+$sidebarToggleZIndex: 2000;
 
-$sidebarSectionVSpacing: 2rem;
+$sidebarHSpacing: 1.5rem;
+$sidebarVSpacing: 1rem;
 
-$sidebarLinkHSpacing: 2rem;
+$sidebarItemIconSize: 1.8rem;
+
+$sidebarLinkHSpacing: $sidebarHSpacing;
 $sidebarLinkVSpacing: .5rem;
-$sidebarLinkHoverBg: #eee;
-$sidebarLinkActiveBg: #e8e8e8;
+
+$sidebarToggleButtonSpacing: .5rem;
+
+$sidebarCollapsedWidth: $sidebarLinkHSpacing + $sidebarItemIconSize + $sidebarLinkHSpacing;
+$sidebarExpandedWidth: 20rem;

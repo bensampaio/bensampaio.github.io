@@ -12,15 +12,13 @@ import responsiveLogo from './responsive.png';
 import sassLogo from './sass.png';
 
 export default {
-	"goal" : [
-		"I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way. Besides that, creating this website was also a way to get some pratice with several technologies and concepts I wasn't very familiar with, suchs as, SASS, AngularJS, and Responsive Design."
-	],
+	"goal" : "I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way. Besides that, creating this website was also a way to get some pratice with several technologies and concepts I wasn't very familiar with, suchs as, SASS, AngularJS, and Responsive Design.",
 	"technologies" : {
-		"summary" : [
-			"For this website development were used the usual Web technologies (HTML5, CSS3, JS), including some of the most used client-side frameworks at the moment (SASS and AngularJS). For server-side logic were used Node.js with express framework. To populate the website sections I decided to use the LinkedIn API, this way its possible to load profile data directly from LinkedIn without having to duplicate it manually each time something needs to be changed.",
-			"The website was tested on the most recent desktop and mobile browsers, such as, Google Chrome, Mozilla Firefox, Safari, Opera, and IE11.",
-			"If you would like to check the code or if you would like to create your own website using this layout you can find the repository and documentation <a href='https://github.com/bensampaio/bensampaio.github.io' target='_blank'>here</a>."
-		],
+		"summary" : `
+			For this website development were used the usual Web technologies (HTML5, CSS3, JS), including some of the most used client-side frameworks at the moment (SASS and AngularJS). For server-side logic were used Node.js with express framework. To populate the website sections I decided to use the LinkedIn API, this way its possible to load profile data directly from LinkedIn without having to duplicate it manually each time something needs to be changed.
+			The website was tested on the most recent desktop and mobile browsers, such as, Google Chrome, Mozilla Firefox, Safari, Opera, and IE11.
+			If you would like to check the code or if you would like to create your own website using this layout you can find the repository and documentation [here](https://github.com/bensampaio/bensampaio.github.io).
+		`,
 		"client" : [
 			{
 				"id" : "html",

@@ -1,6 +1,14 @@
+@import '../../shared/grid';
 @import '../Sidebar/vars';
 
 .container {
-  margin-left: $sidebarWidth;
-  padding: $sidebarSectionVSpacing 3rem;
+  margin-left: $sidebarCollapsedWidth;
+  padding: $sidebarVSpacing $sidebarHSpacing;
+  transition: margin-left $sidebarAnimationDuration ease-in-out;
+
+  &Collapsed {
+    @include md-up {
+      margin-left: $sidebarExpandedWidth;
+    }
+  }
 }
