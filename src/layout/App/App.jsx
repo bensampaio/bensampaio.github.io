@@ -9,7 +9,8 @@ class App extends PureComponent {
         super(props);
 
         this.state = {
-            sidebar: false,
+            // start the sidebar as expanded on desktop devices and collapsed on mobile devices
+            sidebar: !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         };
 
         this.toggleSidebar = this.toggleSidebar.bind(this);
