@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 
+import ErrorScreen from '../../screens/ErrorScreen';
 import Sidebar from '../Sidebar';
 import Content from '../Content';
 
@@ -9,11 +10,17 @@ class App extends PureComponent {
         super(props);
 
         this.state = {
+            error: null,
+            errorInfo: null,
             // start the sidebar as expanded on desktop devices and collapsed on mobile devices
             sidebar: !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         };
 
         this.toggleSidebar = this.toggleSidebar.bind(this);
+    }
+
+    componentDidCatch(error, errorInfo) {
+        this.setState({ error, errorInfo });
     }
 
     toggleSidebar(event) {
@@ -26,7 +33,11 @@ class App extends PureComponent {
 
     render() {
         const { location } = this.props;
-        const { sidebar } = this.state;
+        const { error, errorInfo, sidebar } = this.state;
+
+        if (error || errorInfo) {
+            return <ErrorScreen />;
+        }
 
         return (
             <>

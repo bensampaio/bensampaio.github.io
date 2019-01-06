@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBars,
+    faBug,
     faChevronDown,
     faCode,
     faChevronUp,
@@ -40,6 +41,7 @@ library.add(
     faAngular,
     faApple,
     faBars,
+    faBug,
     faChevronDown,
     faChevronUp,
     faCode,
