@@ -19,14 +19,16 @@ const Period = ({ from, to }) => {
         fromOptions.month = 'long';
     }
 
-    if (to.year) {
-        toDate.setFullYear(to.year);
-        toOptions.year = 'numeric';
-    }
+    if (to) {
+        if (to.year) {
+            toDate.setFullYear(to.year);
+            toOptions.year = 'numeric';
+        }
 
-    if (to.month) {
-        toDate.setMonth(to.month - 1);
-        toOptions.month = 'long';
+        if (to.month) {
+            toDate.setMonth(to.month - 1);
+            toOptions.month = 'long';
+        }
     }
 
     const fromText = fromDate.toLocaleDateString(lang, fromOptions);

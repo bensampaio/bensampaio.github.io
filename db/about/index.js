@@ -1,22 +1,19 @@
-import angularLogo from './angularjs.png';
-import bowerLogo from './bower.png';
 import cssLogo from './css.png';
-import expressLogo from './express.png';
-import gruntLogo from './grunt.png';
 import htmlLogo from './html.png';
+import fontawesomeLogo from './fontawesome.png';
 import jsLogo from './js.png';
-import jsonLogo from './json.png';
-import linkedinLogo from './linkedin.png';
-import nodeLogo from './nodejs.png';
-import responsiveLogo from './responsive.png';
+import reactLogo from './react.png';
+import reactRouterLogo from './reactRouter.png';
 import sassLogo from './sass.png';
+import webpackLogo from './webpack.png';
+import yarnLogo from './yarn.png';
 
 export default {
-	"goal" : "I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way. Besides that, creating this website was also a way to get some pratice with several technologies and concepts I wasn't very familiar with, suchs as, SASS, AngularJS, and Responsive Design.",
+	"goal" : "I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way.",
 	"technologies" : {
 		"summary" : `
-			For this website development were used the usual Web technologies (HTML5, CSS3, JS), including some of the most used client-side frameworks at the moment (SASS and AngularJS). For server-side logic were used Node.js with express framework. To populate the website sections I decided to use the LinkedIn API, this way its possible to load profile data directly from LinkedIn without having to duplicate it manually each time something needs to be changed.
-			The website was tested on the most recent desktop and mobile browsers, such as, Google Chrome, Mozilla Firefox, Safari, Opera, and IE11.
+			For the development of this website were used the usual Web technologies (HTML5, CSS3, JS), including some of the most used client-side frameworks at the moment (React and SASS).
+			The website was tested on the most recent desktop and mobile browsers, such as, Google Chrome, Mozilla Firefox, Safari, Opera, and Edge.
 			If you would like to check the code or if you would like to create your own website using this layout you can find the repository and documentation [here](https://github.com/bensampaio/bensampaio.github.io).
 		`,
 		"client" : [
@@ -39,62 +36,42 @@ export default {
 				"logo": jsLogo,
 			},
 			{
-				"id" : "responsive",
-				"url" : "",
-				"desc" : "Responsive",
-				"logo": responsiveLogo,
-			},
-			{
 				"id" : "sass",
 				"url" : "http://sass-lang.com/",
-				"desc" : "3.4",
+				"desc" : "SASS",
 				"logo": sassLogo,
 			},
 			{
-				"id" : "angularjs",
-				"url" : "https://angularjs.org/",
-				"desc" : "1.3",
-				"logo": angularLogo,
-			}
-		],
-		"server" : [
-			{
-				"id" : "nodejs",
-				"url" : "http://nodejs.org/",
-				"desc" : "0.10",
-				"logo": nodeLogo,
+				"id" : "react",
+				"url" : "https://reactjs.org/",
+				"desc" : "React",
+				"logo": reactLogo,
 			},
 			{
-				"id" : "express",
-				"url" : "http://expressjs.com/",
-				"desc" : "4",
-				"logo": expressLogo,
+				"id" : "react-router",
+				"url" : "",
+				"desc" : "React Router",
+				"logo": reactRouterLogo,
 			},
 			{
-				"id" : "linkedin",
-				"url" : "https://developer.linkedin.com/apis",
-				"desc" : "API",
-				"logo": linkedinLogo,
-			},
-			{
-				"id" : "json",
-				"url" : "http://www.json.org/",
-				"desc" : "JSON",
-				"logo": jsonLogo,
+				"id" : "fontawesome",
+				"url" : "https://fontawesome.com/",
+				"desc" : "Font Awesome",
+				"logo": fontawesomeLogo,
 			}
 		],
 		"tools" : [
 			{
-				"id" : "bower",
-				"url" : "http://bower.io/",
-				"desc" : "1.3",
-				"logo": bowerLogo,
+				"id" : "yarn",
+				"url" : "https://yarnpkg.com/",
+				"desc" : "Yarn",
+				"logo": yarnLogo,
 			},
 			{
-				"id" : "grunt",
-				"url" : "http://gruntjs.com/",
-				"desc" : "0.4.5",
-				"logo": gruntLogo,
+				"id" : "webpack",
+				"url" : "https://webpack.js.org/",
+				"desc" : "Webpack",
+				"logo": webpackLogo,
 			}
 		]
 	},
@@ -116,11 +93,6 @@ export default {
 			}
 		],
 		"others" : [
-			{
-				"name" : "Font Awesome",
-				"desc" : "icon set used almost on every section",
-				"url" : "http://fortawesome.github.io/Font-Awesome/"
-			},
 			{
 				"name" : "plamenj",
 				"desc" : "created the palette of colors used on the main website sections",

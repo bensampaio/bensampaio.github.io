@@ -29,12 +29,6 @@ const AboutScreen = React.memo(() => (
             {about.technologies.client.map((tech, index) => <Technology data={tech} key={index} />)}
         </HorizontalList>
 
-
-        <h3>Backend</h3>
-        <HorizontalList>
-            {about.technologies.server.map((tech, index) => <Technology data={tech} key={index} />)}
-        </HorizontalList>
-
         <h3>Tools</h3>
         <HorizontalList>
             {about.technologies.tools.map((tech, index) => <Technology data={tech} key={index} />)}
