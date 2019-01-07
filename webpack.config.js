@@ -94,6 +94,7 @@ module.exports = {
     output: {
         path: __dirname,
         filename: path.join('public', 'js', '[name].[hash].js'),
+        chunkFilename: path.join('public', 'js', '[id].[chunkhash].js'),
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -109,7 +110,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: path.join('public', 'css', '[name].[hash].css'),
-            chunkFilename: path.join('public', 'css', '[id].[hash].css'),
+            chunkFilename: path.join('public', 'css', '[id].[chunkhash].css'),
         }),
         new OptimizeCssAssetsPlugin({}),
     ],
