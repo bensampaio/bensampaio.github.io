@@ -66,7 +66,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'img/[name].[hash].[ext]',
+                            name: path.join('public', 'img', '[name].[hash].[ext]'),
                         },
                     },
                 ],
@@ -76,23 +76,28 @@ module.exports = {
     optimization: {
         splitChunks: {
             cacheGroups: {
-                commons: {
+                react: {
+                    chunks: 'initial',
+                    enforce: true,
+                    name: 'react',
+                    test: /node_modules\/react/,
+                },
+                others: {
                     chunks: 'initial',
                     enforce: true,
                     name: 'vendor',
-                    test: /node_modules/,
+                    test: /node_modules\/(?!react)/,
                 },
             },
         },
     },
     output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'js/[name].[hash].js',
+        path: __dirname,
+        filename: path.join('public', 'js', '[name].[hash].js'),
     },
     plugins: [
         new HtmlWebpackPlugin({
             favicon: path.join(__dirname, 'src', 'favicon.ico'),
-            filename: path.join('..', 'index.html'),
             meta: {
                 author: metadata.author,
                 description: metadata.description,
@@ -103,8 +108,8 @@ module.exports = {
             title: '',
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[hash].css',
-            chunkFilename: 'css/[id].[hash].css',
+            filename: path.join('public', 'css', '[name].[hash].css'),
+            chunkFilename: path.join('public', 'css', '[id].[hash].css'),
         }),
         new OptimizeCssAssetsPlugin({}),
     ],
