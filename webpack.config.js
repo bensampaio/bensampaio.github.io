@@ -92,6 +92,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             favicon: path.join(__dirname, 'src', 'favicon.ico'),
+            filename: path.join('..', 'index.html'),
             meta: {
                 author: metadata.author,
                 description: metadata.description,
