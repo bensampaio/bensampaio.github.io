@@ -1,4 +1,4 @@
-@import '../../layout/Sidebar/vars';
+@import '../../layout/Menu/vars';
 
 $iconSize: 10vh;
 
@@ -6,7 +6,7 @@ $iconSize: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: calc(#{(100vh - $iconSize) / 2} - #{$sidebarVSpacing}) 0;
+  margin: calc(#{(100vh - $iconSize) / 2} - #{$menuVSpacing}) 0;
 }
 
 .icon {

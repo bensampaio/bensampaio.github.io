@@ -28,6 +28,7 @@ module.exports = {
                                 '@babel/plugin-syntax-dynamic-import'
                             ],
                             presets: [
+                                '@babel/preset-flow',
                                 ['@babel/preset-env', {
                                     useBuiltIns: 'usage',
                                 }],

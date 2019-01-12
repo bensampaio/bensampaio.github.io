@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import experience from '../../../db/experience';
@@ -9,7 +11,9 @@ import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import styles from './ExperienceScreen.scss';
 
-const ExperienceScreen = React.memo(() => (
+type ExperienceScreenProps = {};
+
+const ExperienceScreen = () => (
     <Screen title={'Experience'}>
         <VerticalList>
             {experience.map((position, index) => (
@@ -32,6 +36,6 @@ const ExperienceScreen = React.memo(() => (
             ))}
         </VerticalList>
     </Screen>
-));
+);
 
-export default ExperienceScreen;
+export default React.memo<ExperienceScreenProps>(ExperienceScreen);

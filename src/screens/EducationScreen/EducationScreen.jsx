@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import education from '../../../db/education';
@@ -9,7 +11,9 @@ import Text from '../../shared/Text';
 import styles from './EducationScreen.scss';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
-const EducationScreen = React.memo(() => (
+type EducationScreenProps = {};
+
+const EducationScreen = () => (
     <Screen>
         <VerticalList>
             {education.map((degree, index) => (
@@ -32,6 +36,6 @@ const EducationScreen = React.memo(() => (
             ))}
         </VerticalList>
     </Screen>
-));
+);
 
-export default EducationScreen;
+export default React.memo<EducationScreenProps>(EducationScreen);

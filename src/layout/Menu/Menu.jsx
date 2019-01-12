@@ -1,12 +1,19 @@
+// @flow
+
 import classnames from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import me from '../../../db/me';
-import styles from './Sidebar.scss';
+import styles from './Menu.scss';
 
-const Sidebar = React.memo(({ expanded, onToggle }) => {
+type MenuProps = {
+    expanded: boolean,
+    onToggle: (SyntheticEvent<HTMLButtonElement>) => void,
+};
+
+const Menu = ({ expanded, onToggle }: MenuProps) => {
     const containerClassNames = classnames(styles.container, {
         [styles.containerExpanded]: expanded,
         [styles.containerCollapsed]: !expanded,
@@ -15,11 +22,11 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
     return (
         <aside className={containerClassNames}>
             <button className={classnames(styles.toggleButton, styles.itemHover)} title={expanded ? 'Collapse' : 'Expand'} onClick={onToggle}>
-                <FontAwesomeIcon fixedWidth={true} icon={'bars'} />
+                <FontAwesomeIcon aria-hidden={true} fixedWidth={true} icon={'bars'} />
             </button>
             <header className={styles.header}>
                 <NavLink activeClassName={styles.linkHome} className={classnames(styles.item, styles.link, styles.headerLink)} exact={true} to={'/'}>
-                    <img className={styles.headerImage} src={me.picture} />
+                    <img alt={''} aria-hidden={true} className={styles.headerImage} src={me.picture} />
                     <h1 className={styles.headerHeading}>{me.fullName}</h1>
                 </NavLink>
             </header>
@@ -27,19 +34,19 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
                 <ul className={styles.list}>
                     <li>
                         <NavLink activeClassName={classnames(styles.itemActive, styles.linkExperience)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/experience'}>
-                            <FontAwesomeIcon fixedWidth={true} icon={'file'} />
+                            <FontAwesomeIcon aria-hidden={true} fixedWidth={true} icon={'file'} />
                             <span className={styles.itemName}>Experience</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink activeClassName={classnames(styles.itemActive, styles.linkEducation)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/education'}>
-                            <FontAwesomeIcon fixedWidth={true} icon={'graduation-cap'} />
+                            <FontAwesomeIcon aria-hidden={true} fixedWidth={true} icon={'graduation-cap'} />
                             <span className={styles.itemName}>Education</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink activeClassName={classnames(styles.itemActive, styles.linkProjects)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/projects'}>
-                            <FontAwesomeIcon fixedWidth={true} icon={'code'} />
+                            <FontAwesomeIcon aria-hidden={true} fixedWidth={true} icon={'code'} />
                             <span className={styles.itemName}>Projects</span>
                         </NavLink>
                     </li>
@@ -50,13 +57,13 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
                     <ul className={styles.list}>
                         <li>
                             <NavLink activeClassName={classnames(styles.itemActive, styles.linkAbout)} className={classnames(styles.item, styles.itemHover, styles.link)} to={'/about'}>
-                                <FontAwesomeIcon fixedWidth={true} icon={'info-circle'} />
+                                <FontAwesomeIcon aria-hidden={true} fixedWidth={true} icon={'info-circle'} />
                                 <span className={styles.itemName}>About</span>
                             </NavLink>
                         </li>
                         <li>
                             <div className={styles.item}>
-                                <FontAwesomeIcon fixedWidth={true} icon={['far', 'copyright']} />
+                                <FontAwesomeIcon aria-hidden={true} fixedWidth={true} icon={['far', 'copyright']} />
                                 <span className={styles.itemName}>
                                     {new Date().getFullYear()} {me.fullName}
                                 </span>
@@ -67,6 +74,6 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
             </footer>
         </aside>
     );
-});
+};
 
-export default Sidebar;
+export default React.memo<MenuProps>(Menu);

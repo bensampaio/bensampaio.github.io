@@ -1,12 +1,24 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 
 import ErrorScreen from '../../screens/ErrorScreen';
-import Sidebar from '../Sidebar';
+import Menu from '../Menu';
 import Content from '../Content';
 
-class App extends PureComponent {
+type AppProps = {
+    location: Object,
+};
 
-    constructor(props) {
+type AppState = {
+    error: ?Object,
+    errorInfo: ?Object,
+    sidebar: boolean,
+};
+
+class App extends PureComponent<AppProps, AppState> {
+
+    constructor(props: AppProps) {
         super(props);
 
         this.state = {
@@ -16,14 +28,15 @@ class App extends PureComponent {
             sidebar: !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         };
 
+        //$FlowFixMe
         this.toggleSidebar = this.toggleSidebar.bind(this);
     }
 
-    componentDidCatch(error, errorInfo) {
+    componentDidCatch(error: ?Object, errorInfo: ?Object) {
         this.setState({ error, errorInfo });
     }
 
-    toggleSidebar(event) {
+    toggleSidebar(event: SyntheticEvent<HTMLButtonElement>) {
         event.currentTarget.blur();
 
         this.setState((prevState) => ({
@@ -41,7 +54,7 @@ class App extends PureComponent {
 
         return (
             <>
-                <Sidebar location={location} expanded={sidebar} onToggle={this.toggleSidebar} />
+                <Menu location={location} expanded={sidebar} onToggle={this.toggleSidebar} />
                 <Content location={location} expanded={!sidebar} />
             </>
         );

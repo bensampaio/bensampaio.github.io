@@ -1,7 +1,24 @@
+// @flow
+
 import React from 'react';
 
-const Period = ({ from, to }) => {
-    const { lang } = document.documentElement;
+type PeriodProps = {
+    from: {
+        year: number,
+        month: number,
+        day: number,
+    },
+    to: {
+        year: number,
+        month: number,
+        day: number,
+    },
+};
+
+const Period = ({ from, to }: PeriodProps) => {
+    const { documentElement } = document;
+
+    const lang = documentElement ? documentElement.lang : 'en';
 
     const fromDate = new Date();
     const toDate = new Date();
@@ -39,6 +56,6 @@ const Period = ({ from, to }) => {
             {fromText} - {toText}
         </span>
     );
-}
+};
 
-export default Period;
+export default React.memo<PeriodProps>(Period);

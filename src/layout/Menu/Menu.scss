@@ -12,17 +12,17 @@
   height: 100%;
   left: 0;
   overflow-y: auto;
-  padding: $sidebarVSpacing 0;
+  padding: $menuVSpacing 0;
   position: fixed;
   top: 0;
-  transition: width $sidebarAnimationDuration ease-in-out;
+  transition: width $menuAnimationDuration ease-in-out;
 
   &Collapsed {
-    width: $sidebarCollapsedWidth;
+    width: $menuCollapsedWidth;
   }
 
   &Expanded {
-    width: $sidebarExpandedWidth;
+    width: $menuExpandedWidth;
   }
 }
 
@@ -33,8 +33,8 @@
   color: inherit;
   cursor: pointer;
   font-size: 1rem;
-  margin: 0 $sidebarLinkHSpacing - $sidebarToggleButtonSpacing;
-  padding: $sidebarToggleButtonSpacing;
+  margin: 0 $menuLinkHSpacing - $menuToggleButtonSpacing;
+  padding: $menuToggleButtonSpacing;
 
   .containerCollapsed & {
     align-self: center;
@@ -47,7 +47,7 @@
 
 .header {
   flex: 0 0 auto;
-  margin-bottom: $sidebarVSpacing;
+  margin-bottom: $menuVSpacing;
   position: relative;
 
   &Link {
@@ -57,19 +57,19 @@
   }
 
   &Image {
-    border: $sidebarHeaderPictureBorder solid currentColor;
+    border: $menuHeaderPictureBorder solid currentColor;
     border-radius: 50%;
-    height: $sidebarHeaderPictureSize;
-    width: $sidebarHeaderPictureSize;
+    height: $menuHeaderPictureSize;
+    width: $menuHeaderPictureSize;
 
     .containerCollapsed & {
-      height: $sidebarHeaderPictureBorder + $sidebarItemIconSize;
-      width: $sidebarHeaderPictureBorder + $sidebarItemIconSize;
+      height: $menuHeaderPictureBorder + $menuItemIconSize;
+      width: $menuHeaderPictureBorder + $menuItemIconSize;
     }
   }
 
   &Heading {
-    margin: $sidebarVSpacing 0 0;
+    margin: $menuVSpacing 0 0;
     white-space: nowrap;
 
     .containerCollapsed & {
@@ -84,7 +84,7 @@
 
 .footer {
   flex: 0 0 auto;
-  margin-top: $sidebarVSpacing;
+  margin-top: $menuVSpacing;
 
   .itemName {
     font-size: $tinyText;
@@ -99,10 +99,10 @@
 
 .item {
   display: flex;
-  padding: $sidebarLinkVSpacing $sidebarLinkHSpacing;
+  padding: $menuLinkVSpacing $menuLinkHSpacing;
 
   &Name {
-    margin-left: $sidebarLinkHSpacing;
+    margin-left: $menuLinkHSpacing;
     white-space: nowrap;
 
     .containerCollapsed & {

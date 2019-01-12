@@ -1,3 +1,5 @@
+// @flow
+
 import classnames from 'classnames';
 import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,20 +11,26 @@ import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import styles from './InfoScreen.scss';
 
-class InfoScreen extends PureComponent {
+type InfoScreenProps = {};
+type InfoScreenState = {
+    showExtraSkills: boolean,
+};
 
-    constructor(props) {
+class InfoScreen extends PureComponent<InfoScreenProps, InfoScreenState> {
+
+    constructor(props: InfoScreenProps) {
         super(props);
 
         this.state = {
             showExtraSkills: false,
         };
 
+        //$FlowFixMe
         this.toggleExtraSkills = this.toggleExtraSkills.bind(this);
     }
 
     toggleExtraSkills() {
-        this.setState((prevState) => ({
+        this.setState((prevState: InfoScreenState): InfoScreenState => ({
             showExtraSkills: !prevState.showExtraSkills,
         }));
     }
@@ -42,7 +50,7 @@ class InfoScreen extends PureComponent {
                     {info.skills.slice(0, 15).map(({ icon, name }, index) => (
                         <HorizontalListItem key={index}>
                             <strong>
-                                {icon && <FontAwesomeIcon icon={['fab', icon]} />} {name}
+                                {icon && <FontAwesomeIcon aria-hidden={true} icon={['fab', icon]} />} {name}
                             </strong>
                         </HorizontalListItem>
                     ))}
@@ -53,14 +61,14 @@ class InfoScreen extends PureComponent {
                                 <HorizontalList>
                                     {info.skills.slice(15).map(({ icon, name }, index) => (
                                         <HorizontalListItem key={index}>
-                                            {icon && <FontAwesomeIcon icon={['fab', icon]} />} {name}
+                                            {icon && <FontAwesomeIcon aria-hidden={true} icon={['fab', icon]} />} {name}
                                         </HorizontalListItem>
                                     ))}
                                 </HorizontalList>
                             </div>
-                            <button className={styles.extraSkillsButton} onClick={this.toggleExtraSkills}>
-                                <FontAwesomeIcon className={classnames({ [styles.extraSkillsButtonIconHide]: showExtraSkills })} icon={'chevron-down'} />
-                                <FontAwesomeIcon className={classnames({ [styles.extraSkillsButtonIconHide]: !showExtraSkills })} icon={'chevron-up'} />
+                            <button className={styles.extraSkillsButton} title={'Expand / Collapse'} onClick={this.toggleExtraSkills}>
+                                <FontAwesomeIcon aria-hidden={true} className={classnames({ [styles.extraSkillsButtonIconHide]: showExtraSkills })} icon={'chevron-down'} />
+                                <FontAwesomeIcon aria-hidden={true} className={classnames({ [styles.extraSkillsButtonIconHide]: !showExtraSkills })} icon={'chevron-up'} />
                             </button>
                         </div>
                     </HorizontalListItem>
@@ -71,7 +79,7 @@ class InfoScreen extends PureComponent {
                     {info.languages.map((lang, index) => (
                         <HorizontalListItem key={index}>
                             <div className={styles.language}>
-                                <img className={styles.languageFlag} src={lang.flag} />
+                                <img alt={''} aria-hidden={true} className={styles.languageFlag} src={lang.flag} />
                                 <div>
                                     <div>
                                         <strong>{lang.name}</strong>
@@ -90,7 +98,7 @@ class InfoScreen extends PureComponent {
                     {info.pages.map(({ icon, name, url }, index) => (
                         <HorizontalListItem key={index}>
                             <ExternalLink className={styles.socialNetworkLink} to={url}>
-                                <FontAwesomeIcon className={styles.socialNetworkLinkIcon} icon={['fab', icon]} />
+                                <FontAwesomeIcon aria-hidden={true} className={styles.socialNetworkLinkIcon} icon={['fab', icon]} />
                                 <span>
                                     {name}
                                 </span>

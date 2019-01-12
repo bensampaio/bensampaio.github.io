@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,11 +9,13 @@ import ExternalLink from '../../shared/ExternalLink';
 
 const handleClick = () => location.reload();
 
-const ErrorScreen = React.memo(() => (
+type ErrorScreenProps = {};
+
+const ErrorScreen = () => (
     <Screen>
         <div className={styles.container}>
             <h2 className={styles.heading}>Something went wrong</h2>
-            <FontAwesomeIcon className={styles.icon} icon={'bug'} />
+            <FontAwesomeIcon aria-hidden={true} className={styles.icon} icon={'bug'} />
             <div className={styles.buttonContainer}>
                 <button onClick={handleClick}>Try again</button>
             </div>
@@ -20,6 +24,6 @@ const ErrorScreen = React.memo(() => (
             </div>
         </div>
     </Screen>
-));
+);
 
-export default ErrorScreen;
+export default React.memo<ErrorScreenProps>(ErrorScreen);

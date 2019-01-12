@@ -1,9 +1,16 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import React, { PureComponent, type Node } from 'react';
 
 import me from '../../../db/me';
 import styles from './Screen.scss';
 
-class Screen extends PureComponent {
+type ScreenProps = {
+    children: Node,
+    title?: string,
+};
+
+class Screen extends PureComponent<ScreenProps, {}> {
 
     componentDidMount() {
         const { title } = this.props;

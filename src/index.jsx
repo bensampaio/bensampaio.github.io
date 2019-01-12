@@ -1,6 +1,8 @@
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBars,
@@ -71,8 +73,10 @@ library.add(
     faWindows,
 );
 
-ReactDOM.render(
-    <BrowserRouter>
-        <Route component={App} />
-    </BrowserRouter>
-, rootElement);
+if (rootElement instanceof HTMLElement) {
+    ReactDOM.render((
+        <HashRouter>
+            <Route component={App}/>
+        </HashRouter>
+    ), rootElement);
+}

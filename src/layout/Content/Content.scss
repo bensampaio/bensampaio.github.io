@@ -1,15 +1,15 @@
 @import '../../shared/grid';
-@import '../Sidebar/vars';
+@import '../Menu/vars';
 
 .container {
-  margin-left: $sidebarCollapsedWidth;
+  margin-left: $menuCollapsedWidth;
   min-height: 100vh;
-  padding: $sidebarVSpacing $sidebarHSpacing;
-  transition: margin-left $sidebarAnimationDuration ease-in-out;
+  padding: $menuVSpacing $menuHSpacing;
+  transition: margin-left $menuAnimationDuration ease-in-out;
 
   &Collapsed {
     @include md-up {
-      margin-left: $sidebarExpandedWidth;
+      margin-left: $menuExpandedWidth;
     }
   }
 }
