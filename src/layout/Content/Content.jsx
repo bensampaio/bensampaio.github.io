@@ -1,3 +1,5 @@
+// @flow
+
 import classnames from 'classnames';
 import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
@@ -12,7 +14,11 @@ const InfoScreen = lazy(() => import('../../screens/InfoScreen'));
 const NotFoundScreen = lazy(() => import('../../screens/NotFoundScreen'));
 const ProjectsScreen = lazy(() => import('../../screens/ProjectsScreen'));
 
-const Content = React.memo(({ expanded }) => {
+type ContentProps = {
+    expanded: boolean,
+};
+
+const Content = ({ expanded }: ContentProps) => {
     const containerClassNames = classnames(styles.container, {
         [styles.containerCollapsed]: !expanded,
         [styles.containerExpanded]: expanded,
@@ -32,6 +38,6 @@ const Content = React.memo(({ expanded }) => {
             </Suspense>
         </main>
     );
-});
+};
 
-export default Content;
+export default React.memo<ContentProps>(Content);

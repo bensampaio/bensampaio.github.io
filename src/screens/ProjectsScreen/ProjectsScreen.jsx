@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import projects from '../../../db/projects';
@@ -9,7 +11,9 @@ import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import YouTube from '../../shared/YouTube';
 import styles from './ProjectsScreen.scss';
 
-const ProjectsScreen = React.memo(() => (
+type ProjectsScreenProps = {};
+
+const ProjectsScreen = () => (
     <Screen>
         <VerticalList>
             {projects.map((project, index) => (
@@ -39,6 +43,6 @@ const ProjectsScreen = React.memo(() => (
             ))}
         </VerticalList>
     </Screen>
-));
+);
 
-export default ProjectsScreen;
+export default React.memo<ProjectsScreenProps>(ProjectsScreen);

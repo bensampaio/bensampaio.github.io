@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
@@ -71,8 +73,10 @@ library.add(
     faWindows,
 );
 
-ReactDOM.render(
-    <HashRouter>
-        <Route component={App} />
-    </HashRouter>
-, rootElement);
+if (rootElement instanceof HTMLElement) {
+    ReactDOM.render((
+        <HashRouter>
+            <Route component={App}/>
+        </HashRouter>
+    ), rootElement);
+}

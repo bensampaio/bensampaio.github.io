@@ -1,7 +1,9 @@
+// @flow
+
 import React from 'react';
 
-const YouTube = (props) => (
-    <iframe {...props} frameBorder="0" allowFullScreen></iframe>
+const YouTube = (props: HTMLIFrameElement) => (
+    <iframe {...props} frameBorder="0" allowFullScreen />
 );
 
-export default YouTube;
+export default React.memo<HTMLIFrameElement>(YouTube);

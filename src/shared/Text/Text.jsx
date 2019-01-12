@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import ExternalLink from '../ExternalLink';
@@ -44,12 +46,16 @@ const parseLinks = (line) => {
     return accumulator;
 };
 
+type TextProps = {
+    children: string,
+};
+
 /**
  * Converts markdown into a component tree (supports: links, lists and paragraphs).
  * @param {Object} props
  * @returns {Array}
  */
-const Text = ({ children }) => {
+const Text = ({ children }: TextProps) => {
     const lines = children.split(/\n/g);
 
     let currentList = null;
@@ -101,4 +107,4 @@ const Text = ({ children }) => {
     }, []);
 };
 
-export default Text;
+export default React.memo<TextProps>(Text);

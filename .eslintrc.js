@@ -5,6 +5,7 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
+        "plugin:flowtype/recommended",
         "plugin:react/recommended",
     ],
     "parser": "babel-eslint",
@@ -16,6 +17,7 @@ module.exports = {
         "sourceType": "module",
     },
     "plugins": [
+        "flowtype",
         "react",
     ],
     "rules": {
@@ -32,6 +34,7 @@ module.exports = {
             "single",
         ],
         "react/display-name": 0,
+        "react/prop-types": 0,
         "semi": [
             "error",
             "always",

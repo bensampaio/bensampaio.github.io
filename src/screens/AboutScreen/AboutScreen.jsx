@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import about from '../../../db/about';
@@ -7,16 +9,25 @@ import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import styles from './AboutScreen.scss';
 
-const Technology = ({ data }) => (
+type AboutScreenProps = {};
+
+type TechnologyProps = {
+    desc: string,
+    id: string,
+    logo: string,
+    url: string,
+};
+
+const Technology = React.memo<TechnologyProps>(({ desc, id, logo, url }: TechnologyProps) => (
     <HorizontalListItem>
-        <ExternalLink className={styles.techLink} to={data.url}>
-            <img alt={data.id} className={styles.techLogo} src={data.logo} />
-            <span className={styles.techName}>{data.desc}</span>
+        <ExternalLink className={styles.techLink} to={url}>
+            <img alt={id} className={styles.techLogo} src={logo} />
+            <span className={styles.techName}>{desc}</span>
         </ExternalLink>
     </HorizontalListItem>
-);
+));
 
-const AboutScreen = React.memo(() => (
+const AboutScreen = () => (
     <Screen>
         <h2>Goal</h2>
         <Text>{about.goal}</Text>
@@ -26,12 +37,12 @@ const AboutScreen = React.memo(() => (
 
         <h3>Frontend</h3>
         <HorizontalList>
-            {about.technologies.client.map((tech, index) => <Technology data={tech} key={index} />)}
+            {about.technologies.client.map((tech, index) => <Technology {...tech} key={index} />)}
         </HorizontalList>
 
         <h3>Tools</h3>
         <HorizontalList>
-            {about.technologies.tools.map((tech, index) => <Technology data={tech} key={index} />)}
+            {about.technologies.tools.map((tech, index) => <Technology {...tech} key={index} />)}
         </HorizontalList>
 
         <h2>Credits</h2>
@@ -70,6 +81,6 @@ const AboutScreen = React.memo(() => (
             ))}
         </HorizontalList>
     </Screen>
-));
+);
 
-export default AboutScreen;
+export default React.memo<AboutScreenProps>(AboutScreen);

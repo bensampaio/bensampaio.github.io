@@ -34,8 +34,12 @@
     "webpack-dev-server": "^3.1.14"
   },
   "devDependencies": {
+    "@babel/preset-flow": "^7.0.0",
+    "empty": "^0.10.1",
     "eslint": "^5.11.1",
+    "eslint-plugin-flowtype": "^3.2.1",
     "eslint-plugin-react": "^7.12.2",
+    "flow-bin": "^0.90.0",
     "stylelint": "^9.9.0",
     "stylelint-scss": "^3.4.4"
   },
