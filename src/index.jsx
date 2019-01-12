@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBars,
@@ -72,7 +72,7 @@ library.add(
 );
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <Route component={App} />
-    </BrowserRouter>
+    </HashRouter>
 , rootElement);
