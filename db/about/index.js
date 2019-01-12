@@ -1,4 +1,6 @@
+import babelLogo from './babel.png';
 import cssLogo from './css.png';
+import flowLogo from './flow.png';
 import htmlLogo from './html.png';
 import fontawesomeLogo from './fontawesome.png';
 import jsLogo from './js.png';
@@ -66,6 +68,18 @@ export default {
 				"url" : "https://yarnpkg.com/",
 				"desc" : "Yarn",
 				"logo": yarnLogo,
+			},
+			{
+				"id" : "babel",
+				"url" : "https://babeljs.io/",
+				"desc" : "Babel",
+				"logo": babelLogo,
+			},
+			{
+				"id" : "flow",
+				"url" : "https://flow.org/",
+				"desc" : "Flow",
+				"logo": flowLogo,
 			},
 			{
 				"id" : "webpack",
