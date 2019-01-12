@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import me from '../../../db/me';
-import styles from './Sidebar.scss';
+import styles from './Menu.scss';
 
-const Sidebar = React.memo(({ expanded, onToggle }) => {
+const Menu = React.memo(({ expanded, onToggle }) => {
     const containerClassNames = classnames(styles.container, {
         [styles.containerExpanded]: expanded,
         [styles.containerCollapsed]: !expanded,
@@ -69,4 +69,4 @@ const Sidebar = React.memo(({ expanded, onToggle }) => {
     );
 });
 
-export default Sidebar;
+export default Menu;

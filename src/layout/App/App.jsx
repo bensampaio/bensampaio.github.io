@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import ErrorScreen from '../../screens/ErrorScreen';
-import Sidebar from '../Sidebar';
+import Menu from '../Menu';
 import Content from '../Content';
 
 class App extends PureComponent {
@@ -41,7 +41,7 @@ class App extends PureComponent {
 
         return (
             <>
-                <Sidebar location={location} expanded={sidebar} onToggle={this.toggleSidebar} />
+                <Menu location={location} expanded={sidebar} onToggle={this.toggleSidebar} />
                 <Content location={location} expanded={!sidebar} />
             </>
         );
