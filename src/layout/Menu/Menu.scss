@@ -16,6 +16,7 @@
   position: fixed;
   top: 0;
   transition: width $menuAnimationDuration ease-in-out;
+  z-index: 1;
 
   &Collapsed {
     width: $menuCollapsedWidth;

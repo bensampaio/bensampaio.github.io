@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 
 import ErrorScreen from '../../screens/ErrorScreen';
+import { isMobile } from '../../shared/deviceHelper.mjs';
 import Menu from '../Menu';
 import Content from '../Content';
 
@@ -13,7 +14,7 @@ type AppProps = {
 type AppState = {
     error: ?Object,
     errorInfo: ?Object,
-    sidebar: boolean,
+    menu: boolean,
 };
 
 class App extends PureComponent<AppProps, AppState> {
@@ -24,29 +25,38 @@ class App extends PureComponent<AppProps, AppState> {
         this.state = {
             error: null,
             errorInfo: null,
-            // start the sidebar as expanded on desktop devices and collapsed on mobile devices
-            sidebar: !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+            // start the menu as expanded on desktop devices and collapsed on mobile devices
+            menu: !isMobile(),
         };
 
         //$FlowFixMe
-        this.toggleSidebar = this.toggleSidebar.bind(this);
+        this.handleMenuSelect = this.handleMenuSelect.bind(this);
+        this.handleMenuToggle = this.handleMenuToggle.bind(this);
     }
 
     componentDidCatch(error: ?Object, errorInfo: ?Object) {
         this.setState({ error, errorInfo });
     }
 
-    toggleSidebar(event: SyntheticEvent<HTMLButtonElement>) {
+    handleMenuSelect() {
+        if (isMobile()) {
+            this.setState({
+                menu: false,
+            });
+        }
+    }
+
+    handleMenuToggle(event: SyntheticEvent<HTMLButtonElement>) {
         event.currentTarget.blur();
 
         this.setState((prevState) => ({
-            sidebar: !prevState.sidebar,
+            menu: !prevState.menu,
         }));
     }
 
     render() {
         const { location } = this.props;
-        const { error, errorInfo, sidebar } = this.state;
+        const { error, errorInfo, menu } = this.state;
 
         if (error || errorInfo) {
             return <ErrorScreen />;
@@ -54,8 +64,8 @@ class App extends PureComponent<AppProps, AppState> {
 
         return (
             <>
-                <Menu location={location} expanded={sidebar} onToggle={this.toggleSidebar} />
-                <Content location={location} expanded={!sidebar} />
+                <Menu location={location} expanded={menu} onSelect={this.handleMenuSelect} onToggle={this.handleMenuToggle} />
+                <Content location={location} expanded={!menu} />
             </>
         );
     }
