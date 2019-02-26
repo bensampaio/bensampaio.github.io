@@ -1,7 +1,7 @@
 // @flow
 
 import classnames from 'classnames';
-import React from 'react';
+import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -77,4 +77,4 @@ const Menu = ({ expanded, onSelect, onToggle }: MenuProps) => {
     );
 };
 
-export default React.memo<MenuProps>(Menu);
+export default memo<MenuProps>(Menu);

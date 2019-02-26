@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import education from '../../../db/education';
 import ExternalLink from '../../shared/ExternalLink';
@@ -14,7 +14,7 @@ import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 type EducationScreenProps = {};
 
 const EducationScreen = () => (
-    <Screen>
+    <Screen title={'Education'}>
         <VerticalList>
             {education.map((degree, index) => (
                 <VerticalListItem key={index}>
@@ -38,4 +38,4 @@ const EducationScreen = () => (
     </Screen>
 );
 
-export default React.memo<EducationScreenProps>(EducationScreen);
+export default memo<EducationScreenProps>(EducationScreen);

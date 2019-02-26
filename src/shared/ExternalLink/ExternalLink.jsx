@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react';
+import React, { memo, type Node } from 'react';
 
 type ExternalLinkProps = {
     ...HTMLAnchorElement,
@@ -14,4 +14,4 @@ const ExternalLink = ({ children, to, ...rest }: ExternalLinkProps) => (
     </a>
 );
 
-export default React.memo<ExternalLinkProps>(ExternalLink);
+export default memo<ExternalLinkProps>(ExternalLink);

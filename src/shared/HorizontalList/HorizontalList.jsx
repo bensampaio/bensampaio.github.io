@@ -1,13 +1,13 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import styles from './HorizontalList.scss';
 
-export const HorizontalList = React.memo<HTMLUListElement>((props: HTMLUListElement) => (
+export const HorizontalList = memo<HTMLUListElement>((props: HTMLUListElement) => (
     <ul {...props} className={styles.list} />
 ));
 
-export const HorizontalListItem = React.memo<HTMLLIElement>((props: HTMLLIElement) => (
+export const HorizontalListItem = memo<HTMLLIElement>((props: HTMLLIElement) => (
     <li {...props} className={styles.item} />
 ));

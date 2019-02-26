@@ -31,6 +31,7 @@ class App extends PureComponent<AppProps, AppState> {
 
         //$FlowFixMe
         this.handleMenuSelect = this.handleMenuSelect.bind(this);
+        //$FlowFixMe
         this.handleMenuToggle = this.handleMenuToggle.bind(this);
     }
 

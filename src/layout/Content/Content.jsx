@@ -1,7 +1,7 @@
 // @flow
 
 import classnames from 'classnames';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, memo, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import SpinnerScreen from '../../screens/SpinnerScreen';
@@ -40,4 +40,4 @@ const Content = ({ expanded }: ContentProps) => {
     );
 };
 
-export default React.memo<ContentProps>(Content);
+export default memo<ContentProps>(Content);

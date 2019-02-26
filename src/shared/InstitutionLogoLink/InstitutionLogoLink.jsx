@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import ExternalLink from '../ExternalLink';
 import styles from './InstitutionLogoLink.scss';
@@ -17,4 +17,4 @@ const InstitutionLogoLink = ({ logo, name, url }: InstitutionLogoLinkProps) => (
     </ExternalLink>
 );
 
-export default React.memo<InstitutionLogoLinkProps>(InstitutionLogoLink);
+export default memo<InstitutionLogoLinkProps>(InstitutionLogoLink);

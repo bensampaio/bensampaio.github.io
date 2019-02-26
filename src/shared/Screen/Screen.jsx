@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PureComponent, type Node } from 'react';
+import React, { memo, useEffect, type Node } from 'react';
 
 import me from '../../../db/me';
 import styles from './Screen.scss';
@@ -10,32 +10,24 @@ type ScreenProps = {
     title?: string,
 };
 
-class Screen extends PureComponent<ScreenProps, {}> {
-
-    componentDidMount() {
-        const { title } = this.props;
-
+const Screen = ({ children, title }: ScreenProps) => {
+    useEffect(() => {
         if (title) {
             document.title = `${title} | ${me.fullName}`;
         } else {
             document.title = me.fullName;
         }
-    }
 
-    componentWillUnmount() {
-        document.title = me.fullName;
-    }
+        return () => {
+            document.title = me.fullName;
+        };
+    });
 
-    render() {
-        const { children } = this.props;
+    return (
+        <article className={styles.container}>
+            {children}
+        </article>
+    );
+};
 
-        return (
-            <article className={styles.container}>
-                {children}
-            </article>
-        );
-    }
-
-}
-
-export default Screen;
+export default memo<ScreenProps>(Screen);

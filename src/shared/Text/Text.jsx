@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import ExternalLink from '../ExternalLink';
 
@@ -107,4 +107,4 @@ const Text = ({ children }: TextProps) => {
     }, []);
 };
 
-export default React.memo<TextProps>(Text);
+export default memo<TextProps>(Text);

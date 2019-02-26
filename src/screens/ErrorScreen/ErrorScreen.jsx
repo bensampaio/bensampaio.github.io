@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
@@ -12,7 +12,7 @@ const handleClick = () => location.reload();
 type ErrorScreenProps = {};
 
 const ErrorScreen = () => (
-    <Screen>
+    <Screen title={'Error'}>
         <div className={styles.container}>
             <h2 className={styles.heading}>Something went wrong</h2>
             <FontAwesomeIcon aria-hidden={true} className={styles.icon} icon={'bug'} />
@@ -26,4 +26,4 @@ const ErrorScreen = () => (
     </Screen>
 );
 
-export default React.memo<ErrorScreenProps>(ErrorScreen);
+export default memo<ErrorScreenProps>(ErrorScreen);

@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
@@ -9,7 +9,7 @@ import styles from './NotFoundScreen.scss';
 type NotFoundScreenProps = {};
 
 const NotFoundScreen = () => (
-    <Screen>
+    <Screen title={'Not found'}>
         <div className={styles.container}>
             <h2 className={styles.heading}>Page not found</h2>
             <FontAwesomeIcon aria-hidden={true} className={styles.icon} icon={['far', 'frown-open']} />
@@ -17,4 +17,4 @@ const NotFoundScreen = () => (
     </Screen>
 );
 
-export default React.memo<NotFoundScreenProps>(NotFoundScreen);
+export default memo<NotFoundScreenProps>(NotFoundScreen);
