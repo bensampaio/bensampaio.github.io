@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 type PeriodProps = {
     from: {
@@ -58,4 +58,4 @@ const Period = ({ from, to }: PeriodProps) => {
     );
 };
 
-export default React.memo<PeriodProps>(Period);
+export default memo<PeriodProps>(Period);

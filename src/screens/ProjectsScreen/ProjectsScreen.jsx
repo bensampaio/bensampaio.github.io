@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import projects from '../../../db/projects';
 import ExternalLink from '../../shared/ExternalLink';
@@ -14,7 +14,7 @@ import styles from './ProjectsScreen.scss';
 type ProjectsScreenProps = {};
 
 const ProjectsScreen = () => (
-    <Screen>
+    <Screen title={'Projects'}>
         <VerticalList>
             {projects.map((project, index) => (
                 <VerticalListItem key={index}>
@@ -45,4 +45,4 @@ const ProjectsScreen = () => (
     </Screen>
 );
 
-export default React.memo<ProjectsScreenProps>(ProjectsScreen);
+export default memo<ProjectsScreenProps>(ProjectsScreen);

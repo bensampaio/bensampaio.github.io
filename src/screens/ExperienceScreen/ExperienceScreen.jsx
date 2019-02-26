@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import experience from '../../../db/experience';
 import ExternalLink from '../../shared/ExternalLink';
@@ -38,4 +38,4 @@ const ExperienceScreen = () => (
     </Screen>
 );
 
-export default React.memo<ExperienceScreenProps>(ExperienceScreen);
+export default memo<ExperienceScreenProps>(ExperienceScreen);

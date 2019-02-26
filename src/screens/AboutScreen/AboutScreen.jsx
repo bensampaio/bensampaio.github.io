@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import about from '../../../db/about';
 import ExternalLink from '../../shared/ExternalLink';
@@ -18,7 +18,7 @@ type TechnologyProps = {
     url: string,
 };
 
-const Technology = React.memo<TechnologyProps>(({ desc, id, logo, url }: TechnologyProps) => (
+const Technology = memo<TechnologyProps>(({ desc, id, logo, url }: TechnologyProps) => (
     <HorizontalListItem>
         <ExternalLink className={styles.techLink} to={url}>
             <img alt={id} className={styles.techLogo} src={logo} />
@@ -28,7 +28,7 @@ const Technology = React.memo<TechnologyProps>(({ desc, id, logo, url }: Technol
 ));
 
 const AboutScreen = () => (
-    <Screen>
+    <Screen title={'About'}>
         <h2>Goal</h2>
         <Text>{about.goal}</Text>
 
@@ -83,4 +83,4 @@ const AboutScreen = () => (
     </Screen>
 );
 
-export default React.memo<AboutScreenProps>(AboutScreen);
+export default memo<AboutScreenProps>(AboutScreen);

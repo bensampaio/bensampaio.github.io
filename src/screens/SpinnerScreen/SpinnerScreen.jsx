@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
@@ -9,7 +9,7 @@ import styles from './SpinnerScreen.scss';
 type SpinnerScreenProps = {};
 
 const SpinnerScreen = () => (
-    <Screen>
+    <Screen title={'Waiting'}>
         <div className={styles.container}>
             <FontAwesomeIcon
                 aria-hidden={true}
@@ -23,4 +23,4 @@ const SpinnerScreen = () => (
     </Screen>
 );
 
-export default React.memo<SpinnerScreenProps>(SpinnerScreen);
+export default memo<SpinnerScreenProps>(SpinnerScreen);
