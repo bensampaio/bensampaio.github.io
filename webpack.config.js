@@ -30,6 +30,7 @@ module.exports = {
                             presets: [
                                 '@babel/preset-flow',
                                 ['@babel/preset-env', {
+                                    corejs: 3,
                                     useBuiltIns: 'usage',
                                 }],
                                 '@babel/preset-react',
