@@ -47,6 +47,7 @@
   "scripts": {
     "build:dev": "NODE_ENV=development webpack-dev-server --history-api-fallback",
     "build:prd": "rm -rf public/* && NODE_ENV=production webpack",
+    "format:js": "prettier 'src/**/*.{mjs,js,jsx}'",
     "lint:css": "stylelint 'src/**/*.{css,scss}'",
     "lint:js": "eslint 'src/**/*.{mjs,js,jsx}'"
   },
