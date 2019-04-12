@@ -95,7 +95,7 @@ module.exports = {
     },
     output: {
         path: __dirname,
-        filename: path.join('public', 'js', '[name].[hash].js'),
+        filename: path.join('public', 'js', '[name].[chunkhash].js'),
         chunkFilename: path.join('public', 'js', '[id].[chunkhash].js'),
     },
     plugins: [
@@ -111,8 +111,8 @@ module.exports = {
             title: '',
         }),
         new MiniCssExtractPlugin({
-            filename: path.join('public', 'css', '[name].[hash].css'),
-            chunkFilename: path.join('public', 'css', '[id].[chunkhash].css'),
+            filename: path.join('public', 'css', '[name].[contenthash].css'),
+            chunkFilename: path.join('public', 'css', '[id].[contenthash].css'),
         }),
         new OptimizeCssAssetsPlugin({}),
     ],
