@@ -29,6 +29,8 @@ const Technology = memo<TechnologyProps>(({ desc, id, logo, url }: TechnologyPro
 
 const AboutScreen = () => (
     <Screen title={'About'}>
+        <h1>About</h1>
+        
         <h2>Goal</h2>
         <Text>{about.goal}</Text>
 

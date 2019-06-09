@@ -3,7 +3,6 @@
 import React, { PureComponent } from 'react';
 
 import ErrorScreen from '../../screens/ErrorScreen';
-import { isMobile } from '../../shared/deviceHelper.mjs';
 import Menu from '../Menu';
 import Content from '../Content';
 
@@ -25,39 +24,16 @@ class App extends PureComponent<AppProps, AppState> {
         this.state = {
             error: null,
             errorInfo: null,
-            // start the menu as expanded on desktop devices and collapsed on mobile devices
-            menu: !isMobile(),
         };
-
-        //$FlowFixMe
-        this.handleMenuSelect = this.handleMenuSelect.bind(this);
-        //$FlowFixMe
-        this.handleMenuToggle = this.handleMenuToggle.bind(this);
     }
 
     componentDidCatch(error: ?Object, errorInfo: ?Object) {
         this.setState({ error, errorInfo });
     }
 
-    handleMenuSelect() {
-        if (isMobile()) {
-            this.setState({
-                menu: false,
-            });
-        }
-    }
-
-    handleMenuToggle(event: SyntheticEvent<HTMLButtonElement>) {
-        event.currentTarget.blur();
-
-        this.setState((prevState) => ({
-            menu: !prevState.menu,
-        }));
-    }
-
     render() {
         const { location } = this.props;
-        const { error, errorInfo, menu } = this.state;
+        const { error, errorInfo } = this.state;
 
         if (error || errorInfo) {
             return <ErrorScreen />;
@@ -65,8 +41,8 @@ class App extends PureComponent<AppProps, AppState> {
 
         return (
             <>
-                <Menu location={location} expanded={menu} onSelect={this.handleMenuSelect} onToggle={this.handleMenuToggle} />
-                <Content location={location} expanded={!menu} />
+                <Menu location={location} />
+                <Content location={location} />
             </>
         );
     }

@@ -2,14 +2,8 @@
 @import '../Menu/vars';
 
 .container {
-  margin-left: $menuCollapsedWidth;
+  margin-top: 3.5rem;
   min-height: 100vh;
-  padding: $menuVSpacing $menuHSpacing;
+  padding: $menuVSpacing * 2 $menuHSpacing;
   transition: margin-left $menuAnimationDuration ease-in-out;
-
-  &Collapsed {
-    @include md-up {
-      margin-left: $menuExpandedWidth;
-    }
-  }
 }

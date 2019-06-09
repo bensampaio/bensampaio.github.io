@@ -1,12 +1,9 @@
-@import '../../layout/Menu/vars';
-
 $iconSize: 10vh;
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: calc(#{(100vh - $iconSize) / 2} - #{$menuVSpacing}) 0;
 }
 
 .icon {
