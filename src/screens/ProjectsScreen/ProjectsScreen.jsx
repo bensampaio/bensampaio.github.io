@@ -15,6 +15,7 @@ type ProjectsScreenProps = {};
 
 const ProjectsScreen = () => (
     <Screen title={'Projects'}>
+        <h1>Projects</h1>
         <VerticalList>
             {projects.map((project, index) => (
                 <VerticalListItem key={index}>

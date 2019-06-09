@@ -1,29 +1,23 @@
 @import '../../shared/anchor';
 @import '../../shared/color';
+@import '../../shared/grid';
 @import '../../shared/text';
 @import './vars';
 
 .container {
   background-color: $gray3;
-  bottom: 0;
   color: $white;
   display: flex;
   flex-direction: column;
-  height: 100%;
   left: 0;
-  overflow-y: auto;
-  padding: $menuVSpacing 0;
+  padding: $menuVSpacing $menuHSpacing;
   position: fixed;
+  right: 0;
   top: 0;
-  transition: width $menuAnimationDuration ease-in-out;
   z-index: 1;
 
-  &Collapsed {
-    width: $menuCollapsedWidth;
-  }
-
-  &Expanded {
-    width: $menuExpandedWidth;
+  @include md-up {
+    flex-direction: row;
   }
 }
 
@@ -34,88 +28,84 @@
   color: inherit;
   cursor: pointer;
   font-size: 1rem;
-  margin: 0 $menuLinkHSpacing - $menuToggleButtonSpacing;
+  margin: 0;
   padding: $menuToggleButtonSpacing;
 
-  .containerCollapsed & {
-    align-self: center;
-  }
-
-  .containerExpanded & {
-    align-self: flex-start;
+  @include md-up {
+    display: none;
   }
 }
 
 .header {
+  align-items: center;
+  display: flex;
   flex: 0 0 auto;
-  margin-bottom: $menuVSpacing;
-  position: relative;
-
-  &Link {
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
+  justify-content: space-between;
 
   &Image {
     border: $menuHeaderPictureBorder solid currentColor;
     border-radius: 50%;
     height: $menuHeaderPictureSize;
     width: $menuHeaderPictureSize;
-
-    .containerCollapsed & {
-      height: $menuHeaderPictureBorder + $menuItemIconSize;
-      width: $menuHeaderPictureBorder + $menuItemIconSize;
-    }
   }
 
   &Heading {
-    margin: $menuVSpacing 0 0;
-    white-space: nowrap;
-
-    .containerCollapsed & {
-      display: none;
-    }
+    font-size: 1rem;
+    margin: 0 0 0 $menuItemHSpacing;
   }
 }
 
 .nav {
   flex: 1 0 auto;
-}
-
-.footer {
-  flex: 0 0 auto;
-  margin-top: $menuVSpacing;
-
-  .itemName {
-    font-size: $tinyText;
+    
+  .containerCollapsed & {
+    height: 0;
+    overflow: hidden;
+      
+    @include md-up {
+      height: auto;
+      overflow: visible;
+    }
   }
 }
 
 .list {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
+    
+  @include md-up {
+    flex-direction: row;    
+  }
+}
+
+.separator {
+  flex: 1 0 auto;
 }
 
 .item {
+  align-items: center;
   display: flex;
-  padding: $menuLinkVSpacing $menuLinkHSpacing;
+  margin: 0 $menuItemHSpacing;
+  padding: $menuItemVSpacing $menuItemHSpacing $menuItemVSpacing 0;
+    
+  &Icon {
+    align-items: center;
+    display: flex;
+    height: $menuHeaderPictureSize;
+    justify-content: center;
+    width: $menuHeaderPictureSize; 
+  }
 
   &Name {
-    margin-left: $menuLinkHSpacing;
+    margin-left: $menuItemHSpacing / 2;
     white-space: nowrap;
-
-    .containerCollapsed & {
-      display: none;
-    }
   }
 
-  &Active {
-    background-color: $gray48;
-  }
-
-  &Hover:not(&Active):hover {
+  &Hover:hover {
     background-color: $gray4;
   }
 }

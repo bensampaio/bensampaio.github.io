@@ -1,19 +1,14 @@
 $menuAnimationDuration: 400ms;
 $menuZIndex: 1000;
-$menuToggleZIndex: 2000;
 
-$menuHSpacing: 1.8rem;
-$menuVSpacing: 1.2rem;
+$menuHSpacing: 1rem;
+$menuVSpacing: .5rem;
 
+$menuItemHSpacing: .5rem;
+$menuItemVSpacing: .25rem;
 $menuItemIconSize: 1.25rem;
-
-$menuLinkHSpacing: $menuHSpacing;
-$menuLinkVSpacing: .5rem;
 
 $menuToggleButtonSpacing: .5rem;
 
 $menuHeaderPictureBorder: .2rem;
-$menuHeaderPictureSize: 8rem;
-
-$menuCollapsedWidth: $menuLinkHSpacing + $menuItemIconSize + $menuLinkHSpacing;
-$menuExpandedWidth: 20rem;
+$menuHeaderPictureSize: 2rem;
