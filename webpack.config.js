@@ -30,10 +30,16 @@ module.exports = {
                 exclude: /node_modules/,
                 test: /\.s?css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: true,
+                        },
+                    },
                     {
                         loader: 'css-loader',
                         options: {
+                            esModule: true,
                             modules: true,
                         },
                     },
