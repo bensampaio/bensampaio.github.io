@@ -70,13 +70,14 @@ library.add(
     faReact,
     faSass,
     faSpinner,
-    faWindows,
+    faWindows
 );
 
 if (rootElement instanceof HTMLElement) {
-    ReactDOM.render((
+    ReactDOM.render(
         <HashRouter>
-            <Route component={App}/>
-        </HashRouter>
-    ), rootElement);
+            <Route component={App} />
+        </HashRouter>,
+        rootElement
+    );
 }

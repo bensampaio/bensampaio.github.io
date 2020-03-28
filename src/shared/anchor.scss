@@ -1,4 +1,4 @@
-@mixin anchorColors($normalColor, $hoverColor: null, $focusColor: null, $activeColor: null, $visitedColor: null) {
+@mixin colors($normalColor, $hoverColor: null, $focusColor: null, $activeColor: null, $visitedColor: null) {
   @if ($hoverColor == null) {
     $hoverColor: $normalColor;
   }

@@ -6,7 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import info from '../../../db/info';
 import ExternalLink from '../../shared/ExternalLink';
-import { HorizontalList, HorizontalListItem } from '../../shared/HorizontalList';
+import {
+    HorizontalList,
+    HorizontalListItem,
+} from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import styles from './InfoScreen.scss';
@@ -23,34 +26,66 @@ const InfoScreen = () => {
     return (
         <Screen>
             <h2>Summary</h2>
-            <Text>
-                {info.summary}
-            </Text>
+            <Text>{info.summary}</Text>
 
             <h2>Skills</h2>
             <HorizontalList>
                 {info.skills.slice(0, 15).map(({ icon, name }, index) => (
                     <HorizontalListItem key={index}>
                         <strong>
-                            {icon && <FontAwesomeIcon aria-hidden={true} icon={['fab', icon]} />} {name}
+                            {icon && (
+                                <FontAwesomeIcon
+                                    aria-hidden={true}
+                                    icon={['fab', icon]}
+                                />
+                            )}{' '}
+                            {name}
                         </strong>
                     </HorizontalListItem>
                 ))}
 
                 <HorizontalListItem>
                     <div className={styles.extraSkills}>
-                        <div className={classnames(styles.extraSkillsContent, { [styles.extraSkillsContentHide]: !showExtraSkills })}>
+                        <div
+                            className={classnames(styles.extraSkillsContent, {
+                                [styles.extraSkillsContentHide]: !showExtraSkills,
+                            })}
+                        >
                             <HorizontalList>
-                                {info.skills.slice(15).map(({ icon, name }, index) => (
-                                    <HorizontalListItem key={index}>
-                                        {icon && <FontAwesomeIcon aria-hidden={true} icon={['fab', icon]} />} {name}
-                                    </HorizontalListItem>
-                                ))}
+                                {info.skills
+                                    .slice(15)
+                                    .map(({ icon, name }, index) => (
+                                        <HorizontalListItem key={index}>
+                                            {icon && (
+                                                <FontAwesomeIcon
+                                                    aria-hidden={true}
+                                                    icon={['fab', icon]}
+                                                />
+                                            )}{' '}
+                                            {name}
+                                        </HorizontalListItem>
+                                    ))}
                             </HorizontalList>
                         </div>
-                        <button className={styles.extraSkillsButton} title={'Expand / Collapse'} onClick={toggleExtraSkills}>
-                            <FontAwesomeIcon aria-hidden={true} className={classnames({ [styles.extraSkillsButtonIconHide]: showExtraSkills })} icon={'chevron-down'} />
-                            <FontAwesomeIcon aria-hidden={true} className={classnames({ [styles.extraSkillsButtonIconHide]: !showExtraSkills })} icon={'chevron-up'} />
+                        <button
+                            className={styles.extraSkillsButton}
+                            title={'Expand / Collapse'}
+                            onClick={toggleExtraSkills}
+                        >
+                            <FontAwesomeIcon
+                                aria-hidden={true}
+                                className={classnames({
+                                    [styles.extraSkillsButtonIconHide]: showExtraSkills,
+                                })}
+                                icon={'chevron-down'}
+                            />
+                            <FontAwesomeIcon
+                                aria-hidden={true}
+                                className={classnames({
+                                    [styles.extraSkillsButtonIconHide]: !showExtraSkills,
+                                })}
+                                icon={'chevron-up'}
+                            />
                         </button>
                     </div>
                 </HorizontalListItem>
@@ -61,7 +96,12 @@ const InfoScreen = () => {
                 {info.languages.map((lang, index) => (
                     <HorizontalListItem key={index}>
                         <div className={styles.language}>
-                            <img alt={''} aria-hidden={true} className={styles.languageFlag} src={lang.flag} />
+                            <img
+                                alt={''}
+                                aria-hidden={true}
+                                className={styles.languageFlag}
+                                src={lang.flag}
+                            />
                             <div>
                                 <div>
                                     <strong>{lang.name}</strong>
@@ -79,11 +119,16 @@ const InfoScreen = () => {
             <HorizontalList>
                 {info.pages.map(({ icon, name, url }, index) => (
                     <HorizontalListItem key={index}>
-                        <ExternalLink className={styles.socialNetworkLink} to={url}>
-                            <FontAwesomeIcon aria-hidden={true} className={styles.socialNetworkLinkIcon} icon={['fab', icon]} />
-                            <span>
-                                {name}
-                            </span>
+                        <ExternalLink
+                            className={styles.socialNetworkLink}
+                            to={url}
+                        >
+                            <FontAwesomeIcon
+                                aria-hidden={true}
+                                className={styles.socialNetworkLinkIcon}
+                                icon={['fab', icon]}
+                            />
+                            <span>{name}</span>
                         </ExternalLink>
                     </HorizontalListItem>
                 ))}

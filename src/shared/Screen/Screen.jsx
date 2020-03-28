@@ -23,11 +23,7 @@ const Screen = ({ children, title }: ScreenProps) => {
         };
     });
 
-    return (
-        <article className={styles.container}>
-            {children}
-        </article>
-    );
+    return <article className={styles.container}>{children}</article>;
 };
 
 export default memo<ScreenProps>(Screen);

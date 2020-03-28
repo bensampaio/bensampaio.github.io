@@ -17,7 +17,6 @@ type AppState = {
 };
 
 class App extends PureComponent<AppProps, AppState> {
-
     constructor(props: AppProps) {
         super(props);
 
@@ -46,7 +45,6 @@ class App extends PureComponent<AppProps, AppState> {
             </>
         );
     }
-
 }
 
 export default App;

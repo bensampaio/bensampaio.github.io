@@ -1,5 +1,5 @@
-@import '../../shared/text';
-@import '../../shared/anchor';
+@use '../../shared/anchor' as anchor;
+@use '../../shared/text' as text;
 
 .extraSkills {
   background-color: #eee;
@@ -39,12 +39,12 @@
   }
 
   &Level {
-    font-size: $smallText;
+    font-size: text.$small;
   }
 }
 
 .socialNetworkLink {
-  @include anchorColors(inherit);
+  @include anchor.colors(inherit);
   display: flex;
   text-decoration: none;
 

@@ -35,10 +35,14 @@ const ProjectsScreen = () => (
                                 <InstitutionLogoLink {...project.institution} />
                             )}
                         </header>
-                        {project.video && <YouTube height="350px" src={project.video} width="100%" />}
-                        <Text>
-                            {project.desc}
-                        </Text>
+                        {project.video && (
+                            <YouTube
+                                height="350px"
+                                src={project.video}
+                                width="100%"
+                            />
+                        )}
+                        <Text>{project.desc}</Text>
                     </article>
                 </VerticalListItem>
             ))}
