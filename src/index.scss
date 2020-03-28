@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@use 'shared/anchor' as anchor;
 
-@import 'shared/anchor';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 *,
 *::after,
@@ -42,7 +42,7 @@ p {
 }
 
 a {
-    @include anchorColors(#0077b5);
+    @include anchor.colors(#0077b5);
 
     &:hover {
         text-decoration: none;

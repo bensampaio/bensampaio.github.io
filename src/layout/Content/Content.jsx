@@ -18,9 +18,21 @@ const Content = () => (
         <Suspense fallback={<SpinnerScreen />}>
             <Switch>
                 <Route component={InfoScreen} exact={true} path={'/'} />
-                <Route component={ExperienceScreen} exact={true} path={'/experience'} />
-                <Route component={EducationScreen} exact={true} path={'/education'} />
-                <Route component={ProjectsScreen} exact={true} path={'/projects'} />
+                <Route
+                    component={ExperienceScreen}
+                    exact={true}
+                    path={'/experience'}
+                />
+                <Route
+                    component={EducationScreen}
+                    exact={true}
+                    path={'/education'}
+                />
+                <Route
+                    component={ProjectsScreen}
+                    exact={true}
+                    path={'/projects'}
+                />
                 <Route component={AboutScreen} exact={true} path={'/about'} />
                 <Route component={NotFoundScreen} />
             </Switch>

@@ -1,8 +1,8 @@
-@import '../../shared/anchor';
+@use '../../shared/anchor' as anchor;
 
 .tech {
   &Link {
-    @include anchorColors(inherit);
+    @include anchor.colors(inherit);
     align-items: center;
     display: flex;
     flex-direction: column;

@@ -4,7 +4,10 @@ import React, { memo } from 'react';
 
 import about from '../../../db/about';
 import ExternalLink from '../../shared/ExternalLink';
-import { HorizontalList, HorizontalListItem } from '../../shared/HorizontalList';
+import {
+    HorizontalList,
+    HorizontalListItem,
+} from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import styles from './AboutScreen.scss';
@@ -18,19 +21,21 @@ type TechnologyProps = {
     url: string,
 };
 
-const Technology = memo<TechnologyProps>(({ desc, id, logo, url }: TechnologyProps) => (
-    <HorizontalListItem>
-        <ExternalLink className={styles.techLink} to={url}>
-            <img alt={id} className={styles.techLogo} src={logo} />
-            <span className={styles.techName}>{desc}</span>
-        </ExternalLink>
-    </HorizontalListItem>
-));
+const Technology = memo<TechnologyProps>(
+    ({ desc, id, logo, url }: TechnologyProps) => (
+        <HorizontalListItem>
+            <ExternalLink className={styles.techLink} to={url}>
+                <img alt={id} className={styles.techLogo} src={logo} />
+                <span className={styles.techName}>{desc}</span>
+            </ExternalLink>
+        </HorizontalListItem>
+    )
+);
 
 const AboutScreen = () => (
     <Screen title={'About'}>
         <h1>About</h1>
-        
+
         <h2>Goal</h2>
         <Text>{about.goal}</Text>
 
@@ -39,12 +44,16 @@ const AboutScreen = () => (
 
         <h3>Frontend</h3>
         <HorizontalList>
-            {about.technologies.client.map((tech, index) => <Technology {...tech} key={index} />)}
+            {about.technologies.client.map((tech, index) => (
+                <Technology {...tech} key={index} />
+            ))}
         </HorizontalList>
 
         <h3>Tools</h3>
         <HorizontalList>
-            {about.technologies.tools.map((tech, index) => <Technology {...tech} key={index} />)}
+            {about.technologies.tools.map((tech, index) => (
+                <Technology {...tech} key={index} />
+            ))}
         </HorizontalList>
 
         <h2>Credits</h2>
@@ -75,10 +84,18 @@ const AboutScreen = () => (
         <HorizontalList>
             {about.credits.others.map((other, index) => (
                 <HorizontalListItem key={index}>
-                    <ExternalLink to={other.url}>
-                        {other.name}
-                    </ExternalLink>
-                    {other.desc && <span> - {other.desc} {other.item && <ExternalLink to={other.item.url}>{other.item.name}</ExternalLink>}</span>}
+                    <ExternalLink to={other.url}>{other.name}</ExternalLink>
+                    {other.desc && (
+                        <span>
+                            {' '}
+                            - {other.desc}{' '}
+                            {other.item && (
+                                <ExternalLink to={other.item.url}>
+                                    {other.item.name}
+                                </ExternalLink>
+                            )}
+                        </span>
+                    )}
                 </HorizontalListItem>
             ))}
         </HorizontalList>

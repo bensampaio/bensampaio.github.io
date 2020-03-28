@@ -22,16 +22,21 @@ const ExperienceScreen = () => (
                     <article>
                         <header className={styles.header}>
                             <div>
-                                <h2 className={styles.heading}>{position.title}</h2>
-                                <ExternalLink to={position.institution.url}>{position.institution.name}</ExternalLink>, <Period {...position.period} />
+                                <h2 className={styles.heading}>
+                                    {position.title}
+                                </h2>
+                                <ExternalLink to={position.institution.url}>
+                                    {position.institution.name}
+                                </ExternalLink>
+                                , <Period {...position.period} />
                             </div>
                             {position.institution.logo && (
-                                <InstitutionLogoLink {...position.institution} />
+                                <InstitutionLogoLink
+                                    {...position.institution}
+                                />
                             )}
                         </header>
-                        <Text>
-                            {position.summary}
-                        </Text>
+                        <Text>{position.summary}</Text>
                     </article>
                 </VerticalListItem>
             ))}
