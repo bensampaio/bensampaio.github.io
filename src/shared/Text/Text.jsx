@@ -85,22 +85,17 @@ const Text = ({ children }: TextProps) => {
                 currentList = [];
             }
 
-            currentList.push(
-                <li key={currentList.length}>{parsedLine}</li>
-            );
+            currentList.push(<li key={currentList.length}>{parsedLine}</li>);
 
-            if (index + 1 === lines.length || !listItemRegExp.test(lines[index + 1])) {
-                accumulator.push(
-                    <ul key={index}>
-                        {currentList}
-                    </ul>
-                );
+            if (
+                index + 1 === lines.length ||
+                !listItemRegExp.test(lines[index + 1])
+            ) {
+                accumulator.push(<ul key={index}>{currentList}</ul>);
                 currentList = null;
             }
         } else {
-            accumulator.push(
-                <p key={index}>{parsedLine}</p>
-            );
+            accumulator.push(<p key={index}>{parsedLine}</p>);
         }
 
         return accumulator;

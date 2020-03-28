@@ -49,7 +49,10 @@ const Period = ({ from, to }: PeriodProps) => {
     }
 
     const fromText = fromDate.toLocaleDateString(lang, fromOptions);
-    const toText = Object.keys(toOptions).length > 0 ? toDate.toLocaleDateString(lang, toOptions) : 'Now';
+    const toText =
+        Object.keys(toOptions).length > 0
+            ? toDate.toLocaleDateString(lang, toOptions)
+            : 'Now';
 
     return (
         <span>

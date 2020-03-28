@@ -22,16 +22,19 @@ const EducationScreen = () => (
                     <article>
                         <header className={styles.header}>
                             <div>
-                                <h2 className={styles.heading}>{`${degree.degree} in ${degree.field}`}</h2>
-                                <ExternalLink to={degree.institution.url}>{degree.institution.name}</ExternalLink>, <Period {...degree.period} />
+                                <h2
+                                    className={styles.heading}
+                                >{`${degree.degree} in ${degree.field}`}</h2>
+                                <ExternalLink to={degree.institution.url}>
+                                    {degree.institution.name}
+                                </ExternalLink>
+                                , <Period {...degree.period} />
                             </div>
                             {degree.institution.logo && (
                                 <InstitutionLogoLink {...degree.institution} />
                             )}
                         </header>
-                        <Text>
-                            {degree.summary}
-                        </Text>
+                        <Text>{degree.summary}</Text>
                     </article>
                 </VerticalListItem>
             ))}
