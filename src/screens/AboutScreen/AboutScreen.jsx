@@ -1,6 +1,6 @@
 // @flow
 
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 import about from '../../../db/about';
 import ExternalLink from '../../shared/ExternalLink';

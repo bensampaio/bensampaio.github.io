@@ -1,6 +1,6 @@
 // @flow
 
-import React, { memo, type Node } from 'react';
+import { memo, type Node } from 'react';
 
 type ExternalLinkProps = {
     ...HTMLAnchorElement,

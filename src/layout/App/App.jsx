@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 
 import ErrorScreen from '../../screens/ErrorScreen';
 import Menu from '../Menu';

@@ -1,6 +1,6 @@
 // @flow
 
-import React, { lazy, memo, Suspense } from 'react';
+import { lazy, memo, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import SpinnerScreen from '../../screens/SpinnerScreen';

@@ -1,7 +1,7 @@
 // @flow
 
 import classnames from 'classnames';
-import React, { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import info from '../../../db/info';
