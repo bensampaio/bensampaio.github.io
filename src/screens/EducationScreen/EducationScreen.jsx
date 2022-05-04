@@ -8,8 +8,8 @@ import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
 import Period from '../../shared/Period';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
-import styles from './EducationScreen.scss';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
+import styles from './EducationScreen.module.scss';
 
 type EducationScreenProps = {};
 

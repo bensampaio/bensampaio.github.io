@@ -12,7 +12,7 @@ import {
 } from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
-import styles from './InfoScreen.scss';
+import styles from './InfoScreen.module.scss';
 
 type InfoScreenProps = {};
 

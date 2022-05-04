@@ -30,19 +30,8 @@ module.exports = {
                 exclude: /node_modules/,
                 test: /\.s?css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            esModule: true,
-                        },
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            esModule: true,
-                            modules: true,
-                        },
-                    },
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
                     'sass-loader',
                     {
                         loader: 'postcss-loader',
@@ -63,35 +52,17 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: path.join('public', 'img', '[name].[hash].[ext]'),
+                            name: path.join('public', 'img', '[name].[contenthash].[ext]'),
                         },
                     },
                 ],
             },
         ],
     },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                react: {
-                    chunks: 'initial',
-                    enforce: true,
-                    name: 'react',
-                    test: /node_modules\/react/,
-                },
-                others: {
-                    chunks: 'initial',
-                    enforce: true,
-                    name: 'vendor',
-                    test: /node_modules\/(?!react)/,
-                },
-            },
-        },
-    },
     output: {
         path: __dirname,
-        filename: path.join('public', 'js', '[name].[chunkhash].js'),
-        chunkFilename: path.join('public', 'js', '[id].[chunkhash].js'),
+        filename: path.join('public', 'js', '[name].[contenthash].js'),
+        chunkFilename: path.join('public', 'js', '[id].[contenthash].js'),
     },
     plugins: [
         new HtmlWebpackPlugin({

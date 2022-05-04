@@ -2,7 +2,7 @@
 
 import { memo } from 'react';
 
-import styles from './HorizontalList.scss';
+import styles from './HorizontalList.module.scss';
 
 export const HorizontalList = memo<HTMLUListElement>(
     (props: HTMLUListElement) => <ul {...props} className={styles.list} />

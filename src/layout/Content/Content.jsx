@@ -4,7 +4,7 @@ import { lazy, memo, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import SpinnerScreen from '../../screens/SpinnerScreen';
-import styles from './Content.scss';
+import styles from './Content.module.scss';
 
 const AboutScreen = lazy(() => import('../../screens/AboutScreen'));
 const EducationScreen = lazy(() => import('../../screens/EducationScreen'));

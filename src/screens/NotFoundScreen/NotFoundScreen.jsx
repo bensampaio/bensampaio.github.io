@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
-import styles from './NotFoundScreen.scss';
+import styles from './NotFoundScreen.module.scss';
 
 type NotFoundScreenProps = {};
 

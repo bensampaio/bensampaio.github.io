@@ -9,7 +9,7 @@ import Period from '../../shared/Period';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
-import styles from './ExperienceScreen.scss';
+import styles from './ExperienceScreen.module.scss';
 
 type ExperienceScreenProps = {};
 

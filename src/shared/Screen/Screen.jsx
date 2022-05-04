@@ -3,7 +3,7 @@
 import { memo, useEffect, type Node } from 'react';
 
 import me from '../../../db/me';
-import styles from './Screen.scss';
+import styles from './Screen.module.scss';
 
 type ScreenProps = {
     children: Node,

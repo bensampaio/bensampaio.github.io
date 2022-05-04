@@ -9,7 +9,7 @@ import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import YouTube from '../../shared/YouTube';
-import styles from './ProjectsScreen.scss';
+import styles from './ProjectsScreen.module.scss';
 
 type ProjectsScreenProps = {};
 

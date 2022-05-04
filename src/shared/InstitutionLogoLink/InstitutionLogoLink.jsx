@@ -3,7 +3,7 @@
 import { memo } from 'react';
 
 import ExternalLink from '../ExternalLink';
-import styles from './InstitutionLogoLink.scss';
+import styles from './InstitutionLogoLink.module.scss';
 
 type InstitutionLogoLinkProps = {
     logo: string,

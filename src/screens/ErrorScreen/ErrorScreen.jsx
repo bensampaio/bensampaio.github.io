@@ -4,8 +4,8 @@ import { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
-import styles from './ErrorScreen.scss';
 import ExternalLink from '../../shared/ExternalLink';
+import styles from './ErrorScreen.module.scss';
 
 const handleClick = () => location.reload();
 

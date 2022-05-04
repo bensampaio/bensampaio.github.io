@@ -10,7 +10,7 @@ import {
 } from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
-import styles from './AboutScreen.scss';
+import styles from './AboutScreen.module.scss';
 
 type AboutScreenProps = {};
 

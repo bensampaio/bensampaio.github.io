@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import me from '../../../db/me';
-import styles from './Menu.scss';
+import styles from './Menu.module.scss';
 
 const Menu = () => {
     const [expanded, setExpanded] = useState(false);

@@ -46,6 +46,7 @@
 .socialNetworkLink {
   @include anchor.colors(inherit);
   display: flex;
+  align-items: center;
   text-decoration: none;
 
   &Icon {

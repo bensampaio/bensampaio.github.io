@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
-import styles from './SpinnerScreen.scss';
+import styles from './SpinnerScreen.module.scss';
 
 type SpinnerScreenProps = {};
 
