@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBars,
@@ -76,7 +76,7 @@ library.add(
 if (rootElement instanceof HTMLElement) {
     ReactDOM.render(
         <HashRouter>
-            <Route component={App} />
+            <App />
         </HashRouter>,
         rootElement
     );

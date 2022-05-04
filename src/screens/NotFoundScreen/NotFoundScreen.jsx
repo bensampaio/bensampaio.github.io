@@ -9,7 +9,7 @@ import styles from './NotFoundScreen.scss';
 type NotFoundScreenProps = {};
 
 const NotFoundScreen = () => (
-    <Screen title={'Not found'}>
+    <Screen title="Not found">
         <div className={styles.container}>
             <h2 className={styles.heading}>Page not found</h2>
             <FontAwesomeIcon

@@ -33,7 +33,7 @@ const Technology = memo<TechnologyProps>(
 );
 
 const AboutScreen = () => (
-    <Screen title={'About'}>
+    <Screen title="About">
         <h1>About</h1>
 
         <h2>Goal</h2>

@@ -1,7 +1,7 @@
 // @flow
 
 import React, { lazy, memo, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import SpinnerScreen from '../../screens/SpinnerScreen';
 import styles from './Content.scss';
@@ -16,26 +16,23 @@ const ProjectsScreen = lazy(() => import('../../screens/ProjectsScreen'));
 const Content = () => (
     <main className={styles.container}>
         <Suspense fallback={<SpinnerScreen />}>
-            <Switch>
-                <Route component={InfoScreen} exact={true} path={'/'} />
+            <Routes>
+                <Route element={<InfoScreen />} path="/" />
                 <Route
-                    component={ExperienceScreen}
-                    exact={true}
-                    path={'/experience'}
+                    element={<ExperienceScreen />}
+                    path="/experience"
                 />
                 <Route
-                    component={EducationScreen}
-                    exact={true}
-                    path={'/education'}
+                    element={<EducationScreen />}
+                    path="/education"
                 />
                 <Route
-                    component={ProjectsScreen}
-                    exact={true}
-                    path={'/projects'}
+                    element={<ProjectsScreen />}
+                    path="/projects"
                 />
-                <Route component={AboutScreen} exact={true} path={'/about'} />
-                <Route component={NotFoundScreen} />
-            </Switch>
+                <Route element={<AboutScreen />} path="/about" />
+                <Route element={<NotFoundScreen />} />
+            </Routes>
         </Suspense>
     </main>
 );

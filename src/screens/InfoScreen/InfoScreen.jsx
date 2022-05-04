@@ -69,7 +69,7 @@ const InfoScreen = () => {
                         </div>
                         <button
                             className={styles.extraSkillsButton}
-                            title={'Expand / Collapse'}
+                            title="Expand / Collapse"
                             onClick={toggleExtraSkills}
                         >
                             <FontAwesomeIcon
@@ -77,14 +77,14 @@ const InfoScreen = () => {
                                 className={classnames({
                                     [styles.extraSkillsButtonIconHide]: showExtraSkills,
                                 })}
-                                icon={'chevron-down'}
+                                icon="chevron-down"
                             />
                             <FontAwesomeIcon
                                 aria-hidden={true}
                                 className={classnames({
                                     [styles.extraSkillsButtonIconHide]: !showExtraSkills,
                                 })}
-                                icon={'chevron-up'}
+                                icon="chevron-up"
                             />
                         </button>
                     </div>
@@ -97,7 +97,7 @@ const InfoScreen = () => {
                     <HorizontalListItem key={index}>
                         <div className={styles.language}>
                             <img
-                                alt={''}
+                                alt=""
                                 aria-hidden={true}
                                 className={styles.languageFlag}
                                 src={lang.flag}

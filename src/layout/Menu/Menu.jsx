@@ -28,18 +28,20 @@ const Menu = () => {
         <header className={containerClassNames}>
             <div className={styles.header}>
                 <NavLink
-                    activeClassName={styles.linkHome}
-                    className={classnames(
+                    className={({ isActive }) => classnames(
                         styles.item,
                         styles.link,
-                        styles.headerLink
+                        styles.headerLink,
+                        {
+                            [styles.linkHome]: isActive
+                        }
                     )}
-                    exact={true}
-                    to={'/'}
+                    end
+                    to="/"
                     onClick={handleSelect}
                 >
                     <img
-                        alt={''}
+                        alt=""
                         aria-hidden={true}
                         className={styles.headerImage}
                         src={me.picture}
@@ -57,7 +59,7 @@ const Menu = () => {
                     <FontAwesomeIcon
                         aria-hidden={true}
                         fixedWidth={true}
-                        icon={'bars'}
+                        icon="bars"
                     />
                 </button>
             </div>
@@ -65,23 +67,23 @@ const Menu = () => {
                 <ul className={styles.list}>
                     <li>
                         <NavLink
-                            activeClassName={classnames(
-                                styles.itemActive,
-                                styles.linkExperience
-                            )}
-                            className={classnames(
+                            className={({ isActive }) => classnames(
                                 styles.item,
                                 styles.itemHover,
-                                styles.link
+                                styles.link,
+                                {
+                                    [styles.itemActive]: isActive,
+                                    [styles.linkExperience]: isActive,
+                                }
                             )}
-                            to={'/experience'}
+                            to="/experience"
                             onClick={handleSelect}
                         >
                             <div className={styles.itemIcon}>
                                 <FontAwesomeIcon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon={'file'}
+                                    icon="file"
                                 />
                             </div>
                             <span className={styles.itemName}>Experience</span>
@@ -89,23 +91,23 @@ const Menu = () => {
                     </li>
                     <li>
                         <NavLink
-                            activeClassName={classnames(
-                                styles.itemActive,
-                                styles.linkEducation
-                            )}
-                            className={classnames(
+                            className={({ isActive }) => classnames(
                                 styles.item,
                                 styles.itemHover,
-                                styles.link
+                                styles.link,
+                                {
+                                    [styles.itemActive]: isActive,
+                                    [styles.linkEducation]: isActive,
+                                }
                             )}
-                            to={'/education'}
+                            to="/education"
                             onClick={handleSelect}
                         >
                             <div className={styles.itemIcon}>
                                 <FontAwesomeIcon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon={'graduation-cap'}
+                                    icon="graduation-cap"
                                 />
                             </div>
                             <span className={styles.itemName}>Education</span>
@@ -113,23 +115,23 @@ const Menu = () => {
                     </li>
                     <li>
                         <NavLink
-                            activeClassName={classnames(
-                                styles.itemActive,
-                                styles.linkProjects
-                            )}
-                            className={classnames(
+                            className={({ isActive }) => classnames(
                                 styles.item,
                                 styles.itemHover,
-                                styles.link
+                                styles.link,
+                                {
+                                    [styles.itemActive]: isActive,
+                                    [styles.linkProjects]: isActive,
+                                }
                             )}
-                            to={'/projects'}
+                            to="/projects"
                             onClick={handleSelect}
                         >
                             <div className={styles.itemIcon}>
                                 <FontAwesomeIcon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon={'code'}
+                                    icon="code"
                                 />
                             </div>
                             <span className={styles.itemName}>Projects</span>
@@ -138,23 +140,22 @@ const Menu = () => {
                     <li className={styles.separator}></li>
                     <li>
                         <NavLink
-                            activeClassName={classnames(
-                                styles.itemActive,
-                                styles.linkAbout
-                            )}
-                            className={classnames(
+                            className={({ isActive }) => classnames(
                                 styles.item,
                                 styles.itemHover,
-                                styles.link
+                                styles.link, {
+                                    [styles.itemActive]: isActive,
+                                    [styles.linkAbout]: isActive,
+                                }
                             )}
-                            to={'/about'}
+                            to="/about"
                             onClick={handleSelect}
                         >
                             <div className={styles.itemIcon}>
                                 <FontAwesomeIcon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon={'info-circle'}
+                                    icon="info-circle"
                                 />
                             </div>
                             <span className={styles.itemName}>About</span>

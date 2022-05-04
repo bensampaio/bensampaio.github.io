@@ -9,15 +9,15 @@ import styles from './SpinnerScreen.scss';
 type SpinnerScreenProps = {};
 
 const SpinnerScreen = () => (
-    <Screen title={'Waiting'}>
+    <Screen title="Waiting">
         <div className={styles.container}>
             <FontAwesomeIcon
                 aria-hidden={true}
                 className={styles.icon}
                 fixedWidth={true}
-                icon={'spinner'}
+                icon="spinner"
                 spin={true}
-                title={'Loading...'}
+                title="Loading..."
             />
         </div>
     </Screen>

@@ -14,7 +14,7 @@ import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 type EducationScreenProps = {};
 
 const EducationScreen = () => (
-    <Screen title={'Education'}>
+    <Screen title="Education">
         <h1>Education</h1>
         <VerticalList>
             {education.map((degree, index) => (
