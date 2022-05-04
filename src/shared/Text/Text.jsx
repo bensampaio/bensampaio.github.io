@@ -8,7 +8,8 @@ import ExternalLink from '../ExternalLink';
  * Regular expression used to identify markdown for a link.
  * @type {RegExp}
  */
-const anchorRegExp = /\[(.+)\]\((https?:\/\/[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b[-a-zA-Z0-9@:%_+.~#?&//=]*)\)/gi;
+const anchorRegExp =
+    /\[(.+)\]\((https?:\/\/[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b[-a-zA-Z0-9@:%_+.~#?&//=]*)\)/gi;
 
 /**
  * Regular expression used to identify markdown for a list item.

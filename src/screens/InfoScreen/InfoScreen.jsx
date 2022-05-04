@@ -48,7 +48,8 @@ const InfoScreen = () => {
                     <div className={styles.extraSkills}>
                         <div
                             className={classnames(styles.extraSkillsContent, {
-                                [styles.extraSkillsContentHide]: !showExtraSkills,
+                                [styles.extraSkillsContentHide]:
+                                    !showExtraSkills,
                             })}
                         >
                             <HorizontalList>
@@ -75,14 +76,16 @@ const InfoScreen = () => {
                             <FontAwesomeIcon
                                 aria-hidden={true}
                                 className={classnames({
-                                    [styles.extraSkillsButtonIconHide]: showExtraSkills,
+                                    [styles.extraSkillsButtonIconHide]:
+                                        showExtraSkills,
                                 })}
                                 icon="chevron-down"
                             />
                             <FontAwesomeIcon
                                 aria-hidden={true}
                                 className={classnames({
-                                    [styles.extraSkillsButtonIconHide]: !showExtraSkills,
+                                    [styles.extraSkillsButtonIconHide]:
+                                        !showExtraSkills,
                                 })}
                                 icon="chevron-up"
                             />

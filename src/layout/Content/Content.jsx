@@ -18,18 +18,9 @@ const Content = () => (
         <Suspense fallback={<SpinnerScreen />}>
             <Routes>
                 <Route element={<InfoScreen />} path="/" />
-                <Route
-                    element={<ExperienceScreen />}
-                    path="/experience"
-                />
-                <Route
-                    element={<EducationScreen />}
-                    path="/education"
-                />
-                <Route
-                    element={<ProjectsScreen />}
-                    path="/projects"
-                />
+                <Route element={<ExperienceScreen />} path="/experience" />
+                <Route element={<EducationScreen />} path="/education" />
+                <Route element={<ProjectsScreen />} path="/projects" />
                 <Route element={<AboutScreen />} path="/about" />
                 <Route element={<NotFoundScreen />} />
             </Routes>

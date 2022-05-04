@@ -41,7 +41,7 @@
     "eslint-plugin-flowtype": "^4.5.3",
     "eslint-plugin-react": "^7.17.0",
     "flow-bin": "^0.121.0",
-    "prettier": "^2.0.2",
+    "prettier": "^2.6.2",
     "stylelint": "^13.2.1",
     "stylelint-scss": "^3.13.0"
   },

@@ -28,14 +28,16 @@ const Menu = () => {
         <header className={containerClassNames}>
             <div className={styles.header}>
                 <NavLink
-                    className={({ isActive }) => classnames(
-                        styles.item,
-                        styles.link,
-                        styles.headerLink,
-                        {
-                            [styles.linkHome]: isActive
-                        }
-                    )}
+                    className={({ isActive }) =>
+                        classnames(
+                            styles.item,
+                            styles.link,
+                            styles.headerLink,
+                            {
+                                [styles.linkHome]: isActive,
+                            }
+                        )
+                    }
                     end
                     to="/"
                     onClick={handleSelect}
@@ -67,15 +69,17 @@ const Menu = () => {
                 <ul className={styles.list}>
                     <li>
                         <NavLink
-                            className={({ isActive }) => classnames(
-                                styles.item,
-                                styles.itemHover,
-                                styles.link,
-                                {
-                                    [styles.itemActive]: isActive,
-                                    [styles.linkExperience]: isActive,
-                                }
-                            )}
+                            className={({ isActive }) =>
+                                classnames(
+                                    styles.item,
+                                    styles.itemHover,
+                                    styles.link,
+                                    {
+                                        [styles.itemActive]: isActive,
+                                        [styles.linkExperience]: isActive,
+                                    }
+                                )
+                            }
                             to="/experience"
                             onClick={handleSelect}
                         >
@@ -91,15 +95,17 @@ const Menu = () => {
                     </li>
                     <li>
                         <NavLink
-                            className={({ isActive }) => classnames(
-                                styles.item,
-                                styles.itemHover,
-                                styles.link,
-                                {
-                                    [styles.itemActive]: isActive,
-                                    [styles.linkEducation]: isActive,
-                                }
-                            )}
+                            className={({ isActive }) =>
+                                classnames(
+                                    styles.item,
+                                    styles.itemHover,
+                                    styles.link,
+                                    {
+                                        [styles.itemActive]: isActive,
+                                        [styles.linkEducation]: isActive,
+                                    }
+                                )
+                            }
                             to="/education"
                             onClick={handleSelect}
                         >
@@ -115,15 +121,17 @@ const Menu = () => {
                     </li>
                     <li>
                         <NavLink
-                            className={({ isActive }) => classnames(
-                                styles.item,
-                                styles.itemHover,
-                                styles.link,
-                                {
-                                    [styles.itemActive]: isActive,
-                                    [styles.linkProjects]: isActive,
-                                }
-                            )}
+                            className={({ isActive }) =>
+                                classnames(
+                                    styles.item,
+                                    styles.itemHover,
+                                    styles.link,
+                                    {
+                                        [styles.itemActive]: isActive,
+                                        [styles.linkProjects]: isActive,
+                                    }
+                                )
+                            }
                             to="/projects"
                             onClick={handleSelect}
                         >
@@ -140,14 +148,17 @@ const Menu = () => {
                     <li className={styles.separator}></li>
                     <li>
                         <NavLink
-                            className={({ isActive }) => classnames(
-                                styles.item,
-                                styles.itemHover,
-                                styles.link, {
-                                    [styles.itemActive]: isActive,
-                                    [styles.linkAbout]: isActive,
-                                }
-                            )}
+                            className={({ isActive }) =>
+                                classnames(
+                                    styles.item,
+                                    styles.itemHover,
+                                    styles.link,
+                                    {
+                                        [styles.itemActive]: isActive,
+                                        [styles.linkAbout]: isActive,
+                                    }
+                                )
+                            }
                             to="/about"
                             onClick={handleSelect}
                         >
