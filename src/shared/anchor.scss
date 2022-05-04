@@ -1,17 +1,17 @@
 @mixin colors($normalColor, $hoverColor: null, $focusColor: null, $activeColor: null, $visitedColor: null) {
-  @if ($hoverColor == null) {
+  @if not $hoverColor {
     $hoverColor: $normalColor;
   }
 
-  @if ($focusColor == null) {
+  @if not $focusColor {
     $focusColor: $normalColor;
   }
 
-  @if ($activeColor == null) {
+  @if not $activeColor {
     $activeColor: $normalColor;
   }
 
-  @if ($visitedColor == null) {
+  @if not $visitedColor {
     $visitedColor: $normalColor;
   }
 

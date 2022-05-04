@@ -22,6 +22,7 @@
     "html-webpack-plugin": "^4.0.2",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "^8.4.13",
     "postcss-loader": "^3.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -29,7 +30,6 @@
     "react-router-dom": "^6.3.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.0",
-    "stylelint-config-recommended": "^3.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
@@ -42,8 +42,10 @@
     "eslint-plugin-react": "^7.17.0",
     "flow-bin": "^0.121.0",
     "prettier": "^2.6.2",
-    "stylelint": "^13.2.1",
-    "stylelint-scss": "^3.13.0"
+    "stylelint": "^14.8.2",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-recommended-scss": "^6.0.0"
   },
   "scripts": {
     "build:dev": "NODE_ENV=development webpack-dev-server --history-api-fallback",
