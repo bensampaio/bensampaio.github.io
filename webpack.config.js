@@ -3,7 +3,8 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const metadata = require('./package.json');
 
@@ -59,6 +60,12 @@ module.exports = {
             },
         ],
     },
+    optimization: {
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin(),
+        ],
+    },
     output: {
         path: __dirname,
         filename: path.join('public', 'js', '[name].[contenthash].js'),
@@ -80,6 +87,5 @@ module.exports = {
             filename: path.join('public', 'css', '[name].[contenthash].css'),
             chunkFilename: path.join('public', 'css', '[id].[contenthash].css'),
         }),
-        new OptimizeCssAssetsPlugin({}),
     ],
 };
