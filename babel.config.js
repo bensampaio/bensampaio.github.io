@@ -1,13 +1,19 @@
 module.exports = {
-    plugins: [
-        '@babel/plugin-syntax-dynamic-import'
-    ],
+    plugins: ['@babel/plugin-syntax-dynamic-import'],
     presets: [
-        '@babel/preset-flow',
-        ['@babel/preset-env', {
-            corejs: 3,
-            useBuiltIns: 'usage',
-        }],
-        '@babel/preset-react',
+        [
+            '@babel/preset-env',
+            {
+                corejs: 3,
+                useBuiltIns: 'usage',
+            },
+        ],
+        [
+            '@babel/preset-react',
+            {
+                runtime: 'automatic',
+            },
+        ],
+        '@babel/preset-typescript',
     ],
 };
