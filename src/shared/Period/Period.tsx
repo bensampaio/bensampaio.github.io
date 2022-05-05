@@ -2,15 +2,15 @@ import { FC, memo } from 'react';
 
 type Props = {
     from: {
-        year?: number,
-        month?: number,
-        day?: number,
-    },
+        year?: number;
+        month?: number;
+        day?: number;
+    };
     to?: null | {
-        year?: number,
-        month?: number,
-        day?: number,
-    },
+        year?: number;
+        month?: number;
+        day?: number;
+    };
 };
 
 const Period: FC<Props> = ({ from, to }) => {

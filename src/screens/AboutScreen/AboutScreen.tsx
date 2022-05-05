@@ -11,21 +11,25 @@ import Text from '../../shared/Text';
 import styles from './AboutScreen.module.scss';
 
 type TechnologyProps = {
-    desc: string,
-    id: string,
-    logo: string,
-    url: string,
+    desc: string;
+    id: string;
+    logo: string;
+    url: string;
 };
 
-const Technology:FC<TechnologyProps> = 
-    ({ desc, id, logo, url }: TechnologyProps) => (
-        <HorizontalListItem>
-            <ExternalLink className={styles.techLink} to={url}>
-                <img alt={id} className={styles.techLogo} src={logo} />
-                <span className={styles.techName}>{desc}</span>
-            </ExternalLink>
-        </HorizontalListItem>
-    );
+const Technology: FC<TechnologyProps> = ({
+    desc,
+    id,
+    logo,
+    url,
+}: TechnologyProps) => (
+    <HorizontalListItem>
+        <ExternalLink className={styles.techLink} to={url}>
+            <img alt={id} className={styles.techLogo} src={logo} />
+            <span className={styles.techName}>{desc}</span>
+        </ExternalLink>
+    </HorizontalListItem>
+);
 
 const AboutScreen: FC = () => (
     <Screen title="About">

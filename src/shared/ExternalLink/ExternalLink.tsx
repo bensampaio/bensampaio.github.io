@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 
 type Props = Omit<JSX.IntrinsicElements['a'], 'href'> & {
-    children: ReactNode,
-    to: string,
+    children: ReactNode;
+    to: string;
 };
 
 const ExternalLink: FC<Props> = ({ children, to, ...rest }) => (

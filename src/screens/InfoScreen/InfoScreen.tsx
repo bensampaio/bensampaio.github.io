@@ -57,7 +57,10 @@ const InfoScreen: FC = () => {
                                             {icon && (
                                                 <FontAwesomeIcon
                                                     aria-hidden={true}
-                                                    icon={['fab', icon as IconName]}
+                                                    icon={[
+                                                        'fab',
+                                                        icon as IconName,
+                                                    ]}
                                                 />
                                             )}{' '}
                                             {name}

@@ -24,7 +24,7 @@ module.exports = {
                 use: [
                     {
                         loader: 'babel-loader',
-                    }
+                    },
                 ],
             },
             {
@@ -38,10 +38,8 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
-                                plugins: [
-                                    autoprefixer(),
-                                ],
-                            }
+                                plugins: [autoprefixer()],
+                            },
                         },
                     },
                 ],
@@ -53,7 +51,11 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: path.join('public', 'img', '[name].[contenthash].[ext]'),
+                            name: path.join(
+                                'public',
+                                'img',
+                                '[name].[contenthash].[ext]'
+                            ),
                         },
                     },
                 ],
@@ -61,10 +63,7 @@ module.exports = {
         ],
     },
     optimization: {
-        minimizer: [
-            new CssMinimizerPlugin(),
-            new TerserPlugin(),
-        ],
+        minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     },
     output: {
         path: __dirname,
@@ -78,7 +77,8 @@ module.exports = {
                 author: metadata.author,
                 description: metadata.description,
                 keywords: metadata.keywords.join(','),
-                viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+                viewport:
+                    'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
             },
             template: path.join(__dirname, 'src', 'index.html'),
             title: '',

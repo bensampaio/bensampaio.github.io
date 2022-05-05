@@ -1,13 +1,13 @@
 import { ComponentType, ErrorInfo, PureComponent, ReactNode } from 'react';
 
 type Props = {
-    children: ReactNode,
-    fallback: ComponentType,
+    children: ReactNode;
+    fallback: ComponentType;
 };
 
 type State = {
-    error: null | Error,
-    errorInfo?: null | ErrorInfo
+    error: null | Error;
+    errorInfo?: null | ErrorInfo;
 };
 
 class ErrorBoundary extends PureComponent<Props, State> {

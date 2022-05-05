@@ -4,8 +4,8 @@ import me from '../../../db/me';
 import styles from './Screen.module.scss';
 
 type Props = {
-    children: ReactNode,
-    title?: string,
+    children: ReactNode;
+    title?: string;
 };
 
 const Screen: FC<Props> = ({ children, title }) => {

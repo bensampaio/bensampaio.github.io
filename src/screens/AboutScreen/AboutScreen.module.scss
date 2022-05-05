@@ -1,19 +1,19 @@
 @use '../../shared/anchor' as anchor;
 
 .tech {
-  &Link {
-    @include anchor.colors(inherit);
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-  }
+    &Link {
+        @include anchor.colors(inherit);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+    }
 
-  &Logo {
-    max-height: 4rem;
-  }
+    &Logo {
+        max-height: 4rem;
+    }
 
-  &Name {
-    margin-top: .2rem;
-  }
+    &Name {
+        margin-top: 0.2rem;
+    }
 }

@@ -9,77 +9,77 @@ $xs-max: $sm-min - 1;
 
 // large desktops and larger
 @mixin xl-up {
-  @media screen and (min-width: $xl-min) {
-    @content;
-  }
+    @media screen and (min-width: $xl-min) {
+        @content;
+    }
 }
 
 // landscape tablet and larger
 @mixin lg-up {
-  @media screen and (min-width: $lg-min) {
-    @content;
-  }
+    @media screen and (min-width: $lg-min) {
+        @content;
+    }
 }
 
 // portrait tablet and larger
 @mixin md-up {
-  @media screen and (min-width: $md-min) {
-    @content;
-  }
+    @media screen and (min-width: $md-min) {
+        @content;
+    }
 }
 
 // landscape large phones from 5" and larger
 @mixin sm-up {
-  @media screen and (min-width: $sm-min) {
-    @content;
-  }
+    @media screen and (min-width: $sm-min) {
+        @content;
+    }
 }
 
 // landscape tablet
 @mixin lg-only {
-  @media screen and (min-width: $lg-min) and (max-width: $lg-max) {
-    @content;
-  }
+    @media screen and (min-width: $lg-min) and (max-width: $lg-max) {
+        @content;
+    }
 }
 
 // portrait tablet
 @mixin md-only {
-  @media screen and (min-width: $md-min) and (max-width: $md-max) {
-    @content;
-  }
+    @media screen and (min-width: $md-min) and (max-width: $md-max) {
+        @content;
+    }
 }
 
 // landscape large phones from 5" up to 7"
 @mixin sm-only {
-  @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
-    @content;
-  }
+    @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
+        @content;
+    }
 }
 
 // all mobile devices
 @mixin lg-down {
-  @media screen and (max-width: $lg-max) {
-    @content;
-  }
+    @media screen and (max-width: $lg-max) {
+        @content;
+    }
 }
 
 // all phones up to portrait tablet
 @mixin md-down {
-  @media screen and (max-width: $md-max) {
-    @content;
-  }
+    @media screen and (max-width: $md-max) {
+        @content;
+    }
 }
 
 // all phones up to landscape large phones of 7"
 @mixin sm-down {
-  @media screen and (max-width: $sm-max) {
-    @content;
-  }
+    @media screen and (max-width: $sm-max) {
+        @content;
+    }
 }
 
 // all phones up to portrait large phones of 7"
 @mixin xs-down {
-  @media screen and (max-width: $xs-max) {
-    @content;
-  }
+    @media screen and (max-width: $xs-max) {
+        @content;
+    }
 }
