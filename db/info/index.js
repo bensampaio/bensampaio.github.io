@@ -63,11 +63,6 @@ export default {
             url: 'https://github.com/bensampaio',
         },
         {
-            name: 'Google+',
-            icon: 'google-plus-square',
-            url: 'https://plus.google.com/u/0/+BrunoSampaio88',
-        },
-        {
             name: 'Facebook',
             icon: 'facebook-square',
             url: 'https://www.facebook.com/bens.sampaio',
