@@ -4,7 +4,7 @@ import epikLogo from './epik.png';
 
 export default [ {
     "name": "Banif - Credit Workflow Process",
-    "video": false,
+    "video": null,
     "desc": `
         Web platform that implements the credit workflow process of Banif (one of Portuguese main banks):
         * Account managers on any branch could start the process by creating a new proposal for a client;
@@ -19,7 +19,7 @@ export default [ {
 }, {
     "name": "Google Chrome Extension - Web Inspector",
     "url": "https://chrome.google.com/webstore/detail/web-inspector/enibedkmbpadhfofcgjcphipflcbpelf?utm_source=chrome-ntp-icon",
-    "video": false,
+    "video": null,
     "desc": `
         Chrome extension that allows users to inspect a web page contents and properties by clicking on certain page elements. Some examples:
         * If a text element is clicked it will display the font used, the text size, the text color, and background color.
@@ -27,7 +27,7 @@ export default [ {
         * If a image or video is clicked its dimensions and source URL will be displayed.
         Technologies used: JavaScript, jQuery, Chrome API, CSS3, HTML5.
     `,
-    "institution": false
+    "institution": null
 }, {
     "name": "Epik",
     "url": "http://epik.di.fct.unl.pt/epik",
@@ -40,7 +40,7 @@ export default [ {
 }, {
     "name": "Cubic",
     "url": "http://epik.di.fct.unl.pt/moodle/",
-    "video": false,
+    "video": null,
     "desc": `
         Cubic is a new theme for Moodle 2.3. Its objective is to provide users with a more user-friendly interface, which provides several forms of social awareness and some new concepts.
         Besides this theme, I also developed other plugins for Moodle which can be found here: [https://moodle.org/plugins/browse.php?list=set&id=31](https://moodle.org/plugins/browse.php?list=set&id=31).
@@ -50,10 +50,10 @@ export default [ {
 }, {
     "name": "Coggitare - Forum",
     "url": "http://coggitare.com/forum",
-    "video": false,
+    "video": null,
     "desc": `
         Initially this project purpose was to provide users with scientific information about Vitamin-D. The development was finished but unfortunately the project had to be canceled, so now a simpler version of the website is being used on a new project still under construction.
         Technologies used: JavaScript, jQuery, HTML5, CSS3, PHP, CakePHP, and MySQL.
     `,
-    "institution": { "url": "http://www.coggitare.com/forum/", "logo": false, "name": "Coggitare" }
+    "institution": { "url": "http://www.coggitare.com/forum/", "logo": null, "name": "Coggitare" }
 } ]

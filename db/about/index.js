@@ -1,6 +1,6 @@
 import babelLogo from './babel.png';
 import cssLogo from './css.png';
-import flowLogo from './flow.png';
+import tsLogo from './ts.png';
 import htmlLogo from './html.png';
 import fontawesomeLogo from './fontawesome.png';
 import jsLogo from './js.png';
@@ -76,10 +76,10 @@ export default {
 				"logo": babelLogo,
 			},
 			{
-				"id" : "flow",
-				"url" : "https://flow.org/",
-				"desc" : "Flow",
-				"logo": flowLogo,
+				"id" : "typescript",
+				"url" : "https://www.typescriptlang.org/",
+				"desc" : "TypeScript",
+				"logo": tsLogo,
 			},
 			{
 				"id" : "webpack",

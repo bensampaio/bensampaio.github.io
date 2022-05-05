@@ -5,10 +5,11 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:flowtype/recommended",
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
     ],
-    "parser": "@babel/eslint-parser",
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -17,9 +18,10 @@ module.exports = {
         "sourceType": "module",
     },
     "plugins": [
-        "flowtype",
         "react",
+        "@typescript-eslint",
     ],
+    "root": true,
     "rules": {
         "indent": [
             "error",
@@ -34,6 +36,7 @@ module.exports = {
             "single",
         ],
         "react/display-name": 0,
+        "react/react-in-jsx-scope": 0,
         "react/prop-types": 0,
         "semi": [
             "error",

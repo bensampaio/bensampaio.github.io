@@ -12,7 +12,7 @@ module.exports = {
     entry: {
         main: [
             path.join(__dirname, 'src', 'index.scss'),
-            path.join(__dirname, 'src', 'index.jsx'),
+            path.join(__dirname, 'src', 'index.tsx'),
         ],
     },
     mode: process.env.NODE_ENV,
@@ -20,7 +20,7 @@ module.exports = {
         rules: [
             {
                 exclude: /node_modules/,
-                test: /\.m?jsx?$/,
+                test: /\.m?tsx?$/,
                 use: [
                     {
                         loader: 'babel-loader',
@@ -88,4 +88,7 @@ module.exports = {
             chunkFilename: path.join('public', 'css', '[id].[contenthash].css'),
         }),
     ],
+    resolve: {
+        extensions: ['.js', '.ts', '.tsx'],
+    },
 };
