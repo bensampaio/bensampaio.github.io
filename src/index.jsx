@@ -1,6 +1,7 @@
 // @flow
 
-import ReactDOM from 'react-dom';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -38,7 +39,7 @@ import {
 
 import App from './layout/App';
 
-const rootElement = document.getElementById('app-root');
+const container = document.getElementById('app-root');
 
 library.add(
     faAngular,
@@ -72,11 +73,14 @@ library.add(
     faWindows
 );
 
-if (rootElement instanceof HTMLElement) {
-    ReactDOM.render(
-        <HashRouter>
-            <App />
-        </HashRouter>,
-        rootElement
+if (container instanceof HTMLElement) {
+    const root = createRoot(container);
+
+    root.render(
+        <StrictMode>
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </StrictMode>
     );
 }
