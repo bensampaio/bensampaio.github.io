@@ -1,7 +1,17 @@
 {
   "name": "PersonalWebsite",
-  "version": "1.0.1",
+  "author": "Bruno Sampaio",
   "description": "My personal website",
+  "keywords": [
+    "personal",
+    "resume",
+    "curriculum vitae",
+    "portfolio",
+    "linkedin"
+  ],
+  "license": "MIT",
+  "packageManager": "yarn@3.2.0",
+  "version": "1.0.1",
   "dependencies": {
     "@babel/core": "^7.17.10",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
@@ -58,14 +68,5 @@
     "format:js": "prettier '**/*.{js,ts,tsx,scss}'",
     "lint:css": "stylelint 'src/**/*.{css,scss}'",
     "lint:js": "eslint 'src/**/*.{ts,tsx}'"
-  },
-  "keywords": [
-    "personal",
-    "resume",
-    "curriculum vitae",
-    "portfolio",
-    "linkedin"
-  ],
-  "author": "Bruno Sampaio",
-  "license": "MIT"
+  }
 }
