@@ -51,7 +51,11 @@ workflows:
   all:
     jobs:
       - install
-      - lint
-      - format
-      - validate
-      - build
+      - lint:
+          requires: install
+      - format:
+          requires: install
+      - validate:
+          requires: install
+      - build:
+          requires: install
