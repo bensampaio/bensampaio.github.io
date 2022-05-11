@@ -7,11 +7,7 @@ jobs:
     steps:
       - restore_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: "Install yarn"
-          command: curl -o- -L https://yarnpkg.com/install.sh | bash
-      - yarn set version berry
-      - yarn install --immutable
+      - run: yarn install --immutable
       - save_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
           paths:
@@ -24,8 +20,8 @@ jobs:
     steps:
       - restore_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
-      - yarn lint:css
-      - yarn lint:js
+      - run: yarn lint:css
+      - run: yarn lint:js
 
   format:
     docker:
@@ -33,7 +29,7 @@ jobs:
     steps:
       - restore_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
-      - yarn format:check
+      - run: yarn format:check
 
   validate:
     docker:
@@ -41,7 +37,7 @@ jobs:
     steps:
       - restore_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
-      - yarn tsc
+      - run: yarn tsc
 
   build:
     docker:
@@ -49,7 +45,7 @@ jobs:
     steps:
       - restore_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
-      - yarn build:prd
+      - run: yarn build:prd
 
 workflows:
   all:
