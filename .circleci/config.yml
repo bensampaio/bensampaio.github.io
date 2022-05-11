@@ -10,6 +10,7 @@ jobs:
       - run:
           name: "Install yarn"
           command: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - yarn set version berry
       - yarn install --immutable
       - save_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
