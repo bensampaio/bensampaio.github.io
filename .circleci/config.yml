@@ -7,6 +7,7 @@ jobs:
     steps:
       - restore_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - yarn -v
       - yarn install --immutable
       - save_cache:
           key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
