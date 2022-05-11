@@ -52,10 +52,14 @@ workflows:
     jobs:
       - install
       - lint:
-          requires: install
+          requires:
+            - install
       - format:
-          requires: install
+          requires:
+            - install
       - validate:
-          requires: install
+          requires:
+            - install
       - build:
-          requires: install
+          requires:
+            - install
