@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: yarn install --immutable
       - save_cache:
-          key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
           paths:
             - .yarn/cache
             - .pnp.cjs
@@ -22,7 +22,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: yarn lint:css
       - run: yarn lint:js
 
@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: yarn format:check
 
   validate:
@@ -41,7 +41,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: yarn tsc
 
   build:
@@ -50,7 +50,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cache-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: yarn build:prd
 
 workflows:
