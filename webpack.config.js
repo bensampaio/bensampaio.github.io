@@ -70,6 +70,22 @@ export default {
     },
     optimization: {
         minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+        splitChunks: {
+            cacheGroups: {
+                react: {
+                    chunks: 'initial',
+                    enforce: true,
+                    name: 'react',
+                    test: /node_modules\/react/,
+                },
+                others: {
+                    chunks: 'initial',
+                    enforce: true,
+                    name: 'vendor',
+                    test: /node_modules\/(?!react)/,
+                },
+            },
+        },
     },
     output: {
         path: dirname,
