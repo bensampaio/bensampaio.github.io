@@ -99,11 +99,7 @@ const InfoScreen: FC = () => {
                 {info.languages.map((lang, index) => (
                     <HorizontalListItem key={index}>
                         <div className={styles.language}>
-                            <img
-                                alt=""
-                                aria-hidden={true}
-                                src={lang.flag}
-                            />
+                            <img alt="" aria-hidden={true} src={lang.flag} />
                             <div>
                                 <div>
                                     <strong>{lang.name}</strong>

@@ -21,7 +21,10 @@ export default [
             logo: karifyLogo,
             name: 'Karify',
         },
-        period: { from: { month: 5, year: 2016 }, to: { month: 11, year: 2020 } },
+        period: {
+            from: { month: 5, year: 2016 },
+            to: { month: 11, year: 2020 },
+        },
         summary: `
             I was given the task of rebuilding the existing web frontend using React. This involved a lot of decision-making with stakeholders, building a design system together with a designer and defining a code style guide and quality assurance standards. In the meantime, I helped with the hiring of new developers and supervised a React Native project meant to replace the existing mobile apps.
 
