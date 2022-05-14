@@ -1,8 +1,19 @@
 import campusincLogo from './campusinc.png';
+import catawikiLogo from './catawiki.svg';
 import karifyLogo from './karify.png';
 import safiraLogo from './safira.jpg';
 
 export default [
+    {
+        title: 'Senior Frontend Engineer',
+        institution: {
+            url: 'http://www.catawiki.com/',
+            logo: catawikiLogo,
+            name: 'Catawiki',
+        },
+        period: { from: { month: 12, year: 2020 }, to: null },
+        summary: '',
+    },
     {
         title: 'Frontend Developer',
         institution: {
@@ -10,11 +21,11 @@ export default [
             logo: karifyLogo,
             name: 'Karify',
         },
-        period: { from: { month: 5, year: 2016 }, to: null },
+        period: { from: { month: 5, year: 2016 }, to: { month: 11, year: 2020 } },
         summary: `
             I was given the task of rebuilding the existing web frontend using React. This involved a lot of decision-making with stakeholders, building a design system together with a designer and defining a code style guide and quality assurance standards. In the meantime, I helped with the hiring of new developers and supervised a React Native project meant to replace the existing mobile apps.
 
-            Technologies: JavaScript (ES 2015+), React, Redux, SASS, CSS Modules, Jest, Webpack, NodeJS (express), ESLint, Stylelint, yarn workspaces.
+            Technologies: JavaScript (ES 2015+), React, Redux, SASS, CSS Modules, Jest, Webpack, Node.js (express), ESLint, Stylelint, yarn workspaces.
         `,
     },
     {
@@ -34,7 +45,7 @@ export default [
             * Participated in functional and technical analysis, including decision-making support concerning new features to be added to the product;
             * Migrated the frontend from ECMAScript 5 to 2015.
             
-            Technologies: JavaScript (ECMAScript 2015), AngularJS, jQuery, Jasmine, Twitter Bootstrap, Webpack, NodeJS, SASS, CSS3, HTML5, Bower, Gulp, Karma, Laravel, MySQL.
+            Technologies: JavaScript (ECMAScript 2015), AngularJS, jQuery, Jasmine, Twitter Bootstrap, Webpack, Node.js, SASS, CSS3, HTML5, Bower, Gulp, Karma, Laravel, MySQL.
         `,
     },
     {
@@ -66,7 +77,7 @@ export default [
     {
         title: 'Software Developer',
         institution: {
-            url: 'http://www.coggitare.com/forum/',
+            url: 'https://forumd.org/forumd/',
             logo: false,
             name: 'Coggitare',
         },
@@ -75,7 +86,7 @@ export default [
             to: { month: 10, year: 2012 },
         },
         summary: `
-            Developed the entire website and was responsible for all architectural decisions. In terms of UI and UX worked along side with a designer.
+            Developed the whole website and was responsible for all architectural decisions. In terms of UI and UX worked along side with a UX designer.
             Technologies: JavaScript, jQuery, HTML5, CSS3, PHP, CakePHP, and MySQL.
         `,
     },

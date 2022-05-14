@@ -52,7 +52,7 @@ export default {
             },
             {
                 exclude: /node_modules/,
-                test: /\.(jpg|png)$/,
+                test: /\.(jpg|png|svg)$/,
                 use: [
                     {
                         loader: 'file-loader',

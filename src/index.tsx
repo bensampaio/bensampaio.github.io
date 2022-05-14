@@ -32,6 +32,7 @@ import {
     faPhp,
     faReact,
     faSass,
+    faTwitterSquare,
     faWindows,
 } from '@fortawesome/free-brands-svg-icons';
 
@@ -68,6 +69,7 @@ library.add(
     faReact,
     faSass,
     faSpinner,
+    faTwitterSquare,
     faWindows
 );
 

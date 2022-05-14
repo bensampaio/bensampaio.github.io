@@ -102,7 +102,6 @@ const InfoScreen: FC = () => {
                             <img
                                 alt=""
                                 aria-hidden={true}
-                                className={styles.languageFlag}
                                 src={lang.flag}
                             />
                             <div>

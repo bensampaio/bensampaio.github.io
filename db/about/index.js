@@ -14,7 +14,7 @@ export default {
     goal: 'I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way.',
     technologies: {
         summary: `
-			For the development of this website were used the usual Web technologies (HTML5, CSS3, JS), including some of the most used client-side frameworks at the moment (React and SASS).
+			For the development of this website were used modern Web technologies like TypeScript, React and SASS.
 			The website was tested on the most recent desktop and mobile browsers, such as, Google Chrome, Mozilla Firefox, Safari, Opera, and Edge.
 			If you would like to check the code or if you would like to create your own website using this layout you can find the repository and documentation [here](https://github.com/bensampaio/bensampaio.github.io).
 		`,
