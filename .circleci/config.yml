@@ -13,6 +13,8 @@ jobs:
           key: yarn-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
           paths:
             - .yarn/cache
+            - .yarn/unplugged
+            - .yarn/install-state.gz
             - .pnp.cjs
             - .pnp.loader.mjs
 
