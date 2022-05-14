@@ -69,5 +69,6 @@
     "format": "prettier '**/*.{js,ts,tsx,scss}' --write",
     "lint:css": "stylelint 'src/**/*.{css,scss}'",
     "lint:js": "eslint 'src/**/*.{ts,tsx}'"
-  }
+  },
+  "type": "module"
 }

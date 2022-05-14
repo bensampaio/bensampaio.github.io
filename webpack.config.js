@@ -1,18 +1,24 @@
-const path = require('path');
+import { createRequire } from 'module';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+import autoprefixer from 'autoprefixer';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+
+const require = createRequire(import.meta.url);
 
 const metadata = require('./package.json');
 
-module.exports = {
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default {
     entry: {
         main: [
-            path.join(__dirname, 'src', 'index.scss'),
-            path.join(__dirname, 'src', 'index.tsx'),
+            path.join(dirname, 'src', 'index.scss'),
+            path.join(dirname, 'src', 'index.tsx'),
         ],
     },
     mode: process.env.NODE_ENV,
@@ -66,13 +72,13 @@ module.exports = {
         minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     },
     output: {
-        path: __dirname,
+        path: dirname,
         filename: path.join('public', 'js', '[name].[contenthash].js'),
         chunkFilename: path.join('public', 'js', '[id].[contenthash].js'),
     },
     plugins: [
         new HtmlWebpackPlugin({
-            favicon: path.join(__dirname, 'src', 'favicon.ico'),
+            favicon: path.join(dirname, 'src', 'favicon.ico'),
             meta: {
                 author: metadata.author,
                 description: metadata.description,
@@ -80,7 +86,7 @@ module.exports = {
                 viewport:
                     'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
             },
-            template: path.join(__dirname, 'src', 'index.html'),
+            template: path.join(dirname, 'src', 'index.html'),
             title: '',
         }),
         new MiniCssExtractPlugin({
