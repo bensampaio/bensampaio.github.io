@@ -3,9 +3,6 @@
 .tech {
     &Link {
         @include anchor.colors(inherit);
-        align-items: center;
-        display: flex;
-        flex-direction: column;
         text-decoration: none;
     }
 

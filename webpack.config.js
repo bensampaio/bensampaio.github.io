@@ -2,7 +2,6 @@ import { createRequire } from 'module';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import autoprefixer from 'autoprefixer';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
@@ -40,14 +39,7 @@ export default {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                plugins: [autoprefixer()],
-                            },
-                        },
-                    },
+                    'postcss-loader',
                 ],
             },
             {
