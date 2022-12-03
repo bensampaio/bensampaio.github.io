@@ -1,8 +1,8 @@
+import cn from 'classnames';
 import { FC, lazy, memo, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import SpinnerScreen from '../../screens/SpinnerScreen';
-import styles from './Content.module.scss';
 
 const AboutScreen = lazy(() => import('../../screens/AboutScreen'));
 const EducationScreen = lazy(() => import('../../screens/EducationScreen'));
@@ -12,7 +12,7 @@ const NotFoundScreen = lazy(() => import('../../screens/NotFoundScreen'));
 const ProjectsScreen = lazy(() => import('../../screens/ProjectsScreen'));
 
 const Content: FC = () => (
-    <main className={styles.container}>
+    <main className={cn('min-h-screen', 'mt-xxxl', 'p-s')}>
         <Suspense fallback={<SpinnerScreen />}>
             <Routes>
                 <Route element={<InfoScreen />} path="/" />

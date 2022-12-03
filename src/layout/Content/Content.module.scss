@@ -1,8 +1,0 @@
-@use '../Menu/vars' as menu;
-
-.container {
-    margin-top: 3.5rem;
-    min-height: 100vh;
-    padding: menu.$vSpacing * 2 menu.$hSpacing;
-    transition: margin-left menu.$animationDuration ease-in-out;
-}

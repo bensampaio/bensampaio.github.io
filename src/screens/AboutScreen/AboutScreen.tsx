@@ -25,7 +25,10 @@ const Technology: FC<TechnologyProps> = ({
     url,
 }: TechnologyProps) => (
     <HorizontalListItem>
-        <ExternalLink className={cn('flex', 'flex-col', 'items-center', styles.techLink)} to={url}>
+        <ExternalLink
+            className={cn('flex', 'flex-col', 'items-center', styles.techLink)}
+            to={url}
+        >
             <img alt={id} className={styles.techLogo} src={logo} />
             <span className={styles.techName}>{desc}</span>
         </ExternalLink>
