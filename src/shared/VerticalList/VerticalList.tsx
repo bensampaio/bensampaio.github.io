@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
-import styles from './VerticalList.module.scss';
-
 export const VerticalList: FC<JSX.IntrinsicElements['ul']> = (props) => (
-    <ul {...props} className={styles.list} />
+    <ul {...props} className="flex flex-col gap-y-lg list-none m-0 p-0" />
 );
 
 export const VerticalListItem: FC<JSX.IntrinsicElements['li']> = (props) => (
-    <li {...props} className={styles.item} />
+    <li {...props} />
 );

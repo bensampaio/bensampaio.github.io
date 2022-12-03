@@ -7,7 +7,6 @@ import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import YouTube from '../../shared/YouTube';
-import styles from './ProjectsScreen.module.scss';
 
 const ProjectsScreen: FC = () => (
     <Screen title="Projects">
@@ -16,9 +15,9 @@ const ProjectsScreen: FC = () => (
             {projects.map((project, index) => (
                 <VerticalListItem key={index}>
                     <article>
-                        <header className={styles.header}>
+                        <header className="flex items-center justify-between mb-sm">
                             <div>
-                                <h2 className={styles.heading}>
+                                <h2 className="mb-xs">
                                     {project.name}
                                 </h2>
                                 {project.institution?.url && (

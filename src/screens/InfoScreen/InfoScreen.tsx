@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import cn from 'classnames';
 import { FC, memo, useCallback, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -42,11 +42,10 @@ const InfoScreen: FC = () => {
                 ))}
 
                 <HorizontalListItem>
-                    <div className={styles.extraSkills}>
+                    <div className="bg-gray-e border border-solid border-gray-d text-gray-4">
                         <div
-                            className={classnames(styles.extraSkillsContent, {
-                                [styles.extraSkillsContentHide]:
-                                    !showExtraSkills,
+                            className={cn('transition-h', 'duration-200', 'ease-in-out',  {
+                                'h-0 overflow-hidden': !showExtraSkills,
                             })}
                         >
                             <HorizontalList>
@@ -69,23 +68,21 @@ const InfoScreen: FC = () => {
                             </HorizontalList>
                         </div>
                         <button
-                            className={styles.extraSkillsButton}
+                            className="bg-transparent border-0 cursor-pointer p-0 text-inherit text-base w-full"
                             title="Expand / Collapse"
                             onClick={toggleExtraSkills}
                         >
                             <FontAwesomeIcon
                                 aria-hidden={true}
-                                className={classnames({
-                                    [styles.extraSkillsButtonIconHide]:
-                                        showExtraSkills,
+                                className={cn({
+                                    hidden: showExtraSkills,
                                 })}
                                 icon="chevron-down"
                             />
                             <FontAwesomeIcon
                                 aria-hidden={true}
-                                className={classnames({
-                                    [styles.extraSkillsButtonIconHide]:
-                                        !showExtraSkills,
+                                className={cn({
+                                    hidden: !showExtraSkills,
                                 })}
                                 icon="chevron-up"
                             />
@@ -98,13 +95,13 @@ const InfoScreen: FC = () => {
             <HorizontalList>
                 {info.languages.map((lang, index) => (
                     <HorizontalListItem key={index}>
-                        <div className={styles.language}>
+                        <div className="flex items-center gap-x-xs">
                             <img alt="" aria-hidden={true} src={lang.flag} />
                             <div>
                                 <div>
                                     <strong>{lang.name}</strong>
                                 </div>
-                                <div className={styles.languageLevel}>
+                                <div className="text-xs">
                                     {lang.level}
                                 </div>
                             </div>
@@ -118,7 +115,7 @@ const InfoScreen: FC = () => {
                 {info.pages.map(({ icon, name, url }, index) => (
                     <HorizontalListItem key={index}>
                         <ExternalLink
-                            className={styles.socialNetworkLink}
+                            className={cn('flex', 'items-center', 'gap-x-xs', 'no-underline', styles.socialNetworkLink)}
                             to={url}
                         >
                             <FontAwesomeIcon

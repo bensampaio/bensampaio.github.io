@@ -1,67 +1,23 @@
 @use '../../shared/anchor' as anchor;
-@use '../../shared/text' as text;
-
-.extraSkills {
-    background-color: #eee;
-    border: 1px solid #ddd;
-    color: #444;
-
-    &Button {
-        background-color: transparent;
-        border: none;
-        color: inherit;
-        cursor: pointer;
-        font-size: 1rem;
-        padding: 0;
-        width: 100%;
-    }
-
-    &ButtonIconHide {
-        display: none;
-    }
-
-    &Content {
-        transition: height 200ms ease-in-out;
-    }
-
-    &ContentHide {
-        height: 0;
-        overflow: hidden;
-    }
-}
-
-.language {
-    align-items: center;
-    display: flex;
-    gap: 0.5rem;
-
-    &Level {
-        font-size: text.$small;
-    }
-}
 
 .socialNetworkLink {
     @include anchor.colors(inherit);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
 
     &Icon {
         &[data-icon='linkedin'] {
-            color: #007bb6;
+            color: theme(colors.linkedin);
         }
 
         &[data-icon='github-square'] {
-            color: #000;
+            color: theme(colors.github);
         }
 
         &[data-icon='facebook-square'] {
-            color: #3b5998;
+            color: theme(colors.facebook);
         }
 
         &[data-icon='twitter-square'] {
-            color: #1da1f2;
+            color: theme(colors.twitter);
         }
     }
 }

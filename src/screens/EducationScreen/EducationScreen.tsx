@@ -7,7 +7,6 @@ import Period from '../../shared/Period';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
-import styles from './EducationScreen.module.scss';
 
 const EducationScreen: FC = () => (
     <Screen title="Education">
@@ -16,11 +15,11 @@ const EducationScreen: FC = () => (
             {education.map((degree, index) => (
                 <VerticalListItem key={index}>
                     <article>
-                        <header className={styles.header}>
+                        <header className="flex items-center justify-between mb-sm">
                             <div>
-                                <h2
-                                    className={styles.heading}
-                                >{`${degree.degree} in ${degree.field}`}</h2>
+                                <h2 className="mb-xs">
+                                    {`${degree.degree} in ${degree.field}`}
+                                </h2>
                                 <ExternalLink to={degree.institution.url}>
                                     {degree.institution.name}
                                 </ExternalLink>

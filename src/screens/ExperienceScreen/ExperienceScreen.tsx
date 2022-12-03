@@ -7,7 +7,6 @@ import Period from '../../shared/Period';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
-import styles from './ExperienceScreen.module.scss';
 
 const ExperienceScreen: FC = () => (
     <Screen title="Experience">
@@ -16,9 +15,9 @@ const ExperienceScreen: FC = () => (
             {experience.map((position, index) => (
                 <VerticalListItem key={index}>
                     <article>
-                        <header className={styles.header}>
+                        <header className="flex items-center justify-between mb-s">
                             <div>
-                                <h2 className={styles.heading}>
+                                <h2 className="mb-xs">
                                     {position.title}
                                 </h2>
                                 <ExternalLink to={position.institution.url}>

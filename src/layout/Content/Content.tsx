@@ -12,7 +12,7 @@ const NotFoundScreen = lazy(() => import('../../screens/NotFoundScreen'));
 const ProjectsScreen = lazy(() => import('../../screens/ProjectsScreen'));
 
 const Content: FC = () => (
-    <main className={cn('min-h-screen', 'mt-xxxl', 'p-s')}>
+    <main className={cn('min-h-screen', 'mt-3xl', 'p-sm')}>
         <Suspense fallback={<SpinnerScreen />}>
             <Routes>
                 <Route element={<InfoScreen />} path="/" />

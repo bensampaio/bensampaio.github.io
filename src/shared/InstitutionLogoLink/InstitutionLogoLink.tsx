@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import ExternalLink from '../ExternalLink';
-import styles from './InstitutionLogoLink.module.scss';
 
 type Props = {
     logo: string;
@@ -11,7 +10,7 @@ type Props = {
 
 const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) => (
     <ExternalLink to={url}>
-        <img alt={name} className={styles.image} src={logo} />
+        <img alt={name} className="hidden sm:block max-h-2xl max-w-xs" src={logo} />
     </ExternalLink>
 );
 

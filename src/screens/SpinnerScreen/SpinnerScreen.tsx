@@ -2,14 +2,13 @@ import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
-import styles from './SpinnerScreen.module.scss';
 
 const SpinnerScreen: FC = () => (
     <Screen title="Waiting">
-        <div className={styles.container}>
+        <div className="flex items-center justify-center">
             <FontAwesomeIcon
                 aria-hidden={true}
-                className={styles.icon}
+                className="text-spinner"
                 fixedWidth={true}
                 icon="spinner"
                 spin={true}

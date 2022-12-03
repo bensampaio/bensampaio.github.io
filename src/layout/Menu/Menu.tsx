@@ -21,14 +21,14 @@ const Menu: FC = () => {
         'bg-gray-3',
         'text-white',
         'py-xs',
-        'px-s'
+        'px-sm'
     );
 
-    const itemClassNames = cn('flex', 'items-center', 'mx-xs', 'my-0', 'pr-xs', 'py-xxs');
+    const itemClassNames = cn('flex', 'items-center', 'mx-xs', 'my-0', 'pr-xs', 'py-2xs');
 
     const itemHoverClassNames = 'hover:bg-gray-4';
 
-    const itemIconClassNames = cn('flex', 'items-center', 'justify-center', 'h-l', 'w-l');
+    const itemIconClassNames = cn('flex', 'items-center', 'justify-center', 'h-lg', 'w-lg');
 
     const itemNameClassNames = cn('ml-xxs', 'whitespace-nowrap');
 
@@ -63,7 +63,7 @@ const Menu: FC = () => {
                     <img
                         alt=""
                         aria-hidden={true}
-                        className={cn('border-2', 'border-solid', 'border-current', 'rounded-full', 'h-l', 'w-l')}
+                        className={cn('border-2', 'border-solid', 'border-current', 'rounded-full', 'h-lg', 'w-lg')}
                         src={me.picture}
                     />
                     <h1 className={cn('text-base', 'ml-xs', 'my-0')}>

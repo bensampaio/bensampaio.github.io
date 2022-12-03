@@ -3,14 +3,5 @@
 .tech {
     &Link {
         @include anchor.colors(inherit);
-        text-decoration: none;
-    }
-
-    &Logo {
-        max-height: 4rem;
-    }
-
-    &Name {
-        margin-top: 0.2rem;
     }
 }

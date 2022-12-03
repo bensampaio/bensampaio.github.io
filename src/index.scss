@@ -12,21 +12,9 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    overflow-y: scroll;
-}
-
-body {
-    border: none;
-    margin: 0;
-    padding: 0;
 }
 
 h1,
@@ -46,7 +34,7 @@ p {
 }
 
 a {
-    @include anchor.colors(#0077b5);
+    @include anchor.colors(theme(colors.primary));
 
     &:hover {
         text-decoration: none;
