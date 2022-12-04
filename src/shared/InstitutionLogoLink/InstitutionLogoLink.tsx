@@ -9,8 +9,12 @@ type Props = {
 };
 
 const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) => (
-    <ExternalLink to={url}>
-        <img alt={name} className="hidden sm:block max-h-2xl max-w-xs" src={logo} />
+    <ExternalLink href={url}>
+        <img
+            alt={name}
+            className="hidden sm:block max-h-2xl max-w-xs"
+            src={logo}
+        />
     </ExternalLink>
 );
 

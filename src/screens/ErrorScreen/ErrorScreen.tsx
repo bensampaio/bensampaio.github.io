@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Screen from '../../shared/Screen';
 import ExternalLink from '../../shared/ExternalLink';
+import { Anchor } from '../../shared/Anchor';
 
 const handleClick = () => location.reload();
 
@@ -20,9 +21,12 @@ const ErrorScreen: FC = () => (
             </div>
             <div className="mt-lg">
                 Or{' '}
-                <ExternalLink to="https://github.com/bensampaio/bensampaio.github.io/issues/new">
+                <Anchor
+                    as={ExternalLink}
+                    href="https://github.com/bensampaio/bensampaio.github.io/issues/new"
+                >
                     report an issue on github
-                </ExternalLink>{' '}
+                </Anchor>{' '}
                 with the steps you followed.
             </div>
         </div>

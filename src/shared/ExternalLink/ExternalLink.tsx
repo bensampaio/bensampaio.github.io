@@ -1,12 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
-type Props = Omit<JSX.IntrinsicElements['a'], 'href'> & {
-    children: ReactNode;
-    to: string;
-};
+type Props = JSX.IntrinsicElements['a'];
 
-const ExternalLink: FC<Props> = ({ children, to, ...rest }) => (
-    <a {...rest} href={to} rel="noopener noreferrer" target="_blank">
+const ExternalLink: FC<Props> = ({ children, href, ...rest }) => (
+    <a {...rest} href={href} rel="noopener noreferrer" target="_blank">
         {children}
     </a>
 );

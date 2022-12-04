@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { FC, memo, useCallback, useState } from 'react';
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import info from '../../../db/info';
@@ -10,8 +11,25 @@ import {
 } from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
-import styles from './InfoScreen.module.scss';
-import { IconName } from '@fortawesome/fontawesome-svg-core';
+
+const getSocialColorClassName = (name: string): string => {
+    switch (name) {
+        case 'Facebook':
+            return 'text-facebook';
+
+        case 'Github':
+            return 'text-github';
+
+        case 'LinkedIn':
+            return 'text-linkedin';
+
+        case 'Twitter':
+            return 'text-twitter';
+
+        default:
+            return 'text-inherit';
+    }
+};
 
 const InfoScreen: FC = () => {
     const [showExtraSkills, setShowExtraSkills] = useState(false);
@@ -44,9 +62,14 @@ const InfoScreen: FC = () => {
                 <HorizontalListItem>
                     <div className="bg-gray-e border border-solid border-gray-d text-gray-4">
                         <div
-                            className={cn('transition-h', 'duration-200', 'ease-in-out',  {
-                                'h-0 overflow-hidden': !showExtraSkills,
-                            })}
+                            className={cn(
+                                'transition-h',
+                                'duration-200',
+                                'ease-in-out',
+                                {
+                                    'h-0 overflow-hidden': !showExtraSkills,
+                                }
+                            )}
                         >
                             <HorizontalList>
                                 {info.skills
@@ -101,9 +124,7 @@ const InfoScreen: FC = () => {
                                 <div>
                                     <strong>{lang.name}</strong>
                                 </div>
-                                <div className="text-xs">
-                                    {lang.level}
-                                </div>
+                                <div className="text-xs">{lang.level}</div>
                             </div>
                         </div>
                     </HorizontalListItem>
@@ -115,12 +136,19 @@ const InfoScreen: FC = () => {
                 {info.pages.map(({ icon, name, url }, index) => (
                     <HorizontalListItem key={index}>
                         <ExternalLink
-                            className={cn('flex', 'items-center', 'gap-x-xs', 'no-underline', styles.socialNetworkLink)}
-                            to={url}
+                            className={cn(
+                                'flex',
+                                'items-center',
+                                'gap-x-xs',
+                                'no-underline',
+                                'text-inherit',
+                                'visited:text-inherit'
+                            )}
+                            href={url}
                         >
                             <FontAwesomeIcon
                                 aria-hidden={true}
-                                className={styles.socialNetworkLinkIcon}
+                                className={getSocialColorClassName(name)}
                                 icon={['fab', icon as IconName]}
                             />
                             <span>{name}</span>

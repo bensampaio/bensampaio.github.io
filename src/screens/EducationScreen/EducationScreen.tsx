@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 
 import education from '../../../db/education';
+import { Anchor } from '../../shared/Anchor';
 import ExternalLink from '../../shared/ExternalLink';
 import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
 import Period from '../../shared/Period';
@@ -20,9 +21,12 @@ const EducationScreen: FC = () => (
                                 <h2 className="mb-xs">
                                     {`${degree.degree} in ${degree.field}`}
                                 </h2>
-                                <ExternalLink to={degree.institution.url}>
+                                <Anchor
+                                    as={ExternalLink}
+                                    href={degree.institution.url}
+                                >
                                     {degree.institution.name}
-                                </ExternalLink>
+                                </Anchor>
                                 , <Period {...degree.period} />
                             </div>
                             {degree.institution.logo && (

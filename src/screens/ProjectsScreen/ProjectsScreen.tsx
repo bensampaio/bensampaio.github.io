@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 
 import projects from '../../../db/projects';
+import { Anchor } from '../../shared/Anchor';
 import ExternalLink from '../../shared/ExternalLink';
 import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
 import Screen from '../../shared/Screen';
@@ -17,13 +18,14 @@ const ProjectsScreen: FC = () => (
                     <article>
                         <header className="flex items-center justify-between mb-sm">
                             <div>
-                                <h2 className="mb-xs">
-                                    {project.name}
-                                </h2>
+                                <h2 className="mb-xs">{project.name}</h2>
                                 {project.institution?.url && (
-                                    <ExternalLink to={project.institution.url}>
+                                    <Anchor
+                                        as={ExternalLink}
+                                        href={project.institution.url}
+                                    >
                                         {project.institution.name}
-                                    </ExternalLink>
+                                    </Anchor>
                                 )}
                             </div>
                             {project.institution?.logo && (

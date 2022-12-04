@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 
 import experience from '../../../db/experience';
+import { Anchor } from '../../shared/Anchor';
 import ExternalLink from '../../shared/ExternalLink';
 import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
 import Period from '../../shared/Period';
@@ -17,12 +18,13 @@ const ExperienceScreen: FC = () => (
                     <article>
                         <header className="flex items-center justify-between mb-s">
                             <div>
-                                <h2 className="mb-xs">
-                                    {position.title}
-                                </h2>
-                                <ExternalLink to={position.institution.url}>
+                                <h2 className="mb-xs">{position.title}</h2>
+                                <Anchor
+                                    as={ExternalLink}
+                                    href={position.institution.url}
+                                >
                                     {position.institution.name}
-                                </ExternalLink>
+                                </Anchor>
                                 , <Period {...position.period} />
                             </div>
                             {position.institution.logo && (

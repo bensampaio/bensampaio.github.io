@@ -1,5 +1,3 @@
-@use 'shared/anchor' as anchor;
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @tailwind base;
@@ -30,13 +28,5 @@ p {
 
     &:last-child {
         margin-bottom: 0;
-    }
-}
-
-a {
-    @include anchor.colors(theme(colors.primary));
-
-    &:hover {
-        text-decoration: none;
     }
 }

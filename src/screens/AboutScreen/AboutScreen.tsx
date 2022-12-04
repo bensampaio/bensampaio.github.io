@@ -2,6 +2,7 @@ import cn from 'classnames';
 import { FC, memo } from 'react';
 
 import about from '../../../db/about';
+import { Anchor } from '../../shared/Anchor';
 import ExternalLink from '../../shared/ExternalLink';
 import {
     HorizontalList,
@@ -9,7 +10,6 @@ import {
 } from '../../shared/HorizontalList';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
-import styles from './AboutScreen.module.scss';
 
 type TechnologyProps = {
     desc: string;
@@ -26,8 +26,15 @@ const Technology: FC<TechnologyProps> = ({
 }: TechnologyProps) => (
     <HorizontalListItem>
         <ExternalLink
-            className={cn('flex', 'flex-col', 'items-center', 'no-underline', styles.techLink)}
-            to={url}
+            className={cn(
+                'flex',
+                'flex-col',
+                'items-center',
+                'no-underline',
+                'text-inherit',
+                'visited:text-inherit'
+            )}
+            href={url}
         >
             <img alt={id} className="max-h-4xl" src={logo} />
             <span className="mt-2xs">{desc}</span>
@@ -65,9 +72,9 @@ const AboutScreen: FC = () => (
         <HorizontalList>
             {about.credits.developers.map((developer, index) => (
                 <HorizontalListItem key={index}>
-                    <ExternalLink to={developer.url}>
+                    <Anchor as={ExternalLink} href={developer.url}>
                         {developer.name}
-                    </ExternalLink>
+                    </Anchor>
                 </HorizontalListItem>
             ))}
         </HorizontalList>
@@ -76,9 +83,9 @@ const AboutScreen: FC = () => (
         <HorizontalList>
             {about.credits.designers.map((designer, index) => (
                 <HorizontalListItem key={index}>
-                    <ExternalLink to={designer.url}>
+                    <Anchor as={ExternalLink} href={designer.url}>
                         {designer.name}
-                    </ExternalLink>
+                    </Anchor>
                 </HorizontalListItem>
             ))}
         </HorizontalList>
@@ -87,15 +94,17 @@ const AboutScreen: FC = () => (
         <HorizontalList>
             {about.credits.others.map((other, index) => (
                 <HorizontalListItem key={index}>
-                    <ExternalLink to={other.url}>{other.name}</ExternalLink>
+                    <Anchor as={ExternalLink} href={other.url}>
+                        {other.name}
+                    </Anchor>
                     {other.desc && (
                         <span>
                             {' '}
                             - {other.desc}{' '}
                             {other.item && (
-                                <ExternalLink to={other.item.url}>
+                                <Anchor as={ExternalLink} href={other.item.url}>
                                     {other.item.name}
-                                </ExternalLink>
+                                </Anchor>
                             )}
                         </span>
                     )}

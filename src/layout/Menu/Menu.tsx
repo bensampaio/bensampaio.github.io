@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import me from '../../../db/me';
-import styles from './Menu.module.scss';
 
 const Menu: FC = () => {
     const [expanded, setExpanded] = useState(false);
@@ -24,13 +23,29 @@ const Menu: FC = () => {
         'px-sm'
     );
 
-    const itemClassNames = cn('flex', 'items-center', 'mx-xs', 'my-0', 'pr-xs', 'py-2xs');
+    const itemClassNames = cn(
+        'flex',
+        'items-center',
+        'mx-xs',
+        'my-0',
+        'pr-xs',
+        'py-2xs',
+        'no-underline'
+    );
 
     const itemHoverClassNames = 'hover:bg-gray-4';
 
-    const itemIconClassNames = cn('flex', 'items-center', 'justify-center', 'h-lg', 'w-lg');
+    const itemIconClassNames = cn(
+        'flex',
+        'items-center',
+        'justify-center',
+        'h-lg',
+        'w-lg'
+    );
 
     const itemNameClassNames = cn('ml-xxs', 'whitespace-nowrap');
+
+    const inactiveLinkClassNames = cn('text-inherit', 'visited:text-inherit');
 
     const handleSelect = useCallback(() => {
         setExpanded(false);
@@ -52,8 +67,9 @@ const Menu: FC = () => {
             >
                 <NavLink
                     className={({ isActive }) =>
-                        cn(itemClassNames, styles.link, styles.headerLink, {
-                            [styles.linkHome]: isActive,
+                        cn(itemClassNames, {
+                            [inactiveLinkClassNames]: !isActive,
+                            'text-info visited:text-info': isActive,
                         })
                     }
                     end
@@ -63,7 +79,14 @@ const Menu: FC = () => {
                     <img
                         alt=""
                         aria-hidden={true}
-                        className={cn('border-2', 'border-solid', 'border-current', 'rounded-full', 'h-lg', 'w-lg')}
+                        className={cn(
+                            'border-2',
+                            'border-solid',
+                            'border-current',
+                            'rounded-full',
+                            'h-lg',
+                            'w-lg'
+                        )}
                         src={me.picture}
                     />
                     <h1 className={cn('text-base', 'ml-xs', 'my-0')}>
@@ -99,13 +122,28 @@ const Menu: FC = () => {
                         !expanded,
                 })}
             >
-                <ul className={cn('flex', 'flex-auto', 'flex-col', 'md:flex-row', 'm-0', 'p-0', 'list-none')}>
+                <ul
+                    className={cn(
+                        'flex',
+                        'flex-auto',
+                        'flex-col',
+                        'md:flex-row',
+                        'm-0',
+                        'p-0',
+                        'list-none'
+                    )}
+                >
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, styles.link, {
-                                    [styles.linkExperience]: isActive,
-                                })
+                                cn(
+                                    itemClassNames,
+                                    itemHoverClassNames,
+                                    {
+                                        [inactiveLinkClassNames]: !isActive,
+                                        'text-experience visited:text-experience': isActive,
+                                    }
+                                )
                             }
                             to="/experience"
                             onClick={handleSelect}
@@ -117,15 +155,22 @@ const Menu: FC = () => {
                                     icon="file"
                                 />
                             </div>
-                            <span className={itemNameClassNames}>Experience</span>
+                            <span className={itemNameClassNames}>
+                                Experience
+                            </span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, styles.link, {
-                                    [styles.linkEducation]: isActive,
-                                })
+                                cn(
+                                    itemClassNames,
+                                    itemHoverClassNames,
+                                    {
+                                        [inactiveLinkClassNames]: !isActive,
+                                        'text-education visited:text-education': isActive,
+                                    }
+                                )
                             }
                             to="/education"
                             onClick={handleSelect}
@@ -137,15 +182,22 @@ const Menu: FC = () => {
                                     icon="graduation-cap"
                                 />
                             </div>
-                            <span className={itemNameClassNames}>Education</span>
+                            <span className={itemNameClassNames}>
+                                Education
+                            </span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, styles.link, {
-                                    [styles.linkProjects]: isActive,
-                                })
+                                cn(
+                                    itemClassNames,
+                                    itemHoverClassNames,
+                                    {
+                                        [inactiveLinkClassNames]: !isActive,
+                                        'text-projects visited:text-projects': isActive,
+                                    }
+                                )
                             }
                             to="/projects"
                             onClick={handleSelect}
@@ -164,9 +216,14 @@ const Menu: FC = () => {
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, styles.link, {
-                                    [styles.linkAbout]: isActive,
-                                })
+                                cn(
+                                    itemClassNames,
+                                    itemHoverClassNames,
+                                    {
+                                        [inactiveLinkClassNames]: !isActive,
+                                        'text-about visited:text-about': isActive,
+                                    }
+                                )
                             }
                             to="/about"
                             onClick={handleSelect}

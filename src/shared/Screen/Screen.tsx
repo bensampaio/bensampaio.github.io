@@ -21,7 +21,13 @@ const Screen: FC<Props> = ({ children, title }) => {
         };
     });
 
-    return <article className={cn('h-full', 'max-w-prose', 'my-0', 'mx-auto', 'w-full')}>{children}</article>;
+    return (
+        <article
+            className={cn('h-full', 'max-w-prose', 'my-0', 'mx-auto', 'w-full')}
+        >
+            {children}
+        </article>
+    );
 };
 
 export default memo<Props>(Screen);

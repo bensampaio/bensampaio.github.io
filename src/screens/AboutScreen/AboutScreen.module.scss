@@ -1,7 +1,0 @@
-@use '../../shared/anchor' as anchor;
-
-.tech {
-    &Link {
-        @include anchor.colors(inherit);
-    }
-}

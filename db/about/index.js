@@ -21,19 +21,19 @@ export default {
         client: [
             {
                 id: 'html',
-                url: 'http://www.w3.org/TR/html5/',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
                 desc: 'HTML',
                 logo: htmlLogo,
             },
             {
                 id: 'css',
-                url: 'http://www.w3.org/TR/CSS/',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
                 desc: 'CSS',
                 logo: cssLogo,
             },
             {
                 id: 'js',
-                url: '',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
                 desc: 'JavaScript',
                 logo: jsLogo,
             },

@@ -1,5 +1,6 @@
 import { FC, memo, ReactNode } from 'react';
 
+import { Anchor } from '../Anchor';
 import ExternalLink from '../ExternalLink';
 
 /**
@@ -35,9 +36,9 @@ const parseLinks = (line: string): ReactNode[] => {
 
         if (name && url) {
             accumulator.push(
-                <ExternalLink key={i} to={url}>
+                <Anchor as={ExternalLink} key={i} href={url}>
                     {name}
-                </ExternalLink>
+                </Anchor>
             );
         }
     }
