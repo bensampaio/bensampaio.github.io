@@ -68,7 +68,7 @@ export default {
         {
             name: 'Facebook',
             icon: 'facebook-square',
-            url: 'https://www.facebook.com/bensampaio88',
+            url: 'https://www.facebook.com/glutenfree.sampaio',
         },
         {
             name: 'Twitter',
