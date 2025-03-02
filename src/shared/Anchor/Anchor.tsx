@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { ElementType, ReactElement } from 'react';
+import { ElementType, JSX, ReactElement } from 'react';
 
 type Props<C extends ElementType> = JSX.IntrinsicElements['a'] & {
     as?: C;

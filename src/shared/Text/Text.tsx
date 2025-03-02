@@ -48,6 +48,7 @@ const parseLinks = (line: string): ReactNode[] => {
 
 type Props = {
     children: string;
+    className?: string;
 };
 
 /**
@@ -55,7 +56,7 @@ type Props = {
  * @param {Object} props
  * @returns {Array}
  */
-const Text: FC<Props> = ({ children }) => {
+const Text: FC<Props> = ({ children, className }) => {
     const lines = children.split(/\n/g);
 
     let currentList: null | ReactNode[] = null;
@@ -88,7 +89,12 @@ const Text: FC<Props> = ({ children }) => {
                     }
 
                     currentList.push(
-                        <li key={currentList.length}>{parsedLine}</li>
+                        <li
+                            className="list-disc ml-md mt-xs"
+                            key={currentList.length}
+                        >
+                            {parsedLine}
+                        </li>
                     );
 
                     if (
@@ -99,7 +105,11 @@ const Text: FC<Props> = ({ children }) => {
                         currentList = null;
                     }
                 } else {
-                    accumulator.push(<p key={index}>{parsedLine}</p>);
+                    accumulator.push(
+                        <p className={className} key={index}>
+                            {parsedLine}
+                        </p>
+                    );
                 }
 
                 return accumulator;

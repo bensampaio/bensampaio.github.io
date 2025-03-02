@@ -12,7 +12,7 @@ const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) => (
     <ExternalLink href={url}>
         <img
             alt={name}
-            className="hidden sm:block max-h-2xl max-w-xs"
+            className="hidden sm:block max-h-2xl max-w-6xl"
             src={logo}
         />
     </ExternalLink>
