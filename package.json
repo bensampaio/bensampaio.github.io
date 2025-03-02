@@ -10,7 +10,7 @@
     "linkedin"
   ],
   "license": "MIT",
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@4.7.0",
   "version": "1.0.1",
   "dependencies": {
     "@babel/core": "^7.17.10",
