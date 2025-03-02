@@ -59,10 +59,9 @@
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-react": "^7.37.4",
     "prettier": "^2.8.8",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-recommended": "^7.0.0",
-    "stylelint-config-recommended-scss": "^6.0.0"
+    "stylelint": "^16.15.0",
+    "stylelint-config-recommended": "^15.0.0",
+    "stylelint-config-recommended-scss": "^14.1.0"
   },
   "scripts": {
     "build:dev": "NODE_ENV=development webpack-dev-server --history-api-fallback",
