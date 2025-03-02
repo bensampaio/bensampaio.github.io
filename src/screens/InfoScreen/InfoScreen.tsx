@@ -14,20 +14,20 @@ import Text from '../../shared/Text';
 
 const getSocialColorClassName = (name: string): string => {
     switch (name) {
-        case 'Facebook':
-            return 'text-facebook';
+    case 'Facebook':
+        return 'text-facebook';
 
-        case 'Github':
-            return 'text-github';
+    case 'Github':
+        return 'text-github';
 
-        case 'LinkedIn':
-            return 'text-linkedin';
+    case 'LinkedIn':
+        return 'text-linkedin';
 
-        case 'Twitter':
-            return 'text-twitter';
+    case 'Twitter':
+        return 'text-twitter';
 
-        default:
-            return 'text-inherit';
+    default:
+        return 'text-inherit';
     }
 };
 

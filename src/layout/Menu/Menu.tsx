@@ -136,14 +136,11 @@ const Menu: FC = () => {
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(
-                                    itemClassNames,
-                                    itemHoverClassNames,
-                                    {
-                                        [inactiveLinkClassNames]: !isActive,
-                                        'text-experience visited:text-experience': isActive,
-                                    }
-                                )
+                                cn(itemClassNames, itemHoverClassNames, {
+                                    [inactiveLinkClassNames]: !isActive,
+                                    'text-experience visited:text-experience':
+                                        isActive,
+                                })
                             }
                             to="/experience"
                             onClick={handleSelect}
@@ -163,14 +160,11 @@ const Menu: FC = () => {
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(
-                                    itemClassNames,
-                                    itemHoverClassNames,
-                                    {
-                                        [inactiveLinkClassNames]: !isActive,
-                                        'text-education visited:text-education': isActive,
-                                    }
-                                )
+                                cn(itemClassNames, itemHoverClassNames, {
+                                    [inactiveLinkClassNames]: !isActive,
+                                    'text-education visited:text-education':
+                                        isActive,
+                                })
                             }
                             to="/education"
                             onClick={handleSelect}
@@ -190,14 +184,11 @@ const Menu: FC = () => {
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(
-                                    itemClassNames,
-                                    itemHoverClassNames,
-                                    {
-                                        [inactiveLinkClassNames]: !isActive,
-                                        'text-projects visited:text-projects': isActive,
-                                    }
-                                )
+                                cn(itemClassNames, itemHoverClassNames, {
+                                    [inactiveLinkClassNames]: !isActive,
+                                    'text-projects visited:text-projects':
+                                        isActive,
+                                })
                             }
                             to="/projects"
                             onClick={handleSelect}
@@ -216,14 +207,10 @@ const Menu: FC = () => {
                     <li>
                         <NavLink
                             className={({ isActive }) =>
-                                cn(
-                                    itemClassNames,
-                                    itemHoverClassNames,
-                                    {
-                                        [inactiveLinkClassNames]: !isActive,
-                                        'text-about visited:text-about': isActive,
-                                    }
-                                )
+                                cn(itemClassNames, itemHoverClassNames, {
+                                    [inactiveLinkClassNames]: !isActive,
+                                    'text-about visited:text-about': isActive,
+                                })
                             }
                             to="/about"
                             onClick={handleSelect}
