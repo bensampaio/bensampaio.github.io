@@ -11,14 +11,14 @@ import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
 const EducationScreen: FC = () => (
     <Screen title="Education">
-        <h1>Education</h1>
-        <VerticalList>
+        <h1 className="font-bold text-3xl">Education</h1>
+        <VerticalList className="mt-md">
             {education.map((degree, index) => (
                 <VerticalListItem key={index}>
                     <article>
                         <header className="flex items-center justify-between mb-sm">
                             <div>
-                                <h2 className="mb-xs">
+                                <h2 className="font-bold mb-xs text-2xl">
                                     {`${degree.degree} in ${degree.field}`}
                                 </h2>
                                 <Anchor
@@ -33,7 +33,7 @@ const EducationScreen: FC = () => (
                                 <InstitutionLogoLink {...degree.institution} />
                             )}
                         </header>
-                        <Text>{degree.summary}</Text>
+                        <Text className="mt-sm">{degree.summary}</Text>
                     </article>
                 </VerticalListItem>
             ))}

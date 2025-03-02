@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, JSX } from 'react';
 
 type Props = JSX.IntrinsicElements['a'];
 

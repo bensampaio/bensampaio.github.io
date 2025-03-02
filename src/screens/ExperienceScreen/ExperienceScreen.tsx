@@ -11,14 +11,16 @@ import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
 const ExperienceScreen: FC = () => (
     <Screen title="Experience">
-        <h1>Experience</h1>
-        <VerticalList>
+        <h1 className="font-bold text-3xl">Experience</h1>
+        <VerticalList className="mt-md">
             {experience.map((position, index) => (
                 <VerticalListItem key={index}>
                     <article>
                         <header className="flex items-center justify-between mb-s">
                             <div>
-                                <h2 className="mb-xs">{position.title}</h2>
+                                <h2 className="font-bold mb-xs text-2xl">
+                                    {position.title}
+                                </h2>
                                 <Anchor
                                     as={ExternalLink}
                                     href={position.institution.url}
@@ -33,7 +35,7 @@ const ExperienceScreen: FC = () => (
                                 />
                             )}
                         </header>
-                        <Text>{position.summary}</Text>
+                        <Text className="mt-sm">{position.summary}</Text>
                     </article>
                 </VerticalListItem>
             ))}

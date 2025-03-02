@@ -44,32 +44,32 @@ const Technology: FC<TechnologyProps> = ({
 
 const AboutScreen: FC = () => (
     <Screen title="About">
-        <h1>About</h1>
+        <h1 className="font-bold text-3xl">About</h1>
 
-        <h2>Goal</h2>
-        <Text>{about.goal}</Text>
+        <h2 className="font-bold mt-md text-2xl">Goal</h2>
+        <Text className="mt-xs">{about.goal}</Text>
 
-        <h2>Technologies</h2>
-        <Text>{about.technologies.summary}</Text>
+        <h2 className="font-bold mt-md text-2xl">Technologies</h2>
+        <Text className="mt-xs">{about.technologies.summary}</Text>
 
-        <h3>Frontend</h3>
-        <HorizontalList>
+        <h3 className="font-bold mt-sm text-1xl">Frontend</h3>
+        <HorizontalList className="mt-xs">
             {about.technologies.client.map((tech, index) => (
                 <Technology {...tech} key={index} />
             ))}
         </HorizontalList>
 
-        <h3>Tools</h3>
-        <HorizontalList>
+        <h3 className="font-bold mt-sm text-1xl">Tools</h3>
+        <HorizontalList className="mt-xs">
             {about.technologies.tools.map((tech, index) => (
                 <Technology {...tech} key={index} />
             ))}
         </HorizontalList>
 
-        <h2>Credits</h2>
+        <h2 className="font-bold mt-md text-2xl">Credits</h2>
 
-        <h3>Developers</h3>
-        <HorizontalList>
+        <h3 className="font-bold mt-sm text-1xl">Developers</h3>
+        <HorizontalList className="mt-xs">
             {about.credits.developers.map((developer, index) => (
                 <HorizontalListItem key={index}>
                     <Anchor as={ExternalLink} href={developer.url}>
@@ -79,8 +79,8 @@ const AboutScreen: FC = () => (
             ))}
         </HorizontalList>
 
-        <h3>Designers</h3>
-        <HorizontalList>
+        <h3 className="font-bold mt-sm text-1xl">Designers</h3>
+        <HorizontalList className="mt-xs">
             {about.credits.designers.map((designer, index) => (
                 <HorizontalListItem key={index}>
                     <Anchor as={ExternalLink} href={designer.url}>
@@ -90,8 +90,8 @@ const AboutScreen: FC = () => (
             ))}
         </HorizontalList>
 
-        <h3>Others</h3>
-        <HorizontalList>
+        <h3 className="font-bold mt-sm text-1xl">Others</h3>
+        <HorizontalList className="mt-xxs">
             {about.credits.others.map((other, index) => (
                 <HorizontalListItem key={index}>
                     <Anchor as={ExternalLink} href={other.url}>

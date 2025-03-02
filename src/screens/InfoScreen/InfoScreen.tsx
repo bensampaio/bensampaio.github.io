@@ -14,20 +14,20 @@ import Text from '../../shared/Text';
 
 const getSocialColorClassName = (name: string): string => {
     switch (name) {
-    case 'Facebook':
-        return 'text-facebook';
+        case 'Facebook':
+            return 'text-facebook';
 
-    case 'Github':
-        return 'text-github';
+        case 'Github':
+            return 'text-github';
 
-    case 'LinkedIn':
-        return 'text-linkedin';
+        case 'LinkedIn':
+            return 'text-linkedin';
 
-    case 'Twitter':
-        return 'text-twitter';
+        case 'Twitter':
+            return 'text-twitter';
 
-    default:
-        return 'text-inherit';
+        default:
+            return 'text-inherit';
     }
 };
 
@@ -40,11 +40,11 @@ const InfoScreen: FC = () => {
 
     return (
         <Screen>
-            <h2>Summary</h2>
-            <Text>{info.summary}</Text>
+            <h2 className="font-bold text-2xl">Summary</h2>
+            <Text className="mt-sm">{info.summary}</Text>
 
-            <h2>Skills</h2>
-            <HorizontalList>
+            <h2 className="font-bold mt-md text-2xl">Skills</h2>
+            <HorizontalList className="mt-sm">
                 {info.skills.slice(0, 15).map(({ icon, name }, index) => (
                     <HorizontalListItem key={index}>
                         <strong>
@@ -95,27 +95,33 @@ const InfoScreen: FC = () => {
                             title="Expand / Collapse"
                             onClick={toggleExtraSkills}
                         >
-                            <FontAwesomeIcon
-                                aria-hidden={true}
+                            <div
                                 className={cn({
                                     hidden: showExtraSkills,
                                 })}
-                                icon="chevron-down"
-                            />
-                            <FontAwesomeIcon
-                                aria-hidden={true}
+                            >
+                                <FontAwesomeIcon
+                                    aria-hidden={true}
+                                    icon="chevron-down"
+                                />
+                            </div>
+                            <div
                                 className={cn({
                                     hidden: !showExtraSkills,
                                 })}
-                                icon="chevron-up"
-                            />
+                            >
+                                <FontAwesomeIcon
+                                    aria-hidden={true}
+                                    icon="chevron-up"
+                                />
+                            </div>
                         </button>
                     </div>
                 </HorizontalListItem>
             </HorizontalList>
 
-            <h2>Languages</h2>
-            <HorizontalList>
+            <h2 className="font-bold mt-md text-2xl">Languages</h2>
+            <HorizontalList className="mt-sm">
                 {info.languages.map((lang, index) => (
                     <HorizontalListItem key={index}>
                         <div className="flex items-center gap-x-xs">
@@ -131,8 +137,8 @@ const InfoScreen: FC = () => {
                 ))}
             </HorizontalList>
 
-            <h2>Social</h2>
-            <HorizontalList>
+            <h2 className="font-bold mt-md text-2xl">Social</h2>
+            <HorizontalList className="mt-sm">
                 {info.pages.map(({ icon, name, url }, index) => (
                     <HorizontalListItem key={index}>
                         <ExternalLink
@@ -157,8 +163,8 @@ const InfoScreen: FC = () => {
                 ))}
             </HorizontalList>
 
-            <h2>Interests</h2>
-            <HorizontalList>
+            <h2 className="font-bold mt-md text-2xl">Interests</h2>
+            <HorizontalList className="mt-sm">
                 {info.interests.map((interest, index) => (
                     <HorizontalListItem key={index}>
                         {interest}
