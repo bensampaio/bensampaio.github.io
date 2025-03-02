@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { FC, memo, useCallback, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import me from '../../../db/me';
