@@ -26,7 +26,7 @@ export default [
         )
     ),
     {
-        ignores: ['.yarn', 'db', 'dist', 'node_modules', 'public'],
+        ignores: ['.yarn', 'db', 'dist', 'node_modules'],
         languageOptions: {
             globals: {
                 ...globals.browser,
