@@ -1,1 +1,1 @@
-export { default } from './ExperienceScreen';
+export { ExperienceScreen } from './ExperienceScreen';

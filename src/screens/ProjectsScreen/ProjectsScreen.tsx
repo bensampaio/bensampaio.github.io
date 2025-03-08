@@ -1,15 +1,15 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import projects from '../../../db/projects';
 import { Anchor } from '../../shared/Anchor';
-import ExternalLink from '../../shared/ExternalLink';
-import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
-import Screen from '../../shared/Screen';
-import Text from '../../shared/Text';
+import { ExternalLink } from '../../shared/ExternalLink';
+import { InstitutionLogoLink } from '../../shared/InstitutionLogoLink';
+import { Screen } from '../../shared/Screen';
+import { Text } from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
-import YouTube from '../../shared/YouTube';
+import { YouTube } from '../../shared/YouTube';
 
-const ProjectsScreen: FC = () => (
+export const ProjectsScreen: FC = () => (
   <Screen>
     <h1 className="font-bold text-3xl">Projects</h1>
     <VerticalList className="mt-md">
@@ -39,5 +39,3 @@ const ProjectsScreen: FC = () => (
     </VerticalList>
   </Screen>
 );
-
-export default memo(ProjectsScreen);

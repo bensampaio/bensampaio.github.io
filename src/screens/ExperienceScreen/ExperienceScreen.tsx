@@ -1,15 +1,15 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import experience from '../../../db/experience';
 import { Anchor } from '../../shared/Anchor';
-import ExternalLink from '../../shared/ExternalLink';
-import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
-import Period from '../../shared/Period';
-import Screen from '../../shared/Screen';
-import Text from '../../shared/Text';
+import { ExternalLink } from '../../shared/ExternalLink';
+import { InstitutionLogoLink } from '../../shared/InstitutionLogoLink';
+import { Period } from '../../shared/Period';
+import { Screen } from '../../shared/Screen';
+import { Text } from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
-const ExperienceScreen: FC = () => (
+export const ExperienceScreen: FC = () => (
   <Screen>
     <h1 className="font-bold text-3xl">Experience</h1>
     <VerticalList className="mt-md">
@@ -35,5 +35,3 @@ const ExperienceScreen: FC = () => (
     </VerticalList>
   </Screen>
 );
-
-export default memo(ExperienceScreen);

@@ -1,11 +1,11 @@
 import cn from 'classnames';
-import { FC, memo, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
 };
 
-const Screen: FC<Props> = ({ children }) => {
+export const Screen: FC<Props> = ({ children }) => {
   return (
     <article
       className={cn('h-full', 'max-w-prose', 'my-0', 'mx-auto', 'w-full')}
@@ -14,5 +14,3 @@ const Screen: FC<Props> = ({ children }) => {
     </article>
   );
 };
-
-export default memo<Props>(Screen);

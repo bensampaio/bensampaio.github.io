@@ -1,16 +1,16 @@
 import cn from 'classnames';
 import Image, { StaticImageData } from 'next/image';
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import about from '../../../db/about';
 import { Anchor } from '../../shared/Anchor';
-import ExternalLink from '../../shared/ExternalLink';
+import { ExternalLink } from '../../shared/ExternalLink';
 import {
   HorizontalList,
   HorizontalListItem,
 } from '../../shared/HorizontalList';
-import Screen from '../../shared/Screen';
-import Text from '../../shared/Text';
+import { Screen } from '../../shared/Screen';
+import { Text } from '../../shared/Text';
 
 type TechnologyProps = {
   desc: string;
@@ -19,7 +19,7 @@ type TechnologyProps = {
   url: string;
 };
 
-const Technology: FC<TechnologyProps> = ({
+export const Technology: FC<TechnologyProps> = ({
   desc,
   id,
   logo,
@@ -43,7 +43,7 @@ const Technology: FC<TechnologyProps> = ({
   </HorizontalListItem>
 );
 
-const AboutScreen: FC = () => (
+export const AboutScreen: FC = () => (
   <Screen>
     <h1 className="font-bold text-3xl">About</h1>
 
@@ -114,5 +114,3 @@ const AboutScreen: FC = () => (
     </HorizontalList>
   </Screen>
 );
-
-export default memo(AboutScreen);

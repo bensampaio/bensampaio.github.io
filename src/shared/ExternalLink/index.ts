@@ -1,1 +1,1 @@
-export { default } from './ExternalLink';
+export { ExternalLink } from './ExternalLink';

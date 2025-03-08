@@ -1,19 +1,19 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import info from '../../../db/info';
 import { ExpandCollapse } from '../../shared/ExpandCollapse';
-import ExternalLink from '../../shared/ExternalLink';
+import { ExternalLink } from '../../shared/ExternalLink';
 import {
   HorizontalList,
   HorizontalListItem,
 } from '../../shared/HorizontalList';
 import { Icon } from '../../shared/Icon';
-import Screen from '../../shared/Screen';
-import Text from '../../shared/Text';
+import { Screen } from '../../shared/Screen';
+import { Text } from '../../shared/Text';
 
-const InfoScreen: FC = () => {
+export const InfoScreen: FC = () => {
   return (
     <Screen>
       <h2 className="font-bold text-2xl">Summary</h2>
@@ -92,5 +92,3 @@ const InfoScreen: FC = () => {
     </Screen>
   );
 };
-
-export default memo(InfoScreen);
