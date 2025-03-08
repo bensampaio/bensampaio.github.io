@@ -1,5 +1,4 @@
 .DS_Store
-.dist
 .idea
 .next
 .pnp.*
@@ -9,4 +8,5 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+dist
 node_modules

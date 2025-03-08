@@ -1,7 +1,7 @@
 export default {
-    distDir: 'dist',
-    images: {
-        unoptimized: true,
-    },
-    output: 'export',
+  distDir: 'dist',
+  images: {
+    unoptimized: true,
+  },
+  output: 'export',
 };
