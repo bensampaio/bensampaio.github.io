@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import Image, { StaticImageData } from 'next/image';
 import { FC, memo } from 'react';
 
 import about from '../../../db/about';
@@ -14,7 +15,7 @@ import Text from '../../shared/Text';
 type TechnologyProps = {
     desc: string;
     id: string;
-    logo: string;
+    logo: StaticImageData;
     url: string;
 };
 
@@ -36,7 +37,7 @@ const Technology: FC<TechnologyProps> = ({
             )}
             href={url}
         >
-            <img alt={id} className="max-h-4xl" src={logo} />
+            <Image alt={id} className="max-w-3xl" src={logo} />
             <span className="mt-2xs">{desc}</span>
         </ExternalLink>
     </HorizontalListItem>
@@ -53,14 +54,14 @@ const AboutScreen: FC = () => (
         <Text className="mt-xs">{about.technologies.summary}</Text>
 
         <h3 className="font-bold mt-sm text-1xl">Frontend</h3>
-        <HorizontalList className="mt-xs">
+        <HorizontalList className="items-end mt-xs">
             {about.technologies.client.map((tech, index) => (
                 <Technology {...tech} key={index} />
             ))}
         </HorizontalList>
 
         <h3 className="font-bold mt-sm text-1xl">Tools</h3>
-        <HorizontalList className="mt-xs">
+        <HorizontalList className="items-end mt-xs">
             {about.technologies.tools.map((tech, index) => (
                 <Technology {...tech} key={index} />
             ))}

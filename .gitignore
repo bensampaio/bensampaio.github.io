@@ -1,5 +1,6 @@
 .DS_Store
 .idea
+.next
 .pnp.*
 .yarn/*
 !.yarn/patches

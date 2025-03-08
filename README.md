@@ -31,7 +31,7 @@ To start, first fork this repository and then clone it in your desktop.
 
 ### Install and run
 
-Run `yarn install` and then `yarn build:dev`. Afterwards you should be able to visualize the website in [http://localhost:8080/](http://localhost:8080/). 
+Run `yarn install` and then `yarn dev`. Afterwards you should be able to visualize the website in [http://localhost:8080/](http://localhost:8080/). 
 
 ### Change the data
 
@@ -39,4 +39,4 @@ Change the data in the files in the **db** folder to contain your own data. Make
 
 ### Ready? Go!
 
-When you are done run `yarn build:prd` and then commit and push your changes. Your page should now be live on Github.
+When you are done run `yarn build` and then commit and push your changes. Your page should now be live on Github.

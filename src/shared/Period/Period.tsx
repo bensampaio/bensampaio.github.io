@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { FC, memo } from 'react';
 
 type Props = {
@@ -14,9 +15,9 @@ type Props = {
 };
 
 const Period: FC<Props> = ({ from, to }) => {
-    const { documentElement } = document;
+    const router = useRouter();
 
-    const lang = documentElement ? documentElement.lang : 'en';
+    const lang = router.locale || 'en';
 
     const fromDate = new Date();
     const toDate = new Date();

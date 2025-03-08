@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FC } from 'react';
 
 import ExternalLink from '../ExternalLink';
@@ -10,7 +11,7 @@ type Props = {
 
 const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) => (
     <ExternalLink href={url}>
-        <img
+        <Image
             alt={name}
             className="hidden sm:block max-h-2xl max-w-6xl"
             src={logo}

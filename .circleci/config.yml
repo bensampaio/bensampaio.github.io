@@ -8,6 +8,7 @@ commands:
           keys:
             - v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: corepack enable
+      - run: yarn config set -H enableGlobalCache false
       - run: yarn install --immutable
 
 jobs:
@@ -21,10 +22,7 @@ jobs:
           key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
           paths:
             - .yarn/cache
-            - .yarn/unplugged
-            - .yarn/install-state.gz
-            - .pnp.cjs
-            - .pnp.loader.mjs
+            - node_modules
 
   lint:
     docker:
@@ -56,8 +54,14 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
+<<<<<<< Updated upstream
       - install-dependencies
       - run: yarn build:prd
+=======
+      - restore_cache:
+          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - run: yarn build
+>>>>>>> Stashed changes
 
 workflows:
   all:

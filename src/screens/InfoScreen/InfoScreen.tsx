@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import Image from 'next/image';
 import { FC, memo, useCallback, useState } from 'react';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -125,7 +126,7 @@ const InfoScreen: FC = () => {
                 {info.languages.map((lang, index) => (
                     <HorizontalListItem key={index}>
                         <div className="flex items-center gap-x-xs">
-                            <img alt="" aria-hidden={true} src={lang.flag} />
+                            <Image alt="" aria-hidden={true} src={lang.flag} />
                             <div>
                                 <div>
                                     <strong>{lang.name}</strong>

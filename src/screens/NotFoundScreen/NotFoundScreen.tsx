@@ -9,7 +9,7 @@ const NotFoundScreen: FC = () => (
             <h2 className="text-7xl">Page not found</h2>
             <FontAwesomeIcon
                 aria-hidden={true}
-                className="text-12xl"
+                className="mt-xl text-12xl"
                 icon={['far', 'frown-open']}
             />
         </div>

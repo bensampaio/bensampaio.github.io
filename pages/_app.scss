@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@use 'tailwindcss';
 
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @theme {
     --color-inherit: inherit;
@@ -55,10 +55,8 @@
     --spacing-8xl: 10rem;
 
     --font-sans: 'Open Sans';
-    --font-size-base: 1rem;
-    --font-size-10xl: 10rem;
-    --font-size-12xl: 12rem;
-    --font-size-spinner: 10vh;
+    --text-base: 1rem;
+    --text-12xl: 12rem;
 
     --transition-property-h: height;
     --transition-property-margin-top: margin-top;

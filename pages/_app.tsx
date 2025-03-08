@@ -1,6 +1,6 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { HashRouter } from 'react-router';
+import './_app.scss';
+
+import cn from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faBars,
@@ -35,10 +35,11 @@ import {
     faTwitterSquare,
     faWindows,
 } from '@fortawesome/free-brands-svg-icons';
+import { AppProps } from 'next/app';
 
-import App from './layout/App';
-
-const container = document.getElementById('app-root');
+import Menu from '../src/layout/Menu/Menu';
+import ErrorScreen from '../src/screens/ErrorScreen/ErrorScreen';
+import ErrorBoundary from '../src/shared/ErrorBoundary';
 
 library.add(
     faAngular,
@@ -73,14 +74,13 @@ library.add(
     faWindows
 );
 
-if (container instanceof HTMLElement) {
-    const root = createRoot(container);
+const App = ({ Component }: AppProps) => (
+    <ErrorBoundary fallback={ErrorScreen}>
+        <Menu />
+        <main className={cn('min-h-screen', 'mt-3xl', 'p-sm')}>
+            <Component />
+        </main>
+    </ErrorBoundary>
+);
 
-    root.render(
-        <StrictMode>
-            <HashRouter>
-                <App />
-            </HashRouter>
-        </StrictMode>
-    );
-}
+export default App;

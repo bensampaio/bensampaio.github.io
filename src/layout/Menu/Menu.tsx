@@ -1,11 +1,16 @@
 import cn from 'classnames';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC, memo, useCallback, useState } from 'react';
-import { NavLink } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import me from '../../../db/me';
+import { ROUTES } from '../../constants';
 
 const Menu: FC = () => {
+    const router = useRouter();
+
     const [expanded, setExpanded] = useState(false);
 
     const containerClassNames = cn(
@@ -65,34 +70,37 @@ const Menu: FC = () => {
                     'flex-none'
                 )}
             >
-                <NavLink
-                    className={({ isActive }) =>
-                        cn(itemClassNames, {
-                            [inactiveLinkClassNames]: !isActive,
-                            'text-info visited:text-info': isActive,
-                        })
-                    }
-                    end
-                    to="/"
+                <Link
+                    className={cn(itemClassNames, {
+                        [inactiveLinkClassNames]:
+                            router.pathname !== ROUTES.INFO,
+                        'text-info visited:text-info':
+                            router.pathname === ROUTES.INFO,
+                    })}
+                    href={ROUTES.INFO}
                     onClick={handleSelect}
                 >
-                    <img
+                    <Image
                         alt=""
                         aria-hidden={true}
                         className={cn(
                             'border-2',
                             'border-solid',
-                            'border-current',
                             'rounded-full',
                             'h-lg',
-                            'w-lg'
+                            'w-lg',
+                            'text-inherit',
+                            {
+                                'border-white': router.pathname !== ROUTES.INFO,
+                                'border-info': router.pathname === ROUTES.INFO,
+                            }
                         )}
                         src={me.picture}
                     />
                     <h1 className={cn('text-base', 'ml-xs', 'my-0')}>
                         {me.fullName}
                     </h1>
-                </NavLink>
+                </Link>
                 <button
                     className={cn(
                         'bg-transparent',
@@ -134,15 +142,14 @@ const Menu: FC = () => {
                     )}
                 >
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-experience visited:text-experience':
-                                        isActive,
-                                })
-                            }
-                            to="/experience"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    router.pathname !== ROUTES.EXPERIENCE,
+                                'text-experience visited:text-experience':
+                                    router.pathname === ROUTES.EXPERIENCE,
+                            })}
+                            href={ROUTES.EXPERIENCE}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
@@ -155,18 +162,17 @@ const Menu: FC = () => {
                             <span className={itemNameClassNames}>
                                 Experience
                             </span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-education visited:text-education':
-                                        isActive,
-                                })
-                            }
-                            to="/education"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    router.pathname !== ROUTES.EDUCATION,
+                                'text-education visited:text-education':
+                                    router.pathname === ROUTES.EDUCATION,
+                            })}
+                            href={ROUTES.EDUCATION}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
@@ -179,18 +185,17 @@ const Menu: FC = () => {
                             <span className={itemNameClassNames}>
                                 Education
                             </span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-projects visited:text-projects':
-                                        isActive,
-                                })
-                            }
-                            to="/projects"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    router.pathname !== ROUTES.PROJECTS,
+                                'text-projects visited:text-projects':
+                                    router.pathname === ROUTES.PROJECTS,
+                            })}
+                            href={ROUTES.PROJECTS}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
@@ -201,18 +206,18 @@ const Menu: FC = () => {
                                 />
                             </div>
                             <span className={itemNameClassNames}>Projects</span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li className="flex-auto"></li>
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-about visited:text-about': isActive,
-                                })
-                            }
-                            to="/about"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    router.pathname !== ROUTES.ABOUT,
+                                'text-about visited:text-about':
+                                    router.pathname === ROUTES.ABOUT,
+                            })}
+                            href={ROUTES.ABOUT}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
@@ -223,7 +228,7 @@ const Menu: FC = () => {
                                 />
                             </div>
                             <span className={itemNameClassNames}>About</span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
                         <div className={itemClassNames}>
