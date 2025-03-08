@@ -1,13 +1,15 @@
-import babelLogo from './babel.png';
 import cssLogo from './css.png';
+import eslintLogo from './eslint.png';
 import tsLogo from './ts.png';
 import htmlLogo from './html.png';
 import fontawesomeLogo from './fontawesome.png';
 import jsLogo from './js.png';
 import reactLogo from './react.png';
-import reactRouterLogo from './reactRouter.png';
+import nextLogo from './nextjs.png';
+import prettierLogo from './prettier.png';
 import sassLogo from './sass.png';
-import webpackLogo from './webpack.png';
+import stylelintLogo from './stylelint.png';
+import tailwindLogo from './tailwind.svg';
 import yarnLogo from './yarn.png';
 
 export default {
@@ -38,22 +40,28 @@ export default {
                 logo: jsLogo,
             },
             {
-                id: 'sass',
-                url: 'http://sass-lang.com/',
-                desc: 'SASS',
-                logo: sassLogo,
-            },
-            {
                 id: 'react',
                 url: 'https://reactjs.org/',
                 desc: 'React',
                 logo: reactLogo,
             },
             {
-                id: 'react-router',
-                url: '',
-                desc: 'React Router',
-                logo: reactRouterLogo,
+                id: 'next',
+                url: 'https://nextjs.org/',
+                desc: 'Next.js',
+                logo: nextLogo,
+            },
+            {
+                id: 'tailwind',
+                url: 'https://tailwindcss.com/',
+                desc: 'Tailwind',
+                logo: tailwindLogo,
+            },
+            {
+                id: 'sass',
+                url: 'http://sass-lang.com/',
+                desc: 'SASS',
+                logo: sassLogo,
             },
             {
                 id: 'fontawesome',
@@ -64,16 +72,22 @@ export default {
         ],
         tools: [
             {
-                id: 'yarn',
-                url: 'https://yarnpkg.com/',
-                desc: 'Yarn',
-                logo: yarnLogo,
+                id: 'eslint',
+                url: 'https://eslint.org/',
+                desc: 'ESLint',
+                logo: eslintLogo,
             },
             {
-                id: 'babel',
-                url: 'https://babeljs.io/',
-                desc: 'Babel',
-                logo: babelLogo,
+                id: 'prettier',
+                url: 'https://prettier.io/',
+                desc: 'Prettier',
+                logo: prettierLogo,
+            },
+            {
+                id: 'stylelint',
+                url: 'https://stylelint.io/',
+                desc: 'Stylelint',
+                logo: stylelintLogo,
             },
             {
                 id: 'typescript',
@@ -82,10 +96,10 @@ export default {
                 logo: tsLogo,
             },
             {
-                id: 'webpack',
-                url: 'https://webpack.js.org/',
-                desc: 'Webpack',
-                logo: webpackLogo,
+                id: 'yarn',
+                url: 'https://yarnpkg.com/',
+                desc: 'Yarn',
+                logo: yarnLogo,
             },
         ],
     },

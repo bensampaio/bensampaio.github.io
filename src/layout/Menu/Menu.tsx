@@ -1,15 +1,25 @@
+'use client';
+
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { FC, memo, useCallback, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faBars,
+    faCode,
+    faFile,
+    faGraduationCap,
+    faInfoCircle,
+} from '@fortawesome/free-solid-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 import me from '../../../db/me';
-import { ROUTES } from '../../constants';
+import { ROUTES } from '../../shared/constants';
+import { Icon } from '../../shared/Icon';
 
 const Menu: FC = () => {
-    const router = useRouter();
+    const pathname = usePathname();
 
     const [expanded, setExpanded] = useState(false);
 
@@ -72,10 +82,8 @@ const Menu: FC = () => {
             >
                 <Link
                     className={cn(itemClassNames, {
-                        [inactiveLinkClassNames]:
-                            router.pathname !== ROUTES.INFO,
-                        'text-info visited:text-info':
-                            router.pathname === ROUTES.INFO,
+                        [inactiveLinkClassNames]: pathname !== ROUTES.INFO,
+                        'text-info visited:text-info': pathname === ROUTES.INFO,
                     })}
                     href={ROUTES.INFO}
                     onClick={handleSelect}
@@ -91,8 +99,8 @@ const Menu: FC = () => {
                             'w-lg',
                             'text-inherit',
                             {
-                                'border-white': router.pathname !== ROUTES.INFO,
-                                'border-info': router.pathname === ROUTES.INFO,
+                                'border-white': pathname !== ROUTES.INFO,
+                                'border-info': pathname === ROUTES.INFO,
                             }
                         )}
                         src={me.picture}
@@ -117,11 +125,7 @@ const Menu: FC = () => {
                     title={expanded ? 'Collapse' : 'Expand'}
                     onClick={handleToggle}
                 >
-                    <FontAwesomeIcon
-                        aria-hidden={true}
-                        fixedWidth={true}
-                        icon="bars"
-                    />
+                    <Icon aria-hidden={true} fixedWidth={true} icon={faBars} />
                 </button>
             </div>
             <nav
@@ -145,18 +149,18 @@ const Menu: FC = () => {
                         <Link
                             className={cn(itemClassNames, itemHoverClassNames, {
                                 [inactiveLinkClassNames]:
-                                    router.pathname !== ROUTES.EXPERIENCE,
+                                    pathname !== ROUTES.EXPERIENCE,
                                 'text-experience visited:text-experience':
-                                    router.pathname === ROUTES.EXPERIENCE,
+                                    pathname === ROUTES.EXPERIENCE,
                             })}
                             href={ROUTES.EXPERIENCE}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="file"
+                                    icon={faFile}
                                 />
                             </div>
                             <span className={itemNameClassNames}>
@@ -168,18 +172,18 @@ const Menu: FC = () => {
                         <Link
                             className={cn(itemClassNames, itemHoverClassNames, {
                                 [inactiveLinkClassNames]:
-                                    router.pathname !== ROUTES.EDUCATION,
+                                    pathname !== ROUTES.EDUCATION,
                                 'text-education visited:text-education':
-                                    router.pathname === ROUTES.EDUCATION,
+                                    pathname === ROUTES.EDUCATION,
                             })}
                             href={ROUTES.EDUCATION}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="graduation-cap"
+                                    icon={faGraduationCap}
                                 />
                             </div>
                             <span className={itemNameClassNames}>
@@ -191,18 +195,18 @@ const Menu: FC = () => {
                         <Link
                             className={cn(itemClassNames, itemHoverClassNames, {
                                 [inactiveLinkClassNames]:
-                                    router.pathname !== ROUTES.PROJECTS,
+                                    pathname !== ROUTES.PROJECTS,
                                 'text-projects visited:text-projects':
-                                    router.pathname === ROUTES.PROJECTS,
+                                    pathname === ROUTES.PROJECTS,
                             })}
                             href={ROUTES.PROJECTS}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="code"
+                                    icon={faCode}
                                 />
                             </div>
                             <span className={itemNameClassNames}>Projects</span>
@@ -213,18 +217,18 @@ const Menu: FC = () => {
                         <Link
                             className={cn(itemClassNames, itemHoverClassNames, {
                                 [inactiveLinkClassNames]:
-                                    router.pathname !== ROUTES.ABOUT,
+                                    pathname !== ROUTES.ABOUT,
                                 'text-about visited:text-about':
-                                    router.pathname === ROUTES.ABOUT,
+                                    pathname === ROUTES.ABOUT,
                             })}
                             href={ROUTES.ABOUT}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="info-circle"
+                                    icon={faInfoCircle}
                                 />
                             </div>
                             <span className={itemNameClassNames}>About</span>
@@ -233,9 +237,9 @@ const Menu: FC = () => {
                     <li>
                         <div className={itemClassNames}>
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     fixedWidth={true}
-                                    icon={['far', 'copyright']}
+                                    icon={faCopyright}
                                     title={`${new Date().getFullYear()} ${
                                         me.fullName
                                     }`}

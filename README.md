@@ -20,7 +20,7 @@ Bellow are described the file & folders structure and the usage instructions.
   - **projects/index.js** - stores information about personal projects. This data is used to fill the "Projects" section;
   - **about/index.js** - stores information about the website purpose and architecture. This data is used to fill the "About" section;
 - **node_modules** - contains all the Node.js modules used;
-- **public** - contains all the public resources, such as, images, stylesheets and scripts:
+- **dist** - contains all the public resources, such as, images, stylesheets and scripts:
 - **package.json** - app metadata and dependencies.
 
 ## Usage

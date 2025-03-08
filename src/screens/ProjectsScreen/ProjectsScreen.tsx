@@ -10,7 +10,7 @@ import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 import YouTube from '../../shared/YouTube';
 
 const ProjectsScreen: FC = () => (
-    <Screen title="Projects">
+    <Screen>
         <h1 className="font-bold text-3xl">Projects</h1>
         <VerticalList className="mt-md">
             {projects.map((project, index) => (

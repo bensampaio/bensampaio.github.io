@@ -1,26 +1,11 @@
 import cn from 'classnames';
-import { FC, memo, ReactNode, useEffect } from 'react';
-
-import me from '../../../db/me';
+import { FC, memo, ReactNode } from 'react';
 
 type Props = {
     children: ReactNode;
-    title?: string;
 };
 
-const Screen: FC<Props> = ({ children, title }) => {
-    useEffect(() => {
-        if (title) {
-            document.title = `${title} | ${me.fullName}`;
-        } else {
-            document.title = me.fullName;
-        }
-
-        return () => {
-            document.title = me.fullName;
-        };
-    });
-
+const Screen: FC<Props> = ({ children }) => {
     return (
         <article
             className={cn('h-full', 'max-w-prose', 'my-0', 'mx-auto', 'w-full')}

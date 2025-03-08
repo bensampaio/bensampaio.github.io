@@ -58,6 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "eslint": "^9.21.0",
+    "eslint-config-next": "^15.2.1",
     "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-react": "^7.37.4",
     "prettier": "^3.5.2",
@@ -70,12 +71,12 @@
     "@types/react-dom": "19.*"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "rm -rf public/* && next build",
+    "dev": "next dev --turbo",
+    "build": "rm -rf dist && next build",
     "format:check": "prettier '**/*.{js,ts,tsx,scss}' --check",
     "format": "prettier '**/*.{js,ts,tsx,scss}' --write",
-    "lint:css": "stylelint 'src/**/*.{css,scss}'",
-    "lint:js": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:css": "stylelint '{app,src}/**/*.{css,scss}'",
+    "lint:js": "eslint '{app,src}/**/*.{ts,tsx}'",
     "start": "next start"
   },
   "type": "module"

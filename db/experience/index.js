@@ -81,7 +81,6 @@ export default [
         title: 'Software Developer',
         institution: {
             url: 'https://forumd.org/forumd/',
-            logo: false,
             name: 'Coggitare',
         },
         period: {

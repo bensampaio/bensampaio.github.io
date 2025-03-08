@@ -20,12 +20,13 @@ export default [
         compat.extends(
             'eslint:recommended',
             'plugin:react/recommended',
+            'plugin:@next/next/recommended',
             'plugin:@typescript-eslint/recommended',
             'prettier'
         )
     ),
     {
-        ignores: ['.yarn', 'db', 'node_modules', 'public'],
+        ignores: ['.yarn', 'db', 'dist', 'node_modules', 'public'],
         languageOptions: {
             globals: {
                 ...globals.browser,

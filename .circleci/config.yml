@@ -54,14 +54,8 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-<<<<<<< Updated upstream
       - install-dependencies
-      - run: yarn build:prd
-=======
-      - restore_cache:
-          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: yarn build
->>>>>>> Stashed changes
 
 workflows:
   all:

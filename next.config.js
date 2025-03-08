@@ -1,3 +1,7 @@
 export default {
-    reactStrictMode: true,
+    distDir: 'dist',
+    images: {
+        unoptimized: true,
+    },
+    output: 'export',
 };

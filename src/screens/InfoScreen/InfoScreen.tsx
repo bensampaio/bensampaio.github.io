@@ -1,44 +1,19 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import { FC, memo, useCallback, useState } from 'react';
-import { IconName } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FC, memo } from 'react';
 
 import info from '../../../db/info';
+import { ExpandCollapse } from '../../shared/ExpandCollapse';
 import ExternalLink from '../../shared/ExternalLink';
 import {
     HorizontalList,
     HorizontalListItem,
 } from '../../shared/HorizontalList';
+import { Icon } from '../../shared/Icon';
 import Screen from '../../shared/Screen';
 import Text from '../../shared/Text';
 
-const getSocialColorClassName = (name: string): string => {
-    switch (name) {
-        case 'Facebook':
-            return 'text-facebook';
-
-        case 'Github':
-            return 'text-github';
-
-        case 'LinkedIn':
-            return 'text-linkedin';
-
-        case 'Twitter':
-            return 'text-twitter';
-
-        default:
-            return 'text-inherit';
-    }
-};
-
 const InfoScreen: FC = () => {
-    const [showExtraSkills, setShowExtraSkills] = useState(false);
-
-    const toggleExtraSkills = useCallback(() => {
-        setShowExtraSkills(!showExtraSkills);
-    }, [showExtraSkills]);
-
     return (
         <Screen>
             <h2 className="font-bold text-2xl">Summary</h2>
@@ -49,12 +24,7 @@ const InfoScreen: FC = () => {
                 {info.skills.slice(0, 15).map(({ icon, name }, index) => (
                     <HorizontalListItem key={index}>
                         <strong>
-                            {icon && (
-                                <FontAwesomeIcon
-                                    aria-hidden={true}
-                                    icon={['fab', icon as IconName]}
-                                />
-                            )}{' '}
+                            {icon && <Icon aria-hidden={true} icon={icon} />}{' '}
                             {name}
                         </strong>
                     </HorizontalListItem>
@@ -62,61 +32,23 @@ const InfoScreen: FC = () => {
 
                 <HorizontalListItem>
                     <div className="bg-gray-e border border-solid border-gray-d text-gray-4">
-                        <div
-                            className={cn(
-                                'transition-h',
-                                'duration-200',
-                                'ease-in-out',
-                                {
-                                    'h-0 overflow-hidden': !showExtraSkills,
-                                }
-                            )}
-                        >
+                        <ExpandCollapse>
                             <HorizontalList>
                                 {info.skills
                                     .slice(15)
                                     .map(({ icon, name }, index) => (
                                         <HorizontalListItem key={index}>
                                             {icon && (
-                                                <FontAwesomeIcon
+                                                <Icon
                                                     aria-hidden={true}
-                                                    icon={[
-                                                        'fab',
-                                                        icon as IconName,
-                                                    ]}
+                                                    icon={icon}
                                                 />
                                             )}{' '}
                                             {name}
                                         </HorizontalListItem>
                                     ))}
                             </HorizontalList>
-                        </div>
-                        <button
-                            className="bg-transparent border-0 cursor-pointer p-0 text-inherit text-base w-full"
-                            title="Expand / Collapse"
-                            onClick={toggleExtraSkills}
-                        >
-                            <div
-                                className={cn({
-                                    hidden: showExtraSkills,
-                                })}
-                            >
-                                <FontAwesomeIcon
-                                    aria-hidden={true}
-                                    icon="chevron-down"
-                                />
-                            </div>
-                            <div
-                                className={cn({
-                                    hidden: !showExtraSkills,
-                                })}
-                            >
-                                <FontAwesomeIcon
-                                    aria-hidden={true}
-                                    icon="chevron-up"
-                                />
-                            </div>
-                        </button>
+                        </ExpandCollapse>
                     </div>
                 </HorizontalListItem>
             </HorizontalList>
@@ -140,7 +72,7 @@ const InfoScreen: FC = () => {
 
             <h2 className="font-bold mt-md text-2xl">Social</h2>
             <HorizontalList className="mt-sm">
-                {info.pages.map(({ icon, name, url }, index) => (
+                {info.socials.map(({ icon, name, url }, index) => (
                     <HorizontalListItem key={index}>
                         <ExternalLink
                             className={cn(
@@ -153,10 +85,10 @@ const InfoScreen: FC = () => {
                             )}
                             href={url}
                         >
-                            <FontAwesomeIcon
+                            <Icon
                                 aria-hidden={true}
-                                className={getSocialColorClassName(name)}
-                                icon={['fab', icon as IconName]}
+                                className={icon.color}
+                                icon={icon.src}
                             />
                             <span>{name}</span>
                         </ExternalLink>

@@ -44,7 +44,7 @@ const Technology: FC<TechnologyProps> = ({
 );
 
 const AboutScreen: FC = () => (
-    <Screen title="About">
+    <Screen>
         <h1 className="font-bold text-3xl">About</h1>
 
         <h2 className="font-bold mt-md text-2xl">Goal</h2>

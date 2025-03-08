@@ -10,7 +10,7 @@ import Text from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
 const ExperienceScreen: FC = () => (
-    <Screen title="Experience">
+    <Screen>
         <h1 className="font-bold text-3xl">Experience</h1>
         <VerticalList className="mt-md">
             {experience.map((position, index) => (
