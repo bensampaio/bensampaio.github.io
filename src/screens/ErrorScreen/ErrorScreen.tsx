@@ -1,21 +1,18 @@
 import { FC, memo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBug } from '@fortawesome/free-solid-svg-icons';
 
-import Screen from '../../shared/Screen';
-import ExternalLink from '../../shared/ExternalLink';
 import { Anchor } from '../../shared/Anchor';
+import { Icon } from '../../shared/Icon';
+import ExternalLink from '../../shared/ExternalLink';
+import Screen from '../../shared/Screen';
 
 const handleClick = () => location.reload();
 
 const ErrorScreen: FC = () => (
-    <Screen title="Error">
+    <Screen>
         <div className="text-center">
             <h2 className="text-7xl">Something went wrong</h2>
-            <FontAwesomeIcon
-                aria-hidden={true}
-                className="text-12xl"
-                icon="bug"
-            />
+            <Icon aria-hidden={true} className="text-12xl" icon={faBug} />
             <div className="mt-lg">
                 <button onClick={handleClick}>Try again</button>
             </div>

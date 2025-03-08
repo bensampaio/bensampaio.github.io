@@ -1,11 +1,26 @@
+'use client';
+
 import cn from 'classnames';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FC, memo, useCallback, useState } from 'react';
-import { NavLink } from 'react-router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faBars,
+    faCode,
+    faFile,
+    faGraduationCap,
+    faInfoCircle,
+} from '@fortawesome/free-solid-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 import me from '../../../db/me';
+import { ROUTES } from '../../shared/constants';
+import { Icon } from '../../shared/Icon';
 
 const Menu: FC = () => {
+    const pathname = usePathname();
+
     const [expanded, setExpanded] = useState(false);
 
     const containerClassNames = cn(
@@ -65,34 +80,35 @@ const Menu: FC = () => {
                     'flex-none'
                 )}
             >
-                <NavLink
-                    className={({ isActive }) =>
-                        cn(itemClassNames, {
-                            [inactiveLinkClassNames]: !isActive,
-                            'text-info visited:text-info': isActive,
-                        })
-                    }
-                    end
-                    to="/"
+                <Link
+                    className={cn(itemClassNames, {
+                        [inactiveLinkClassNames]: pathname !== ROUTES.INFO,
+                        'text-info visited:text-info': pathname === ROUTES.INFO,
+                    })}
+                    href={ROUTES.INFO}
                     onClick={handleSelect}
                 >
-                    <img
+                    <Image
                         alt=""
                         aria-hidden={true}
                         className={cn(
                             'border-2',
                             'border-solid',
-                            'border-current',
                             'rounded-full',
                             'h-lg',
-                            'w-lg'
+                            'w-lg',
+                            'text-inherit',
+                            {
+                                'border-white': pathname !== ROUTES.INFO,
+                                'border-info': pathname === ROUTES.INFO,
+                            }
                         )}
                         src={me.picture}
                     />
                     <h1 className={cn('text-base', 'ml-xs', 'my-0')}>
                         {me.fullName}
                     </h1>
-                </NavLink>
+                </Link>
                 <button
                     className={cn(
                         'bg-transparent',
@@ -109,11 +125,7 @@ const Menu: FC = () => {
                     title={expanded ? 'Collapse' : 'Expand'}
                     onClick={handleToggle}
                 >
-                    <FontAwesomeIcon
-                        aria-hidden={true}
-                        fixedWidth={true}
-                        icon="bars"
-                    />
+                    <Icon aria-hidden={true} fixedWidth={true} icon={faBars} />
                 </button>
             </div>
             <nav
@@ -134,103 +146,100 @@ const Menu: FC = () => {
                     )}
                 >
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-experience visited:text-experience':
-                                        isActive,
-                                })
-                            }
-                            to="/experience"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    pathname !== ROUTES.EXPERIENCE,
+                                'text-experience visited:text-experience':
+                                    pathname === ROUTES.EXPERIENCE,
+                            })}
+                            href={ROUTES.EXPERIENCE}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="file"
+                                    icon={faFile}
                                 />
                             </div>
                             <span className={itemNameClassNames}>
                                 Experience
                             </span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-education visited:text-education':
-                                        isActive,
-                                })
-                            }
-                            to="/education"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    pathname !== ROUTES.EDUCATION,
+                                'text-education visited:text-education':
+                                    pathname === ROUTES.EDUCATION,
+                            })}
+                            href={ROUTES.EDUCATION}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="graduation-cap"
+                                    icon={faGraduationCap}
                                 />
                             </div>
                             <span className={itemNameClassNames}>
                                 Education
                             </span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-projects visited:text-projects':
-                                        isActive,
-                                })
-                            }
-                            to="/projects"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    pathname !== ROUTES.PROJECTS,
+                                'text-projects visited:text-projects':
+                                    pathname === ROUTES.PROJECTS,
+                            })}
+                            href={ROUTES.PROJECTS}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="code"
+                                    icon={faCode}
                                 />
                             </div>
                             <span className={itemNameClassNames}>Projects</span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li className="flex-auto"></li>
                     <li>
-                        <NavLink
-                            className={({ isActive }) =>
-                                cn(itemClassNames, itemHoverClassNames, {
-                                    [inactiveLinkClassNames]: !isActive,
-                                    'text-about visited:text-about': isActive,
-                                })
-                            }
-                            to="/about"
+                        <Link
+                            className={cn(itemClassNames, itemHoverClassNames, {
+                                [inactiveLinkClassNames]:
+                                    pathname !== ROUTES.ABOUT,
+                                'text-about visited:text-about':
+                                    pathname === ROUTES.ABOUT,
+                            })}
+                            href={ROUTES.ABOUT}
                             onClick={handleSelect}
                         >
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     aria-hidden={true}
                                     fixedWidth={true}
-                                    icon="info-circle"
+                                    icon={faInfoCircle}
                                 />
                             </div>
                             <span className={itemNameClassNames}>About</span>
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
                         <div className={itemClassNames}>
                             <div className={itemIconClassNames}>
-                                <FontAwesomeIcon
+                                <Icon
                                     fixedWidth={true}
-                                    icon={['far', 'copyright']}
+                                    icon={faCopyright}
                                     title={`${new Date().getFullYear()} ${
                                         me.fullName
                                     }`}

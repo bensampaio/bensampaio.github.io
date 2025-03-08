@@ -1,5 +1,7 @@
 import { FC, memo } from 'react';
 
+import { LOCALE } from '../constants';
+
 type Props = {
     from: {
         year?: number;
@@ -14,10 +16,6 @@ type Props = {
 };
 
 const Period: FC<Props> = ({ from, to }) => {
-    const { documentElement } = document;
-
-    const lang = documentElement ? documentElement.lang : 'en';
-
     const fromDate = new Date();
     const toDate = new Date();
 
@@ -46,10 +44,10 @@ const Period: FC<Props> = ({ from, to }) => {
         }
     }
 
-    const fromText = fromDate.toLocaleDateString(lang, fromOptions);
+    const fromText = fromDate.toLocaleDateString(LOCALE, fromOptions);
     const toText =
         Object.keys(toOptions).length > 0
-            ? toDate.toLocaleDateString(lang, toOptions)
+            ? toDate.toLocaleDateString(LOCALE, toOptions)
             : 'Now';
 
     return (

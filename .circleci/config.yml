@@ -8,6 +8,7 @@ commands:
           keys:
             - v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
       - run: corepack enable
+      - run: yarn config set -H enableGlobalCache false
       - run: yarn install --immutable
 
 jobs:
@@ -21,10 +22,7 @@ jobs:
           key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
           paths:
             - .yarn/cache
-            - .yarn/unplugged
-            - .yarn/install-state.gz
-            - .pnp.cjs
-            - .pnp.loader.mjs
+            - node_modules
 
   lint:
     docker:
@@ -57,7 +55,7 @@ jobs:
     steps:
       - checkout
       - install-dependencies
-      - run: yarn build:prd
+      - run: yarn build
 
 workflows:
   all:

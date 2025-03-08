@@ -1,16 +1,17 @@
 import { FC, memo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFrownOpen } from '@fortawesome/free-regular-svg-icons';
 
+import { Icon } from '../../shared/Icon';
 import Screen from '../../shared/Screen';
 
 const NotFoundScreen: FC = () => (
-    <Screen title="Not found">
+    <Screen>
         <div className="text-center">
             <h2 className="text-7xl">Page not found</h2>
-            <FontAwesomeIcon
+            <Icon
                 aria-hidden={true}
-                className="text-12xl"
-                icon={['far', 'frown-open']}
+                className="mt-xl text-12xl"
+                icon={faFrownOpen}
             />
         </div>
     </Screen>
