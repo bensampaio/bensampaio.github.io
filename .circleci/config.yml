@@ -1,14 +1,22 @@
 version: 2.1
 
+commands:
+  install-dependencies:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - run: corepack enable
+      - run: yarn install --immutable
+
 jobs:
   install:
     docker:
       - image: cimg/node:lts
     steps:
       - checkout
-      - restore_cache:
-          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
-      - run: yarn install --immutable
+      - install-dependencies
       - save_cache:
           key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
           paths:
@@ -23,8 +31,7 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - restore_cache:
-          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - install-dependencies
       - run: yarn lint:css
       - run: yarn lint:js
 
@@ -33,8 +40,7 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - restore_cache:
-          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - install-dependencies
       - run: yarn format:check
 
   validate:
@@ -42,8 +48,7 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - restore_cache:
-          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - install-dependencies
       - run: yarn tsc
 
   build:
@@ -51,8 +56,7 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - restore_cache:
-          key: v1-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+      - install-dependencies
       - run: yarn build:prd
 
 workflows:
