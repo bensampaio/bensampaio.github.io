@@ -13,26 +13,24 @@ import Menu from '../src/layout/Menu';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-    title: {
-        template: `%s | ${me.fullName}`,
-        default: me.fullName,
-    },
-    description: 'Bruno Sampaio personal website',
+  title: {
+    template: `%s | ${me.fullName}`,
+    default: me.fullName,
+  },
+  description: 'Bruno Sampaio personal website',
 };
 
 type Props = {
-    children: ReactNode;
+  children: ReactNode;
 };
 
 const App: FC<Props> = ({ children }) => (
-    <html className="h-full overflow-y-scroll" lang={LOCALE}>
-        <body className="border-0 h-full m-0 p-0">
-            <Menu />
-            <main className={cn('min-h-screen', 'mt-3xl', 'p-sm')}>
-                {children}
-            </main>
-        </body>
-    </html>
+  <html className="h-full overflow-y-scroll" lang={LOCALE}>
+    <body className="border-0 h-full m-0 p-0">
+      <Menu />
+      <main className={cn('min-h-screen', 'mt-3xl', 'p-sm')}>{children}</main>
+    </body>
+  </html>
 );
 
 export default App;

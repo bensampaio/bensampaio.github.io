@@ -5,16 +5,12 @@ import { Icon } from '../../shared/Icon';
 import Screen from '../../shared/Screen';
 
 const NotFoundScreen: FC = () => (
-    <Screen>
-        <div className="text-center">
-            <h2 className="text-7xl">Page not found</h2>
-            <Icon
-                aria-hidden={true}
-                className="mt-xl text-12xl"
-                icon={faFrownOpen}
-            />
-        </div>
-    </Screen>
+  <Screen>
+    <div className="text-center">
+      <h2 className="text-7xl">Page not found</h2>
+      <Icon aria-hidden={true} className="mt-xl text-12xl" icon={faFrownOpen} />
+    </div>
+  </Screen>
 );
 
 export default memo(NotFoundScreen);
