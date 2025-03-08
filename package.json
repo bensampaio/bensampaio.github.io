@@ -65,6 +65,10 @@
     "stylelint-config-recommended": "^15.0.0",
     "stylelint-config-recommended-scss": "^14.1.0"
   },
+  "resolutions": {
+    "@types/react": "19.*",
+    "@types/react-dom": "19.*"
+  },
   "scripts": {
     "build:dev": "NODE_ENV=development webpack-dev-server --history-api-fallback",
     "build:prd": "rm -rf public/* && NODE_ENV=production webpack",
