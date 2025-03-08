@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import { LOCALE } from '../constants';
 
@@ -15,7 +15,7 @@ type Props = {
   };
 };
 
-const Period: FC<Props> = ({ from, to }) => {
+export const Period: FC<Props> = ({ from, to }) => {
   const fromDate = new Date();
   const toDate = new Date();
 
@@ -56,5 +56,3 @@ const Period: FC<Props> = ({ from, to }) => {
     </span>
   );
 };
-
-export default memo<Props>(Period);

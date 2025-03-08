@@ -1,7 +1,7 @@
-import { FC, memo, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { Anchor } from '../Anchor';
-import ExternalLink from '../ExternalLink';
+import { ExternalLink } from '../ExternalLink';
 
 /**
  * Regular expression used to identify markdown for a link.
@@ -56,7 +56,7 @@ type Props = {
  * @param {Object} props
  * @returns {Array}
  */
-const Text: FC<Props> = ({ children, className }) => {
+export const Text: FC<Props> = ({ children, className }) => {
   const lines = children.split(/\n/g);
 
   let currentList: null | ReactNode[] = null;
@@ -114,5 +114,3 @@ const Text: FC<Props> = ({ children, className }) => {
     </>
   );
 };
-
-export default memo<Props>(Text);

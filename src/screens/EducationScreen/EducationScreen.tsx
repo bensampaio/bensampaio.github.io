@@ -1,15 +1,15 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import education from '../../../db/education';
 import { Anchor } from '../../shared/Anchor';
-import ExternalLink from '../../shared/ExternalLink';
-import InstitutionLogoLink from '../../shared/InstitutionLogoLink';
-import Period from '../../shared/Period';
-import Screen from '../../shared/Screen';
-import Text from '../../shared/Text';
+import { ExternalLink } from '../../shared/ExternalLink';
+import { InstitutionLogoLink } from '../../shared/InstitutionLogoLink';
+import { Period } from '../../shared/Period';
+import { Screen } from '../../shared/Screen';
+import { Text } from '../../shared/Text';
 import { VerticalList, VerticalListItem } from '../../shared/VerticalList';
 
-const EducationScreen: FC = () => (
+export const EducationScreen: FC = () => (
   <Screen>
     <h1 className="font-bold text-3xl">Education</h1>
     <VerticalList className="mt-md">
@@ -37,5 +37,3 @@ const EducationScreen: FC = () => (
     </VerticalList>
   </Screen>
 );
-
-export default memo(EducationScreen);

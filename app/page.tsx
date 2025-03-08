@@ -1,3 +1,3 @@
-import InfoScreen from '../src/screens/InfoScreen';
+import { InfoScreen } from '../src/screens/InfoScreen';
 
 export default InfoScreen;

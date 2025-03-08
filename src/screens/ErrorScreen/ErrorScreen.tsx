@@ -1,14 +1,14 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { faBug } from '@fortawesome/free-solid-svg-icons';
 
 import { Anchor } from '../../shared/Anchor';
 import { Icon } from '../../shared/Icon';
-import ExternalLink from '../../shared/ExternalLink';
-import Screen from '../../shared/Screen';
+import { ExternalLink } from '../../shared/ExternalLink';
+import { Screen } from '../../shared/Screen';
 
 const handleClick = () => location.reload();
 
-const ErrorScreen: FC = () => (
+export const ErrorScreen: FC = () => (
   <Screen>
     <div className="text-center">
       <h2 className="text-7xl">Something went wrong</h2>
@@ -29,5 +29,3 @@ const ErrorScreen: FC = () => (
     </div>
   </Screen>
 );
-
-export default memo(ErrorScreen);

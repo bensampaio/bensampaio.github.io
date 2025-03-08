@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FC, memo, useCallback, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import {
   faBars,
   faCode,
@@ -18,7 +18,7 @@ import me from '../../../db/me';
 import { ROUTES } from '../../shared/constants';
 import { Icon } from '../../shared/Icon';
 
-const Menu: FC = () => {
+export const Menu: FC = () => {
   const pathname = usePathname();
 
   const [expanded, setExpanded] = useState(false);
@@ -225,5 +225,3 @@ const Menu: FC = () => {
     </header>
   );
 };
-
-export default memo(Menu);

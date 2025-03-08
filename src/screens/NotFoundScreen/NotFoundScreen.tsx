@@ -1,10 +1,10 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { faFrownOpen } from '@fortawesome/free-regular-svg-icons';
 
 import { Icon } from '../../shared/Icon';
-import Screen from '../../shared/Screen';
+import { Screen } from '../../shared/Screen';
 
-const NotFoundScreen: FC = () => (
+export const NotFoundScreen: FC = () => (
   <Screen>
     <div className="text-center">
       <h2 className="text-7xl">Page not found</h2>
@@ -12,5 +12,3 @@ const NotFoundScreen: FC = () => (
     </div>
   </Screen>
 );
-
-export default memo(NotFoundScreen);

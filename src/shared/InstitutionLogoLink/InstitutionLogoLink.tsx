@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
-import ExternalLink from '../ExternalLink';
+import { ExternalLink } from '../ExternalLink';
 
 type Props = {
   logo?: StaticImageData;
@@ -9,7 +9,7 @@ type Props = {
   url: string;
 };
 
-const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) =>
+export const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) =>
   logo && (
     <ExternalLink href={url}>
       <Image
@@ -19,5 +19,3 @@ const InstitutionLogoLink: FC<Props> = ({ logo, name, url }) =>
       />
     </ExternalLink>
   );
-
-export default InstitutionLogoLink;

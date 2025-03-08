@@ -1,1 +1,1 @@
-export { default } from './InstitutionLogoLink';
+export { InstitutionLogoLink } from './InstitutionLogoLink';

@@ -8,7 +8,7 @@ import { FC, ReactNode } from 'react';
 import { LOCALE } from '../src/shared/constants';
 
 import me from '../db/me';
-import Menu from '../src/layout/Menu';
+import { Menu } from '../src/layout/Menu';
 
 config.autoAddCss = false;
 

@@ -1,1 +1,1 @@
-export { default } from './YouTube';
+export { YouTube } from './YouTube';

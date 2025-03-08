@@ -1,1 +1,1 @@
-export { default } from './EducationScreen';
+export { EducationScreen } from './EducationScreen';
