@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import education from '../../../db/education';
+import { education } from '../../../db/education';
 import { Anchor } from '../../shared/Anchor';
 import { ExternalLink } from '../../shared/ExternalLink';
 import { InstitutionLogoLink } from '../../shared/InstitutionLogoLink';

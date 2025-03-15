@@ -1,9 +1,59 @@
+import { StaticImageData } from 'next/image';
+
 import campusincLogo from './campusinc.png';
 import catawikiLogo from './catawiki.svg';
 import karifyLogo from './karify.png';
 import safiraLogo from './safira.jpg';
 
-export default [
+type Job = {
+  title: string;
+  institution: {
+    url: string;
+    logo?: StaticImageData;
+    name: string;
+  };
+  period: {
+    from: { month: number; year: number };
+    to: { month: number; year: number } | null;
+  };
+  summary: string;
+};
+
+export const experience: Job[] = [
+  {
+    title: 'Staff Frontend Engineer',
+    institution: {
+      url: 'http://www.catawiki.com/',
+      logo: catawikiLogo,
+      name: 'Catawiki',
+    },
+    period: { from: { month: 4, year: 2023 }, to: null },
+    summary: `
+      * Migrate or refactor existing solutions to modernize the codebase and simplify future feature development.
+      * Participate in the technical design of features across teams.
+      * Introduce a layer of integration tests with Playwright.
+      * Moved to Portugal in May 2024 to start a tech hub in Lisbon.
+    `,
+  },
+  {
+    title: 'Web Frontend Guild Lead',
+    institution: {
+      url: 'http://www.catawiki.com/',
+      logo: catawikiLogo,
+      name: 'Catawiki',
+    },
+    period: { from: { month: 9, year: 2022 }, to: null },
+    summary: `
+      * Organized the migration of our global CSS to CSS Modules and our Ruby-based frontends to Next.js.
+      * Goal setting, planning, and prioritization of the guild technical roadmap.
+      * Manage tech weeks 5 times per year.
+      * Distribute ownership and workload of internal libraries.
+      * Improve our code style guide and ways of working as a guild.
+      * Mentor peers on dealing with tough problems, effective communication, and getting things done.
+      * Align with security, platform, and UX teams.
+      * Communication with leadership about the state of the technological landscape of the Web Frontend.
+    `,
+  },
   {
     title: 'Senior Frontend Engineer',
     institution: {
@@ -11,8 +61,16 @@ export default [
       logo: catawikiLogo,
       name: 'Catawiki',
     },
-    period: { from: { month: 12, year: 2020 }, to: null },
-    summary: '',
+    period: { from: { month: 12, year: 2020 }, to: { month: 3, year: 2023 } },
+    summary: `
+      I was a member of the Logistics team and the Web FE guild.
+
+      * Migrated logistics-related pages from legacy technologies to React and TypeScript.
+      * Participated in the redesign of the way our users submit their shipping and pickup information and rebuilt those flows using our modern stack.
+      * Owned the component library which involved contributing new components, reviewing the contributions of others, and aligning with the UX team.
+      * Interviewed new frontend candidates.
+      * Onboarded new joiners to the team.
+    `,
   },
   {
     title: 'Frontend Developer',

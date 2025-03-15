@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import { FC, ReactNode } from 'react';
 import { LOCALE } from '../src/shared/constants';
 
-import me from '../db/me';
+import { me } from '../db/me';
 import { Menu } from '../src/layout/Menu';
 
 config.autoAddCss = false;
