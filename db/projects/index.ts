@@ -1,11 +1,41 @@
+import { StaticImageData } from 'next/image';
+
 import banifLogo from './banif.jpg';
 import cubicLogo from './cubic.png';
 import epikLogo from './epik.png';
+import karifyLogo from './karify.png';
 
-export default [
+type Project = {
+  name: string;
+  url?: string;
+  video?: string;
+  desc: string;
+  institution?: {
+    url: string;
+    logo?: StaticImageData;
+    name: string;
+  };
+};
+
+export const projects: Project[] = [
+  {
+    name: 'Karify React Frontend',
+    desc: `
+        Migrated the Karify jQuery Frontend to React. This migration required creating a separate microservice for the React app, using iframes to detach the React app from the legacy app, a monorepo to structure the app and share code with other internal tools, among others.
+        You can read more about this project on these articles:
+        * [Modernizing a jQuery frontend with React](https://medium.com/@bensampaio/8598b252ceb3)
+        * [From a multi page application to a single page application](https://medium.com/@bensampaio/65deabf2d4ae)
+        * [Building a design system and a component library](https://medium.com/javascript-in-plain-english/3f4e01a7b0b4)
+        * [Setting up a large scale React application](https://medium.com/javascript-in-plain-english/2d50bc8a5ddb)
+    `,
+    institution: {
+      url: 'http://www.karify.com/',
+      logo: karifyLogo,
+      name: 'Karify',
+    },
+  },
   {
     name: 'Banif - Credit Workflow Process',
-    video: null,
     desc: `
         Web platform that implements the credit workflow process of Banif (one of Portuguese main banks):
         * Account managers on any branch could start the process by creating a new proposal for a client;
@@ -25,7 +55,6 @@ export default [
   {
     name: 'Google Chrome Extension - Web Inspector',
     url: 'https://chrome.google.com/webstore/detail/web-inspector/enibedkmbpadhfofcgjcphipflcbpelf?utm_source=chrome-ntp-icon',
-    video: null,
     desc: `
         Chrome extension that allows users to inspect a web page contents and properties by clicking on certain page elements. Some examples:
         * If a text element is clicked it will display the font used, the text size, the text color, and background color.
@@ -33,7 +62,6 @@ export default [
         * If a image or video is clicked its dimensions and source URL will be displayed.
         Technologies used: JavaScript, jQuery, Chrome API, CSS3, HTML5.
     `,
-    institution: null,
   },
   {
     name: 'Epik',
@@ -48,7 +76,6 @@ export default [
   {
     name: 'Cubic',
     url: 'http://epik.di.fct.unl.pt/moodle/',
-    video: null,
     desc: `
         Cubic is a new theme for Moodle 2.3. Its objective is to provide users with a more user-friendly interface, which provides several forms of social awareness and some new concepts.
         Besides this theme, I also developed other plugins for Moodle which can be found here: [https://moodle.org/plugins/browse.php?list=set&id=31](https://moodle.org/plugins/browse.php?list=set&id=31).
@@ -59,14 +86,12 @@ export default [
   {
     name: 'Coggitare - Forum',
     url: 'http://coggitare.com/forum',
-    video: null,
     desc: `
         Initially this project purpose was to provide users with scientific information about Vitamin-D. The development was finished but unfortunately the project had to be canceled, so now a simpler version of the website is being used on a new project still under construction.
         Technologies used: JavaScript, jQuery, HTML5, CSS3, PHP, CakePHP, and MySQL.
     `,
     institution: {
       url: 'http://www.coggitare.com/forum/',
-      logo: null,
       name: 'Coggitare',
     },
   },

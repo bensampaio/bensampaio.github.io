@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 import cssLogo from './css.png';
 import eslintLogo from './eslint.png';
 import tsLogo from './ts.png';
@@ -12,7 +14,39 @@ import stylelintLogo from './stylelint.png';
 import tailwindLogo from './tailwind.svg';
 import yarnLogo from './yarn.png';
 
-export default {
+type Technology = {
+  id: string;
+  url: string;
+  desc: string;
+  logo: StaticImageData;
+};
+
+type Contributor = {
+  desc?: string;
+  name: string;
+  url: string;
+};
+
+type About = {
+  goal: string;
+  technologies: {
+    summary: string;
+    client: Technology[];
+    tools: Technology[];
+  };
+  credits: {
+    developers: Contributor[];
+    designers: Contributor[];
+    others: (Contributor & {
+      item: {
+        name: string;
+        url: string;
+      };
+    })[];
+  };
+};
+
+export const about: About = {
   goal: 'I created this site to present the most interesting and relevant aspects about me and my work in a more clean and simplified way.',
   technologies: {
     summary: `

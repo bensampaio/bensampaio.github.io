@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
-import about from '../../../db/about';
+import { about } from '../../../db/about';
 import { Anchor } from '../../shared/Anchor';
 import { ExternalLink } from '../../shared/ExternalLink';
 import {

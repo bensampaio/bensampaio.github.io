@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
-import me from '../../../db/me';
+import { me } from '../../../db/me';
 import { ROUTES } from '../../shared/constants';
 import { Icon } from '../../shared/Icon';
 

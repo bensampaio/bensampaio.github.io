@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import projects from '../../../db/projects';
+import { projects } from '../../../db/projects';
 import { Anchor } from '../../shared/Anchor';
 import { ExternalLink } from '../../shared/ExternalLink';
 import { InstitutionLogoLink } from '../../shared/InstitutionLogoLink';

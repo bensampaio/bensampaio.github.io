@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { FC } from 'react';
 
-import info from '../../../db/info';
+import { info } from '../../../db/info';
 import { ExpandCollapse } from '../../shared/ExpandCollapse';
 import { ExternalLink } from '../../shared/ExternalLink';
 import {

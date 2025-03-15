@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import experience from '../../../db/experience';
+import { experience } from '../../../db/experience';
 import { Anchor } from '../../shared/Anchor';
 import { ExternalLink } from '../../shared/ExternalLink';
 import { InstitutionLogoLink } from '../../shared/InstitutionLogoLink';

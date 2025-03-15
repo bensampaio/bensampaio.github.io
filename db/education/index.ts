@@ -1,7 +1,24 @@
+import { StaticImageData } from 'next/image';
+
 import tudLogo from './tud.png';
 import unlLogo from './unl.png';
 
-export default [
+type University = {
+  degree: string;
+  field: string;
+  institution: {
+    url: string;
+    logo: StaticImageData;
+    name: string;
+  };
+  period: {
+    from: { year: number };
+    to: { year: number };
+  };
+  summary: string;
+};
+
+export const education: University[] = [
   {
     degree: 'Master',
     field: 'Computer Science Engineering',
