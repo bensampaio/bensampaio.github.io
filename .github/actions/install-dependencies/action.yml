@@ -1,0 +1,26 @@
+name: Install dependencies
+description: Set up Node.js and Yarn, restore the dependency cache and install dependencies.
+
+runs:
+  using: composite
+  steps:
+    - name: Enable corepack
+      shell: bash
+      run: corepack enable
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .nvmrc
+
+    - name: Restore dependency cache
+      uses: actions/cache@v4
+      with:
+        path: |
+          .yarn/cache
+          node_modules
+        key: ${{ runner.os }}-deps-${{ hashFiles('.nvmrc', 'yarn.lock') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: yarn install --immutable

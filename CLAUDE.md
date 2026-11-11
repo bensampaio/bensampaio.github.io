@@ -17,7 +17,7 @@ Uses Yarn 4 (via corepack, `nodeLinker: node-modules`) and Node from `.nvmrc`.
 - `yarn format:check` / `yarn format` — Prettier
 - `yarn tsc` — type-check (there's no script; CI runs this directly)
 
-There is no test suite. CI (CircleCI) runs lint, format check, `tsc` and build; run these before considering a change done.
+There is no test suite. CI (`.github/workflows/ci.yml`, GitHub Actions) runs lint, format check, `tsc` and build on every pull request and push to `master`; run these before considering a change done.
 
 ## Architecture
 
